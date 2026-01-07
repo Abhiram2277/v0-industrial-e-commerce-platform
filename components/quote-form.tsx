@@ -1,0 +1,352 @@
+"use client"
+
+import type React from "react"
+
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useToast } from "@/hooks/use-toast"
+import { Send, CheckCircle, ShoppingCart, X } from "lucide-react"
+import { products, categories } from "@/lib/products"
+import { useCart } from "@/lib/cart-context"
+import Image from "next/image"
+import { Badge } from "@/components/ui/badge"
+
+export function QuoteForm() {
+  const searchParams = useSearchParams()
+  const productId = searchParams.get("product")
+  const { toast } = useToast()
+  const { items: cartItems, removeItem } = useCart()
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    category: "",
+    product: productId || "",
+    quantity: "",
+    message: "",
+  })
+
+  useEffect(() => {
+    if (productId) {
+      const product = products.find((p) => p.id === productId)
+      if (product) {
+        setFormData((prev) => ({
+          ...prev,
+          product: product.name,
+          category: product.category,
+        }))
+      }
+    }
+  }, [productId])
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        category: formData.category,
+        productName: formData.product,
+        quantity: formData.quantity,
+        message: formData.message,
+        cartItems: cartItems.map((item) => ({
+          id: item.id,
+          name: item.name,
+          brand: item.brand,
+          quantity: item.quantity,
+        })),
+      }
+
+      console.log("[v0] Submitting quote request:", submissionData)
+
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submissionData),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to submit quote")
+      }
+
+      console.log("[v0] Quote saved successfully:", result.data)
+
+      setIsSubmitted(true)
+
+      toast({
+        title: "Quote request submitted!",
+        description: "Our team will contact you within 24 hours.",
+      })
+
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          category: "",
+          product: "",
+          quantity: "",
+          message: "",
+        })
+      }, 3000)
+    } catch (error) {
+      console.error("[v0] Error submitting quote:", error)
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  if (isSubmitted) {
+    return (
+      <Card className="border-accent/50">
+        <CardContent className="pt-12 pb-12">
+          <div className="text-center space-y-4">
+            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent">
+              <CheckCircle className="h-10 w-10" />
+            </div>
+            <h3 className="text-2xl font-bold" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Quote Request Received!
+            </h3>
+            <p className="text-muted-foreground text-lg max-w-md mx-auto leading-relaxed">
+              Thank you for your interest. Our sales team will review your request and contact you within 24 hours.
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
+  return (
+    <div className="space-y-6">
+      {cartItems.length > 0 && (
+        <Card className="border-accent/30 bg-accent/5">
+          <CardHeader>
+            <CardTitle className="text-xl flex items-center gap-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              <ShoppingCart className="h-5 w-5" />
+              Items in Your Cart ({cartItems.length})
+            </CardTitle>
+            <CardDescription>These products will be included in your quote request</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {cartItems.map((item) => (
+                <div key={item.id} className="flex items-center gap-4 p-3 bg-background rounded-lg border">
+                  <div className="relative h-16 w-16 rounded-md overflow-hidden bg-secondary/30 flex-shrink-0">
+                    {item.image ? (
+                      <Image
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-xl font-bold text-primary/20">
+                          {item.name
+                            .split(" ")
+                            .map((w) => w[0])
+                            .join("")
+                            .slice(0, 2)}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-semibold text-sm leading-tight">{item.name}</h4>
+                    {item.brand && (
+                      <Badge variant="secondary" className="text-xs mt-1 bg-accent/10 text-accent border-accent/20">
+                        {item.brand}
+                      </Badge>
+                    )}
+                    <p className="text-sm text-muted-foreground mt-1">Quantity: {item.quantity}</p>
+                  </div>
+
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            Get Your Custom Quote
+          </CardTitle>
+          <CardDescription className="text-base leading-relaxed">
+            Fill out the form below and our team will provide you with competitive pricing and expert recommendations.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">
+                  Full Name <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="name"
+                  required
+                  placeholder="John Doe"
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">
+                  Email Address <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="john@company.com"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone">
+                  Phone Number <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  required
+                  placeholder="+91 9398644987"
+                  value={formData.phone}
+                  onChange={(e) => handleChange("phone", e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="company">Company Name</Label>
+                <Input
+                  id="company"
+                  placeholder="ABC Industries"
+                  value={formData.company}
+                  onChange={(e) => handleChange("company", e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="category">
+                  Product Category <span className="text-destructive">*</span>
+                </Label>
+                <Select value={formData.category} onValueChange={(value) => handleChange("category", value)} required>
+                  <SelectTrigger id="category">
+                    <SelectValue placeholder="Select a category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {categories.map((cat) => (
+                      <SelectItem key={cat.slug} value={cat.slug}>
+                        {cat.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="quantity">Estimated Quantity</Label>
+                <Input
+                  id="quantity"
+                  type="number"
+                  placeholder="10"
+                  value={formData.quantity}
+                  onChange={(e) => handleChange("quantity", e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="product">Specific Product or Requirement</Label>
+              <Input
+                id="product"
+                placeholder="e.g., Bosch Angle Grinder or Safety Helmets"
+                value={formData.product}
+                onChange={(e) => handleChange("product", e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message">Additional Details</Label>
+              <Textarea
+                id="message"
+                rows={5}
+                placeholder="Please provide any additional information about your requirements..."
+                value={formData.message}
+                onChange={(e) => handleChange("message", e.target.value)}
+                className="resize-none"
+              />
+            </div>
+
+            <div className="bg-secondary/30 p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                By submitting this form, you agree to be contacted by our sales team. We respect your privacy and will
+                never share your information with third parties.
+              </p>
+            </div>
+
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                "Submitting..."
+              ) : (
+                <>
+                  Submit Quote Request
+                  <Send className="ml-2 h-5 w-5" />
+                </>
+              )}
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}

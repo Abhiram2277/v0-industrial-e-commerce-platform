@@ -1,0 +1,128 @@
+import Link from "next/link"
+import Image from "next/image"
+import { MapPin, Phone, Mail } from "lucide-react"
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div>
+            <div className="relative h-40 w-40 mb-3 bg-white rounded-lg p-2">
+              <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" />
+            </div>
+            <h3 className="font-bold text-3xl mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              PND Industrial Suppliers
+            </h3>
+            <p className="text-sm text-primary-foreground/80 leading-relaxed">
+              Your Premier Channel Partner for Industrial Excellence. Specializing in high-quality PPE and industrial
+              tools.
+            </p>
+            <p className="mt-4 text-sm font-semibold text-accent">"Life is Precious"</p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Quick Links
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/about" className="hover:text-accent transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/brands" className="hover:text-accent transition-colors">
+                  Partner Brands
+                </Link>
+              </li>
+              <li>
+                <Link href="/safety-solutions" className="hover:text-accent transition-colors">
+                  Safety Solutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-accent transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Product Categories */}
+          <div>
+            <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Categories
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/category/head-protection" className="hover:text-accent transition-colors">
+                  Head Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/eye-face-protection" className="hover:text-accent transition-colors">
+                  Eye & Face Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/foot-protection" className="hover:text-accent transition-colors">
+                  Foot Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/power-tools" className="hover:text-accent transition-colors">
+                  Power Tools
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Contact Us
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                <span className="text-primary-foreground/80 leading-relaxed">
+                  Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919398644987" className="hover:text-accent transition-colors">
+                    +91 9398644987
+                  </a>
+                  <a href="tel:+919701110242" className="hover:text-accent transition-colors">
+                    +91 9701110242
+                  </a>
+                  <a href="tel:+918712268672" className="hover:text-accent transition-colors">
+                    +91 8712268672
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <a
+                  href="mailto:pndindustrialsuppliers@gmail.com"
+                  className="hover:text-accent transition-colors break-all"
+                >
+                  pndindustrialsuppliers@gmail.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
+          <p>© 2025 PND Industrial Suppliers. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}

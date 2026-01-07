@@ -1,0 +1,211 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ContactForm } from "@/components/contact-form"
+import { Card, CardContent } from "@/components/ui/card"
+import { MapPin, Phone, Mail, Clock } from "lucide-react"
+
+export default function ContactPage() {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="flex-1">
+        <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Contact Us
+              </h1>
+              <p className="text-xl text-primary-foreground/90 leading-relaxed">
+                Get in touch with our expert team for all your industrial safety needs
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <MapPin className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Our Location
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Phone className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Phone Numbers
+                      </h3>
+                      <div className="text-sm text-muted-foreground space-y-1">
+                        <p>
+                          <a href="tel:+919398644987" className="hover:text-accent transition-colors">
+                            +91 9398644987
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+919701110242" className="hover:text-accent transition-colors">
+                            +91 9701110242
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+918712268672" className="hover:text-accent transition-colors">
+                            +91 8712268672
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Mail className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Email Address
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        <a
+                          href="mailto:pndindustrialsuppliers@gmail.com"
+                          className="hover:text-accent transition-colors break-all"
+                        >
+                          pndindustrialsuppliers@gmail.com
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                  Send Us a Message
+                </h2>
+                <ContactForm />
+              </div>
+
+              <div className="space-y-6">
+                <Card>
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent flex-shrink-0">
+                        <Clock className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                          Business Hours
+                        </h3>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Monday - Friday:</span>
+                            <span className="font-medium">9:00 AM - 6:00 PM</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Saturday:</span>
+                            <span className="font-medium">9:00 AM - 2:00 PM</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-muted-foreground">Sunday:</span>
+                            <span className="font-medium">Closed</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-accent/5 border-accent/20">
+                  <CardContent className="pt-6">
+                    <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                      Why Choose PND Industrial Suppliers?
+                    </h3>
+                    <ul className="space-y-3 text-sm">
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent mt-1">✓</span>
+                        <span className="leading-relaxed">
+                          Authorized channel partner for premium international brands
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent mt-1">✓</span>
+                        <span className="leading-relaxed">6+ years of industry experience in Nellore</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent mt-1">✓</span>
+                        <span className="leading-relaxed">Comprehensive range of PPE and industrial tools</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent mt-1">✓</span>
+                        <span className="leading-relaxed">Expert guidance and personalized solutions</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-accent mt-1">✓</span>
+                        <span className="leading-relaxed">Competitive pricing and fast delivery</span>
+                      </li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-primary text-primary-foreground">
+                  <CardContent className="pt-6">
+                    <p className="text-2xl font-bold mb-2 text-accent">"Life is Precious"</p>
+                    <p className="text-sm leading-relaxed opacity-90">
+                      Our guiding philosophy drives us to provide the highest quality safety equipment and tools to
+                      protect workers and enhance productivity in every workplace.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <h2 className="text-3xl font-bold mb-6 text-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Find Us on the Map
+              </h2>
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <iframe
+                    src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="PND Industrial Suppliers Location - Nellore"
+                  ></iframe>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+      <WhatsAppButton />
+    </div>
+  )
+}

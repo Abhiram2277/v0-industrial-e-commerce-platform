@@ -1,0 +1,89 @@
+"use client"
+
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import type { Product } from "@/lib/products"
+import Link from "next/link"
+import Image from "next/image"
+import { useCart } from "@/lib/cart-context"
+import { ShoppingCart } from "lucide-react"
+
+interface ProductCardProps {
+  product: Product
+}
+
+export function ProductCard({ product }: ProductCardProps) {
+  const { addItem, openCart } = useCart()
+
+  const handleAddToCart = () => {
+    addItem(product)
+    openCart()
+  }
+
+  return (
+    <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
+      <CardHeader>
+        <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
+          {product.image ? (
+            <Image
+              src={product.image || "/placeholder.svg"}
+              alt={product.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-4xl font-bold text-primary/20">
+                {product.name
+                  .split(" ")
+                  .map((w) => w[0])
+                  .join("")
+                  .slice(0, 3)}
+              </div>
+            </div>
+          )}
+        </div>
+        {product.brand && (
+          <Badge variant="secondary" className="w-fit mb-2">
+            {product.brand}
+          </Badge>
+        )}
+        <CardTitle className="text-lg leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+          {product.name}
+        </CardTitle>
+        <CardDescription className="line-clamp-2 leading-relaxed">{product.description}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <div className="space-y-3">
+          <div>
+            <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              {product.features.slice(0, 3).map((feature, index) => (
+                <li key={index} className="flex items-start gap-2">
+                  <span className="text-accent mt-1">•</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </CardContent>
+      <CardFooter className="flex flex-col gap-2">
+        <Button onClick={handleAddToCart} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+          <ShoppingCart className="mr-2 h-4 w-4" />
+          Add to Cart
+        </Button>
+        <div className="flex gap-2 w-full">
+          <Button asChild variant="outline" className="flex-1 bg-transparent">
+            <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+          </Button>
+          <Button asChild variant="outline" className="flex-1 bg-transparent">
+            <Link href={`/product/${product.id}`}>View Details</Link>
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}
