@@ -101,7 +101,7 @@ export function SiteHeader() {
                       >
                         <div className="text-sm font-medium leading-none">{category.name}</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          {category.subcategories?.slice(0, 3).join(", ") || "View all products"}
+                          {category.subcategories.slice(0, 3).join(", ")}
                         </p>
                       </Link>
                     ))}
