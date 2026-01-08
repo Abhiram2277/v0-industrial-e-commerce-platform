@@ -4,20 +4,19 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Industrial theme with Navy, Safety Orange, and Clean White */
-  --background: oklch(1 0 0); /* Clean White */
-  --foreground: oklch(0.205 0.051 258.338); /* Industrial Navy */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.205 0.051 258.338);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.205 0.051 258.338);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.205 0.051 258.338);
-  --primary: oklch(0.205 0.051 258.338); /* Industrial Navy #002147 */
+  --primary: oklch(0.205 0.051 258.338);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0 0); /* Light Gray */
+  --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0.051 258.338);
   --muted: oklch(0.95 0 0);
   --muted-foreground: oklch(0.456 0 0);
-  --accent: oklch(0.693 0.183 53.619); /* Safety Orange #FF8C00 */
+  --accent: oklch(0.693 0.183 53.619);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
@@ -76,7 +75,6 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --font-sans: "Montserrat", "Geist", "Geist Fallback", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
