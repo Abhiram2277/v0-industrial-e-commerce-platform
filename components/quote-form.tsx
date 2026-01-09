@@ -12,10 +12,11 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import { Send, CheckCircle, ShoppingCart, X } from "lucide-react"
-import { products, categories } from "@/lib/products"
+import { getAllProductsClient, getAllCategoriesClient } from "@/lib/products-combined-client"
 import { useCart } from "@/lib/cart-context"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
+import type { Product } from "@/lib/types"
 
 export function QuoteForm() {
   const searchParams = useSearchParams()
@@ -25,6 +26,8 @@ export function QuoteForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [products, setProducts] = useState<Product[]>([])
+  const [categories, setCategories] = useState<any[]>([])
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,16 +40,21 @@ export function QuoteForm() {
   })
 
   useEffect(() => {
-    if (productId) {
-      const product = products.find((p) => p.id === productId)
-      if (product) {
-        setFormData((prev) => ({
-          ...prev,
-          product: product.name,
-          category: product.category,
-        }))
+    Promise.all([getAllProductsClient(), getAllCategoriesClient()]).then(([prods, cats]) => {
+      setProducts(prods)
+      setCategories(cats)
+
+      if (productId) {
+        const product = prods.find((p) => p.id === productId)
+        if (product) {
+          setFormData((prev) => ({
+            ...prev,
+            product: product.name,
+            category: product.category,
+          }))
+        }
       }
-    }
+    })
   }, [productId])
 
   const handleSubmit = async (e: React.FormEvent) => {

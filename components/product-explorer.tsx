@@ -1,25 +1,37 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, ShoppingCart } from "lucide-react"
-import { products, categories } from "@/lib/products"
+import { getAllProductsClient, getAllCategoriesClient } from "@/lib/products-combined-client"
+import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
 
-const categoryData = categories.map((cat) => ({
-  id: cat.slug,
-  title: cat.name,
-  image: `/images/categories/${cat.slug}.jpg`,
-  description: cat.description,
-}))
+interface Category {
+  slug: string
+  name: string
+  description: string
+  image?: string
+}
 
 export function ProductExplorer() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [products, setProducts] = useState<Product[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
+  const [loading, setLoading] = useState(true)
   const { addItem } = useCart()
+
+  useEffect(() => {
+    Promise.all([getAllProductsClient(), getAllCategoriesClient()]).then(([prods, cats]) => {
+      setProducts(prods)
+      setCategories(cats)
+      setLoading(false)
+    })
+  }, [])
 
   const handleCategoryClick = (categoryId: string) => {
     setSelectedCategory(categoryId)
@@ -30,8 +42,28 @@ export function ProductExplorer() {
   }
 
   const handleAddToCart = (productId: string) => {
-    addItem(productId, 1)
+    const product = products.find((p) => p.id === productId)
+    if (product) {
+      addItem(product)
+    }
   }
+
+  if (loading) {
+    return (
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <p>Loading products...</p>
+        </div>
+      </section>
+    )
+  }
+
+  const categoryData = categories.map((cat) => ({
+    id: cat.slug,
+    title: cat.name,
+    image: cat.image || `/images/categories/${cat.slug}.jpg`,
+    description: cat.description,
+  }))
 
   if (!selectedCategory) {
     return (
@@ -64,8 +96,9 @@ export function ProductExplorer() {
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/0" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-60" />
+                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                       {productCount} Products
                     </div>
                   </div>

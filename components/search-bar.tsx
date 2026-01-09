@@ -3,15 +3,21 @@
 import { useState, useEffect, useRef } from "react"
 import { Search, X } from "lucide-react"
 import { Input } from "@/components/ui/input"
-import { products } from "@/lib/products"
+import { getAllProductsClient } from "@/lib/products-combined-client"
+import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
 
 export function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("")
   const [isOpen, setIsOpen] = useState(false)
-  const [searchResults, setSearchResults] = useState<typeof products>([])
+  const [searchResults, setSearchResults] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>([])
   const searchRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    getAllProductsClient().then(setProducts)
+  }, [])
 
   useEffect(() => {
     if (searchQuery.trim().length > 0) {
@@ -30,7 +36,7 @@ export function SearchBar() {
       setSearchResults([])
       setIsOpen(false)
     }
-  }, [searchQuery])
+  }, [searchQuery, products])
 
   // Close dropdown when clicking outside
   useEffect(() => {

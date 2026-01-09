@@ -2,10 +2,11 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ProductCard } from "@/components/product-card"
-import { products, categories } from "@/lib/products"
+import { getAllProducts, getAllCategories } from "@/lib/products-combined"
 import { notFound } from "next/navigation"
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const categories = await getAllCategories()
   return categories.map((category) => ({
     slug: category.slug,
   }))
@@ -17,6 +18,9 @@ export default async function CategoryPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
+  const categories = await getAllCategories()
+  const products = await getAllProducts()
+
   const category = categories.find((c) => c.slug === slug)
 
   if (!category) {
@@ -38,7 +42,7 @@ export default async function CategoryPage({
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">{category.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">
-                {category.subcategories.map((sub, index) => (
+                {(category.subcategories ?? []).map((sub, index) => (
                   <span
                     key={index}
                     className="px-3 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm"

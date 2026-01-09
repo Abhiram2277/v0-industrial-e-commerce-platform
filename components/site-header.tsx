@@ -15,9 +15,18 @@ import {
 import { cn } from "@/lib/utils"
 import { CartButton } from "./cart-button"
 import { SearchBar } from "./search-bar"
-import { categories } from "@/lib/products"
+import { getAllCategoriesClient } from "@/lib/products-combined-client"
+import { useEffect, useState } from "react"
 
 export function SiteHeader() {
+  const [categories, setCategories] = useState<any[]>([])
+
+  useEffect(() => {
+    getAllCategoriesClient().then((allCategories) => {
+      setCategories(allCategories)
+    })
+  }, [])
+
   return (
     <header className="z-50 w-full border-b bg-background">
       <div className="container mx-auto">

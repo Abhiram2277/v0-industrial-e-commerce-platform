@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -18,10 +20,12 @@ import {
   Droplets,
   HardDrive,
   Bell,
+  Cable,
 } from "lucide-react"
 import Link from "next/link"
-import { categories } from "@/lib/products"
+import { getAllCategoriesClient } from "@/lib/products-combined-client"
 import { ArrowRight } from "lucide-react"
+import { useEffect, useState } from "react"
 
 const categoryIcons: Record<string, any> = {
   "head-protection": HardHat,
@@ -41,10 +45,29 @@ const categoryIcons: Record<string, any> = {
   "welding-equipment": Flame,
   sgbi: HardDrive,
   miscellaneous: Package,
+  lanyard: Cable, // Added icon for lanyard category
 }
 
 export function FeaturedCategories() {
-  const featuredCategories = categories
+  const [categories, setCategories] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    getAllCategoriesClient().then((cats) => {
+      setCategories(cats)
+      setLoading(false)
+    })
+  }, [])
+
+  if (loading) {
+    return (
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <p>Loading categories...</p>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="py-20">
@@ -59,7 +82,7 @@ export function FeaturedCategories() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredCategories.map((category) => {
+          {categories.map((category) => {
             const Icon = categoryIcons[category.slug] || Package
             return (
               <Card

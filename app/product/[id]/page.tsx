@@ -6,13 +6,14 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { products } from "@/lib/products"
+import { getAllProducts } from "@/lib/products-combined"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { CheckCircle2, Package, ShieldCheck, Wrench, ShoppingCart } from "lucide-react"
 import { useCart } from "@/lib/cart-context"
-import { use } from "react"
+import { use, useEffect, useState } from "react"
 import Image from "next/image"
+import type { Product } from "@/lib/types"
 
 export default function ProductPage({
   params,
@@ -20,9 +21,30 @@ export default function ProductPage({
   params: Promise<{ id: string }>
 }) {
   const { id } = use(params)
-  const product = products.find((p) => p.id === id)
+  const [product, setProduct] = useState<Product | null>(null)
+  const [loading, setLoading] = useState(true)
 
   const { addItem, openCart } = useCart()
+
+  useEffect(() => {
+    getAllProducts().then((products) => {
+      const foundProduct = products.find((p) => p.id === id)
+      setProduct(foundProduct || null)
+      setLoading(false)
+    })
+  }, [id])
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1 flex items-center justify-center">
+          <p>Loading product...</p>
+        </main>
+        <SiteFooter />
+      </div>
+    )
+  }
 
   if (!product) {
     notFound()
