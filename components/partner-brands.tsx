@@ -34,7 +34,7 @@ export function PartnerBrands() {
                 src={brand.logo || "/placeholder.svg"}
                 alt={`${brand.name} logo`}
                 fill
-                className="object-contain p-2 px-px py-px"
+                className="object-contain p-2 my-0 py-0 px-0"
               />
             </Card>
           ))}

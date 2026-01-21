@@ -83,7 +83,7 @@ export function HeroSection() {
               </div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-border">
+              <div className="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-border py-5">
                 <Users className="h-10 w-10 text-accent mb-4" />
                 <h3
                   className="font-bold text-lg mb-2 text-card-foreground"
@@ -95,7 +95,7 @@ export function HeroSection() {
                   Dedicated team to help you choose the right safety solutions
                 </p>
               </div>
-              <div className="bg-accent/10 rounded-xl p-6 border-2 border-accent/30">
+              <div className="bg-accent/10 rounded-xl p-6 border-2 border-accent/30 px-6 py-10">
                 <p className="text-2xl font-bold text-accent mb-2">"Life is Precious"</p>
                 <p className="text-sm text-card-foreground">Our guiding philosophy in everything we do</p>
               </div>

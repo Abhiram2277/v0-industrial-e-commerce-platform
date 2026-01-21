@@ -8,12 +8,28 @@ export interface Category {
   image: string
 }
 
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn(
+      "[v0] Supabase environment variables are not available. Make sure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.",
+    )
+    return null
+  }
+
+  return createBrowserClient(supabaseUrl, supabaseAnonKey)
+}
+
 export async function getDbProductsClient(): Promise<Product[]> {
   try {
-    const supabase = createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    )
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      console.warn("[v0] Supabase client not initialized. Returning empty product list.")
+      return []
+    }
 
     const { data, error } = await supabase.from("products").select("*").order("id", { ascending: true })
 
@@ -31,10 +47,12 @@ export async function getDbProductsClient(): Promise<Product[]> {
 
 export async function getDbCategoriesClient(): Promise<Category[]> {
   try {
-    const supabase = createBrowserClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    )
+    const supabase = getSupabaseClient()
+
+    if (!supabase) {
+      console.warn("[v0] Supabase client not initialized. Returning empty categories list.")
+      return []
+    }
 
     const { data, error } = await supabase.from("categories").select("*").order("slug", { ascending: true })
 

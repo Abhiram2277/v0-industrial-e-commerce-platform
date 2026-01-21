@@ -20,11 +20,20 @@ import { useEffect, useState } from "react"
 
 export function SiteHeader() {
   const [categories, setCategories] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    getAllCategoriesClient().then((allCategories) => {
-      setCategories(allCategories)
-    })
+    getAllCategoriesClient()
+      .then((allCategories) => {
+        setCategories(allCategories)
+        setError(null)
+      })
+      .catch((err) => {
+        console.error("[v0] Failed to load categories:", err)
+        setError("Failed to load categories. Please refresh the page.")
+      })
+      .finally(() => setIsLoading(false))
   }, [])
 
   return (
@@ -78,7 +87,7 @@ export function SiteHeader() {
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
                   >
                     Home
@@ -90,7 +99,7 @@ export function SiteHeader() {
                 <Link href="/about" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
                   >
                     About Us
@@ -102,18 +111,28 @@ export function SiteHeader() {
                 <NavigationMenuTrigger>Shop by Category</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[800px] grid-cols-3 gap-3 p-4 max-h-[500px] overflow-y-auto">
-                    {categories.map((category) => (
-                      <Link
-                        key={category.slug}
-                        href={`/category/${category.slug}`}
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">{category.name}</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          {category.subcategories?.slice(0, 3).join(", ") || "View all products"}
-                        </p>
-                      </Link>
-                    ))}
+                    {error ? (
+                      <div className="col-span-3 text-center text-sm text-destructive">{error}</div>
+                    ) : isLoading ? (
+                      <div className="col-span-3 text-center text-sm text-muted-foreground">Loading categories...</div>
+                    ) : categories.length > 0 ? (
+                      categories.map((category) => (
+                        <Link
+                          key={category.slug}
+                          href={`/category/${category.slug}`}
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">{category.name}</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            {category.subcategories?.slice(0, 3).join(", ") || "View all products"}
+                          </p>
+                        </Link>
+                      ))
+                    ) : (
+                      <div className="col-span-3 text-center text-sm text-muted-foreground">
+                        No categories available
+                      </div>
+                    )}
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -122,7 +141,7 @@ export function SiteHeader() {
                 <Link href="/brands" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
                   >
                     Partner Brands
@@ -134,7 +153,7 @@ export function SiteHeader() {
                 <Link href="/safety-solutions" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
                   >
                     Safety Solutions
@@ -146,7 +165,7 @@ export function SiteHeader() {
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
                   >
                     Contact Us
