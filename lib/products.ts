@@ -1122,7 +1122,7 @@ export const products: Product[] = [
     subcategory: "DIP PU Sole",
     brand: "Udyogi Safety",
     description: "Chelsea style ankle boots with slip-on design for easy wear",
-    image: "/images/image.png",
+    image: "/images/products/hillson-edge-active.jpg",
     features: ["Chelsea boot style", "Easy slip-on", "Ankle support", "Steel toe protection", "DIP PU sole"],
     applications: ["Quick access areas", "Supervision", "Site visits", "Professional use"],
   },
