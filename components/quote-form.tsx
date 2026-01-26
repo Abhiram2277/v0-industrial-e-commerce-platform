@@ -11,12 +11,19 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
-import { Send, CheckCircle, ShoppingCart, X } from "lucide-react"
+import { Send, CheckCircle, ShoppingCart, X, Plus, Trash2 } from "lucide-react"
 import { getAllProductsClient, getAllCategoriesClient } from "@/lib/products-combined-client"
 import { useCart } from "@/lib/cart-context"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import type { Product } from "@/lib/types"
+
+interface QuoteItem {
+  id: string
+  category: string
+  product: string
+  quantity: string
+}
 
 export function QuoteForm() {
   const searchParams = useSearchParams()
@@ -28,14 +35,14 @@ export function QuoteForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<any[]>([])
+  const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([
+    { id: crypto.randomUUID(), category: "", product: "", quantity: "1" }
+  ])
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
-    category: "",
-    product: productId || "",
-    quantity: "",
     message: "",
   })
 
@@ -47,15 +54,43 @@ export function QuoteForm() {
       if (productId) {
         const product = prods.find((p) => p.id === productId)
         if (product) {
-          setFormData((prev) => ({
-            ...prev,
-            product: product.name,
+          setQuoteItems([{
+            id: crypto.randomUUID(),
             category: product.category,
-          }))
+            product: product.name,
+            quantity: "1"
+          }])
         }
       }
     })
   }, [productId])
+
+  const addQuoteItem = () => {
+    setQuoteItems([...quoteItems, { id: crypto.randomUUID(), category: "", product: "", quantity: "1" }])
+  }
+
+  const removeQuoteItem = (id: string) => {
+    if (quoteItems.length > 1) {
+      setQuoteItems(quoteItems.filter(item => item.id !== id))
+    }
+  }
+
+  const updateQuoteItem = (id: string, field: keyof QuoteItem, value: string, resetProduct = false) => {
+    setQuoteItems(quoteItems.map(item => {
+      if (item.id === id) {
+        const updates: Partial<QuoteItem> = { [field]: value }
+        if (resetProduct) {
+          updates.product = ""
+        }
+        return { ...item, ...updates }
+      }
+      return item
+    }))
+  }
+
+  const getProductsForCategory = (categorySlug: string) => {
+    return products.filter(p => p.category === categorySlug)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -67,10 +102,12 @@ export function QuoteForm() {
         email: formData.email,
         phone: formData.phone,
         company: formData.company,
-        category: formData.category,
-        productName: formData.product,
-        quantity: formData.quantity,
         message: formData.message,
+        quoteItems: quoteItems.filter(item => item.category || item.product).map(item => ({
+          category: item.category,
+          product: item.product,
+          quantity: item.quantity,
+        })),
         cartItems: cartItems.map((item) => ({
           id: item.id,
           name: item.name,
@@ -111,11 +148,9 @@ export function QuoteForm() {
           email: "",
           phone: "",
           company: "",
-          category: "",
-          product: "",
-          quantity: "",
           message: "",
         })
+        setQuoteItems([{ id: crypto.randomUUID(), category: "", product: "", quantity: "1" }])
       }, 3000)
     } catch (error) {
       console.error("[v0] Error submitting quote:", error)
@@ -278,44 +313,100 @@ export function QuoteForm() {
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="category">
-                  Product Category <span className="text-destructive">*</span>
-                </Label>
-                <Select value={formData.category} onValueChange={(value) => handleChange("category", value)} required>
-                  <SelectTrigger id="category">
-                    <SelectValue placeholder="Select a category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {categories.map((cat) => (
-                      <SelectItem key={cat.slug} value={cat.slug}>
-                        {cat.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="quantity">Estimated Quantity</Label>
-                <Input
-                  id="quantity"
-                  type="number"
-                  placeholder="10"
-                  value={formData.quantity}
-                  onChange={(e) => handleChange("quantity", e.target.value)}
-                />
+            {/* Multi-Product Selector */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <Label className="text-base font-semibold">Products Required</Label>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={addQuoteItem}
+                  className="bg-transparent"
+                >
+                  <Plus className="h-4 w-4 mr-1" />
+                  Add Product
+                </Button>
               </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="product">Specific Product or Requirement</Label>
-              <Input
-                id="product"
-                placeholder="e.g., Bosch Angle Grinder or Safety Helmets"
-                value={formData.product}
-                onChange={(e) => handleChange("product", e.target.value)}
-              />
+              
+              <div className="space-y-3">
+                {quoteItems.map((item, index) => (
+                  <div key={item.id} className="p-4 border rounded-lg bg-secondary/20 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-muted-foreground">Product {index + 1}</span>
+                      {quoteItems.length > 1 && (
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          className="h-8 w-8 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                          onClick={() => removeQuoteItem(item.id)}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      )}
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+                      <div className="space-y-2 sm:col-span-1 lg:col-span-4">
+                        <Label className="text-xs font-medium">Category</Label>
+                        <Select 
+                          value={item.category} 
+                          onValueChange={(value) => {
+                            updateQuoteItem(item.id, "category", value, true)
+                          }}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select category" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {categories.map((cat) => (
+                              <SelectItem key={cat.slug} value={cat.slug}>
+                                {cat.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      
+                      <div className="space-y-2 sm:col-span-1 lg:col-span-5">
+                        <Label className="text-xs font-medium">Product</Label>
+                        <Select 
+                          value={item.product} 
+                          onValueChange={(value) => updateQuoteItem(item.id, "product", value)}
+                          disabled={!item.category}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder={item.category ? "Select product" : "Select category first"} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {getProductsForCategory(item.category).map((prod) => (
+                              <SelectItem key={prod.id} value={prod.name}>
+                                {prod.name}
+                              </SelectItem>
+                            ))}
+                            <SelectItem value="other">Other (Specify in message)</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      
+                      <div className="space-y-2 sm:col-span-2 lg:col-span-3">
+                        <Label className="text-xs font-medium">Quantity</Label>
+                        <Input
+                          type="number"
+                          min="1"
+                          placeholder="1"
+                          value={item.quantity}
+                          onChange={(e) => updateQuoteItem(item.id, "quantity", e.target.value)}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="space-y-2">
