@@ -17,6 +17,7 @@ import { useCart } from "@/lib/cart-context"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import type { Product } from "@/lib/types"
+import { generateId } from "@/lib/uuid"
 
 interface QuoteItem {
   id: string
@@ -36,7 +37,7 @@ export function QuoteForm() {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<any[]>([])
   const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([
-    { id: crypto.randomUUID(), category: "", product: "", quantity: "1" }
+    { id: generateId(), category: "", product: "", quantity: "1" }
   ])
   const [formData, setFormData] = useState({
     name: "",
@@ -55,7 +56,7 @@ export function QuoteForm() {
         const product = prods.find((p) => p.id === productId)
         if (product) {
           setQuoteItems([{
-            id: crypto.randomUUID(),
+            id: generateId(),
             category: product.category,
             product: product.name,
             quantity: "1"
@@ -66,7 +67,7 @@ export function QuoteForm() {
   }, [productId])
 
   const addQuoteItem = () => {
-    setQuoteItems([...quoteItems, { id: crypto.randomUUID(), category: "", product: "", quantity: "1" }])
+    setQuoteItems([...quoteItems, { id: generateId(), category: "", product: "", quantity: "1" }])
   }
 
   const removeQuoteItem = (id: string) => {
@@ -150,7 +151,7 @@ export function QuoteForm() {
           company: "",
           message: "",
         })
-        setQuoteItems([{ id: crypto.randomUUID(), category: "", product: "", quantity: "1" }])
+        setQuoteItems([{ id: generateId(), category: "", product: "", quantity: "1" }])
       }, 3000)
     } catch (error) {
       console.error("[v0] Error submitting quote:", error)
