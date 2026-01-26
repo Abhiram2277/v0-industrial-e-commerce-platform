@@ -36,11 +36,7 @@ export function ProductCard({ product }: ProductCardProps) {
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-4xl font-bold text-primary/20">
-                {product.name
-                  .split(" ")
-                  .map((w) => w[0])
-                  .join("")
-                  .slice(0, 3)}
+                {product.name.split(" ").map((w) => w[0]).join("").slice(0, 3)}
               </div>
             </div>
           )}
