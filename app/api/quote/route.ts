@@ -83,7 +83,8 @@ export async function POST(request: Request) {
         })
 
         if (!response.ok) {
-          console.error("[v0] Failed to send email notification")
+          const errorText = await response.text()
+          console.error("[v0] Failed to send email notification:", errorText)
         } else {
           console.log("[v0] Email notification sent successfully to", adminEmail)
         }
