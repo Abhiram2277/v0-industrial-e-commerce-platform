@@ -166,13 +166,18 @@ export function ProductExplorer() {
                 <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
                   {product.image ? (
                     <Image
-                      src={product.image || "/placeholder.svg"}
+                      src={product.image}
                       alt={product.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
                     />
-                  ) : (
+                  ) : null}
+                  {!product.image && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-5xl font-bold text-primary/20">
                         {product.name
