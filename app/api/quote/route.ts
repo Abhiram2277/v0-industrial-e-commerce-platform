@@ -6,6 +6,10 @@ export async function POST(request: Request) {
     const supabase = await createClient()
     const data = await request.json()
 
+    // Handle both old format (single product) and new format (multiple products)
+    const quoteItems = data.quoteItems || []
+    const firstItem = quoteItems[0] || {}
+    
     const { data: quote, error } = await supabase
       .from("quotes")
       .insert({
@@ -13,11 +17,12 @@ export async function POST(request: Request) {
         email: data.email,
         phone: data.phone,
         company: data.company,
-        category: data.category,
-        product_name: data.productName,
-        quantity: data.quantity ? Number.parseInt(data.quantity) : null,
+        category: data.category || firstItem.category || null,
+        product_name: data.productName || firstItem.product || null,
+        quantity: data.quantity ? Number.parseInt(data.quantity) : (firstItem.quantity ? Number.parseInt(firstItem.quantity) : null),
         message: data.message,
         cart_items: data.cartItems || null,
+        quote_items: quoteItems.length > 0 ? quoteItems : null,
       })
       .select()
       .single()
@@ -50,10 +55,17 @@ export async function POST(request: Request) {
               <p><strong>Email:</strong> ${data.email}</p>
               <p><strong>Phone:</strong> ${data.phone}</p>
               <p><strong>Company:</strong> ${data.company || "N/A"}</p>
-              <p><strong>Category:</strong> ${data.category || "N/A"}</p>
-              <p><strong>Product:</strong> ${data.productName || "N/A"}</p>
-              <p><strong>Quantity:</strong> ${data.quantity || "N/A"}</p>
               <p><strong>Message:</strong> ${data.message || "N/A"}</p>
+              ${
+                quoteItems.length > 0
+                  ? `
+                <h3>Requested Products:</h3>
+                <ul>
+                  ${quoteItems.map((item: any) => `<li>${item.product || 'Any product'} (${item.category || 'Any category'}) - Qty: ${item.quantity || 1}</li>`).join("")}
+                </ul>
+              `
+                  : ""
+              }
               ${
                 data.cartItems && data.cartItems.length > 0
                   ? `
@@ -71,7 +83,8 @@ export async function POST(request: Request) {
         })
 
         if (!response.ok) {
-          console.error("[v0] Failed to send email notification")
+          const errorText = await response.text()
+          console.error("[v0] Failed to send email notification:", errorText)
         } else {
           console.log("[v0] Email notification sent successfully to", adminEmail)
         }
