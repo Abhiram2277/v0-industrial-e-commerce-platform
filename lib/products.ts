@@ -1038,7 +1038,7 @@ export const products: Product[] = [
     subcategory: "DIP PU Sole",
     brand: "Udyogi Safety",
     description: "Professional marshal series with DIP double density sole for superior comfort",
-    image: "/images/image.png", // Updated image URL
+    image: "/images/products/hillson-edge-trek.jpg",
     features: [
       "DIP double density PU/PU",
       "Microfiber with reflector",
