@@ -595,7 +595,7 @@ export const products: Product[] = [
   // FACE PROTECTION - Complete range
   // Face Protection - Face shields, welding shields, and carriers
   {
-    id: "fp-001",
+    id: "face-001",
     name: "6PAV / 6PAU Helmet Mount",
     category: "face-protection",
     subcategory: "Helmet-Mounted Shields",
@@ -606,7 +606,7 @@ export const products: Product[] = [
     applications: ["Grinding", "Chipping", "General industrial work", "Metal fabrication"],
   },
   {
-    id: "fp-002",
+    id: "face-002",
     name: "6PA3",
     category: "face-protection",
     subcategory: "Helmet-Mounted Shields",
@@ -617,7 +617,7 @@ export const products: Product[] = [
     applications: ["General welding", "Grinding", "Metal work", "Construction"],
   },
   {
-    id: "fp-003",
+    id: "face-003",
     name: "FC 38 B Shade 7",
     category: "face-protection",
     subcategory: "Welding Visors",
@@ -628,7 +628,7 @@ export const products: Product[] = [
     applications: ["Heavy arc welding", "High-intensity welding", "Professional welding", "Industrial fabrication"],
   },
   {
-    id: "fp-004",
+    id: "face-004",
     name: "FC 38 G Shade 3",
     category: "face-protection",
     subcategory: "Welding Visors",
@@ -639,7 +639,7 @@ export const products: Product[] = [
     applications: ["Gas welding", "Brazing", "Soldering", "Light cutting operations"],
   },
   {
-    id: "fp-005",
+    id: "face-005",
     name: "FC 38 G Shade 5",
     category: "face-protection",
     subcategory: "Welding Visors",
@@ -650,7 +650,7 @@ export const products: Product[] = [
     applications: ["Medium welding", "Gas cutting", "Torch brazing", "Metal work"],
   },
   {
-    id: "fp-006",
+    id: "face-006",
     name: "FC 38 B Shade 3",
     category: "face-protection",
     subcategory: "Welding Visors",
@@ -661,7 +661,7 @@ export const products: Product[] = [
     applications: ["Light welding", "Welding inspection", "Furnace observation", "Hot work monitoring"],
   },
   {
-    id: "fp-007",
+    id: "face-007",
     name: "FC 38 C",
     category: "face-protection",
     subcategory: "Face Shields",
@@ -678,7 +678,7 @@ export const products: Product[] = [
     applications: ["Grinding", "Chemical handling", "Splash protection", "General safety"],
   },
   {
-    id: "fp-008",
+    id: "face-008",
     name: "FC 48",
     category: "face-protection",
     subcategory: "Face Shields",
@@ -689,7 +689,7 @@ export const products: Product[] = [
     applications: ["Industrial work", "Manufacturing", "Professional trades", "Multi-purpose protection"],
   },
   {
-    id: "fp-009",
+    id: "face-009",
     name: "FC 58",
     category: "face-protection",
     subcategory: "Face Shields",
@@ -700,7 +700,7 @@ export const products: Product[] = [
     applications: ["Heavy grinding", "Chemical plants", "Industrial safety", "High-risk operations"],
   },
   {
-    id: "fp-010",
+    id: "face-010",
     name: "FC 1000",
     category: "face-protection",
     subcategory: "Face Shields",
@@ -711,7 +711,7 @@ export const products: Product[] = [
     applications: ["Professional use", "Critical operations", "Laboratory work", "Medical applications"],
   },
   {
-    id: "fp-011",
+    id: "face-011",
     name: "B1/B10R",
     category: "face-protection",
     subcategory: "Face Shield Carriers",
@@ -722,7 +722,7 @@ export const products: Product[] = [
     applications: ["Face shield mounting", "Industrial safety", "Multi-purpose carrier", "Professional use"],
   },
   {
-    id: "fp-012",
+    id: "face-012",
     name: "A3",
     category: "face-protection",
     subcategory: "Face Shield Carriers",
@@ -733,7 +733,7 @@ export const products: Product[] = [
     applications: ["Quick protection", "Intermittent use", "General industry", "Multi-environment"],
   },
   {
-    id: "fp-013",
+    id: "face-013",
     name: "AL3",
     category: "face-protection",
     subcategory: "Face Shield Carriers",
@@ -750,7 +750,7 @@ export const products: Product[] = [
     applications: ["Long duration work", "Professional trades", "Industrial use", "Extended operations"],
   },
   {
-    id: "fp-014",
+    id: "face-014",
     name: "A8",
     category: "face-protection",
     subcategory: "Face Shield Carriers",
@@ -761,7 +761,7 @@ export const products: Product[] = [
     applications: ["Professional trades", "Extended use", "Heavy-duty work", "Industrial operations"],
   },
   {
-    id: "fp-015",
+    id: "face-015",
     name: "FC 100",
     category: "face-protection",
     subcategory: "Face Shield Carriers",
@@ -772,7 +772,7 @@ export const products: Product[] = [
     applications: ["Industrial safety", "Face shield mounting", "Multi-purpose use", "Professional operations"],
   },
   {
-    id: "fp-016",
+    id: "face-016",
     name: "FC 200 Carrier",
     category: "face-protection",
     subcategory: "Face Shield Carriers",
