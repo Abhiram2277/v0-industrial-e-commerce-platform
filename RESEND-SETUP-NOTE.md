@@ -26,9 +26,9 @@ You need to **verify a domain** in Resend:
 4. Add the DNS records Resend provides to your domain provider
 5. Wait for verification (usually 5-10 minutes)
 6. Update the `from` email in the code to use your domain:
-   ```
+   \`\`\`
    from: "PND Industrial <noreply@pndindustrial.com>"
-   ```
+   \`\`\`
 
 ### Alternative (No Domain Verification):
 

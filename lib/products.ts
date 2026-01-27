@@ -1677,7 +1677,7 @@ export const products: Product[] = [
     subcategory: "Arm Protection",
     brand: "Udyogi Safety",
     description: "Standard arm sleeves for basic cut protection",
-    image: "https://udyogisafety.com/wp-content/uploads/2024/03/Aramid-Sleeve.jpg",
+    image: "/images/products/k1-arm-sleeves.jpg",
     features: ["Basic cut protection", "Comfortable wear", "Breathable material", "Elastic ends", "Washable"],
     applications: ["Light assembly", "Packaging", "Material handling", "General protection"],
   },
