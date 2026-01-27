@@ -10,6 +10,7 @@ import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
+import { getProductImage, getCategoryImage } from "@/lib/product-images"
 
 interface Category {
   slug: string
@@ -61,7 +62,7 @@ export function ProductExplorer() {
   const categoryData = categories.map((cat) => ({
     id: cat.slug,
     title: cat.name,
-    image: cat.image || `/images/categories/${cat.slug}.jpg`,
+    image: cat.image || getCategoryImage(cat.slug),
     description: cat.description,
   }))
 
@@ -164,25 +165,13 @@ export function ProductExplorer() {
             >
               <CardHeader>
                 <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
-                  {product.image ? (
-                    <Image
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-5xl font-bold text-primary/20">
-                        {product.name
-                          .split(" ")
-                          .map((w) => w[0])
-                          .join("")
-                          .slice(0, 3)}
-                      </div>
-                    </div>
-                  )}
+                  <Image
+                    src={getProductImage(product.image, product.category, product.id)}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 {product.brand && (
                   <Badge variant="secondary" className="w-fit mb-2 bg-accent/10 text-accent border-accent/20">
