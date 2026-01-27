@@ -16,6 +16,7 @@ import { sgbiProducts } from "./categories/sgbi"
 import { workplaceSafetyProducts } from "./categories/workplace-safety"
 import { anchorageSlingProducts } from "./categories/anchorage-sling"
 import { harnessProducts } from "./categories/harness"
+import { powerToolsProducts } from "./categories/power-tools"
 
 // Combine all products
 export const products: Product[] = [
@@ -34,6 +35,7 @@ export const products: Product[] = [
   ...workplaceSafetyProducts,
   ...anchorageSlingProducts,
   ...harnessProducts,
+  ...powerToolsProducts,
 ]
 
 // Export categories
@@ -172,6 +174,17 @@ export const categories: Category[] = [
       "Lightweight Harnesses",
       "Work Positioning Harnesses",
       "Specialty Application Harnesses",
+    ],
+  },
+  {
+    slug: "power-tools",
+    name: "Power Tools",
+    description: "Professional grade power tools for construction, drilling, cutting, and grinding applications",
+    subcategories: [
+      "Angle Grinders",
+      "Cordless Drills",
+      "Jigsaws",
+      "Saws",
     ],
   },
 ]
