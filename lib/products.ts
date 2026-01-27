@@ -1721,7 +1721,7 @@ export const products: Product[] = [
     subcategory: "Chemical Resistant",
     brand: "DPL",
     description: "Mid-length nitrile chemical gloves balancing protection and dexterity",
-    image: "https://udyogisafety.com/wp-content/uploads/2024/03/Interface.jpg",
+    image: "/images/products/nixus-55-gloves.jpg",
     features: ["55cm length", "Nitrile rubber", "Good dexterity", "Chemical protection"],
     applications: ["Laboratory work", "Chemical handling", "Industrial cleaning", "Pharmaceutical"],
   },
