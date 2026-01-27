@@ -1325,7 +1325,7 @@ export const products: Product[] = [
     subcategory: "PU Coated",
     brand: "Udyogi Safety",
     description: "PU palm coated gloves for precision work requiring excellent dexterity",
-    image: "https://udyogisafety.com/wp-content/uploads/2020/02/NPU.jpg",
+    image: "/images/products/fpd845-gloves.jpg",
     features: ["PU palm coating", "13 gauge liner", "Excellent dexterity", "Good grip", "Lightweight"],
     applications: ["Electronics", "Assembly work", "Inspection", "Precision handling"],
   },
