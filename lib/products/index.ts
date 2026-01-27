@@ -183,8 +183,12 @@ export const categories: Category[] = [
     subcategories: [
       "Angle Grinders",
       "Cordless Drills",
+      "Die Grinders",
       "Jigsaws",
       "Saws",
+      "Bench Grinders",
+      "Polishers",
+      "Multi-Tools",
     ],
   },
 ]
