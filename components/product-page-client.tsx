@@ -109,37 +109,41 @@ export function ProductPageClient({ product }: ProductPageClientProps) {
 
           {/* Features and Applications */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <Card>
-              <CardHeader>
-                <CardTitle style={{ fontFamily: "Montserrat, sans-serif" }}>Key Features</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            {(product.features && product.features.length > 0) && (
+              <Card>
+                <CardHeader>
+                  <CardTitle style={{ fontFamily: "Montserrat, sans-serif" }}>Key Features</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
 
-            <Card>
-              <CardHeader>
-                <CardTitle style={{ fontFamily: "Montserrat, sans-serif" }}>Applications</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {product.applications.map((application, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="leading-relaxed">{application}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            {(product.applications && product.applications.length > 0) && (
+              <Card>
+                <CardHeader>
+                  <CardTitle style={{ fontFamily: "Montserrat, sans-serif" }}>Applications</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {product.applications.map((application, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{application}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </section>
