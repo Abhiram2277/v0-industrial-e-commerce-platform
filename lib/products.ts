@@ -1244,7 +1244,7 @@ export const products: Product[] = [
     subcategory: "DPP PU Sole",
     brand: "Udyogi Safety",
     description: "Ladies safety design with comfort and style for women workers",
-    image: "/images/image.png",
+    image: "/images/products/edge-lsd-safety-shoes.jpg",
     features: [
       "Ladies specific fit",
       "Steel toe protection",
