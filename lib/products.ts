@@ -3219,16 +3219,6 @@ export const products: Product[] = [
     features: ["400W motor", "Variable speed", "Tool-free blade change", "Dust blower"],
     applications: ["Curved cutting", "Intricate work", "Wood and metal", "DIY projects"],
   },
-  {
-    id: "pt-005",
-    name: "DeWalt Rotary Drill DCD996B",
-    category: "power-tools",
-    brand: "DeWalt",
-    description: "Compact and lightweight 18V cordless rotary drill for professional applications",
-    image: "/images/products/dewalt-dcd996b-rotary-drill.jpg",
-    features: ["18V Li-Ion compact design", "2-speed transmission (0-450/0-1500 rpm)", "1/2\" single sleeve chuck", "LED work light", "Compact and lightweight at 3.5 lbs"],
-    applications: ["Drilling in wood and metal", "Fastening applications", "Construction work", "General maintenance", "Professional contractors"],
-  },
 
   // Safety Equipment
   // Removed duplicate products from this category based on updates.
