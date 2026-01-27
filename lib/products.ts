@@ -1710,7 +1710,7 @@ export const products: Product[] = [
     subcategory: "Chemical Resistant",
     brand: "DPL",
     description: "Extended length chemical gloves for maximum forearm protection",
-    image: "https://udyogisafety.com/wp-content/uploads/2024/03/Interface.jpg",
+    image: "/images/products/nova-60-gloves.jpg",
     features: ["60cm length", "Extended protection", "Chemical resistant", "Rolled cuff"],
     applications: ["Deep tank work", "Chemical mixing", "Waste handling", "Industrial processes"],
   },
