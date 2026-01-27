@@ -1272,7 +1272,7 @@ export const products: Product[] = [
     subcategory: "DPP PU Sole",
     brand: "Udyogi Safety",
     description: "Premium white safety shoes for supervisors and officers",
-    image: "/images/image.png",
+    image: "/images/products/edge-officer-choice-safety-shoes.jpg",
     features: [
       "Premium white finish",
       "Professional appearance",
