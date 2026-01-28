@@ -38,10 +38,10 @@
 
 In your Vercel project environment variables (or .env.local for local testing):
 
-```env
+\`\`\`env
 RESEND_API_KEY=re_xxxxx  # Already added ✅
 ADMIN_EMAIL=your-company-email@pndindustrial.com  # Add this
-```
+\`\`\`
 
 **Default Email:** If not set, emails will be sent to `info@pndindustrial.com`
 
@@ -74,14 +74,14 @@ ADMIN_EMAIL=your-company-email@pndindustrial.com  # Add this
 
 ## What Happens When Someone Submits:
 
-```
+\`\`\`
 Customer fills form → 
   Data saved to Supabase database → 
     Email sent to your PND company email → 
       You receive notification → 
         View full details in /admin dashboard → 
           Contact customer back
-```
+\`\`\`
 
 ---
 

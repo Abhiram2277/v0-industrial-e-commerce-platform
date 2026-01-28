@@ -13,13 +13,18 @@ function getSupabaseClient() {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn(
-      "[v0] Supabase environment variables are not available. Make sure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.",
+    console.debug(
+      "[v0] Supabase environment variables not set - database features disabled. Products will be loaded from local data.",
     )
     return null
   }
 
-  return createBrowserClient(supabaseUrl, supabaseAnonKey)
+  try {
+    return createBrowserClient(supabaseUrl, supabaseAnonKey)
+  } catch (error) {
+    console.error("[v0] Failed to initialize Supabase client:", error)
+    return null
+  }
 }
 
 export async function getDbProductsClient(): Promise<Product[]> {
@@ -27,20 +32,27 @@ export async function getDbProductsClient(): Promise<Product[]> {
     const supabase = getSupabaseClient()
 
     if (!supabase) {
-      console.warn("[v0] Supabase client not initialized. Returning empty product list.")
       return []
     }
 
-    const { data, error } = await supabase.from("products").select("*").order("id", { ascending: true })
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .order("id", { ascending: true })
 
     if (error) {
-      console.error("[v0] Error fetching products from database:", error)
+      console.debug("[v0] Database query error (falling back to local products):", error.message)
       return []
     }
 
-    return data || []
+    if (!data || data.length === 0) {
+      return []
+    }
+
+    return data
   } catch (error) {
-    console.error("[v0] Error in getDbProductsClient:", error)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    console.debug("[v0] Failed to fetch products from database:", errorMessage)
     return []
   }
 }
@@ -50,20 +62,27 @@ export async function getDbCategoriesClient(): Promise<Category[]> {
     const supabase = getSupabaseClient()
 
     if (!supabase) {
-      console.warn("[v0] Supabase client not initialized. Returning empty categories list.")
       return []
     }
 
-    const { data, error } = await supabase.from("categories").select("*").order("slug", { ascending: true })
+    const { data, error } = await supabase
+      .from("categories")
+      .select("*")
+      .order("slug", { ascending: true })
 
     if (error) {
-      console.error("[v0] Error fetching categories from database:", error)
+      console.debug("[v0] Database query error (falling back to local categories):", error.message)
       return []
     }
 
-    return data || []
+    if (!data || data.length === 0) {
+      return []
+    }
+
+    return data
   } catch (error) {
-    console.error("[v0] Error in getDbCategoriesClient:", error)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    console.debug("[v0] Failed to fetch categories from database:", errorMessage)
     return []
   }
 }
