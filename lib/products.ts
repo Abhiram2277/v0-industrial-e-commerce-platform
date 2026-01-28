@@ -1272,7 +1272,7 @@ export const products: Product[] = [
     subcategory: "DPP PU Sole",
     brand: "Udyogi Safety",
     description: "Premium white safety shoes for supervisors and officers",
-    image: "/images/products/hillson-rockmaster-gumboots.jpg",
+    image: "/images/products/hillson-edge-esd.jpg",
     features: [
       "Premium white finish",
       "Professional appearance",
