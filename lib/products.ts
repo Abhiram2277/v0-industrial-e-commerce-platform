@@ -1261,7 +1261,7 @@ export const products: Product[] = [
     subcategory: "DPP PU Sole",
     brand: "Udyogi Safety",
     description: "Metal-free safety shoes for security checkpoints and electronics",
-    image: "/images/image.png",
+    image: "/images/products/hillson-edge-thunder.jpg",
     features: ["Metal-free construction", "Composite toe", "Airport friendly", "Lightweight", "Non-metallic"],
     applications: ["Airport security", "Electronics", "Metal detectors", "Sensitive areas"],
   },
