@@ -67,3 +67,21 @@ export async function getDbCategoriesClient(): Promise<Category[]> {
     return []
   }
 }
+    if (!supabase) {
+      console.warn("[v0] Supabase client not initialized. Returning empty categories list.")
+      return []
+    }
+
+    const { data, error } = await supabase.from("categories").select("*").order("slug", { ascending: true })
+
+    if (error) {
+      console.error("[v0] Error fetching categories from database:", error)
+      return []
+    }
+
+    return data || []
+  } catch (error) {
+    console.error("[v0] Error in getDbCategoriesClient:", error)
+    return []
+  }
+}
