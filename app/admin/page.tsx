@@ -16,9 +16,23 @@ export default async function AdminPage() {
   //   redirect("/admin/login")
   // }
 
-  const { data: quotes } = await supabase.from("quotes").select("*").order("created_at", { ascending: false })
+  let quotes = null
+  let contacts = null
+  
+  try {
+    const { data: quotesData } = await supabase.from("quotes").select("*").order("created_at", { ascending: false })
+    quotes = quotesData
+  } catch (error) {
+    console.log("[v0] Note: Supabase not configured. Running in demo mode.")
+    quotes = []
+  }
 
-  const { data: contacts } = await supabase.from("contacts").select("*").order("created_at", { ascending: false })
+  try {
+    const { data: contactsData } = await supabase.from("contacts").select("*").order("created_at", { ascending: false })
+    contacts = contactsData
+  } catch (error) {
+    contacts = []
+  }
 
   return (
     <div className="min-h-screen bg-secondary/10">
