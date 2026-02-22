@@ -139,18 +139,6 @@ export function SiteHeader() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/about" asChild>
-                  <NavigationMenuLink
-                    className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                    )}
-                  >
-                    About Us
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
                 <NavigationMenuTrigger>Shop by Category</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[800px] grid-cols-3 gap-3 p-4 max-h-[500px] overflow-y-auto">
@@ -178,42 +166,6 @@ export function SiteHeader() {
                     )}
                   </div>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/brands" asChild>
-                  <NavigationMenuLink
-                    className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                    )}
-                  >
-                    Partner Brands
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/safety-solutions" asChild>
-                  <NavigationMenuLink
-                    className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                    )}
-                  >
-                    Safety Solutions
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/contact" asChild>
-                  <NavigationMenuLink
-                    className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                    )}
-                  >
-                    Contact Us
-                  </NavigationMenuLink>
-                </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
