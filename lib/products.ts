@@ -5767,5 +5767,3 @@ export const lanyardProducts: Product[] = [
     ],
   },
 ]
-
-]
