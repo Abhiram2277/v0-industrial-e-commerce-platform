@@ -3,6 +3,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { QuoteForm } from "@/components/quote-form"
 
+export const dynamic = "force-dynamic"
+
 export default function QuotePage() {
   return (
     <div className="flex min-h-screen flex-col">
