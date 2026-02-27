@@ -20,6 +20,12 @@ export async function getDbProducts(): Promise<Product[]> {
 
     return data || []
   } catch (error) {
+    // If error is about cookies being called outside request scope, return empty array
+    // This happens during static generation
+    if (error instanceof Error && error.message.includes("cookies")) {
+      console.error("[v0] Database not available during static generation, using file-based products only")
+      return []
+    }
     console.error("[v0] Error in getDbProducts:", error)
     return []
   }
@@ -37,6 +43,12 @@ export async function getDbCategories(): Promise<Category[]> {
 
     return data || []
   } catch (error) {
+    // If error is about cookies being called outside request scope, return empty array
+    // This happens during static generation
+    if (error instanceof Error && error.message.includes("cookies")) {
+      console.error("[v0] Database not available during static generation, using file-based categories only")
+      return []
+    }
     console.error("[v0] Error in getDbCategories:", error)
     return []
   }
@@ -58,6 +70,12 @@ export async function getDbProductsByCategory(category: string): Promise<Product
 
     return data || []
   } catch (error) {
+    // If error is about cookies being called outside request scope, return empty array
+    // This happens during static generation
+    if (error instanceof Error && error.message.includes("cookies")) {
+      console.error("[v0] Database not available during static generation")
+      return []
+    }
     console.error("[v0] Error in getDbProductsByCategory:", error)
     return []
   }

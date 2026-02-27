@@ -5,12 +5,7 @@ import { ProductCard } from "@/components/product-card"
 import { getAllProducts, getAllCategories } from "@/lib/products-combined"
 import { notFound } from "next/navigation"
 
-export async function generateStaticParams() {
-  const categories = await getAllCategories()
-  return categories.map((category) => ({
-    slug: category.slug,
-  }))
-}
+export const dynamic = "force-dynamic"
 
 export default async function CategoryPage({
   params,

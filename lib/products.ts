@@ -5341,7 +5341,7 @@ export const categories = [
       "Ergonomic Design",
     ],
   },
-  import type { Product } from "../types"
+]
 
 export const lanyardProducts: Product[] = [
   // Rope Lanyards
@@ -5766,6 +5766,4 @@ export const lanyardProducts: Product[] = [
       "Equipment maintenance",
     ],
   },
-]
-
 ]
