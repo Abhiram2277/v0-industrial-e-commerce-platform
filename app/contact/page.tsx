@@ -127,12 +127,22 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Kakinada Branch Phone
+                        Kakinada Branch Phones
                       </h3>
                       <div className="text-sm text-muted-foreground space-y-2">
                         <p>
+                          <a href="tel:+917730940410" className="hover:text-accent transition-colors font-medium">
+                            +91 77309 40410
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+919182156665" className="hover:text-accent transition-colors font-medium">
+                            +91 91821 56665
+                          </a>
+                        </p>
+                        <p>
                           <a href="tel:+919948592229" className="hover:text-accent transition-colors font-medium">
-                            +91 9948592229
+                            +91 99485 92229
                           </a>
                         </p>
                       </div>
