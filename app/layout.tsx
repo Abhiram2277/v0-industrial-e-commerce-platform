@@ -1,10 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat, Roboto } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { CartProvider } from "@/lib/cart-context"
 import { CartSidebar } from "@/components/cart-sidebar"
+import dynamic from "next/dynamic"
+
+const Analytics = dynamic(() => import("@vercel/analytics/next").then((mod) => mod.Analytics), {
+  ssr: false,
+})
 
 const montserrat = Montserrat({
   subsets: ["latin"],
