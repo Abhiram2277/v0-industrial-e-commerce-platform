@@ -233,7 +233,7 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
                     Nellore Branch
                   </h3>
-                  <Card className="overflow-hidden">
+                  <Card className="overflow-hidden mb-4">
                     <CardContent className="p-0">
                       <iframe
                         src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
@@ -247,13 +247,38 @@ export default function ContactPage() {
                       ></iframe>
                     </CardContent>
                   </Card>
+                  <Card className="bg-muted border-accent/30">
+                    <CardContent className="pt-4">
+                      <h4 className="font-bold text-sm mb-1">PND INDUSTRIAL SUPPLIERS</h4>
+                      <p className="text-xs text-muted-foreground mb-3">
+                        C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
+                      </p>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex text-yellow-500">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-sm">★</span>
+                          ))}
+                        </div>
+                        <span className="text-xs font-semibold">4.6</span>
+                        <span className="text-xs text-muted-foreground">(17 reviews)</span>
+                      </div>
+                      <a
+                        href="https://maps.app.goo.gl/CnL7pq9HzQvQvKYJ7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent text-xs font-medium hover:underline"
+                      >
+                        View larger map
+                      </a>
+                    </CardContent>
+                  </Card>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
                     Kakinada Branch
                   </h3>
-                  <Card className="overflow-hidden">
+                  <Card className="overflow-hidden mb-4">
                     <CardContent className="p-0">
                       <iframe
                         src="https://www.google.com/maps?q=D.No.+2-98%2F2B,+Gangalamma+Devi+Temple,+Vakalapudi,+Kakinada,+AP-533005&output=embed"
@@ -265,6 +290,30 @@ export default function ContactPage() {
                         referrerPolicy="no-referrer-when-downgrade"
                         title="PND Industrial Suppliers Location - Kakinada"
                       ></iframe>
+                    </CardContent>
+                  </Card>
+                  <Card className="bg-muted border-accent/30">
+                    <CardContent className="pt-4">
+                      <h4 className="font-bold text-sm mb-1">PND INDUSTRIAL SUPPLIERS</h4>
+                      <p className="text-xs text-muted-foreground mb-3">
+                        D.No. 2-98/2B, Near Gangalamma Devi Temple, Vakalapudi, Kakinada, AP-533005
+                      </p>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex text-yellow-500">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-sm">★</span>
+                          ))}
+                        </div>
+                        <span className="text-xs font-semibold">New Branch</span>
+                      </div>
+                      <a
+                        href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent text-xs font-medium hover:underline"
+                      >
+                        View on Google Maps
+                      </a>
                     </CardContent>
                   </Card>
                 </div>
