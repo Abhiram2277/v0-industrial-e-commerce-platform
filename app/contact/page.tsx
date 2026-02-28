@@ -37,7 +37,7 @@ export default function ContactPage() {
                         Our Location
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        D.No. 2-98/2B, Near Gangalamma Devi Temple, Opp. Indrapasta Apartment, Vakalapudi, Kakinada, AP-533005
+                        Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
                       </p>
                     </div>
                   </div>
@@ -55,11 +55,6 @@ export default function ContactPage() {
                         Phone Numbers
                       </h3>
                       <div className="text-sm text-muted-foreground space-y-1">
-                        <p>
-                          <a href="tel:+919948592229" className="hover:text-accent transition-colors">
-                            +91 9948592229
-                          </a>
-                        </p>
                         <p>
                           <a href="tel:+919398644987" className="hover:text-accent transition-colors">
                             +91 9398644987
