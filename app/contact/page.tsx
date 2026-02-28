@@ -94,28 +94,45 @@ export default function ContactPage() {
                       <Phone className="h-7 w-7" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Phone Numbers
+                      <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Nellore Branch Phones
                       </h3>
-                      <div className="text-sm text-muted-foreground space-y-1">
+                      <div className="text-sm text-muted-foreground space-y-2">
                         <p>
-                          <a href="tel:+919948592229" className="hover:text-accent transition-colors">
-                            +91 9948592229
-                          </a>
-                        </p>
-                        <p>
-                          <a href="tel:+919398644987" className="hover:text-accent transition-colors">
+                          <a href="tel:+919398644987" className="hover:text-accent transition-colors font-medium">
                             +91 9398644987
                           </a>
                         </p>
                         <p>
-                          <a href="tel:+919701110242" className="hover:text-accent transition-colors">
+                          <a href="tel:+919701110242" className="hover:text-accent transition-colors font-medium">
                             +91 9701110242
                           </a>
                         </p>
                         <p>
-                          <a href="tel:+918712268672" className="hover:text-accent transition-colors">
+                          <a href="tel:+918712268672" className="hover:text-accent transition-colors font-medium">
                             +91 8712268672
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Phone className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Kakinada Branch Phone
+                      </h3>
+                      <div className="text-sm text-muted-foreground space-y-2">
+                        <p>
+                          <a href="tel:+919948592229" className="hover:text-accent transition-colors font-medium">
+                            +91 9948592229
                           </a>
                         </p>
                       </div>
