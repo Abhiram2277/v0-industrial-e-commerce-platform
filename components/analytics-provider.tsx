@@ -1,11 +1,8 @@
 "use client"
 
-import dynamic from "next/dynamic"
-
-const Analytics = dynamic(() => import("@vercel/analytics/next").then((mod) => mod.Analytics), {
-  ssr: false,
-})
+// Analytics temporarily disabled due to compatibility issues
+// TODO: Re-enable when Vercel Analytics is updated to handle current environment
 
 export function AnalyticsProvider() {
-  return <Analytics />
+  return null
 }
