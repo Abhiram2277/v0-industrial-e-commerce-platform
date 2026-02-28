@@ -45,6 +45,14 @@ export default async function CategoryPage({
           </div>
         </div>
 
+        {/* Floating Back to Categories Button - Fixed at bottom-left */}
+        <Link href="/" className="fixed bottom-20 left-4 z-50 md:hidden">
+          <Button className="gap-2 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg rounded-full h-12 px-4">
+            <ArrowLeft className="h-4 w-4" />
+            Back
+          </Button>
+        </Link>
+
         {/* Category Header with Back Button */}
         <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-16">
           <div className="container mx-auto px-4">
