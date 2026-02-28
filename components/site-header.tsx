@@ -126,13 +126,13 @@ export function SiteHeader() {
               </button>
 
               {showCategories && (
-                <div className="absolute left-0 top-full mt-1 w-96 bg-background border border-input rounded-md shadow-lg p-4 z-50 max-h-96 overflow-y-auto">
+                <div className="absolute left-0 top-full mt-1 bg-background border border-input rounded-md shadow-lg p-4 z-50 max-h-96 overflow-y-auto w-screen sm:w-96 sm:left-0 md:w-[500px] lg:w-[600px]">
                   {error ? (
                     <div className="text-center text-sm text-destructive">{error}</div>
                   ) : isLoading ? (
                     <div className="text-center text-sm text-muted-foreground">Loading categories...</div>
                   ) : categories && categories.length > 0 ? (
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2">
                       {categories.map((category) => (
                         <Link
                           key={category.slug}
