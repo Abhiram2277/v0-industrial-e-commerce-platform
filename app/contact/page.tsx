@@ -228,20 +228,47 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold mb-6 text-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 Find Us on the Map
               </h2>
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <iframe
-                    src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
-                    width="100%"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="PND Industrial Suppliers Location - Nellore"
-                  ></iframe>
-                </CardContent>
-              </Card>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                    Nellore Branch
+                  </h3>
+                  <Card className="overflow-hidden">
+                    <CardContent className="p-0">
+                      <iframe
+                        src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
+                        width="100%"
+                        height="400"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="PND Industrial Suppliers Location - Nellore"
+                      ></iframe>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                    Kakinada Branch
+                  </h3>
+                  <Card className="overflow-hidden">
+                    <CardContent className="p-0">
+                      <iframe
+                        src="https://www.google.com/maps?q=D.No.+2-98%2F2B,+Gangalamma+Devi+Temple,+Vakalapudi,+Kakinada,+AP-533005&output=embed"
+                        width="100%"
+                        height="400"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="PND Industrial Suppliers Location - Kakinada"
+                      ></iframe>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
