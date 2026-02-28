@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat, Roboto } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { CartProvider } from "@/lib/cart-context"
 import { CartSidebar } from "@/components/cart-sidebar"
@@ -37,13 +36,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
-      <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }}>
+    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`} suppressHydrationWarning>
+      <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>
           {children}
           <CartSidebar />
         </CartProvider>
-        <Analytics />
       </body>
     </html>
   )
