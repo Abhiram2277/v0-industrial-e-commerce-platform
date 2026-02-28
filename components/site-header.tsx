@@ -2,16 +2,8 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Phone } from "lucide-react"
+import { Phone, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 import { CartButton } from "./cart-button"
 import { SearchBar } from "./search-bar"
@@ -23,6 +15,7 @@ export function SiteHeader() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isMounted, setIsMounted] = useState(false)
+  const [showCategories, setShowCategories] = useState(false)
 
   useEffect(() => {
     setIsMounted(true)
@@ -43,6 +36,131 @@ export function SiteHeader() {
       })
       .finally(() => setIsLoading(false))
   }, [isMounted])
+
+  return (
+    <header className="z-50 w-full border-b bg-background">
+      <div className="container mx-auto">
+        {/* Top Bar */}
+        <div className="flex items-center justify-between border-b py-2 text-sm">
+          <div className="flex items-center gap-4 text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <Phone className="h-3 w-3" />
+              +91 9398644987
+            </span>
+            <span className="hidden md:inline">pndindustrialsuppliers@gmail.com</span>
+          </div>
+          <div className="text-xs font-medium text-primary">"Life is Precious" - Your Safety Partner</div>
+        </div>
+
+        {/* Main Navigation */}
+        <div className="flex items-center justify-between py-4">
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="relative h-36 w-36 flex-shrink-0">
+              <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
+            </div>
+            <div className="hidden md:flex flex-col">
+              <span className="font-bold text-3xl leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                PND Industrial Suppliers
+              </span>
+              <span className="text-sm text-muted-foreground">Industrial Excellence Since 2020</span>
+            </div>
+          </Link>
+
+          {/* Search Bar */}
+          <div className="hidden lg:flex flex-1 max-w-md mx-8">
+            <SearchBar />
+          </div>
+
+          {/* Cart Button and Quick Quote Button */}
+          <div className="flex items-center gap-3">
+            <CartButton />
+            <Link href="/quote">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">Quick Quote</Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Navigation Menu - Simple HTML to avoid Radix hydration issues */}
+        {isMounted && (
+          <nav className="flex items-center justify-start pb-4 gap-4 flex-wrap">
+            <Link href="/" className={cn(
+              "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+            )}>
+              Home
+            </Link>
+
+            <Link href="/about" className={cn(
+              "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+            )}>
+              About Us
+            </Link>
+
+            <Link href="/brands" className={cn(
+              "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+            )}>
+              Partner Brands
+            </Link>
+
+            <Link href="/safety-solutions" className={cn(
+              "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+            )}>
+              Safety Solutions
+            </Link>
+
+            <Link href="/contact" className={cn(
+              "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+            )}>
+              Contact Us
+            </Link>
+
+            {/* Categories Dropdown */}
+            <div className="relative group">
+              <button
+                onClick={() => setShowCategories(!showCategories)}
+                className={cn(
+                  "inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                )}
+              >
+                Shop by Category
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </button>
+
+              {showCategories && (
+                <div className="absolute left-0 top-full mt-1 w-96 bg-background border border-input rounded-md shadow-lg p-4 z-50 max-h-96 overflow-y-auto">
+                  {error ? (
+                    <div className="text-center text-sm text-destructive">{error}</div>
+                  ) : isLoading ? (
+                    <div className="text-center text-sm text-muted-foreground">Loading categories...</div>
+                  ) : categories && categories.length > 0 ? (
+                    <div className="grid grid-cols-2 gap-2">
+                      {categories.map((category) => (
+                        <Link
+                          key={category.slug}
+                          href={`/category/${category.slug}`}
+                          onClick={() => setShowCategories(false)}
+                          className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">{category.name}</div>
+                          <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                            {category.subcategories?.slice(0, 2).join(", ") || "View products"}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center text-sm text-muted-foreground">
+                      No categories available
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </nav>
+        )}
+      </div>
+    </header>
+  )
+}
 
   return (
     <header className="z-50 w-full border-b bg-background">
