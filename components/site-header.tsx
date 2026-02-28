@@ -39,7 +39,7 @@ export function SiteHeader() {
 
   return (
     <header className="z-50 w-full border-b bg-background">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div className="flex items-center justify-between border-b py-2 text-sm">
           <div className="flex items-center gap-4 text-muted-foreground">
@@ -53,8 +53,8 @@ export function SiteHeader() {
         </div>
 
         {/* Main Navigation */}
-        <div className="flex items-center justify-between py-4">
-          <Link href="/" className="flex items-center space-x-3">
+        <div className="flex items-center justify-between py-4 gap-4">
+          <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
             <div className="relative h-36 w-36 flex-shrink-0">
               <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
             </div>
@@ -72,7 +72,7 @@ export function SiteHeader() {
           </div>
 
           {/* Cart Button and Quick Quote Button */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-shrink-0">
             <CartButton />
             <Link href="/quote">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">Quick Quote</Button>
