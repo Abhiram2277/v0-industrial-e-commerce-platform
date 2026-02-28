@@ -269,7 +269,6 @@ export function QuoteForm() {
                 <Input
                   id="name"
                   required
-                  placeholder="John Doe"
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                 />
@@ -283,7 +282,6 @@ export function QuoteForm() {
                   id="email"
                   type="email"
                   required
-                  placeholder="john@company.com"
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                 />
@@ -297,7 +295,6 @@ export function QuoteForm() {
                   id="phone"
                   type="tel"
                   required
-                  placeholder="+91 9398644987"
                   value={formData.phone}
                   onChange={(e) => handleChange("phone", e.target.value)}
                 />
@@ -307,7 +304,6 @@ export function QuoteForm() {
                 <Label htmlFor="company">Company Name</Label>
                 <Input
                   id="company"
-                  placeholder="ABC Industries"
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
                 />
@@ -397,7 +393,6 @@ export function QuoteForm() {
                         <Input
                           type="number"
                           min="1"
-                          placeholder="1"
                           value={item.quantity}
                           onChange={(e) => updateQuoteItem(item.id, "quantity", e.target.value)}
                           className="w-full"
@@ -414,7 +409,6 @@ export function QuoteForm() {
               <Textarea
                 id="message"
                 rows={5}
-                placeholder="Please provide any additional information about your requirements..."
                 value={formData.message}
                 onChange={(e) => handleChange("message", e.target.value)}
                 className="resize-none"
