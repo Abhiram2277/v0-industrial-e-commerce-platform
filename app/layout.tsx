@@ -4,11 +4,7 @@ import { Montserrat, Roboto } from "next/font/google"
 import "./globals.css"
 import { CartProvider } from "@/lib/cart-context"
 import { CartSidebar } from "@/components/cart-sidebar"
-import dynamic from "next/dynamic"
-
-const Analytics = dynamic(() => import("@vercel/analytics/next").then((mod) => mod.Analytics), {
-  ssr: false,
-})
+import { AnalyticsProvider } from "@/components/analytics-provider"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -47,7 +43,7 @@ export default function RootLayout({
           {children}
           <CartSidebar />
         </CartProvider>
-        <Analytics />
+        <AnalyticsProvider />
       </body>
     </html>
   )
