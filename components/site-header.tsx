@@ -22,8 +22,15 @@ export function SiteHeader() {
   const [categories, setCategories] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted) return
+    
     getAllCategoriesClient()
       .then((allCategories) => {
         setCategories(allCategories || [])
@@ -35,7 +42,7 @@ export function SiteHeader() {
         setCategories([])
       })
       .finally(() => setIsLoading(false))
-  }, [])
+  }, [isMounted])
 
   return (
     <header className="z-50 w-full border-b bg-background">
@@ -82,94 +89,98 @@ export function SiteHeader() {
 
         {/* Navigation Menu */}
         <nav className="flex items-center justify-between pb-4">
-          <NavigationMenu>
-            <NavigationMenuList className="flex-wrap">
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/"
-                  className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                  )}
-                >
-                  Home
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/about"
-                  className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                  )}
-                >
-                  About Us
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/brands"
-                  className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                  )}
-                >
-                  Partner Brands
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/safety-solutions"
-                  className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                  )}
-                >
-                  Safety Solutions
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  href="/contact"
-                  className={cn(
-                    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                  )}
-                >
-                  Contact Us
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Shop by Category</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[800px] grid-cols-3 gap-3 p-4 max-h-[500px] overflow-y-auto">
-                    {error ? (
-                      <div className="col-span-3 text-center text-sm text-destructive">{error}</div>
-                    ) : isLoading ? (
-                      <div className="col-span-3 text-center text-sm text-muted-foreground">Loading categories...</div>
-                    ) : categories && categories.length > 0 ? (
-                      categories.map((category) => (
-                        <Link
-                          key={category.slug}
-                          href={`/category/${category.slug}`}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">{category.name}</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {category.subcategories?.slice(0, 3).join(", ") || "View all products"}
-                          </p>
-                        </Link>
-                      ))
-                    ) : (
-                      <div className="col-span-3 text-center text-sm text-muted-foreground">
-                        No categories available
-                      </div>
+          {isMounted ? (
+            <NavigationMenu>
+              <NavigationMenuList className="flex-wrap">
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/"
+                    className={cn(
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                     )}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                  >
+                    Home
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/about"
+                    className={cn(
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                    )}
+                  >
+                    About Us
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/brands"
+                    className={cn(
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                    )}
+                  >
+                    Partner Brands
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/safety-solutions"
+                    className={cn(
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                    )}
+                  >
+                    Safety Solutions
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/contact"
+                    className={cn(
+                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                    )}
+                  >
+                    Contact Us
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Shop by Category</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid w-[800px] grid-cols-3 gap-3 p-4 max-h-[500px] overflow-y-auto">
+                      {error ? (
+                        <div className="col-span-3 text-center text-sm text-destructive">{error}</div>
+                      ) : isLoading ? (
+                        <div className="col-span-3 text-center text-sm text-muted-foreground">Loading categories...</div>
+                      ) : categories && categories.length > 0 ? (
+                        categories.map((category) => (
+                          <Link
+                            key={category.slug}
+                            href={`/category/${category.slug}`}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{category.name}</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {category.subcategories?.slice(0, 3).join(", ") || "View all products"}
+                            </p>
+                          </Link>
+                        ))
+                      ) : (
+                        <div className="col-span-3 text-center text-sm text-muted-foreground">
+                          No categories available
+                        </div>
+                      )}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          ) : (
+            <div className="h-10" />
+          )}
         </nav>
       </div>
     </header>
