@@ -2,11 +2,8 @@
 
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
-import { useState } from "react"
 
 export function PartnerBrands() {
-  const [isPaused, setIsPaused] = useState(false)
-
   const brands = [
     { name: "Udyogi Safety", logo: "/images/brands/udyogi-logo.png" },
     { name: "Bosch", logo: "/images/brands/bosch-logo.jpg" },
@@ -16,9 +13,6 @@ export function PartnerBrands() {
     { name: "Ador Welding", logo: "/images/brands/ador-logo.jpg" },
     { name: "Black+Decker", logo: "/images/brands/black-decker-logo.jpg" },
   ]
-
-  // Duplicate brands for seamless infinite loop
-  const duplicatedBrands = [...brands, ...brands, ...brands]
 
   return (
     <section className="py-16 bg-background border-y">
@@ -30,73 +24,20 @@ export function PartnerBrands() {
           <p className="text-muted-foreground text-lg">Authorized Channel Partner for Premium Brands</p>
         </div>
 
-        {/* Carousel Container */}
-        <div
-          className="relative overflow-hidden"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <style>{`
-            @keyframes scroll-left {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(calc(-${brands.length} * (100% + 24px)));
-              }
-            }
-
-            .carousel-track {
-              animation: scroll-left 40s linear ${isPaused ? "paused" : "running"} infinite;
-              display: flex;
-              gap: 1.5rem;
-              width: max-content;
-            }
-
-            .carousel-item {
-              flex-shrink: 0;
-              width: calc((100vw - 2rem) / 7);
-              max-width: 160px;
-            }
-
-            @media (max-width: 1024px) {
-              .carousel-item {
-                width: calc((100vw - 2rem) / 6);
-                max-width: 140px;
-              }
-            }
-
-            @media (max-width: 768px) {
-              .carousel-item {
-                width: calc((100vw - 2rem) / 4);
-                max-width: 130px;
-              }
-            }
-
-            @media (max-width: 640px) {
-              .carousel-item {
-                width: calc((100vw - 2rem) / 3);
-                max-width: 120px;
-              }
-            }
-          `}</style>
-
-          <div className="carousel-track">
-            {duplicatedBrands.map((brand, index) => (
-              <div key={index} className="carousel-item group">
-                <Card className="relative overflow-hidden bg-white shadow-sm hover:shadow-lg transition-all duration-300 h-28 flex items-center justify-center">
-                  <div className="relative w-full h-full p-4 flex items-center justify-center">
-                    <Image
-                      src={brand.logo || "/placeholder.svg"}
-                      alt={`${brand.name} logo`}
-                      fill
-                      className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                </Card>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+          {brands.map((brand, index) => (
+            <Card
+              key={index}
+              className="relative overflow-hidden hover:shadow-lg transition-all hover:border-accent/50 bg-white hover:-translate-y-1 aspect-square"
+            >
+              <Image
+                src={brand.logo || "/placeholder.svg"}
+                alt={`${brand.name} logo`}
+                fill
+                className="object-contain p-2 my-0 py-0 px-0"
+              />
+            </Card>
+          ))}
         </div>
 
         <div className="mt-8 text-center">
