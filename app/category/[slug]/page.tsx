@@ -31,6 +31,20 @@ export default async function CategoryPage({
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
+        {/* Sticky Back Navigation Bar */}
+        <div className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border/50">
+          <div className="container mx-auto px-4 py-3 flex items-center gap-4">
+            <Link href="/">
+              <Button variant="ghost" size="sm" className="gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                Back
+              </Button>
+            </Link>
+            <div className="h-6 w-px bg-border" />
+            <h2 className="font-semibold text-sm md:text-base truncate">{category.name}</h2>
+          </div>
+        </div>
+
         {/* Category Header with Back Button */}
         <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-16">
           <div className="container mx-auto px-4">
@@ -84,15 +98,6 @@ export default async function CategoryPage({
             )}
           </div>
         </section>
-
-        {/* Sticky Back Button for Mobile/Scrolled Views */}
-        <div className="fixed bottom-24 right-4 lg:hidden z-40">
-          <Link href="/">
-            <Button className="gap-2 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg rounded-full h-14 w-14 p-0 flex items-center justify-center">
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
       </main>
       <SiteFooter />
       <WhatsAppButton />
