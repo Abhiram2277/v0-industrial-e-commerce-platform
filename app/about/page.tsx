@@ -44,7 +44,7 @@ export default function AboutPage() {
                 About PND Industrial Suppliers
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-                Your trusted partner for industrial safety and excellence since 2020
+                Your trusted partner for industrial safety and excellence since 2020 • Serving from Nellore & Kakinada
               </p>
             </div>
           </div>
