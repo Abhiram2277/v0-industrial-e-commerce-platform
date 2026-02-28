@@ -34,7 +34,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Our Location
+                        Nellore Branch
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
@@ -48,29 +48,15 @@ export default function ContactPage() {
                 <CardContent className="pt-6">
                   <div className="flex flex-col items-center text-center space-y-4">
                     <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
-                      <Phone className="h-7 w-7" />
+                      <MapPin className="h-7 w-7" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Phone Numbers
+                        Kakinada Branch
                       </h3>
-                      <div className="text-sm text-muted-foreground space-y-1">
-                        <p>
-                          <a href="tel:+919398644987" className="hover:text-accent transition-colors">
-                            +91 9398644987
-                          </a>
-                        </p>
-                        <p>
-                          <a href="tel:+919701110242" className="hover:text-accent transition-colors">
-                            +91 9701110242
-                          </a>
-                        </p>
-                        <p>
-                          <a href="tel:+918712268672" className="hover:text-accent transition-colors">
-                            +91 8712268672
-                          </a>
-                        </p>
-                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        D.No. 2-98/2B, Near Gangalamma Devi Temple, Opp. Indrapasta Apartment, Vakalapudi, Kakinada, AP-533005
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -94,6 +80,45 @@ export default function ContactPage() {
                           pndindustrialsuppliers@gmail.com
                         </a>
                       </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Phone className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Phone Numbers
+                      </h3>
+                      <div className="text-sm text-muted-foreground space-y-1">
+                        <p>
+                          <a href="tel:+919948592229" className="hover:text-accent transition-colors">
+                            +91 9948592229
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+919398644987" className="hover:text-accent transition-colors">
+                            +91 9398644987
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+919701110242" className="hover:text-accent transition-colors">
+                            +91 9701110242
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+918712268672" className="hover:text-accent transition-colors">
+                            +91 8712268672
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
