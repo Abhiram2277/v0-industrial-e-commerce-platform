@@ -26,12 +26,13 @@ export function SiteHeader() {
   useEffect(() => {
     getAllCategoriesClient()
       .then((allCategories) => {
-        setCategories(allCategories)
+        setCategories(allCategories || [])
         setError(null)
       })
       .catch((err) => {
         console.error("[v0] Failed to load categories:", err)
         setError("Failed to load categories. Please refresh the page.")
+        setCategories([])
       })
       .finally(() => setIsLoading(false))
   }, [])
@@ -146,7 +147,7 @@ export function SiteHeader() {
                       <div className="col-span-3 text-center text-sm text-destructive">{error}</div>
                     ) : isLoading ? (
                       <div className="col-span-3 text-center text-sm text-muted-foreground">Loading categories...</div>
-                    ) : categories.length > 0 ? (
+                    ) : categories && categories.length > 0 ? (
                       categories.map((category) => (
                         <Link
                           key={category.slug}
