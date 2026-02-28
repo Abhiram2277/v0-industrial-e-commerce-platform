@@ -89,12 +89,15 @@ export function SiteFooter() {
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
                 <span className="text-primary-foreground/80 leading-relaxed">
-                  Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
+                  D.No. 2-98/2B, Near Gangalamma Devi Temple, Opp. Indrapasta Apartment, Vakalapudi, Kakinada, AP-533005
                 </span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
                 <div className="flex flex-col gap-1">
+                  <a href="tel:+919948592229" className="hover:text-accent transition-colors">
+                    +91 9948592229
+                  </a>
                   <a href="tel:+919398644987" className="hover:text-accent transition-colors">
                     +91 9398644987
                   </a>
