@@ -14,8 +14,11 @@ export function PartnerBrands() {
     { name: "Black+Decker", logo: "/images/brands/black-decker-logo.jpg" },
   ]
 
+  // Duplicate brands for seamless looping
+  const duplicatedBrands = [...brands, ...brands]
+
   return (
-    <section className="py-16 bg-background border-y">
+    <section className="py-16 bg-background border-y overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
@@ -24,20 +27,33 @@ export function PartnerBrands() {
           <p className="text-muted-foreground text-lg">Authorized Channel Partner for Premium Brands</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-          {brands.map((brand, index) => (
-            <Card
-              key={index}
-              className="relative overflow-hidden hover:shadow-lg transition-all hover:border-accent/50 bg-white hover:-translate-y-1 aspect-square"
-            >
-              <Image
-                src={brand.logo || "/placeholder.svg"}
-                alt={`${brand.name} logo`}
-                fill
-                className="object-contain p-2 my-0 py-0 px-0"
-              />
-            </Card>
-          ))}
+        {/* Carousel Container */}
+        <div className="relative overflow-hidden">
+          <div className="carousel-scroll flex gap-6">
+            {duplicatedBrands.map((brand, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0"
+                style={{
+                  width: "calc((100vw - 2rem - 24px * 6) / 7)",
+                  minWidth: "120px",
+                }}
+              >
+                <Card
+                  className="relative overflow-hidden h-32 bg-white hover:shadow-lg transition-all hover:border-accent/50 hover:-translate-y-1 aspect-square flex items-center justify-center group cursor-pointer"
+                >
+                  <div className="relative w-full h-full p-3">
+                    <Image
+                      src={brand.logo || "/placeholder.svg"}
+                      alt={`${brand.name} logo`}
+                      fill
+                      className="object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-8 text-center">
