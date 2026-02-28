@@ -1,11 +1,30 @@
+"use client"
+
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { FloatingBackButton } from "@/components/floating-back-button"
 import { ContactForm } from "@/components/contact-form"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function ContactPage() {
+  const [isHydrated, setIsHydrated] = useState(false)
+
+  useEffect(() => {
+    setIsHydrated(true)
+  }, [])
+
+  if (!isHydrated) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1 bg-background" />
+      </div>
+    )
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -365,6 +384,7 @@ export default function ContactPage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
+      <FloatingBackButton />
     </div>
   )
 }
