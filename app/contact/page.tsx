@@ -248,29 +248,41 @@ export default function ContactPage() {
                         ></iframe>
                       </CardContent>
                     </Card>
-                    <div className="absolute top-3 left-3 bg-white rounded-md shadow-md p-3 max-w-xs">
-                      <div className="flex justify-between items-start gap-3">
-                        <div>
-                          <p className="font-semibold text-sm">PND INDUSTRIAL SUPPLIERS</p>
-                          <p className="text-xs text-gray-700 mt-1">
+                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+                      <div className="flex justify-between items-start gap-4">
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
+                          <p className="text-xs text-gray-700 mt-2 leading-relaxed">
                             C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
                           </p>
-                          <div className="flex items-center gap-1 mt-1">
-                            <div className="flex text-yellow-500">
+                          <div className="flex items-center gap-2 mt-2">
+                            <div className="flex gap-0.5 text-yellow-500">
                               {[...Array(5)].map((_, i) => (
                                 <span key={i} className="text-xs">★</span>
                               ))}
                             </div>
-                            <span className="text-xs">4.6 (17 reviews)</span>
+                            <span className="text-xs text-gray-700">4.6</span>
+                            <a href="https://maps.app.goo.gl/CnL7pq9HzQvQvKYJ7" target="_blank" rel="noopener noreferrer" className="text-blue-500 text-xs hover:underline">
+                              17 reviews
+                            </a>
                           </div>
+                          <a
+                            href="https://maps.app.goo.gl/CnL7pq9HzQvQvKYJ7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 text-xs font-medium hover:underline mt-2 block"
+                          >
+                            View larger map
+                          </a>
                         </div>
                         <a
                           href="https://www.google.com/maps/dir/?api=1&destination=C2F4+6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-accent hover:bg-accent/90 text-white font-semibold px-3 py-2 rounded text-xs whitespace-nowrap"
+                          className="text-blue-500 hover:text-blue-700 flex-shrink-0 text-sm font-medium"
+                          title="Get directions"
                         >
-                          Directions
+                          Directions →
                         </a>
                       </div>
                     </div>
@@ -296,29 +308,38 @@ export default function ContactPage() {
                         ></iframe>
                       </CardContent>
                     </Card>
-                    <div className="absolute top-3 left-3 bg-white rounded-md shadow-md p-3 max-w-xs">
-                      <div className="flex justify-between items-start gap-3">
-                        <div>
-                          <p className="font-semibold text-sm">PND INDUSTRIAL SUPPLIERS</p>
-                          <p className="text-xs text-gray-700 mt-1">
+                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+                      <div className="flex justify-between items-start gap-4">
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
+                          <p className="text-xs text-gray-700 mt-2 leading-relaxed">
                             D.No. 2-98/2B, Vakalapudi, Kakinada, AP-533005
                           </p>
-                          <div className="flex items-center gap-1 mt-1">
-                            <div className="flex text-yellow-500">
+                          <div className="flex items-center gap-2 mt-2">
+                            <div className="flex gap-0.5 text-yellow-500">
                               {[...Array(5)].map((_, i) => (
                                 <span key={i} className="text-xs">★</span>
                               ))}
                             </div>
-                            <span className="text-xs">New Branch</span>
+                            <span className="text-xs text-gray-700">New</span>
                           </div>
+                          <a
+                            href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 text-xs font-medium hover:underline mt-2 block"
+                          >
+                            View on Google Maps
+                          </a>
                         </div>
                         <a
                           href="https://www.google.com/maps/dir/?api=1&destination=D.No.+2-98/2B,+Vakalapudi,+Kakinada,+AP-533005"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-accent hover:bg-accent/90 text-white font-semibold px-3 py-2 rounded text-xs whitespace-nowrap"
+                          className="text-blue-500 hover:text-blue-700 flex-shrink-0 text-sm font-medium"
+                          title="Get directions"
                         >
-                          Directions
+                          Directions →
                         </a>
                       </div>
                     </div>
