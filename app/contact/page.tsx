@@ -233,43 +233,43 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
                     Nellore Branch
                   </h3>
-                  <Card className="overflow-hidden mb-4">
-                    <CardContent className="p-0">
-                      <iframe
-                        src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
-                        width="100%"
-                        height="400"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="PND Industrial Suppliers Location - Nellore"
-                      ></iframe>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-muted border-accent/30">
-                    <CardContent className="p-4">
-                      <div className="flex justify-between items-start gap-4">
+                  <div className="relative">
+                    <Card className="overflow-hidden">
+                      <CardContent className="p-0">
+                        <iframe
+                          src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
+                          width="100%"
+                          height="400"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="PND Industrial Suppliers Location - Nellore"
+                        ></iframe>
+                      </CardContent>
+                    </Card>
+                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-3 max-w-xs">
+                      <div className="flex justify-between items-start gap-3">
                         <div className="flex-1">
-                          <h4 className="font-bold text-sm mb-2">PND INDUSTRIAL SUPPLIERS</h4>
-                          <p className="text-xs text-muted-foreground mb-3">
+                          <h4 className="font-bold text-sm mb-1">PND INDUSTRIAL SUPPLIERS</h4>
+                          <p className="text-xs text-gray-600 mb-2">
                             C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
                           </p>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1">
                             <div className="flex text-yellow-500">
                               {[...Array(5)].map((_, i) => (
-                                <span key={i} className="text-sm">★</span>
+                                <span key={i} className="text-xs">★</span>
                               ))}
                             </div>
                             <span className="text-xs font-semibold">4.6</span>
-                            <span className="text-xs text-muted-foreground">(17 reviews)</span>
+                            <span className="text-xs text-gray-600">(17 reviews)</span>
                           </div>
                         </div>
                         <a
                           href="https://www.google.com/maps/dir/?api=1&destination=C2F4+6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-4 py-2 rounded text-xs whitespace-nowrap"
+                          className="bg-accent hover:bg-accent/90 text-white font-semibold px-3 py-1.5 rounded text-xs whitespace-nowrap"
                         >
                           Directions
                         </a>
@@ -282,40 +282,40 @@ export default function ContactPage() {
                       >
                         View larger map
                       </a>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
                     Kakinada Branch
                   </h3>
-                  <Card className="overflow-hidden mb-4">
-                    <CardContent className="p-0">
-                      <iframe
-                        src="https://www.google.com/maps?q=D.No.+2-98%2F2B,+Gangalamma+Devi+Temple,+Vakalapudi,+Kakinada,+AP-533005&output=embed"
-                        width="100%"
-                        height="400"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="PND Industrial Suppliers Location - Kakinada"
-                      ></iframe>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-muted border-accent/30">
-                    <CardContent className="p-4">
-                      <div className="flex justify-between items-start gap-4">
+                  <div className="relative">
+                    <Card className="overflow-hidden">
+                      <CardContent className="p-0">
+                        <iframe
+                          src="https://www.google.com/maps?q=D.No.+2-98%2F2B,+Gangalamma+Devi+Temple,+Vakalapudi,+Kakinada,+AP-533005&output=embed"
+                          width="100%"
+                          height="400"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="PND Industrial Suppliers Location - Kakinada"
+                        ></iframe>
+                      </CardContent>
+                    </Card>
+                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-3 max-w-xs">
+                      <div className="flex justify-between items-start gap-3">
                         <div className="flex-1">
-                          <h4 className="font-bold text-sm mb-2">PND INDUSTRIAL SUPPLIERS</h4>
-                          <p className="text-xs text-muted-foreground mb-3">
+                          <h4 className="font-bold text-sm mb-1">PND INDUSTRIAL SUPPLIERS</h4>
+                          <p className="text-xs text-gray-600 mb-2">
                             D.No. 2-98/2B, Near Gangalamma Devi Temple, Vakalapudi, Kakinada, AP-533005
                           </p>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1">
                             <div className="flex text-yellow-500">
                               {[...Array(5)].map((_, i) => (
-                                <span key={i} className="text-sm">★</span>
+                                <span key={i} className="text-xs">★</span>
                               ))}
                             </div>
                             <span className="text-xs font-semibold">New Branch</span>
@@ -325,7 +325,7 @@ export default function ContactPage() {
                           href="https://www.google.com/maps/dir/?api=1&destination=D.No.+2-98/2B,+Vakalapudi,+Kakinada,+AP-533005"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-4 py-2 rounded text-xs whitespace-nowrap"
+                          className="bg-accent hover:bg-accent/90 text-white font-semibold px-3 py-1.5 rounded text-xs whitespace-nowrap"
                         >
                           Directions
                         </a>
@@ -338,8 +338,8 @@ export default function ContactPage() {
                       >
                         View on Google Maps
                       </a>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
