@@ -36,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
-      <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }}>
+    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`} suppressHydrationWarning>
+      <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>
           {children}
           <CartSidebar />
