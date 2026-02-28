@@ -1,11 +1,30 @@
+"use client"
+
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { FloatingBackButton } from "@/components/floating-back-button"
 import { ContactForm } from "@/components/contact-form"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function ContactPage() {
+  const [isHydrated, setIsHydrated] = useState(false)
+
+  useEffect(() => {
+    setIsHydrated(true)
+  }, [])
+
+  if (!isHydrated) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1 bg-background" />
+      </div>
+    )
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -127,12 +146,22 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Kakinada Branch Phone
+                        Kakinada Branch Phones
                       </h3>
                       <div className="text-sm text-muted-foreground space-y-2">
                         <p>
+                          <a href="tel:+917730940410" className="hover:text-accent transition-colors font-medium">
+                            +91 77309 40410
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+919182156665" className="hover:text-accent transition-colors font-medium">
+                            +91 91821 56665
+                          </a>
+                        </p>
+                        <p>
                           <a href="tel:+919948592229" className="hover:text-accent transition-colors font-medium">
-                            +91 9948592229
+                            +91 99485 92229
                           </a>
                         </p>
                       </div>
@@ -355,6 +384,7 @@ export default function ContactPage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
+      <FloatingBackButton />
     </div>
   )
 }
