@@ -248,38 +248,31 @@ export default function ContactPage() {
                         ></iframe>
                       </CardContent>
                     </Card>
-                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-4 w-80">
-                      <div className="relative pr-24">
-                        <p className="font-semibold text-sm leading-tight">PND INDUSTRIAL SUPPLIERS</p>
-                        <p className="text-xs text-gray-700 mt-2 leading-relaxed">
-                          C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
-                        </p>
-                        <div className="flex items-center gap-1 mt-2">
-                          <div className="flex text-yellow-500 text-sm">
-                            {[...Array(5)].map((_, i) => (
-                              <span key={i}>★</span>
-                            ))}
+                    <div className="absolute top-3 left-3 bg-white rounded-md shadow-md p-3 max-w-xs">
+                      <div className="flex justify-between items-start gap-3">
+                        <div>
+                          <p className="font-semibold text-sm">PND INDUSTRIAL SUPPLIERS</p>
+                          <p className="text-xs text-gray-700 mt-1">
+                            C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
+                          </p>
+                          <div className="flex items-center gap-1 mt-1">
+                            <div className="flex text-yellow-500">
+                              {[...Array(5)].map((_, i) => (
+                                <span key={i} className="text-xs">★</span>
+                              ))}
+                            </div>
+                            <span className="text-xs">4.6 (17 reviews)</span>
                           </div>
-                          <span className="text-xs text-gray-600 ml-1">4.6</span>
-                          <span className="text-xs text-blue-600">9 reviews</span>
                         </div>
                         <a
-                          href="https://maps.app.goo.gl/CnL7pq9HzQvQvKYJ7"
+                          href="https://www.google.com/maps/dir/?api=1&destination=C2F4+6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 text-xs font-medium hover:underline mt-2 inline-block"
+                          className="bg-accent hover:bg-accent/90 text-white font-semibold px-3 py-2 rounded text-xs whitespace-nowrap"
                         >
-                          View larger map
+                          Directions
                         </a>
                       </div>
-                      <a
-                        href="https://www.google.com/maps/dir/?api=1&destination=C2F4+6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-4 right-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-1 rounded text-xs whitespace-nowrap"
-                      >
-                        Directions
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -303,38 +296,31 @@ export default function ContactPage() {
                         ></iframe>
                       </CardContent>
                     </Card>
-                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-4 w-80">
-                      <div className="relative pr-24">
-                        <p className="font-semibold text-sm leading-tight">PND INDUSTRIAL SUPPLIERS</p>
-                        <p className="text-xs text-gray-700 mt-2 leading-relaxed">
-                          D.No. 2-98/2B, Near Gangalamma Devi Temple, Vakalapudi, Kakinada, AP-533005
-                        </p>
-                        <div className="flex items-center gap-1 mt-2">
-                          <div className="flex text-yellow-500 text-sm">
-                            {[...Array(5)].map((_, i) => (
-                              <span key={i}>★</span>
-                            ))}
+                    <div className="absolute top-3 left-3 bg-white rounded-md shadow-md p-3 max-w-xs">
+                      <div className="flex justify-between items-start gap-3">
+                        <div>
+                          <p className="font-semibold text-sm">PND INDUSTRIAL SUPPLIERS</p>
+                          <p className="text-xs text-gray-700 mt-1">
+                            D.No. 2-98/2B, Vakalapudi, Kakinada, AP-533005
+                          </p>
+                          <div className="flex items-center gap-1 mt-1">
+                            <div className="flex text-yellow-500">
+                              {[...Array(5)].map((_, i) => (
+                                <span key={i} className="text-xs">★</span>
+                              ))}
+                            </div>
+                            <span className="text-xs">New Branch</span>
                           </div>
-                          <span className="text-xs text-gray-600 ml-1">New</span>
-                          <span className="text-xs text-blue-600">Branch</span>
                         </div>
                         <a
-                          href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6"
+                          href="https://www.google.com/maps/dir/?api=1&destination=D.No.+2-98/2B,+Vakalapudi,+Kakinada,+AP-533005"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 text-xs font-medium hover:underline mt-2 inline-block"
+                          className="bg-accent hover:bg-accent/90 text-white font-semibold px-3 py-2 rounded text-xs whitespace-nowrap"
                         >
-                          View larger map
+                          Directions
                         </a>
                       </div>
-                      <a
-                        href="https://www.google.com/maps/dir/?api=1&destination=D.No.+2-98/2B,+Vakalapudi,+Kakinada,+AP-533005"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-4 right-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-1 rounded text-xs whitespace-nowrap"
-                      >
-                        Directions
-                      </a>
                     </div>
                   </div>
                 </div>
