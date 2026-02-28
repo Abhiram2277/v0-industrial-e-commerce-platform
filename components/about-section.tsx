@@ -29,9 +29,11 @@ export function AboutSection() {
             <p className="text-lg leading-relaxed text-muted-foreground">
               <span className="font-semibold text-foreground">PND Industrial Suppliers</span> is a trusted distributor
               and supplier of premium-quality industrial products, established in{" "}
-              <span className="font-semibold text-foreground">2020</span> and headquartered in{" "}
-              <span className="font-semibold text-foreground">Nellore, Andhra Pradesh</span>. We specialize in providing
-              end-to-end industrial supply solutions with a strong focus on safety, reliability, and timely delivery.
+              <span className="font-semibold text-foreground">2020</span> with headquarters in{" "}
+              <span className="font-semibold text-foreground">Nellore, Andhra Pradesh</span>. We recently expanded our
+              operations to <span className="font-semibold text-foreground">Kakinada</span> to better serve our growing
+              customer base across South India. We specialize in providing end-to-end industrial supply solutions with a
+              strong focus on safety, reliability, and timely delivery.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
               We are authorized distributors and channel partners for leading brands such as{" "}
@@ -43,9 +45,10 @@ export function AboutSection() {
             <Card className="bg-primary/5 border-primary/20">
               <CardContent className="pt-6">
                 <p className="text-base leading-relaxed text-foreground">
-                  With a strong footprint across <span className="font-semibold">South India</span> and a growing base
-                  of over <span className="font-semibold text-accent">152 registered customers</span>, we cater to
-                  diverse industrial segments by delivering consistent quality and dependable service.
+                  With operations in <span className="font-semibold">Nellore</span> and{" "}
+                  <span className="font-semibold">Kakinada</span> across South India and a growing base of over{" "}
+                  <span className="font-semibold text-accent">152 registered customers</span>, we cater to diverse
+                  industrial segments by delivering consistent quality and dependable service from both branches.
                 </p>
               </CardContent>
             </Card>

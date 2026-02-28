@@ -18,8 +18,8 @@ export function HeroSection() {
               Your Premier Partner for <span className="text-accent">Industrial Excellence</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-2xl">
-              Based in Nellore, we specialize in high-quality Personal Protective Equipment and industrial tools from
-              world-leading brands. Guided by our philosophy:{" "}
+              Serving from Nellore and Kakinada, we specialize in high-quality Personal Protective Equipment and
+              industrial tools from world-leading brands. Guided by our philosophy:{" "}
               <span className="font-semibold text-accent">"Life is Precious"</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
