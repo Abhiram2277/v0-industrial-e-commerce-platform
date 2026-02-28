@@ -321,7 +321,10 @@ export default function ContactPage() {
                                 <span key={i} className="text-xs">★</span>
                               ))}
                             </div>
-                            <span className="text-xs text-gray-700">New</span>
+                            <span className="text-xs text-gray-700">5.0</span>
+                            <a href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6" target="_blank" rel="noopener noreferrer" className="text-blue-500 text-xs hover:underline">
+                              9 reviews
+                            </a>
                           </div>
                           <a
                             href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6"
