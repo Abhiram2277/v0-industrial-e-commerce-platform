@@ -34,7 +34,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Our Location
+                        Nellore Branch
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
@@ -48,29 +48,15 @@ export default function ContactPage() {
                 <CardContent className="pt-6">
                   <div className="flex flex-col items-center text-center space-y-4">
                     <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
-                      <Phone className="h-7 w-7" />
+                      <MapPin className="h-7 w-7" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        Phone Numbers
+                        Kakinada Branch
                       </h3>
-                      <div className="text-sm text-muted-foreground space-y-1">
-                        <p>
-                          <a href="tel:+919398644987" className="hover:text-accent transition-colors">
-                            +91 9398644987
-                          </a>
-                        </p>
-                        <p>
-                          <a href="tel:+919701110242" className="hover:text-accent transition-colors">
-                            +91 9701110242
-                          </a>
-                        </p>
-                        <p>
-                          <a href="tel:+918712268672" className="hover:text-accent transition-colors">
-                            +91 8712268672
-                          </a>
-                        </p>
-                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        D.No. 2-98/2B, Near Gangalamma Devi Temple, Opp. Indrapasta Apartment, Vakalapudi, Kakinada, AP-533005
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -94,6 +80,62 @@ export default function ContactPage() {
                           pndindustrialsuppliers@gmail.com
                         </a>
                       </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Phone className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Nellore Branch Phones
+                      </h3>
+                      <div className="text-sm text-muted-foreground space-y-2">
+                        <p>
+                          <a href="tel:+919398644987" className="hover:text-accent transition-colors font-medium">
+                            +91 9398644987
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+919701110242" className="hover:text-accent transition-colors font-medium">
+                            +91 9701110242
+                          </a>
+                        </p>
+                        <p>
+                          <a href="tel:+918712268672" className="hover:text-accent transition-colors font-medium">
+                            +91 8712268672
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow hover:border-accent/50">
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                      <Phone className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                        Kakinada Branch Phone
+                      </h3>
+                      <div className="text-sm text-muted-foreground space-y-2">
+                        <p>
+                          <a href="tel:+919948592229" className="hover:text-accent transition-colors font-medium">
+                            +91 9948592229
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -186,20 +228,127 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold mb-6 text-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 Find Us on the Map
               </h2>
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <iframe
-                    src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
-                    width="100%"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="PND Industrial Suppliers Location - Nellore"
-                  ></iframe>
-                </CardContent>
-              </Card>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                    Nellore Branch
+                  </h3>
+                  <div className="relative">
+                    <Card className="overflow-hidden">
+                      <CardContent className="p-0">
+                        <iframe
+                          src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
+                          width="100%"
+                          height="400"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="PND Industrial Suppliers Location - Nellore"
+                        ></iframe>
+                      </CardContent>
+                    </Card>
+                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+                      <div className="flex justify-between items-start gap-4">
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
+                          <p className="text-xs text-gray-700 mt-2 leading-relaxed">
+                            C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
+                          </p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <div className="flex gap-0.5 text-yellow-500">
+                              {[...Array(5)].map((_, i) => (
+                                <span key={i} className="text-xs">★</span>
+                              ))}
+                            </div>
+                            <span className="text-xs text-gray-700">4.6</span>
+                            <a href="https://maps.app.goo.gl/CnL7pq9HzQvQvKYJ7" target="_blank" rel="noopener noreferrer" className="text-blue-500 text-xs hover:underline">
+                              17 reviews
+                            </a>
+                          </div>
+                          <a
+                            href="https://maps.app.goo.gl/CnL7pq9HzQvQvKYJ7"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 text-xs font-medium hover:underline mt-2 block"
+                          >
+                            View larger map
+                          </a>
+                        </div>
+                        <a
+                          href="https://www.google.com/maps/dir/?api=1&destination=C2F4+6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:text-blue-700 flex-shrink-0 text-sm font-medium"
+                          title="Get directions"
+                        >
+                          Directions →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                    Kakinada Branch
+                  </h3>
+                  <div className="relative">
+                    <Card className="overflow-hidden">
+                      <CardContent className="p-0">
+                        <iframe
+                          src="https://www.google.com/maps?q=D.No.+2-98%2F2B,+Gangalamma+Devi+Temple,+Vakalapudi,+Kakinada,+AP-533005&output=embed"
+                          width="100%"
+                          height="400"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="PND Industrial Suppliers Location - Kakinada"
+                        ></iframe>
+                      </CardContent>
+                    </Card>
+                    <div className="absolute top-3 left-3 bg-white rounded-lg shadow-lg p-4 max-w-xs">
+                      <div className="flex justify-between items-start gap-4">
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
+                          <p className="text-xs text-gray-700 mt-2 leading-relaxed">
+                            D.No. 2-98/2B, Vakalapudi, Kakinada, AP-533005
+                          </p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <div className="flex gap-0.5 text-yellow-500">
+                              {[...Array(5)].map((_, i) => (
+                                <span key={i} className="text-xs">★</span>
+                              ))}
+                            </div>
+                            <span className="text-xs text-gray-700">5.0</span>
+                            <a href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6" target="_blank" rel="noopener noreferrer" className="text-blue-500 text-xs hover:underline">
+                              9 reviews
+                            </a>
+                          </div>
+                          <a
+                            href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 text-xs font-medium hover:underline mt-2 block"
+                          >
+                            View on Google Maps
+                          </a>
+                        </div>
+                        <a
+                          href="https://www.google.com/maps/dir/?api=1&destination=D.No.+2-98/2B,+Vakalapudi,+Kakinada,+AP-533005"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:text-blue-700 flex-shrink-0 text-sm font-medium"
+                          title="Get directions"
+                        >
+                          Directions →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

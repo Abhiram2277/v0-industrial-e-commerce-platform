@@ -85,24 +85,42 @@ export function SiteFooter() {
             <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Contact Us
             </h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <span className="text-primary-foreground/80 leading-relaxed">
-                  Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
-                </span>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <p className="font-semibold text-accent mb-2">Nellore Branch</p>
+                <div className="flex items-start gap-2 mb-2">
+                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                  <span className="text-primary-foreground/80 leading-relaxed text-xs">
+                    Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 ml-6">
+                  <Phone className="h-3 w-3 flex-shrink-0" />
+                  <div className="flex flex-col gap-1">
+                    <a href="tel:+919398644987" className="hover:text-accent transition-colors text-xs">
+                      +91 9398644987
+                    </a>
+                    <a href="tel:+919701110242" className="hover:text-accent transition-colors text-xs">
+                      +91 9701110242
+                    </a>
+                    <a href="tel:+918712268672" className="hover:text-accent transition-colors text-xs">
+                      +91 8712268672
+                    </a>
+                  </div>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 flex-shrink-0" />
-                <div className="flex flex-col gap-1">
-                  <a href="tel:+919398644987" className="hover:text-accent transition-colors">
-                    +91 9398644987
-                  </a>
-                  <a href="tel:+919701110242" className="hover:text-accent transition-colors">
-                    +91 9701110242
-                  </a>
-                  <a href="tel:+918712268672" className="hover:text-accent transition-colors">
-                    +91 8712268672
+              <li>
+                <p className="font-semibold text-accent mb-2">Kakinada Branch</p>
+                <div className="flex items-start gap-2 mb-2">
+                  <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+                  <span className="text-primary-foreground/80 leading-relaxed text-xs">
+                    D.No. 2-98/2B, Near Gangalamma Devi Temple, Vakalapudi, Kakinada, AP-533005
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 ml-6">
+                  <Phone className="h-3 w-3 flex-shrink-0" />
+                  <a href="tel:+919948592229" className="hover:text-accent transition-colors text-xs">
+                    +91 9948592229
                   </a>
                 </div>
               </li>
@@ -110,7 +128,7 @@ export function SiteFooter() {
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 <a
                   href="mailto:pndindustrialsuppliers@gmail.com"
-                  className="hover:text-accent transition-colors break-all"
+                  className="hover:text-accent transition-colors break-all text-xs"
                 >
                   pndindustrialsuppliers@gmail.com
                 </a>
