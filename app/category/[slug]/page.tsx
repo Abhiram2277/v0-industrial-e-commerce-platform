@@ -45,7 +45,8 @@ export default function CategoryPage({
     return (
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
-        <main className="flex-1 bg-background" />
+        <main className="flex-1" />
+        <SiteFooter />
       </div>
     )
   }
@@ -55,7 +56,7 @@ export default function CategoryPage({
       <SiteHeader />
       <main className="flex-1">
         {/* Sticky Back Navigation Bar */}
-        <div className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border/50">
+        <div className="sticky top-0 z-30 bg-background/95 backdrop-blur border-b border-border/50">
           <div className="container mx-auto px-4 py-3 flex items-center gap-4">
             <Link href="/">
               <Button variant="ghost" size="sm" className="gap-2">
