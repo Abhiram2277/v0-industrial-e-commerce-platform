@@ -2,13 +2,35 @@
 
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export function FloatingBackButton() {
   const router = useRouter()
+  const pathname = usePathname()
+  const [canGoBack, setCanGoBack] = useState(false)
+
+  useEffect(() => {
+    // Check if there's browser history to go back to
+    setCanGoBack(window.history.length > 1)
+  }, [])
 
   const handleBack = () => {
-    router.back()
+    // Determine safe back navigation based on current path
+    if (pathname?.includes("/category/")) {
+      // From category page, go to home or shop
+      router.push("/")
+    } else if (pathname?.includes("/product/")) {
+      // From product detail, go back to category or home
+      router.back()
+    } else if (canGoBack) {
+      // Try browser back if available
+      router.back()
+    } else {
+      // Default to home
+      router.push("/")
+    }
   }
 
   return (
