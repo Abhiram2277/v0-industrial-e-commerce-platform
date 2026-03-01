@@ -4,11 +4,13 @@ import { Montserrat, Roboto } from "next/font/google"
 import "./globals.css"
 import { CartProvider } from "@/lib/cart-context"
 import { CartSidebar } from "@/components/cart-sidebar"
+import { Analytics } from "@vercel/analytics/react"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
+  preload: true,
 })
 
 const roboto = Roboto({
@@ -16,6 +18,7 @@ const roboto = Roboto({
   weight: ["400", "500", "700"],
   variable: "--font-roboto",
   display: "swap",
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -28,6 +31,11 @@ export const metadata: Metadata = {
     icon: "/pnd-logo.ico",
     apple: "/pnd-logo.png",
   },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 }
 
 export default function RootLayout({
@@ -37,11 +45,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${roboto.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>
           {children}
           <CartSidebar />
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   )

@@ -1,6 +1,28 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Performance: Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance: GPU acceleration for smooth animations */
+.will-animate {
+  will-change: transform, opacity;
+}
+
+/* Performance: Enable 3D transforms for better performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.205 0.051 258.338);
