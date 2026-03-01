@@ -10,6 +10,7 @@ import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
+import { FloatingBackButton } from "@/components/floating-back-button"
 
 interface Category {
   slug: string
@@ -135,100 +136,103 @@ export function ProductExplorer() {
   const categoryProducts = products.filter((product) => product.category === currentCategory.id)
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <Button
-            variant="outline"
-            onClick={handleBackToCategories}
-            className="mb-6 hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Categories
-          </Button>
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              {currentCategory.title}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Browse our selection of {categoryProducts.length} {currentCategory.title.toLowerCase()} products
-            </p>
+    <>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-8">
+            <Button
+              variant="outline"
+              onClick={handleBackToCategories}
+              className="mb-6 hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Categories
+            </Button>
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                {currentCategory.title}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Browse our selection of {categoryProducts.length} {currentCategory.title.toLowerCase()} products
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categoryProducts.map((product) => (
+              <Card
+                key={product.id}
+                className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 flex flex-col h-full"
+              >
+                <CardHeader>
+                  <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
+                    {product.image ? (
+                      <Image
+                        src={product.image || "/placeholder.svg"}
+                        alt={product.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-5xl font-bold text-primary/20">
+                          {product.name
+                            .split(" ")
+                            .map((w) => w[0])
+                            .join("")
+                            .slice(0, 3)}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  {product.brand && (
+                    <Badge variant="secondary" className="w-fit mb-2 bg-accent/10 text-accent border-accent/20">
+                      {product.brand}
+                    </Badge>
+                  )}
+                  <CardTitle className="text-lg leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                    {product.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2 text-primary">Key Features:</h4>
+                      <ul className="text-sm text-muted-foreground space-y-2">
+                        {product.features.slice(0, 3).map((feature, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <span className="text-accent mt-1 font-bold">•</span>
+                            <span className="leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="flex flex-col gap-2 pt-0">
+                  <Button
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+                    onClick={() => handleAddToCart(product.id)}
+                  >
+                    <ShoppingCart className="mr-2 h-4 w-4" />
+                    Add to Cart
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="border-accent/30 hover:bg-accent/10 hover:border-accent bg-transparent w-full"
+                  >
+                    <Link href={`/quote?product=${product.id}`}>Quick Quote</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categoryProducts.map((product) => (
-            <Card
-              key={product.id}
-              className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 flex flex-col h-full"
-            >
-              <CardHeader>
-                <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
-                  {product.image ? (
-                    <Image
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-5xl font-bold text-primary/20">
-                        {product.name
-                          .split(" ")
-                          .map((w) => w[0])
-                          .join("")
-                          .slice(0, 3)}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                {product.brand && (
-                  <Badge variant="secondary" className="w-fit mb-2 bg-accent/10 text-accent border-accent/20">
-                    {product.brand}
-                  </Badge>
-                )}
-                <CardTitle className="text-lg leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  {product.name}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2 text-primary">Key Features:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-2">
-                      {product.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <span className="text-accent mt-1 font-bold">•</span>
-                          <span className="leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter className="flex flex-col gap-2 pt-0">
-                <Button
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-                  onClick={() => handleAddToCart(product.id)}
-                >
-                  <ShoppingCart className="mr-2 h-4 w-4" />
-                  Add to Cart
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="border-accent/30 hover:bg-accent/10 hover:border-accent bg-transparent w-full"
-                >
-                  <Link href={`/quote?product=${product.id}`}>Quick Quote</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <FloatingBackButton />
+    </>
   )
 }
