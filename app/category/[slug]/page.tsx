@@ -11,41 +11,68 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useEffect, useState } from "react"
+import { useParams } from "next/navigation"
 
-export default function CategoryPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default function CategoryPage() {
+  const params = useParams()
+  const slug = params.slug as string
+  
   const [category, setCategory] = useState<any>(null)
   const [categoryProducts, setCategoryProducts] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const loadData = async () => {
-      const { slug } = await params
-      const categories = await getAllCategories()
-      const products = await getAllProducts()
+      try {
+        const categories = await getAllCategories()
+        const products = await getAllProducts()
 
-      const foundCategory = categories.find((c) => c.slug === slug)
+        const foundCategory = categories.find((c) => c.slug === slug)
 
-      if (!foundCategory) {
-        notFound()
+        if (!foundCategory) {
+          setCategory(null)
+          setLoading(false)
+          return
+        }
+
+        setCategory(foundCategory)
+        setCategoryProducts(products.filter((p) => p.category === slug))
+      } catch (error) {
+        console.error("Error loading category:", error)
+        setCategory(null)
+      } finally {
+        setLoading(false)
       }
-
-      setCategory(foundCategory)
-      setCategoryProducts(products.filter((p) => p.category === slug))
-      setLoading(false)
     }
 
-    loadData()
-  }, [params])
+    if (slug) {
+      loadData()
+    }
+  }, [slug])
 
-  if (loading || !category) {
+  if (loading) {
     return (
       <div className="flex min-h-screen flex-col">
         <SiteHeader />
-        <main className="flex-1" />
+        <main className="flex-1 bg-background flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-muted-foreground">Loading category...</p>
+          </div>
+        </main>
+        <SiteFooter />
+      </div>
+    )
+  }
+
+  if (!category) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1 bg-background flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-muted-foreground text-lg">Category not found</p>
+          </div>
+        </main>
         <SiteFooter />
       </div>
     )
