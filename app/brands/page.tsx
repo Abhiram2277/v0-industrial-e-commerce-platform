@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { FloatingBackButton } from "@/components/floating-back-button"
 import { PartnerBrands } from "@/components/partner-brands"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle } from "lucide-react"
@@ -125,6 +126,7 @@ export default function BrandsPage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
+      <FloatingBackButton />
     </div>
   )
 }
