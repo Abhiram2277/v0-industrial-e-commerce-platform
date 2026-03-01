@@ -3,7 +3,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { FloatingBackButton } from "@/components/floating-back-button"
 import { ContactForm } from "@/components/contact-form"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
@@ -384,7 +383,6 @@ export default function ContactPage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
-      <FloatingBackButton />
     </div>
   )
 }

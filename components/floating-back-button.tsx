@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export function FloatingBackButton() {
   return (
-    <div className="fixed bottom-20 left-4 z-40">
+    <div className="fixed bottom-24 left-4 z-40">
       <Link href="/">
         <Button
           size="lg"

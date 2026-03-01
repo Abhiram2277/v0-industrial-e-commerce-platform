@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { createContext, useContext, useState, useEffect } from "react"
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react"
 import { products, type Product } from "./products"
 
 export interface CartItem {
@@ -31,6 +31,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
   const [isOpen, setIsOpen] = useState(false)
+  const [isHydrated, setIsHydrated] = useState(false)
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -42,12 +43,19 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         console.error("Failed to parse cart data")
       }
     }
+    setIsHydrated(true)
   }, [])
 
-  // Save cart to localStorage whenever it changes
+  // Save cart to localStorage whenever it changes (debounced)
   useEffect(() => {
-    localStorage.setItem("pnd-cart", JSON.stringify(items))
-  }, [items])
+    if (!isHydrated) return
+    
+    const timer = setTimeout(() => {
+      localStorage.setItem("pnd-cart", JSON.stringify(items))
+    }, 300)
+
+    return () => clearTimeout(timer)
+  }, [items, isHydrated])
 
   const addItem = (productOrId: Product | string, quantity = 1) => {
     let product: Product | undefined
