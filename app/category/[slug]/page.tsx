@@ -1,7 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { FloatingBackButton } from "@/components/floating-back-button"
 import { ProductCard } from "@/components/product-card"
 import { Button } from "@/components/ui/button"
 import { getAllProducts, getAllCategories } from "@/lib/products-combined"
@@ -102,7 +101,6 @@ export default async function CategoryPage({
       </main>
       <SiteFooter />
       <WhatsAppButton />
-      <FloatingBackButton />
     </div>
   )
 }
