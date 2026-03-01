@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { FloatingBackButton } from "@/components/floating-back-button"
 import { AboutSection } from "@/components/about-section"
 import { PartnerBrands } from "@/components/partner-brands"
 import { Card, CardContent } from "@/components/ui/card"
@@ -182,6 +183,7 @@ export default function AboutPage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
+      <FloatingBackButton />
     </div>
   )
 }
