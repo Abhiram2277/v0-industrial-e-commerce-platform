@@ -1,7 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { FloatingBackButton } from "@/components/floating-back-button"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { PartnerBrands } from "@/components/partner-brands"
@@ -23,7 +22,6 @@ export default function HomePage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
-      <FloatingBackButton />
     </div>
   )
 }

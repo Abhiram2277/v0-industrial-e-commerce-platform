@@ -1,7 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { FloatingBackButton } from "@/components/floating-back-button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -360,7 +359,6 @@ export default function SafetySolutionsPage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
-      <FloatingBackButton />
     </div>
   )
 }

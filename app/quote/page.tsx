@@ -1,7 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { FloatingBackButton } from "@/components/floating-back-button"
 import { QuoteForm } from "@/components/quote-form"
 
 export const dynamic = "force-dynamic"
@@ -35,7 +34,6 @@ export default function QuotePage() {
       </main>
       <SiteFooter />
       <WhatsAppButton />
-      <FloatingBackButton />
     </div>
   )
 }
