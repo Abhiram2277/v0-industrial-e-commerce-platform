@@ -56,7 +56,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between py-4 gap-4">
           <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
             <div className="relative h-36 w-36 flex-shrink-0">
-              <Image src="/pnd-logo-new.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
+              <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
             </div>
             <div className="hidden md:flex flex-col">
               <span className="font-bold text-3xl leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
