@@ -1,3 +1,5 @@
+"use client"
+
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -8,25 +10,45 @@ import { getAllProducts, getAllCategories } from "@/lib/products-combined"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { useEffect, useState } from "react"
 
-export const dynamic = "force-dynamic"
-
-export default async function CategoryPage({
+export default function CategoryPage({
   params,
 }: {
   params: Promise<{ slug: string }>
 }) {
-  const { slug } = await params
-  const categories = await getAllCategories()
-  const products = await getAllProducts()
+  const [category, setCategory] = useState<any>(null)
+  const [categoryProducts, setCategoryProducts] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const category = categories.find((c) => c.slug === slug)
+  useEffect(() => {
+    const loadData = async () => {
+      const { slug } = await params
+      const categories = await getAllCategories()
+      const products = await getAllProducts()
 
-  if (!category) {
-    notFound()
+      const foundCategory = categories.find((c) => c.slug === slug)
+
+      if (!foundCategory) {
+        notFound()
+      }
+
+      setCategory(foundCategory)
+      setCategoryProducts(products.filter((p) => p.category === slug))
+      setLoading(false)
+    }
+
+    loadData()
+  }, [params])
+
+  if (loading || !category) {
+    return (
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1 bg-background" />
+      </div>
+    )
   }
-
-  const categoryProducts = products.filter((p) => p.category === slug)
 
   return (
     <div className="flex min-h-screen flex-col">
