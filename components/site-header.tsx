@@ -59,7 +59,7 @@ export function SiteHeader() {
               <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
             </div>
             <div className="hidden md:flex flex-col">
-              <span className="font-bold text-3xl leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              <span className="font-bold text-4xl leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 PND Industrial Suppliers
               </span>
               <span className="text-sm text-muted-foreground">Industrial Excellence Since 2020</span>
