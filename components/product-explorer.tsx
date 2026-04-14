@@ -124,32 +124,6 @@ export function ProductExplorer() {
               )
             })}
           </div>
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                      {productCount} Products
-                    </div>
-                  </div>
-                  <CardHeader className="text-center pb-8">
-                    <CardTitle className="text-2xl" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                      {category.title}
-                    </CardTitle>
-                    <p className="text-base text-muted-foreground mt-4 leading-relaxed">{category.description}</p>
-                  </CardHeader>
-                  <CardFooter className="pt-0 justify-center pb-8">
-                    <Button
-                      variant="ghost"
-                      className="text-accent hover:text-accent-foreground hover:bg-accent"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleCategoryClick(category.id)
-                      }}
-                    >
-                      View All Products
-                    </Button>
-                  </CardFooter>
-                </Card>
-              )
-            })}
-          </div>
         </div>
       </section>
     )
