@@ -75,7 +75,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3 flex-shrink-0">
             <CartButton />
             <Link href="/quote">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base">Quick Quote</Button>
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg">Quick Quote</Button>
             </Link>
           </div>
         </div>
