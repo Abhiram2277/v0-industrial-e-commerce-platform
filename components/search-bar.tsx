@@ -61,7 +61,7 @@ export function SearchBar() {
       <Input
         type="search"
         placeholder="Search products, categories, brands..."
-        className="pl-10 pr-10 w-full text-lg"
+        className="pl-10 pr-10 w-full text-base"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         onFocus={() => searchQuery.length > 0 && setIsOpen(true)}
