@@ -67,18 +67,18 @@ export function ProductExplorer() {
 
   if (!selectedCategory) {
     return (
-      <section className="py-20">
+      <section className="py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Explore Our Products
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Select a category to view our comprehensive range of safety equipment and industrial tools
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {categoryData.map((category) => {
               const productCount = products.filter((p) => p.category === category.id).length
 
@@ -102,13 +102,13 @@ export function ProductExplorer() {
                       {productCount} Products
                     </div>
                   </div>
-                  <CardHeader className="text-center pb-4">
+                  <CardHeader className="text-center pb-6">
                     <CardTitle className="text-xl" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       {category.title}
                     </CardTitle>
-                    <p className="text-sm text-muted-foreground mt-2">{category.description}</p>
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{category.description}</p>
                   </CardHeader>
-                  <CardFooter className="pt-0 justify-center">
+                  <CardFooter className="pt-0 justify-center pb-6">
                     <Button
                       variant="ghost"
                       className="text-accent hover:text-accent-foreground hover:bg-accent"
@@ -135,35 +135,35 @@ export function ProductExplorer() {
   const categoryProducts = products.filter((product) => product.category === currentCategory.id)
 
   return (
-    <section className="py-20">
+    <section className="py-24 md:py-32">
       <div className="container mx-auto px-4">
-        <div className="mb-8">
+        <div className="mb-12">
           <Button
             variant="outline"
             onClick={handleBackToCategories}
-            className="mb-6 hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
+            className="mb-8 hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Categories
           </Button>
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
               {currentCategory.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Browse our selection of {categoryProducts.length} {currentCategory.title.toLowerCase()} products
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categoryProducts.map((product) => (
             <Card
               key={product.id}
               className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 flex flex-col h-full"
             >
-              <CardHeader>
-                <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
+              <CardHeader className="pb-4">
+                <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
                   {product.image ? (
                     <Image
                       src={product.image || "/placeholder.svg"}
@@ -185,7 +185,7 @@ export function ProductExplorer() {
                   )}
                 </div>
                 {product.brand && (
-                  <Badge variant="secondary" className="w-fit mb-2 bg-accent/10 text-accent border-accent/20">
+                  <Badge variant="secondary" className="w-fit mb-3 bg-accent/10 text-accent border-accent/20">
                     {product.brand}
                   </Badge>
                 )}
@@ -193,14 +193,14 @@ export function ProductExplorer() {
                   {product.name}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-1">
-                <div className="space-y-3">
+              <CardContent className="flex-1 pb-6">
+                <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-sm mb-2 text-primary">Key Features:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-2">
+                    <h4 className="font-semibold text-sm mb-3 text-primary">Key Features:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-3">
                       {product.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-start gap-2">
-                          <span className="text-accent mt-1 font-bold">•</span>
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="text-accent mt-1 font-bold flex-shrink-0">•</span>
                           <span className="leading-relaxed">{feature}</span>
                         </li>
                       ))}
@@ -208,7 +208,7 @@ export function ProductExplorer() {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex flex-col gap-2 pt-0">
+              <CardFooter className="flex flex-col gap-3 pt-0">
                 <Button
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
                   onClick={() => handleAddToCart(product.id)}
