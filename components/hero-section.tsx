@@ -6,7 +6,7 @@ export function HeroSection() {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground">
       <div className="container mx-auto px-4 py-24 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center font-medium">
           <div className="space-y-8">
             <div className="inline-block rounded-full bg-accent/10 px-4 py-2 text-accent border border-accent/20">
               <span className="text-sm font-semibold">Authorized Channel Partner</span>

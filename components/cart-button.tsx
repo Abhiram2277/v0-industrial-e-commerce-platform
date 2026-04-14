@@ -13,7 +13,7 @@ export function CartButton() {
     <Button
       variant="outline"
       size="icon"
-      className="relative hover:bg-accent hover:text-accent-foreground bg-transparent"
+      className="relative hover:bg-accent hover:text-accent-foreground bg-transparent text-base font-light"
       onClick={() => setIsOpen(true)}
     >
       <ShoppingCart className="h-5 w-5" />
