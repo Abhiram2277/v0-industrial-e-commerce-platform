@@ -41,7 +41,7 @@ export function SiteHeader() {
     <header className="z-50 w-full border-b bg-background">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
-        <div className="flex items-center justify-between border-b py-2 text-sm">
+        <div className="flex items-center justify-between border-b py-2 text-base">
           <div className="flex items-center gap-4 text-muted-foreground">
             <span className="flex items-center gap-1">
               <Phone className="h-3 w-3" />
@@ -49,7 +49,7 @@ export function SiteHeader() {
             </span>
             <span className="hidden md:inline">pndindustrialsuppliers@gmail.com</span>
           </div>
-          <div className="text-xs font-medium text-primary">"Life is Precious" - Your Safety Partner</div>
+          <div className="text-sm font-medium text-primary">"Life is Precious" - Your Safety Partner</div>
         </div>
 
         {/* Main Navigation */}
@@ -75,7 +75,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3 flex-shrink-0">
             <CartButton />
             <Link href="/quote">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg">Quick Quote</Button>
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base">Quick Quote</Button>
             </Link>
           </div>
         </div>
