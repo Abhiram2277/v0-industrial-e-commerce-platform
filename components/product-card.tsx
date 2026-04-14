@@ -23,8 +23,8 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
-      <CardHeader>
-        <div className="mb-4 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
+      <CardHeader className="pb-4">
+        <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
           {product.image ? (
             <Image
               src={product.image || "/placeholder.svg"}
@@ -46,31 +46,31 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         {product.brand && (
-          <Badge variant="secondary" className="w-fit mb-2">
+          <Badge variant="secondary" className="w-fit mb-3">
             {product.brand}
           </Badge>
         )}
         <CardTitle className="text-lg leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
           {product.name}
         </CardTitle>
-        <CardDescription className="line-clamp-2 leading-relaxed">{product.description}</CardDescription>
+        <CardDescription className="line-clamp-2 leading-relaxed mt-2">{product.description}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1">
-        <div className="space-y-3">
+      <CardContent className="flex-1 pb-6">
+        <div className="space-y-4">
           <div>
-            <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
-            <ul className="text-sm text-muted-foreground space-y-1">
+            <h4 className="font-semibold text-sm mb-3">Key Features:</h4>
+            <ul className="text-sm text-muted-foreground space-y-2.5">
               {product.features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-accent mt-1">•</span>
-                  <span>{feature}</span>
+                  <span className="leading-relaxed">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex flex-col gap-2">
+      <CardFooter className="flex flex-col gap-3">
         <Button onClick={handleAddToCart} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
