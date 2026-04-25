@@ -1,6 +1,7 @@
 "use client"
 
-import Image from "next/image"
+import { MessageCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export function WhatsAppButton() {
   const handleWhatsAppClick = () => {
@@ -9,25 +10,13 @@ export function WhatsAppButton() {
   }
 
   return (
-    <div
+    <Button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-50 cursor-pointer transition-all hover:scale-110"
-      role="button"
-      tabIndex={0}
+      size="lg"
+      className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-lg transition-all hover:scale-110 p-0"
       aria-label="Contact us on WhatsApp"
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          handleWhatsAppClick()
-        }
-      }}
     >
-      <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7HtmiQYwE4ONCkFMMergH26ovRgwuF.png"
-        alt="WhatsApp"
-        width={56}
-        height={56}
-        className="object-contain"
-      />
-    </div>
+      <MessageCircle className="h-7 w-7 text-white" />
+    </Button>
   )
 }
