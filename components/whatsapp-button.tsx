@@ -17,11 +17,11 @@ export function WhatsAppButton() {
       aria-label="Contact us on WhatsApp"
     >
       <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-fG8VLx1iO4rlIBPOoBV6imOeIvRdB4.png"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-B4eWPMogTwzmJfL2mrowhciZobaFlS.png"
         alt="WhatsApp"
         width={56}
         height={56}
-        className="object-cover"
+        className="object-contain"
       />
     </Button>
   )
