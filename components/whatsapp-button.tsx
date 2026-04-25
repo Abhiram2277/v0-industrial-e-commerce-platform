@@ -16,15 +16,13 @@ export function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all hover:scale-110 p-0 border-0 bg-transparent"
       aria-label="Contact us on WhatsApp"
     >
-      <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-B4eWPMogTwzmJfL2mrowhciZobaFlS.png"
-          alt="WhatsApp"
-          width={56}
-          height={56}
-          className="object-contain"
-        />
-      </div>
+      <Image
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-fG8VLx1iO4rlIBPOoBV6imOeIvRdB4.png"
+        alt="WhatsApp"
+        width={56}
+        height={56}
+        className="object-cover"
+      />
     </Button>
   )
 }
