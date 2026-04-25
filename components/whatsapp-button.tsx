@@ -17,7 +17,7 @@ export function WhatsAppButton() {
       aria-label="Contact us on WhatsApp"
     >
       <Image
-        src="/whatsapp-logo.jpg"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-2AeaxASnrXyX9ccGnzouHDzHAIKZ2m.png"
         alt="WhatsApp"
         width={56}
         height={56}
