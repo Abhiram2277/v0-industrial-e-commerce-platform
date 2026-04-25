@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { CartButton } from "./cart-button"
 import { SearchBar } from "./search-bar"
+import { MobileMenu } from "./mobile-menu"
 import { getAllCategoriesClient } from "@/lib/products-combined-client"
 import { useEffect, useState } from "react"
 
@@ -71,18 +72,24 @@ export function SiteHeader() {
             <SearchBar />
           </div>
 
-          {/* Cart Button and Quick Quote Button */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          {/* Desktop: Cart Button and Quick Quote Button */}
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <CartButton />
             <Link href="/quote">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base">Quick Quote</Button>
             </Link>
           </div>
+
+          {/* Mobile: Hamburger Menu + Cart */}
+          <div className="md:hidden flex items-center gap-2 flex-shrink-0">
+            <CartButton />
+            <MobileMenu categories={categories} isLoading={isLoading} error={error} />
+          </div>
         </div>
 
-        {/* Navigation Menu - Simple HTML to avoid Radix hydration issues */}
+        {/* Desktop Navigation Menu - Hidden on Mobile */}
         {isMounted && (
-          <nav className="flex items-center justify-start pb-4 gap-4 flex-wrap">
+          <nav className="hidden md:flex items-center justify-start pb-4 gap-4 flex-wrap">
             <Link href="/" className={cn(
               "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
             )}>
