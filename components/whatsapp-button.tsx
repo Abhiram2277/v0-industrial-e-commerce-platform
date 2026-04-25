@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export function WhatsAppButton() {
@@ -10,11 +9,17 @@ export function WhatsAppButton() {
   }
 
   return (
-    <Button
+    <div
       onClick={handleWhatsAppClick}
-      size="lg"
-      className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all hover:scale-110 p-0 border-0 bg-transparent"
+      className="fixed bottom-6 right-6 z-50 cursor-pointer transition-all hover:scale-110"
+      role="button"
+      tabIndex={0}
       aria-label="Contact us on WhatsApp"
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          handleWhatsAppClick()
+        }
+      }}
     >
       <Image
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-B4eWPMogTwzmJfL2mrowhciZobaFlS.png"
@@ -23,6 +28,6 @@ export function WhatsAppButton() {
         height={56}
         className="object-contain"
       />
-    </Button>
+    </div>
   )
 }
