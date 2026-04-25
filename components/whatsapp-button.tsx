@@ -22,7 +22,7 @@ export function WhatsAppButton() {
       }}
     >
       <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-B4eWPMogTwzmJfL2mrowhciZobaFlS.png"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7HtmiQYwE4ONCkFMMergH26ovRgwuF.png"
         alt="WhatsApp"
         width={56}
         height={56}
