@@ -20,8 +20,8 @@ export function CTASection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-              <Link href="/contact">
-                Request a Quote <ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/quote">
+                Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
