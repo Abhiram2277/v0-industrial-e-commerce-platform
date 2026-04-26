@@ -98,7 +98,7 @@ export function HeroSection() {
                   Dedicated team to help you choose the right safety solutions
                 </p>
               </div>
-              <div className="bg-accent/10 rounded-xl p-6 border-2 border-accent/30 px-6 py-10">
+              <div className="bg-white rounded-xl p-6 border-2 border-accent/30 px-6 py-10">
                 <p className="text-2xl font-bold text-accent mb-2">"Life is Precious"</p>
                 <p className="text-sm font-medium text-primary">Our guiding philosophy in everything we do</p>
               </div>
