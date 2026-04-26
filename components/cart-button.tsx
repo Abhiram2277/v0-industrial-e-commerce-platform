@@ -13,16 +13,18 @@ export function CartButton() {
     <Button
       variant="outline"
       size="lg"
-      className="relative h-12 w-12 hover:bg-accent hover:text-accent-foreground bg-transparent"
+      className="relative h-12 w-12 p-0 hover:bg-accent hover:text-accent-foreground bg-transparent flex items-center justify-center"
       onClick={() => setIsOpen(true)}
     >
-      <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping-cart-0nYBoMu2kdkdRXlHWUzBQPrvbekGhI.png"
-        alt="Shopping Cart"
-        width={28}
-        height={28}
-        className="object-contain"
-      />
+      <div className="relative h-7 w-7">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping-cart-0nYBoMu2kdkdRXlHWUzBQPrvbekGhI.png"
+          alt="Shopping Cart"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
       {totalItems > 0 && (
         <Badge
           variant="destructive"
