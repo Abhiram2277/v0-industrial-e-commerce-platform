@@ -3,25 +3,37 @@
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
 export function CartButton() {
   const { getTotalItems, setIsOpen } = useCart()
+  const totalItems = getTotalItems()
 
   return (
     <Button
       variant="outline"
-      size="icon"
-      className="relative hover:bg-accent hover:text-accent-foreground bg-transparent"
+      size="lg"
+      className="relative h-12 w-12 p-0 hover:bg-accent hover:text-accent-foreground bg-transparent flex items-center justify-center"
       onClick={() => setIsOpen(true)}
     >
-      <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping-cart-0nYBoMu2kdkdRXlHWUzBQPrvbekGhI.png"
-        alt="Shopping Cart"
-        width={24}
-        height={24}
-        className="object-contain"
-      />
-      <span className="sr-only">Shopping cart</span>
+      <div className="relative h-7 w-7">
+        <Image
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping-cart-0nYBoMu2kdkdRXlHWUzBQPrvbekGhI.png"
+          alt="Shopping Cart"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
+      {totalItems > 0 && (
+        <Badge
+          variant="destructive"
+          className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs bg-accent text-accent-foreground border-2 border-background"
+        >
+          {totalItems}
+        </Badge>
+      )}
+      <span className="sr-only">Shopping cart with {totalItems} items</span>
     </Button>
   )
 }

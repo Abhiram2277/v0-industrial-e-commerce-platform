@@ -28,12 +28,12 @@ export function MobileMenu({ categories, isLoading, error }: MobileMenuProps) {
       {/* Hamburger Icon - Mobile Only */}
       <Button
         variant="outline"
-        size="icon"
-        className="md:hidden"
+        size="lg"
+        className="md:hidden h-12 w-12"
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </Button>
 
       {/* Mobile Menu Panel */}

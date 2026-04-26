@@ -23,11 +23,14 @@ export function HeroSection() {
               <span className="font-semibold text-accent">"Life is Precious"</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-                <Link href="/contact">
-                  Request a Quote <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+              <div>
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto">
+                  <Link href="/quote">
+                    Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <p className="text-xs text-primary-foreground/70 mt-2">Response within 24 hours • No obligation</p>
+              </div>
               <Button
                 asChild
                 size="lg"
@@ -95,9 +98,9 @@ export function HeroSection() {
                   Dedicated team to help you choose the right safety solutions
                 </p>
               </div>
-              <div className="bg-accent/10 rounded-xl p-6 border-2 border-accent/30 px-6 py-10">
+              <div className="bg-white rounded-xl p-6 border-2 border-accent/30 px-6 py-10">
                 <p className="text-2xl font-bold text-accent mb-2">"Life is Precious"</p>
-                <p className="text-sm text-card-foreground">Our guiding philosophy in everything we do</p>
+                <p className="text-sm font-medium text-primary">Our guiding philosophy in everything we do</p>
               </div>
             </div>
           </div>

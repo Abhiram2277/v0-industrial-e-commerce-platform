@@ -84,11 +84,10 @@ export function AboutSection() {
                 </h3>
               </div>
               <div className="inline-block rounded-full bg-accent/10 px-4 py-2 text-accent border border-accent/20 mb-4">
-                <span className="text-base font-semibold">"Customer is our God."</span>
+                <span className="text-base font-semibold">"Reliability Through Performance"</span>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground">
-                To be recognized as a premier industrial service provider in South India through unwavering commitment,
-                superior service standards, and complete customer satisfaction.
+                To provide industrial buyers with dependable, high-quality products and exceptional service through rapid delivery, technical support, and consistent quality—eliminating supply chain risks for our customers.
               </p>
             </CardContent>
           </Card>
@@ -104,11 +103,10 @@ export function AboutSection() {
                 </h3>
               </div>
               <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-primary border border-primary/20 mb-4">
-                <span className="text-base font-semibold">"To Be a Frontrunner."</span>
+                <span className="text-base font-semibold">"Your Trusted Supply Partner"</span>
               </div>
               <p className="text-base leading-relaxed text-muted-foreground">
-                To deliver high-quality products on time with guaranteed performance, consistently exceeding customer
-                expectations through reliable and comprehensive industrial supply solutions.
+                To be the most reliable industrial supplier in South India by maintaining consistent product availability, on-time delivery, competitive pricing, and responsive customer support that industrial buyers depend on.
               </p>
             </CardContent>
           </Card>
