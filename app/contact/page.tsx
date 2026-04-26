@@ -179,7 +179,7 @@ export default function ContactPage() {
                   For general inquiries, partnership opportunities, or support questions—fill out the form below and we'll get back to you within 24 hours.
                 </p>
                 <p className="text-sm text-accent font-semibold mb-4">
-                  💡 Need a product quote? Use the <a href="/quote" className="underline hover:text-accent/80">"Get a Quote"</a> option instead for faster processing.
+                  💡 Need a product quote? <a href="https://wa.me/919398644987" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent/80">WhatsApp us</a> for instant response.
                 </p>
                 <ContactForm />
               </div>
