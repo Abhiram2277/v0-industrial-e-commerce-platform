@@ -178,8 +178,8 @@ export default function ContactPage() {
                 <p className="text-muted-foreground mb-6">
                   For general inquiries, partnership opportunities, or support questions—fill out the form below and we'll get back to you within 24 hours.
                 </p>
-                <p className="text-sm text-accent font-semibold mb-4">
-                  💡 Need a product quote? <a href="https://wa.me/919398644987" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent/80">WhatsApp us</a> for instant response.
+                <p className="text-sm font-semibold mb-4">
+                  💡 Need a product quote? <a href="https://wa.me/919398644987" target="_blank" rel="noopener noreferrer" className="text-green-600 font-bold underline hover:text-green-700 transition-colors">WhatsApp us</a> for instant response.
                 </p>
                 <ContactForm />
               </div>
