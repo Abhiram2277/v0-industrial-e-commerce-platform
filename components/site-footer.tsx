@@ -117,7 +117,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
-          <p>© 2025 PND Industrial Suppliers. All Rights Reserved.</p>
+          <p>© 2020-2026 PND Industrial Suppliers. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
