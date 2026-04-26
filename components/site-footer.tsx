@@ -51,35 +51,6 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Product Categories */}
-          <div>
-            <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              Categories
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/category/head-protection" className="hover:text-accent transition-colors">
-                  Head Protection
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/eye-face-protection" className="hover:text-accent transition-colors">
-                  Eye & Face Protection
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/foot-protection" className="hover:text-accent transition-colors">
-                  Foot Protection
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/power-tools" className="hover:text-accent transition-colors">
-                  Power Tools
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Information */}
           <div>
             <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
