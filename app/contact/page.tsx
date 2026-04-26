@@ -249,7 +249,7 @@ export default function ContactPage() {
                 <Card className="bg-primary text-primary-foreground">
                   <CardContent className="pt-6">
                     <p className="text-2xl font-bold mb-2 text-accent">"Life is Precious"</p>
-                    <p className="text-sm leading-relaxed text-primary-foreground font-medium">
+                    <p className="text-sm leading-relaxed text-white font-medium">
                       Our guiding philosophy drives us to provide the highest quality safety equipment and tools to
                       protect workers and enhance productivity in every workplace.
                     </p>
