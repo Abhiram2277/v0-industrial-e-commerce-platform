@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { CartButton } from "./cart-button"
 import { SearchBar } from "./search-bar"
 import { MobileMenu } from "./mobile-menu"
+import { WhatsAppHeaderButton } from "./whatsapp-header-button"
 import { getAllCategoriesClient } from "@/lib/products-combined-client"
 import { useEffect, useState } from "react"
 
@@ -78,9 +79,10 @@ export function SiteHeader() {
             <SearchBar />
           </div>
 
-          {/* Desktop: Cart Button and Get Quote Button */}
+          {/* Desktop: Cart Button, Direct Messaging, and Get Quote Button */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <CartButton />
+            <WhatsAppHeaderButton />
             <Link href="/quote">
               <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base">Get a Quote</Button>
             </Link>
