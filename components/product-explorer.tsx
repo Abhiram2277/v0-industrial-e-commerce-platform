@@ -67,18 +67,18 @@ export function ProductExplorer() {
 
   if (!selectedCategory) {
     return (
-      <section className="py-32 md:py-40 bg-white">
-        <div className="container mx-auto px-6 md:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ fontFamily: "Montserrat, sans-serif" }}>
+      <section className="py-16 md:py-32 md:py-40 bg-white">
+        <div className="container mx-auto px-4 md:px-6 md:px-8">
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-2xl md:text-4xl md:text-5xl font-bold mb-4 md:mb-8" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Explore Our Products
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Select a category to view our comprehensive range of safety equipment and industrial tools
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
             {categoryData.map((category) => {
               const productCount = products.filter((p) => p.category === category.id).length
 
@@ -135,28 +135,28 @@ export function ProductExplorer() {
   const categoryProducts = products.filter((product) => product.category === currentCategory.id)
 
   return (
-    <section className="py-32 md:py-40">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="mb-16">
+    <section className="py-16 md:py-32 md:py-40">
+      <div className="container mx-auto px-4 md:px-6 md:px-8">
+        <div className="mb-8 md:mb-16">
           <Button
             variant="outline"
             onClick={handleBackToCategories}
-            className="mb-10 hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
+            className="mb-6 md:mb-10 hover:bg-accent hover:text-accent-foreground transition-colors bg-transparent"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Categories
           </Button>
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <h2 className="text-2xl md:text-4xl md:text-5xl font-bold mb-4 md:mb-8" style={{ fontFamily: "Montserrat, sans-serif" }}>
               {currentCategory.title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Browse our selection of {categoryProducts.length} {currentCategory.title.toLowerCase()} products
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {categoryProducts.map((product) => (
             <Card
               key={product.id}

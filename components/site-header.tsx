@@ -55,13 +55,16 @@ export function SiteHeader() {
 
         {/* Main Navigation */}
         <div className="flex items-center justify-between py-4 gap-4">
-          <Link href="/" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 flex-1 md:flex-initial">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 min-w-0">
             <div className="relative h-20 w-20 md:h-36 md:w-36 flex-shrink-0">
               <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
             </div>
-            <div className="flex md:hidden flex-col">
-              <span className="font-bold text-lg leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <div className="flex md:hidden flex-col min-w-0">
+              <span className="font-bold text-sm leading-tight truncate" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 PND Industrial
+              </span>
+              <span className="font-bold text-sm leading-tight truncate" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Suppliers
               </span>
               <span className="text-xs text-muted-foreground">Industrial Excellence</span>
             </div>

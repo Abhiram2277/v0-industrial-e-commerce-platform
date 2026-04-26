@@ -12,15 +12,15 @@ export function CartButton() {
   return (
     <Button
       variant="outline"
-      size="icon"
-      className="relative hover:bg-accent hover:text-accent-foreground bg-transparent"
+      size="lg"
+      className="relative h-12 w-12 hover:bg-accent hover:text-accent-foreground bg-transparent"
       onClick={() => setIsOpen(true)}
     >
       <Image
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping-cart-0nYBoMu2kdkdRXlHWUzBQPrvbekGhI.png"
         alt="Shopping Cart"
-        width={24}
-        height={24}
+        width={28}
+        height={28}
         className="object-contain"
       />
       {totalItems > 0 && (
