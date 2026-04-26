@@ -179,7 +179,7 @@ export default function SafetySolutionsPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-                  <Link href="/quote">Request a Quote</Link>
+                  <Link href="/quote">Get a Quote</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                   <Link href="/contact">Contact Our Experts</Link>

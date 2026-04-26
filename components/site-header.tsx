@@ -78,11 +78,11 @@ export function SiteHeader() {
             <SearchBar />
           </div>
 
-          {/* Desktop: Cart Button and Quick Quote Button */}
+          {/* Desktop: Cart Button and Get Quote Button */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <CartButton />
             <Link href="/quote">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base">Quick Quote</Button>
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base">Get a Quote</Button>
             </Link>
           </div>
 
