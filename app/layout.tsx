@@ -28,8 +28,12 @@ export const metadata: Metadata = {
   generator: "v0.app",
   keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore"],
   icons: {
-    icon: "/favicon-clean.png",
-    apple: "/favicon-clean.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/favicon.png",
   },
   viewport: {
     width: "device-width",
