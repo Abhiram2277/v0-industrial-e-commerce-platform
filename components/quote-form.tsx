@@ -33,6 +33,7 @@ export function QuoteForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [quoteReference, setQuoteReference] = useState<string>("")
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<any[]>([])
   const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([
@@ -134,15 +135,17 @@ export function QuoteForm() {
 
       console.log("[v0] Quote saved successfully:", result.data)
 
+      setQuoteReference(result.data.quoteReference || "")
       setIsSubmitted(true)
 
       toast({
         title: "Quote request submitted!",
-        description: "Our team will contact you within 24 hours.",
+        description: `Reference: ${result.data.quoteReference}. Our team will contact you within 24 hours.`,
       })
 
       setTimeout(() => {
         setIsSubmitted(false)
+        setQuoteReference("")
         setFormData({
           name: "",
           email: "",
@@ -179,8 +182,17 @@ export function QuoteForm() {
             <h3 className="text-2xl font-bold" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Quote Request Received!
             </h3>
+            {quoteReference && (
+              <div className="bg-accent/10 border border-accent/30 rounded-lg p-4 my-4">
+                <p className="text-sm text-muted-foreground mb-1">Reference Number</p>
+                <p className="text-xl font-mono font-bold text-accent">{quoteReference}</p>
+              </div>
+            )}
             <p className="text-muted-foreground text-lg max-w-md mx-auto leading-relaxed">
-              Thank you for your interest. Our sales team will review your request and contact you within 24 hours.
+              Thank you for your interest. A confirmation email has been sent to your email address. Our sales team will review your request and contact you within 24 hours.
+            </p>
+            <p className="text-sm text-muted-foreground italic pt-2">
+              Keep your reference number for your records when contacting our sales team.
             </p>
           </div>
         </CardContent>
