@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
-import { Send, CheckCircle, ShoppingCart, X, Plus, Trash2 } from "lucide-react"
+import { Send, CheckCircle, ShoppingCart, X, Plus, Trash2, AlertCircle } from "lucide-react"
 import { getAllProductsClient, getAllCategoriesClient } from "@/lib/products-combined-client"
 import { useCart } from "@/lib/cart-context"
 import Image from "next/image"
@@ -33,6 +33,8 @@ export function QuoteForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [quoteReference, setQuoteReference] = useState<string>("")
+  const [showValidationError, setShowValidationError] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<any[]>([])
   const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([
@@ -94,6 +96,23 @@ export function QuoteForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Validate that at least one item is selected (either from cart or quote items)
+    const hasCartItems = cartItems.length > 0
+    const hasValidQuoteItems = quoteItems.some(item => item.category && item.product)
+
+    if (!hasCartItems && !hasValidQuoteItems) {
+      setShowValidationError(true)
+      toast({
+        title: "No items selected",
+        description: "Please add items to your cart or select products for the quote.",
+        variant: "destructive",
+      })
+      return
+    }
+
+    setShowValidationError(false)
+
     setIsSubmitting(true)
 
     try {
@@ -103,7 +122,7 @@ export function QuoteForm() {
         phone: formData.phone,
         company: formData.company,
         message: formData.message,
-        quoteItems: quoteItems.filter(item => item.category || item.product).map(item => ({
+        quoteItems: quoteItems.filter(item => item.category && item.product).map(item => ({
           category: item.category,
           product: item.product,
           quantity: item.quantity,
@@ -134,15 +153,17 @@ export function QuoteForm() {
 
       console.log("[v0] Quote saved successfully:", result.data)
 
+      setQuoteReference(result.data.quoteReference || "")
       setIsSubmitted(true)
 
       toast({
         title: "Quote request submitted!",
-        description: "Our team will contact you within 24 hours.",
+        description: `Reference: ${result.data.quoteReference}. Our team will contact you within 24 hours.`,
       })
 
       setTimeout(() => {
         setIsSubmitted(false)
+        setQuoteReference("")
         setFormData({
           name: "",
           email: "",
@@ -179,8 +200,17 @@ export function QuoteForm() {
             <h3 className="text-2xl font-bold" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Quote Request Received!
             </h3>
+            {quoteReference && (
+              <div className="bg-accent/10 border border-accent/30 rounded-lg p-4 my-4">
+                <p className="text-sm text-muted-foreground mb-1">Reference Number</p>
+                <p className="text-xl font-mono font-bold text-accent">{quoteReference}</p>
+              </div>
+            )}
             <p className="text-muted-foreground text-lg max-w-md mx-auto leading-relaxed">
-              Thank you for your interest. Our sales team will review your request and contact you within 24 hours.
+              Thank you for your interest. A confirmation email has been sent to your email address. Our sales team will review your request and contact you within 24 hours.
+            </p>
+            <p className="text-sm text-muted-foreground italic pt-2">
+              Keep your reference number for your records when contacting our sales team.
             </p>
           </div>
         </CardContent>
@@ -422,11 +452,23 @@ export function QuoteForm() {
               </p>
             </div>
 
+            {showValidationError && cartItems.length === 0 && !quoteItems.some(item => item.category && item.product) && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
+                <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-red-900 text-sm">No items selected</h4>
+                  <p className="text-sm text-red-800 mt-1">
+                    Please add items to your cart or select at least one product before submitting.
+                  </p>
+                </div>
+              </div>
+            )}
+
             <Button
               type="submit"
               size="lg"
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-              disabled={isSubmitting}
+              disabled={isSubmitting || (cartItems.length === 0 && !quoteItems.some(item => item.category && item.product))}
             >
               {isSubmitting ? (
                 "Submitting..."
