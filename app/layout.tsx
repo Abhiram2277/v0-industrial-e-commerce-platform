@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   generator: "v0.app",
   keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore"],
   icons: {
-    icon: "/pnd-logo.jpg",
-    apple: "/pnd-logo.jpg",
+    icon: "/pnd-logo.png",
+    apple: "/pnd-logo.png",
   },
   viewport: {
     width: "device-width",
