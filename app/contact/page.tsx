@@ -331,7 +331,7 @@ export default function ContactPage() {
                     <Card className="overflow-hidden">
                       <CardContent className="p-0">
                         <iframe
-                          src="https://www.google.com/maps?q=D.No.+2-98%2F2B,+Gangalamma+Devi+Temple,+Vakalapudi,+Kakinada,+AP-533005&output=embed"
+                          src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS+KAKINADA,+Door+No.+2,+98/2,+Vakalapudi,+Kakinada,+Andhra+Pradesh+533005&output=embed"
                           width="100%"
                           height="400"
                           style={{ border: 0 }}
@@ -370,7 +370,7 @@ export default function ContactPage() {
                           </a>
                         </div>
                         <a
-                          href="https://www.google.com/maps/dir/?api=1&destination=D.No.+2-98/2B,+Vakalapudi,+Kakinada,+AP-533005"
+                          href="https://www.google.com/maps/dir/?api=1&destination=PND+INDUSTRIAL+SUPPLIERS+KAKINADA,+Door+No.+2,+98/2,+Vakalapudi,+Kakinada,+Andhra+Pradesh+533005"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-blue-500 hover:text-blue-700 flex-shrink-0 text-sm font-medium"

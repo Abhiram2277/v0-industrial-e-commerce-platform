@@ -85,7 +85,7 @@ export function SiteFooter() {
                 <div className="flex items-start gap-2 mb-2">
                   <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
                   <span className="text-primary-foreground/80 leading-relaxed text-xs">
-                    D.No. 2-98/2B, Near Gangalamma Devi Temple, Vakalapudi, Kakinada, AP-533005
+                    Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005
                   </span>
                 </div>
                 <div className="flex items-center gap-2 ml-6">
