@@ -29,7 +29,7 @@ export function QuoteForm() {
   const searchParams = useSearchParams()
   const productId = searchParams.get("product")
   const { toast } = useToast()
-  const { items: cartItems, removeItem } = useCart()
+  const { items: cartItems, removeItem, clearCart } = useCart()
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -155,6 +155,7 @@ export function QuoteForm() {
 
       setQuoteReference(result.data.quoteReference || "")
       setIsSubmitted(true)
+      clearCart()
 
       toast({
         title: "Quote request submitted!",
