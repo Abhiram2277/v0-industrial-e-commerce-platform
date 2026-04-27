@@ -95,6 +95,20 @@ export function QuoteForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Validate that at least one item is selected (either from cart or quote items)
+    const hasCartItems = cartItems.length > 0
+    const hasValidQuoteItems = quoteItems.some(item => item.category && item.product)
+
+    if (!hasCartItems && !hasValidQuoteItems) {
+      toast({
+        title: "No items selected",
+        description: "Please add items to your cart or select products for the quote.",
+        variant: "destructive",
+      })
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -104,7 +118,7 @@ export function QuoteForm() {
         phone: formData.phone,
         company: formData.company,
         message: formData.message,
-        quoteItems: quoteItems.filter(item => item.category || item.product).map(item => ({
+        quoteItems: quoteItems.filter(item => item.category && item.product).map(item => ({
           category: item.category,
           product: item.product,
           quantity: item.quantity,
