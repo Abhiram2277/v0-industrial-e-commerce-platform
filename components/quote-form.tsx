@@ -34,6 +34,7 @@ export function QuoteForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [quoteReference, setQuoteReference] = useState<string>("")
+  const [showValidationError, setShowValidationError] = useState(false)
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<any[]>([])
   const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([
@@ -101,6 +102,7 @@ export function QuoteForm() {
     const hasValidQuoteItems = quoteItems.some(item => item.category && item.product)
 
     if (!hasCartItems && !hasValidQuoteItems) {
+      setShowValidationError(true)
       toast({
         title: "No items selected",
         description: "Please add items to your cart or select products for the quote.",
@@ -108,6 +110,8 @@ export function QuoteForm() {
       })
       return
     }
+
+    setShowValidationError(false)
 
     setIsSubmitting(true)
 
@@ -448,7 +452,7 @@ export function QuoteForm() {
               </p>
             </div>
 
-            {cartItems.length === 0 && !quoteItems.some(item => item.category && item.product) && (
+            {showValidationError && cartItems.length === 0 && !quoteItems.some(item => item.category && item.product) && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
                 <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
                 <div>
