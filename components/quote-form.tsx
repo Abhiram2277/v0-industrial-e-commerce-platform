@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
-import { Send, CheckCircle, ShoppingCart, X, Plus, Trash2 } from "lucide-react"
+import { Send, CheckCircle, ShoppingCart, X, Plus, Trash2, AlertCircle } from "lucide-react"
 import { getAllProductsClient, getAllCategoriesClient } from "@/lib/products-combined-client"
 import { useCart } from "@/lib/cart-context"
 import Image from "next/image"
@@ -448,11 +448,23 @@ export function QuoteForm() {
               </p>
             </div>
 
+            {cartItems.length === 0 && !quoteItems.some(item => item.category && item.product) && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-start gap-3">
+                <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-red-900 text-sm">No items selected</h4>
+                  <p className="text-sm text-red-800 mt-1">
+                    Please add items to your cart or select at least one product before submitting.
+                  </p>
+                </div>
+              </div>
+            )}
+
             <Button
               type="submit"
               size="lg"
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-              disabled={isSubmitting}
+              disabled={isSubmitting || (cartItems.length === 0 && !quoteItems.some(item => item.category && item.product))}
             >
               {isSubmitting ? (
                 "Submitting..."
