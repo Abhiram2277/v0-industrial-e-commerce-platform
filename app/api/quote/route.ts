@@ -124,11 +124,26 @@ function generateCustomerEmailHTML(
             background-color: #e5e7eb;
             margin: 24px 0;
           }
+          .logo {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e7eb;
+          }
+          .logo img {
+            max-height: 60px;
+            max-width: 200px;
+            display: inline-block;
+          }
         </style>
       </head>
       <body>
         <div class="container">
           <div class="email-content">
+            <div class="logo">
+              <img src="https://pndindustrialsuppliers.com/icon-192x192.png" alt="PND Industrial Suppliers" />
+            </div>
+
             <div class="header">
               <h1>Quote Request Confirmation</h1>
               <div class="reference-badge">${quoteReference}</div>
