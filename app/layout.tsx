@@ -27,9 +27,15 @@ export const metadata: Metadata = {
     "Leading industrial solutions provider based in Nellore. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more. Life is Precious.",
   generator: "v0.app",
   keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore"],
+  manifest: "/manifest.json",
   icons: {
-    icon: "/pnd-logo.ico",
-    apple: "/pnd-logo.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/icon-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512x512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/icon-192x192.png",
   },
   viewport: {
     width: "device-width",
