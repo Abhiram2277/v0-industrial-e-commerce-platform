@@ -271,7 +271,7 @@ export async function POST(request: Request) {
     // Send admin notification email
     if (process.env.RESEND_API_KEY) {
       try {
-        const adminEmail = process.env.ADMIN_EMAIL || "abhiramgollapalli@gmail.com"
+        const adminEmail = process.env.ADMIN_EMAIL || "pndindustrialsuppliers@gmail.com"
 
         const response = await fetch("https://api.resend.com/emails", {
           method: "POST",
