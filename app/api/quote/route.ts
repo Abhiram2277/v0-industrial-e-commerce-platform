@@ -260,6 +260,9 @@ export async function POST(request: Request) {
 
         console.log("[v0] Attempting to send customer email to:", data.email)
 
+        const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@resend.dev"
+        const fromAddress = fromEmail.includes("<") ? fromEmail : `PND Industrial Suppliers <${fromEmail}>`
+
         const response = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
@@ -267,7 +270,7 @@ export async function POST(request: Request) {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: process.env.RESEND_FROM_EMAIL || "PND Industrial Suppliers <noreply@resend.dev>",
+            from: fromAddress,
             to: data.email,
             subject: `Quote Confirmation - Reference ${quoteReference}`,
             html: customerEmailHTML,
@@ -299,6 +302,8 @@ export async function POST(request: Request) {
     if (process.env.RESEND_API_KEY) {
       try {
         const adminEmail = process.env.ADMIN_EMAIL || "pndindustrialsuppliers@gmail.com"
+        const fromEmail = process.env.RESEND_FROM_EMAIL || "noreply@resend.dev"
+        const fromAddress = fromEmail.includes("<") ? fromEmail : `PND Industrial Suppliers <${fromEmail}>`
 
         const response = await fetch("https://api.resend.com/emails", {
           method: "POST",
@@ -307,7 +312,7 @@ export async function POST(request: Request) {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: process.env.RESEND_FROM_EMAIL || "PND Industrial Suppliers <noreply@resend.dev>",
+            from: fromAddress,
             to: [adminEmail],
             subject: `New Quote Request - Reference ${quoteReference}`,
             html: `
