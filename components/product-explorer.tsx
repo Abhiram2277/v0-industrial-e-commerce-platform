@@ -85,7 +85,7 @@ export function ProductExplorer() {
               return (
                 <Card
                   key={category.id}
-                  className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 cursor-pointer overflow-hidden"
+                  className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 cursor-pointer overflow-hidden flex flex-col h-full"
                   onClick={() => handleCategoryClick(category.id)}
                 >
                   <div className="relative h-56 w-full overflow-hidden bg-secondary/30">
@@ -102,16 +102,15 @@ export function ProductExplorer() {
                       {productCount} Products
                     </div>
                   </div>
-                  <CardHeader className="text-center pb-8">
+                  <CardHeader className="text-center pb-4 flex-shrink-0">
                     <CardTitle className="text-2xl" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       {category.title}
                     </CardTitle>
                     <p className="text-base text-muted-foreground mt-4 leading-relaxed">{category.description}</p>
                   </CardHeader>
-                  <CardFooter className="pt-0 justify-center pb-8">
+                  <CardFooter className="mt-auto pt-4 pb-8 justify-center">
                     <Button
-                      variant="ghost"
-                      className="text-accent hover:text-accent-foreground hover:bg-accent"
+                      className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full transition-all duration-300"
                       onClick={(e) => {
                         e.stopPropagation()
                         handleCategoryClick(category.id)

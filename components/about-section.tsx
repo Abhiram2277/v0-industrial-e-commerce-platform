@@ -1,14 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Target, Eye } from "lucide-react"
+import { CheckCircle2, Target, Eye, Shield, Zap, AlertTriangle, Briefcase, Flame } from "lucide-react"
 
 export function AboutSection() {
   const specializations = [
-    "Personal Protective Equipment (PPE)",
-    "Industrial Power Tools",
-    "Safety & Emergency Equipment",
-    "Workwear & Arc Flash Protection",
-    "Gas Detection Systems",
-    "Welding Equipment & Supplies",
+    { title: "Personal Protective Equipment (PPE)", icon: Shield },
+    { title: "Industrial Power Tools", icon: Zap },
+    { title: "Safety & Emergency Equipment", icon: AlertTriangle },
+    { title: "Workwear & Arc Flash Protection", icon: Briefcase },
+    { title: "Gas Detection Systems", icon: AlertTriangle },
+    { title: "Welding Equipment & Supplies", icon: Flame },
   ]
 
   return (
@@ -59,15 +59,20 @@ export function AboutSection() {
               Our Specializations
             </h3>
             <div className="grid gap-3">
-              {specializations.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-3 bg-card p-4 rounded-lg border border-border hover:border-accent/50 transition-colors"
-                >
-                  <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-base font-medium">{item}</span>
-                </div>
-              ))}
+              {specializations.map((item, index) => {
+                const IconComponent = item.icon
+                return (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 bg-card p-4 rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
+                  >
+                    <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <IconComponent className="h-5 w-5 text-accent" />
+                    </div>
+                    <span className="text-base font-medium group-hover:text-accent transition-colors">{item.title}</span>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
