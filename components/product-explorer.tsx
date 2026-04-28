@@ -110,8 +110,7 @@ export function ProductExplorer() {
                   </CardHeader>
                   <CardFooter className="pt-0 justify-center pb-8">
                     <Button
-                      variant="ghost"
-                      className="text-accent hover:text-accent-foreground hover:bg-accent"
+                      className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full transition-all duration-300"
                       onClick={(e) => {
                         e.stopPropagation()
                         handleCategoryClick(category.id)
