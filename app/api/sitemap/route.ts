@@ -30,8 +30,6 @@ export async function GET() {
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Product Categories -->
   <url>
     <loc>https://pndindustrialsuppliers.com/category/head-protection</loc>
     <lastmod>2026-04-29</lastmod>
@@ -108,4 +106,4 @@ export async function GET() {
   })
 }
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
