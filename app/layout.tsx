@@ -57,6 +57,10 @@ export default function RootLayout({
         {/* DNS prefetch for external services */}
         <link rel="dns-prefetch" href="https://supabase.co" />
         <link rel="dns-prefetch" href="https://api.supabase.co" />
+        {/* Preload critical CSS for mobile - non-blocking */}
+        <link rel="preload" href="/critical-mobile.css" as="style" media="(max-width: 768px)" />
+        {/* Load full stylesheet after critical path */}
+        <link rel="stylesheet" href="/critical-mobile.css" media="(max-width: 768px)" />
       </head>
       <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>

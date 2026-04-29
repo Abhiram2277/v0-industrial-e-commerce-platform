@@ -1,0 +1,183 @@
+/* Critical Mobile CSS - Inline for faster FCP/LCP */
+/* Only includes essential styles for mobile viewports */
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.205 0.051 258.338);
+  --primary: oklch(0.205 0.051 258.338);
+  --primary-foreground: oklch(1 0 0);
+  --accent: oklch(0.693 0.183 53.619);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.892 0 0);
+  --muted-foreground: oklch(0.456 0 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Essential layout styles */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+/* Header */
+header {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Hero section */
+[class*="hero"] {
+  background: linear-gradient(135deg, var(--primary), rgba(32, 80, 153, 0.9));
+  color: var(--primary-foreground);
+  padding: 12px 16px;
+}
+
+[class*="hero"] h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+/* Text */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* Button */
+button, a[role="button"] {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:hover, a[role="button"]:hover {
+  opacity: 0.9;
+}
+
+/* Sections */
+section {
+  padding: 16px 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cards */
+[class*="card"] {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.py-8 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
