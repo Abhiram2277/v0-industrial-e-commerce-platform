@@ -14,6 +14,14 @@ export function AboutSection() {
   return (
     <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4">
+        {/* Centered About Us Heading - Desktop Only */}
+        <div className="hidden md:block text-center mb-16">
+          <h1 className="text-4xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            About Us
+          </h1>
+          <div className="h-1 w-24 bg-accent mx-auto"></div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start">
           {/* Left Column - About Text */}
           <div className="space-y-6">
@@ -53,15 +61,21 @@ export function AboutSection() {
               Our Specializations
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-0">
+            {/* Mobile: 2-column grid, Desktop: Single column with cards */}
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-4">
               {specializations.map((item, index) => {
                 const IconComponent = item.icon
                 return (
-                  <div key={index} className="flex items-center gap-3 md:gap-4 md:pb-4 md:border-b md:border-border md:last:border-b-0">
-                    <div className="h-8 w-8 flex items-center justify-center flex-shrink-0">
-                      <IconComponent className="h-6 w-6 text-accent" />
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-gray-50 md:bg-secondary/50 rounded md:rounded-lg border border-transparent md:border-border hover:border-accent/30 transition-colors group"
+                  >
+                    <div className="h-8 w-8 md:h-6 md:w-6 flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="h-6 w-6 md:h-5 md:w-5 text-accent" />
                     </div>
-                    <span className="text-sm md:text-base font-semibold text-foreground leading-tight md:leading-normal">{item.title}</span>
+                    <span className="text-sm md:text-base font-semibold text-foreground leading-tight md:leading-normal">
+                      {item.title}
+                    </span>
                   </div>
                 )
               })}
