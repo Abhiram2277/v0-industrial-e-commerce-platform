@@ -13,7 +13,7 @@ export async function getAllCategoriesClient() {
 
   for (const dbCat of dbCategories) {
     if (!combinedCategories.find((c) => c.slug === dbCat.slug)) {
-      combinedCategories.push(dbCat)
+      combinedCategories.push({ ...dbCat, subcategories: [] })
     }
   }
 
