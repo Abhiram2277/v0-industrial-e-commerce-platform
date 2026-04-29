@@ -24,7 +24,7 @@ export function PartnerBrands() {
           <p className="text-muted-foreground text-lg">Authorized Channel Partner for Premium Brands</p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-6">
           {brands.map((brand, index) => (
             <Card
               key={index}
