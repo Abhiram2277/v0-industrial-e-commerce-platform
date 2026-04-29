@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     apple: "/icon-192x192.png",
   },
   openGraph: {
-    type: "business.business",
+    type: "website",
     url: "https://pndindustrialsuppliers.com",
     title: "PND Industrial Suppliers | Premium PPE & Industrial Solutions",
     description: "Trusted industrial safety solutions provider in Nellore & Kakinada with 152+ customers and authorized partnerships with Udyogi, Bosch, and DeWalt.",
