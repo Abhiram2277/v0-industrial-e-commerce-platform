@@ -20,11 +20,6 @@ const nextConfig = {
   // Production optimizations
   productionBrowserSourceMaps: false,
 
-  // Experimental features for better performance
-  experimental: {
-    turbopack: true,
-  },
-
   // Headers for caching and performance
   async headers() {
     return [
