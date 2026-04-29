@@ -58,7 +58,7 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Our Specializations
             </h3>
-            <div className="grid gap-3">
+            <div className="hidden lg:grid grid-cols-1 gap-3">
               {specializations.map((item, index) => {
                 const IconComponent = item.icon
                 return (
@@ -70,6 +70,22 @@ export function AboutSection() {
                       <IconComponent className="h-5 w-5 text-accent" />
                     </div>
                     <span className="text-base font-medium group-hover:text-accent transition-colors">{item.title}</span>
+                  </div>
+                )
+              })}
+            </div>
+            <div className="lg:hidden grid grid-cols-2 gap-2">
+              {specializations.map((item, index) => {
+                const IconComponent = item.icon
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center gap-2 bg-card p-2 rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
+                  >
+                    <div className="h-8 w-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <IconComponent className="h-4 w-4 text-accent" />
+                    </div>
+                    <span className="text-xs font-medium group-hover:text-accent transition-colors text-center leading-tight">{item.title}</span>
                   </div>
                 )
               })}
