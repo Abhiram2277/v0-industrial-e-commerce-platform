@@ -95,6 +95,8 @@ export function ProductExplorer() {
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
+                      loading="lazy"
+                      quality={75}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/0" />
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-60" />

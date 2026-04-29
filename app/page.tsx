@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -17,7 +18,9 @@ export default function HomePage() {
         <AboutSection />
         <PartnerBrands />
         <IndustriesServed />
-        <ProductExplorer />
+        <Suspense fallback={<div className="py-20 container mx-auto px-4"><p className="text-center">Loading products...</p></div>}>
+          <ProductExplorer />
+        </Suspense>
         <CTASection />
       </main>
       <SiteFooter />

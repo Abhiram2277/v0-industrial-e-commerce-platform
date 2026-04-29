@@ -51,16 +51,16 @@ export function CTASection() {
           </div>
           <div className="pt-8 flex flex-wrap justify-center gap-8 text-sm">
             <div>
-              <div className="font-bold text-2xl text-accent">24/7</div>
-              <div className="text-primary-foreground/70">Customer Support</div>
+              <div className="font-bold text-2xl text-accent">152+</div>
+              <div className="text-primary-foreground/70">Registered Customers</div>
             </div>
             <div>
-              <div className="font-bold text-2xl text-accent">100%</div>
-              <div className="text-primary-foreground/70">Genuine Products</div>
+              <div className="font-bold text-2xl text-accent">7+</div>
+              <div className="text-primary-foreground/70">Brand Partners</div>
             </div>
             <div>
-              <div className="font-bold text-2xl text-accent">Fast</div>
-              <div className="text-primary-foreground/70">Delivery</div>
+              <div className="font-bold text-2xl text-accent">6 Yrs</div>
+              <div className="text-primary-foreground/70">Industry Experience</div>
             </div>
           </div>
         </div>
