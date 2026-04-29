@@ -9,18 +9,6 @@ export interface Product {
   applications: string[]
   image?: string
   price?: number
-  slug?: string
-  inStock?: boolean
-  stock?: number
-  originalPrice?: number
-  images?: string[]
-  rating?: number
-  reviews?: number
-  featured?: boolean
-  sku?: string
-  tags?: string[]
-  createdAt?: Date
-  updatedAt?: Date
   specifications?: {
     standard?: string
     material?: string

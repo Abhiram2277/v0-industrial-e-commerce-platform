@@ -22,24 +22,11 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "PND Industrial Suppliers | Premium PPE & Industrial Tools in Nellore, Kakinada",
+  title: "PND Industrial Suppliers | Premium Industrial Solutions & PPE",
   description:
-    "Leading industrial safety solutions provider in Nellore & Kakinada. Authorized channel partner for Udyogi, Bosch, DeWalt, Hillson. Premium PPE, power tools, welding equipment. 152+ satisfied customers. 6 years industry experience.",
-  keywords: [
-    "Industrial Suppliers Nellore",
-    "PPE Equipment Nellore",
-    "Safety Equipment Kakinada",
-    "Bosch Tools Supplier",
-    "DeWalt Tools Nellore",
-    "Industrial Safety Equipment",
-    "Personal Protective Equipment",
-    "Udyogi PPE",
-    "Welding Equipment Supplier",
-    "Industrial Power Tools",
-  ],
-  alternates: {
-    canonical: "https://pndindustrialsuppliers.com",
-  },
+    "Leading industrial solutions provider based in Nellore. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more. Life is Precious.",
+  generator: "v0.app",
+  keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore"],
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -49,27 +36,6 @@ export const metadata: Metadata = {
       { url: "/icon-512x512.png", type: "image/png", sizes: "512x512" },
     ],
     apple: "/icon-192x192.png",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://pndindustrialsuppliers.com",
-    title: "PND Industrial Suppliers | Premium PPE & Industrial Solutions",
-    description: "Trusted industrial safety solutions provider in Nellore & Kakinada with 152+ customers and authorized partnerships with Udyogi, Bosch, and DeWalt.",
-    siteName: "PND Industrial Suppliers",
-    images: [
-      {
-        url: "https://pndindustrialsuppliers.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "PND Industrial Suppliers - Premium PPE & Industrial Tools",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PND Industrial Suppliers | Premium PPE & Industrial Solutions",
-    description: "Trusted industrial safety provider with 152+ customers. Bosch, DeWalt, Udyogi authorized distributor.",
-    images: ["https://pndindustrialsuppliers.com/og-image.png"],
   },
   viewport: {
     width: "device-width",
@@ -91,72 +57,6 @@ export default function RootLayout({
         {/* DNS prefetch for external services */}
         <link rel="dns-prefetch" href="https://supabase.co" />
         <link rel="dns-prefetch" href="https://api.supabase.co" />
-        
-        {/* Local Business Schema Markup */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "PND Industrial Suppliers",
-              image: "https://pndindustrialsuppliers.com/og-image.png",
-              description:
-                "Leading industrial safety solutions provider. Authorized channel partner for Udyogi, Bosch, DeWalt, Hillson, and Asian Industrial Paints.",
-              address: [
-                {
-                  "@type": "PostalAddress",
-                  streetAddress: "Nellore",
-                  addressLocality: "Nellore",
-                  addressRegion: "Andhra Pradesh",
-                  postalCode: "524001",
-                  addressCountry: "IN",
-                },
-                {
-                  "@type": "PostalAddress",
-                  streetAddress: "Kakinada",
-                  addressLocality: "Kakinada",
-                  addressRegion: "Andhra Pradesh",
-                  postalCode: "533001",
-                  addressCountry: "IN",
-                },
-              ],
-              telephone: "+91-9398644987",
-              email: "pndindustrialsuppliers@gmail.com",
-              url: "https://pndindustrialsuppliers.com",
-              sameAs: [],
-              priceRange: "$$",
-              foundingDate: "2020",
-              numberOfEmployees: "10-50",
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.8",
-                ratingCount: "152",
-              },
-            }),
-          }}
-        />
-        
-        {/* Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "PND Industrial Suppliers",
-              url: "https://pndindustrialsuppliers.com",
-              logo: "https://pndindustrialsuppliers.com/logo.png",
-              description: "Authorized channel partner for premium industrial brands",
-              sameAs: [],
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+91-9398644987",
-                contactType: "Customer Service",
-              },
-            }),
-          }}
-        />
       </head>
       <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>

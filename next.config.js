@@ -11,7 +11,6 @@ const nextConfig = {
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    qualities: [75, 80],
   },
 
   // Compression and minification
@@ -19,25 +18,6 @@ const nextConfig = {
 
   // Production optimizations
   productionBrowserSourceMaps: false,
-
-  // Experimental features for better performance
-  experimental: {
-    turbopack: true,
-  },
-
-  // Rewrites for sitemap
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-      {
-        source: '/robots.txt',
-        destination: '/api/robots',
-      },
-    ]
-  },
 
   // Headers for caching and performance
   async headers() {
@@ -71,9 +51,6 @@ const nextConfig = {
       },
     ]
   },
-
-  // Optimized bundle analysis
-  swcMinify: true,
 }
 
 module.exports = nextConfig
