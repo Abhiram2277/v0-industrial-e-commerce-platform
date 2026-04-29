@@ -35,6 +35,8 @@ export function PartnerBrands() {
                 alt={`${brand.name} logo`}
                 fill
                 className="object-contain p-2 my-0 py-0 px-0"
+                loading="lazy"
+                quality={80}
               />
             </Card>
           ))}
