@@ -15,16 +15,16 @@ export function PartnerBrands() {
   ]
 
   return (
-    <section className="py-16 bg-background border-y">
+    <section className="py-8 md:py-16 bg-background border-y">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
+        <div className="text-center mb-6 md:mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
             Trusted by Industry Leaders
           </h2>
-          <p className="text-muted-foreground text-lg">Authorized Channel Partner for Premium Brands</p>
+          <p className="text-sm md:text-lg text-muted-foreground">Authorized Channel Partner for Premium Brands</p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-6">
           {brands.map((brand, index) => (
             <Card
               key={index}
@@ -40,8 +40,8 @@ export function PartnerBrands() {
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground italic">
+        <div className="mt-4 md:mt-8 text-center">
+          <p className="text-xs md:text-sm text-muted-foreground italic">
             All products are genuine and backed by manufacturer warranties
           </p>
         </div>
