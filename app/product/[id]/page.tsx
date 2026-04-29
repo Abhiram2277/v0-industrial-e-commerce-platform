@@ -4,7 +4,6 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { getAllProducts } from "@/lib/products-combined"
 import { notFound } from "next/navigation"
 import { ProductDetailClient } from "@/components/product-detail-client"
-import type { Product } from "@/lib/types"
 
 export default async function ProductPage({
   params,
