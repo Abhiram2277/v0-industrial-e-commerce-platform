@@ -1,23 +1,40 @@
 export interface Product {
   id: string
   name: string
-  slug: string
   category: string
+  subcategory: string
+  brand?: string
   description: string
-  price: number
+  features: string[]
+  applications: string[]
+  image?: string
+  price?: number
+  slug?: string
+  inStock?: boolean
+  stock?: number
   originalPrice?: number
-  stock: number
-  image: string
   images?: string[]
   rating?: number
   reviews?: number
   featured?: boolean
-  inStock: boolean
   sku?: string
-  specifications?: Record<string, string>
   tags?: string[]
   createdAt?: Date
   updatedAt?: Date
+  specifications?: {
+    standard?: string
+    material?: string
+    activation?: string
+    connection?: string
+    showerFlow?: string
+    eyewashFlow?: string
+    inlet?: string
+    drain?: string
+    capacity?: string
+    mounting?: string
+    type?: string
+    flowDuration?: string
+  }
 }
 
 export interface Category {
