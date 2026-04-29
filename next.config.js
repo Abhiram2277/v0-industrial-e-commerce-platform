@@ -25,20 +25,6 @@ const nextConfig = {
     turbopack: true,
   },
 
-  // Rewrites for sitemap
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-      {
-        source: '/robots.txt',
-        destination: '/api/robots',
-      },
-    ]
-  },
-
   // Headers for caching and performance
   async headers() {
     return [
