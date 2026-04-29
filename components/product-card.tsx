@@ -87,11 +87,11 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="w-full pt-2 border-t flex items-center justify-center gap-3 text-xs">
           <div className="flex items-center gap-1 text-muted-foreground">
             <Lock className="h-3.5 w-3.5 text-accent" />
-            <span>Secure</span>
+            <span>Secure Payment</span>
           </div>
           <div className="flex items-center gap-1 text-muted-foreground">
             <CheckCircle className="h-3.5 w-3.5 text-accent" />
-            <span>Warranty</span>
+            <span>1-Year Warranty</span>
           </div>
         </div>
       </CardFooter>

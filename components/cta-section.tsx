@@ -35,8 +35,8 @@ export function CTASection() {
             </div>
             <div className="flex flex-col items-center text-center">
               <RotateCcw className="h-6 w-6 text-accent mb-2" />
-              <div className="font-semibold text-sm text-primary-foreground">Easy Returns</div>
-              <div className="text-xs text-primary-foreground/70">30-day return policy</div>
+              <div className="font-semibold text-sm text-primary-foreground">30-Day Returns</div>
+              <div className="text-xs text-primary-foreground/70">Full return window</div>
             </div>
             <div className="flex flex-col items-center text-center">
               <Lock className="h-6 w-6 text-accent mb-2" />
@@ -45,8 +45,8 @@ export function CTASection() {
             </div>
             <div className="flex flex-col items-center text-center">
               <CheckCircle className="h-6 w-6 text-accent mb-2" />
-              <div className="font-semibold text-sm text-primary-foreground">1-Year Warranty</div>
-              <div className="text-xs text-primary-foreground/70">Full protection</div>
+              <div className="font-semibold text-sm text-primary-foreground">Free Replacement</div>
+              <div className="text-xs text-primary-foreground/70">1-year warranty</div>
             </div>
           </div>
           <div className="pt-8 flex flex-wrap justify-center gap-8 text-sm">

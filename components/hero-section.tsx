@@ -53,8 +53,8 @@ export function HeroSection() {
               <div className="flex items-start gap-3">
                 <RotateCcw className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-sm font-semibold">Easy Returns</div>
-                  <div className="text-xs text-primary-foreground/70">30-day return policy</div>
+                  <div className="text-sm font-semibold">30-Day Returns</div>
+                  <div className="text-xs text-primary-foreground/70">Full return window</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -67,8 +67,8 @@ export function HeroSection() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-sm font-semibold">1-Year Warranty</div>
-                  <div className="text-xs text-primary-foreground/70">Full protection</div>
+                  <div className="text-sm font-semibold">Free Replacement</div>
+                  <div className="text-xs text-primary-foreground/70">1-year warranty</div>
                 </div>
               </div>
             </div>
