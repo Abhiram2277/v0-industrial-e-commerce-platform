@@ -53,15 +53,15 @@ export function AboutSection() {
               Our Specializations
             </h2>
 
-            <div className="space-y-4">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-0">
               {specializations.map((item, index) => {
                 const IconComponent = item.icon
                 return (
-                  <div key={index} className="flex items-center gap-4 pb-4 border-b border-border last:border-b-0">
+                  <div key={index} className="flex items-center gap-3 md:gap-4 md:pb-4 md:border-b md:border-border md:last:border-b-0">
                     <div className="h-8 w-8 flex items-center justify-center flex-shrink-0">
                       <IconComponent className="h-6 w-6 text-accent" />
                     </div>
-                    <span className="text-base font-semibold text-foreground">{item.title}</span>
+                    <span className="text-sm md:text-base font-semibold text-foreground leading-tight md:leading-normal">{item.title}</span>
                   </div>
                 )
               })}
