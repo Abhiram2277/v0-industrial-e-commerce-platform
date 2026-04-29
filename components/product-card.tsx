@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import type { Product } from "@/lib/products"
+import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
