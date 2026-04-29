@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://v0-industrial-ecommerce.vercel.app/sitemap.xml
