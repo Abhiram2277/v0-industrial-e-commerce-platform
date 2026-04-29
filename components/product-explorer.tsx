@@ -88,7 +88,7 @@ export function ProductExplorer() {
                   className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 cursor-pointer overflow-hidden flex flex-col h-full"
                   onClick={() => handleCategoryClick(category.id)}
                 >
-                  <div className="relative h-56 w-full overflow-hidden bg-secondary/30">
+                  <div className="relative h-32 sm:h-40 md:h-56 w-full overflow-hidden bg-secondary/30">
                     <Image
                       src={category.image || "/placeholder.svg"}
                       alt={category.title}
@@ -98,17 +98,17 @@ export function ProductExplorer() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/0" />
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-60" />
-                    <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
-                      {productCount} Products
+                    <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-accent text-accent-foreground px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                      {productCount} {productCount === 1 ? "Product" : "Products"}
                     </div>
                   </div>
-                  <CardHeader className="text-center pb-4 flex-shrink-0">
-                    <CardTitle className="text-2xl" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                  <CardHeader className="text-center pb-2 sm:pb-4 flex-shrink-0">
+                    <CardTitle className="text-lg sm:text-2xl" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       {category.title}
                     </CardTitle>
-                    <p className="text-base text-muted-foreground mt-4 leading-relaxed">{category.description}</p>
+                    <p className="text-xs sm:text-base text-muted-foreground mt-2 sm:mt-4 leading-relaxed">{category.description}</p>
                   </CardHeader>
-                  <CardFooter className="mt-auto pt-4 pb-8 justify-center">
+                  <CardFooter className="mt-auto pt-2 sm:pt-4 pb-4 sm:pb-8 justify-center">
                     <Button
                       className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full transition-all duration-300"
                       onClick={(e) => {

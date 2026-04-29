@@ -25,18 +25,18 @@ export function IndustriesServed() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 md:gap-6">
           {industries.map((industry, index) => {
             const Icon = industry.icon
             return (
               <div
                 key={index}
-                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-background border hover:border-accent/50 hover:shadow-md transition-all hover:-translate-y-1"
+                className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 md:p-6 rounded-lg bg-background border hover:border-accent/50 hover:shadow-md transition-all hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center px-0">
-                  <Icon className="w-6 h-6 text-accent px-px py-px mx-px my-0 border-0" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/10 flex items-center justify-center px-0">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent px-px py-px mx-px my-0 border-0" />
                 </div>
-                <span className="text-sm font-medium text-center leading-tight">{industry.name}</span>
+                <span className="text-xs sm:text-sm font-medium text-center leading-tight">{industry.name}</span>
               </div>
             )
           })}

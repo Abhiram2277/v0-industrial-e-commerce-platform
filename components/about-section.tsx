@@ -58,18 +58,18 @@ export function AboutSection() {
             <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Our Specializations
             </h3>
-            <div className="grid gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               {specializations.map((item, index) => {
                 const IconComponent = item.icon
                 return (
                   <div
                     key={index}
-                    className="flex items-start gap-4 bg-card p-4 rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
+                    className="flex items-start gap-3 bg-card p-3 sm:p-4 rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
                   >
-                    <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                      <IconComponent className="h-5 w-5 text-accent" />
+                    <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                      <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                     </div>
-                    <span className="text-base font-medium group-hover:text-accent transition-colors">{item.title}</span>
+                    <span className="text-sm sm:text-base font-medium group-hover:text-accent transition-colors">{item.title}</span>
                   </div>
                 )
               })}
