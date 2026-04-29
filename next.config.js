@@ -24,23 +24,6 @@ const nextConfig = {
     turbopack: true,
   },
 
-  // Webpack config for CSS optimization
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Optimize CSS handling in client bundles
-      config.optimization.splitChunks.cacheGroups = {
-        ...config.optimization.splitChunks.cacheGroups,
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-      };
-    }
-    return config;
-  },
-
   // Headers for caching and performance
   async headers() {
     return [
@@ -68,10 +51,6 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
           },
         ],
       },
