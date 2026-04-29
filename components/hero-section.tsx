@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Award, Users } from "lucide-react"
+import { ArrowRight, Shield, Award, Users, Truck, RotateCcw, Lock, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export function HeroSection() {
@@ -41,6 +41,37 @@ export function HeroSection() {
               </Button>
             </div>
 
+            {/* Trust Badges */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-primary-foreground/20">
+              <div className="flex items-start gap-3">
+                <Truck className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-sm font-semibold">Fast Delivery</div>
+                  <div className="text-xs text-primary-foreground/70">7-10 business days</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <RotateCcw className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-sm font-semibold">Easy Returns</div>
+                  <div className="text-xs text-primary-foreground/70">30-day return policy</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Lock className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-sm font-semibold">Secure Payment</div>
+                  <div className="text-xs text-primary-foreground/70">SSL encrypted</div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-sm font-semibold">1-Year Warranty</div>
+                  <div className="text-xs text-primary-foreground/70">Full protection</div>
+                </div>
+              </div>
+            </div>
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-primary-foreground/20">
               <div>

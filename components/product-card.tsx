@@ -7,7 +7,7 @@ import type { Product } from "@/lib/products"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
-import { ShoppingCart } from "lucide-react"
+import { ShoppingCart, CheckCircle, Lock } from "lucide-react"
 
 interface ProductCardProps {
   product: Product
@@ -82,6 +82,17 @@ export function ProductCard({ product }: ProductCardProps) {
           <Button asChild variant="outline" className="flex-1 bg-transparent">
             <Link href={`/product/${product.id}`}>View Details</Link>
           </Button>
+        </div>
+        {/* Trust Badges */}
+        <div className="w-full pt-2 border-t flex items-center justify-center gap-3 text-xs">
+          <div className="flex items-center gap-1 text-muted-foreground">
+            <Lock className="h-3.5 w-3.5 text-accent" />
+            <span>Secure</span>
+          </div>
+          <div className="flex items-center gap-1 text-muted-foreground">
+            <CheckCircle className="h-3.5 w-3.5 text-accent" />
+            <span>Warranty</span>
+          </div>
         </div>
       </CardFooter>
     </Card>

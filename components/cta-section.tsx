@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Truck, RotateCcw, Lock, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export function CTASection() {
@@ -24,6 +24,30 @@ export function CTASection() {
                 Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
+          </div>
+
+          {/* Trust Badges Below CTA */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+            <div className="flex flex-col items-center text-center">
+              <Truck className="h-6 w-6 text-accent mb-2" />
+              <div className="font-semibold text-sm text-primary-foreground">Fast Delivery</div>
+              <div className="text-xs text-primary-foreground/70">7-10 business days</div>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <RotateCcw className="h-6 w-6 text-accent mb-2" />
+              <div className="font-semibold text-sm text-primary-foreground">Easy Returns</div>
+              <div className="text-xs text-primary-foreground/70">30-day return policy</div>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <Lock className="h-6 w-6 text-accent mb-2" />
+              <div className="font-semibold text-sm text-primary-foreground">Secure Payment</div>
+              <div className="text-xs text-primary-foreground/70">SSL encrypted</div>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <CheckCircle className="h-6 w-6 text-accent mb-2" />
+              <div className="font-semibold text-sm text-primary-foreground">1-Year Warranty</div>
+              <div className="text-xs text-primary-foreground/70">Full protection</div>
+            </div>
           </div>
           <div className="pt-8 flex flex-wrap justify-center gap-8 text-sm">
             <div>
