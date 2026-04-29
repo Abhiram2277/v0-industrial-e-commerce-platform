@@ -9,6 +9,8 @@ export interface Product {
   applications: string[]
   image?: string
   price?: number
+  createdAt?: Date
+  updatedAt?: Date
   specifications?: {
     standard?: string
     material?: string
