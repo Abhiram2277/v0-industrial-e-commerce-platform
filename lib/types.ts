@@ -11,6 +11,14 @@ export interface Product {
   price?: number
   createdAt?: Date
   updatedAt?: Date
+  featured?: boolean
+  inStock?: boolean
+  stock?: number
+  rating?: number
+  reviews?: number
+  slug?: string
+  sku?: string
+  tags?: string[]
   specifications?: {
     standard?: string
     material?: string
