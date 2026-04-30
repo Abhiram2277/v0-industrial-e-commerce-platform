@@ -9,6 +9,16 @@ export interface Product {
   applications: string[]
   image?: string
   price?: number // Added for new products
+  featured?: boolean
+  inStock?: boolean
+  stock?: number
+  rating?: number
+  reviews?: number
+  slug?: string
+  sku?: string
+  tags?: string[]
+  createdAt?: Date
+  updatedAt?: Date
   specifications?: {
     // Added for new products
     [key: string]: string | undefined
