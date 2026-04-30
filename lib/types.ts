@@ -2,7 +2,7 @@ export interface Product {
   id: string
   name: string
   category: string
-  subcategory: string
+  subcategory?: string
   brand?: string
   description: string
   features: string[]
@@ -11,7 +11,16 @@ export interface Product {
   price?: number
   createdAt?: Date
   updatedAt?: Date
+  featured?: boolean
+  inStock?: boolean
+  stock?: number
+  rating?: number
+  reviews?: number
+  slug?: string
+  sku?: string
+  tags?: string[]
   specifications?: {
+    [key: string]: string | undefined
     standard?: string
     material?: string
     activation?: string
@@ -19,6 +28,7 @@ export interface Product {
     showerFlow?: string
     eyewashFlow?: string
     inlet?: string
+    outlet?: string
     drain?: string
     capacity?: string
     mounting?: string
@@ -33,7 +43,7 @@ export interface Category {
   slug: string
   description: string
   image?: string
-  subcategories: string[]
+  subcategories?: string[]
   productCount?: number
 }
 
