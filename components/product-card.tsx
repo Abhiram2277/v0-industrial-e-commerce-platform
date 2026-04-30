@@ -76,10 +76,10 @@ export function ProductCard({ product }: ProductCardProps) {
           Add to Cart
         </Button>
         <div className="flex gap-2 w-full">
-          <Button asChild variant="outline" className="flex-1 bg-transparent">
+          <Button asChild variant="outline" className="flex-1 border-accent text-accent hover:bg-accent/5 bg-transparent">
             <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
           </Button>
-          <Button asChild variant="outline" className="flex-1 bg-transparent">
+          <Button asChild className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary border-primary/20 border">
             <Link href={`/product/${product.id}`}>View Details</Link>
           </Button>
         </div>

@@ -76,11 +76,11 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 Add to Cart
               </Button>
               <div className="flex gap-3">
-                <Button asChild size="lg" variant="outline" className="flex-1 bg-transparent">
+                <Button asChild size="lg" variant="outline" className="flex-1 border-accent text-accent hover:bg-accent/5">
                   <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
-                  <a href="tel:+919398644987">Call Us</a>
+                <Button asChild size="lg" className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary border-primary/20">
+                  <Link href={`/product/${product.id}`}>View Details</Link>
                 </Button>
               </div>
             </div>
