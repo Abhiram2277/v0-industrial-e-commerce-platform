@@ -41,7 +41,7 @@ export interface Category {
   slug: string
   description: string
   image?: string
-  subcategories: string[]
+  subcategories?: string[]
   productCount?: number
 }
 
