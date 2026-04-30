@@ -70,19 +70,18 @@ export function ProductDetailClient({ product }: { product: Product }) {
               <Button
                 onClick={handleAddToCart}
                 size="lg"
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
               >
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart
               </Button>
-              <div className="flex gap-3">
-                <Button asChild size="lg" variant="outline" className="flex-1 bg-transparent">
-                  <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <a href="tel:+919398644987">Call Us</a>
-                </Button>
-              </div>
+              <Button 
+                asChild 
+                size="lg" 
+                className="w-full bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
+              >
+                <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+              </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-4 pt-6 border-t">

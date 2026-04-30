@@ -45,15 +45,9 @@ export default async function CategoryPage({
           </div>
         </div>
 
-        {/* Category Header with Back Button */}
+        {/* Category Header */}
         <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-20 md:py-24">
           <div className="container mx-auto px-4">
-            <Link href="/" className="inline-block mb-8">
-              <Button variant="ghost" className="text-primary-foreground hover:bg-primary-foreground/20 gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 {category.name}
