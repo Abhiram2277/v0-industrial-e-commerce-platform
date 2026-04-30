@@ -11,6 +11,7 @@ export interface Product {
   price?: number // Added for new products
   specifications?: {
     // Added for new products
+    [key: string]: string | undefined
     standard?: string
     material?: string
     activation?: string
@@ -18,6 +19,7 @@ export interface Product {
     showerFlow?: string
     eyewashFlow?: string
     inlet?: string
+    outlet?: string
     drain?: string
     capacity?: string
     mounting?: string
