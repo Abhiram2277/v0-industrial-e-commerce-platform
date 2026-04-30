@@ -20,6 +20,7 @@ export interface Product {
   sku?: string
   tags?: string[]
   specifications?: {
+    [key: string]: string | undefined
     standard?: string
     material?: string
     activation?: string
@@ -27,6 +28,7 @@ export interface Product {
     showerFlow?: string
     eyewashFlow?: string
     inlet?: string
+    outlet?: string
     drain?: string
     capacity?: string
     mounting?: string
