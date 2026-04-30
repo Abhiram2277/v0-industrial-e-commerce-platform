@@ -217,14 +217,20 @@ export function ProductExplorer() {
                   <ShoppingCart className="mr-2 h-4 w-4" />
                   Add to Cart
                 </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="border-accent/30 hover:bg-accent/10 hover:border-accent bg-transparent w-full"
-                >
-                  <Link href={`/quote?product=${product.id}`}>Quick Quote</Link>
-                </Button>
+                <div className="flex gap-2 w-full">
+                  <Button 
+                    asChild 
+                    className="flex-1 bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
+                  >
+                    <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+                  </Button>
+                  <Button 
+                    asChild 
+                    className="flex-1 bg-primary/10 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold transition-all duration-200"
+                  >
+                    <Link href={`/product/${product.id}`}>View Details</Link>
+                  </Button>
+                </div>
               </CardFooter>
             </Card>
           ))}
