@@ -181,8 +181,8 @@
 
 .marquee-item {
   flex: 0 0 auto;
-  min-width: 220px;
-  height: 140px;
+  min-width: 280px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,8 +201,8 @@
   }
 
   .marquee-item {
-    min-width: 160px;
-    height: 110px;
+    min-width: 200px;
+    height: 140px;
   }
 }
 

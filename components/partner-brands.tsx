@@ -36,11 +36,11 @@ export function PartnerBrands() {
                 <Image
                   src={brand.logo || "/placeholder.svg"}
                   alt={`${brand.name} logo`}
-                  width={200}
-                  height={130}
+                  width={240}
+                  height={160}
                   className="object-contain max-w-[90%] max-h-[90%]"
                   loading="lazy"
-                  quality={80}
+                  quality={85}
                 />
               </div>
             </div>
