@@ -22,9 +22,9 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
-      <CardHeader className="pb-4">
-        <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
+    <Card className="group card-hover flex flex-col h-full shadow">
+      <CardHeader className="card-spacing pb-3 md:pb-4">
+        <div className="mb-4 md:mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
           {product.image ? (
             <Image
               src={product.image || "/placeholder.svg"}
@@ -50,16 +50,18 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.brand}
           </Badge>
         )}
-        <CardTitle className="text-lg leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+        <CardTitle className="heading-h3" style={{ fontFamily: "Montserrat, sans-serif" }}>
           {product.name}
         </CardTitle>
-        <CardDescription className="line-clamp-2 leading-relaxed mt-2">{product.description}</CardDescription>
+        <CardDescription className="line-clamp-2 leading-relaxed mt-2 body-small">
+          {product.description}
+        </CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-6">
+      <CardContent className="flex-1 card-spacing pt-0">
         <div className="space-y-4">
           <div>
-            <h4 className="font-semibold text-sm mb-3">Key Features:</h4>
-            <ul className="text-sm text-muted-foreground space-y-2.5">
+            <h4 className="label-text mb-3">Key Features:</h4>
+            <ul className="body-small text-muted-foreground space-y-2.5">
               {product.features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-accent mt-1">•</span>
@@ -70,15 +72,15 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex flex-col gap-3">
-        <Button onClick={handleAddToCart} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+      <CardFooter className="flex flex-col card-spacing pt-3 md:pt-4 border-t">
+        <Button onClick={handleAddToCart} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-md">
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
         </Button>
-        <div className="flex gap-2 w-full">
+        <div className="card-button-gap flex w-full pt-3">
           <Button 
             asChild 
-            className="flex-1 bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
+            className="flex-1 bg-accent/10 border-primary-visual text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
           >
             <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
           </Button>
@@ -89,14 +91,14 @@ export function ProductCard({ product }: ProductCardProps) {
             <Link href={`/product/${product.id}`}>View Details</Link>
           </Button>
         </div>
-        {/* Trust Badges */}
-        <div className="w-full pt-2 border-t flex items-center justify-center gap-3 text-xs">
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <CheckCircle className="h-3.5 w-3.5 text-accent" />
+        {/* Trust Badges - Standardized */}
+        <div className="w-full pt-3 border-t flex items-center justify-center card-gap text-xs mt-2">
+          <div className="flex items-center gap-1 text-secondary">
+            <CheckCircle className="icon-tiny text-accent" />
             <span>30-Day Replacement</span>
           </div>
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <Lock className="h-3.5 w-3.5 text-accent" />
+          <div className="flex items-center gap-1 text-secondary">
+            <Lock className="icon-tiny text-accent" />
             <span>1-Year Warranty</span>
           </div>
         </div>

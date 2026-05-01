@@ -212,3 +212,231 @@
     transform: none;
   }
 }
+
+/* ============================================================================
+   DESIGN SYSTEM DOCUMENTATION & UTILITY CLASSES
+   ============================================================================
+   
+   This design system establishes consistent spacing, typography, visual
+   hierarchy, and component patterns across the industrial e-commerce platform.
+   Follow these patterns for all new components and modifications.
+   
+   ============================================================================ */
+
+/* SPACING SCALE
+   ============================================================================
+   All section and component spacing follows a proportional scale:
+   
+   Mobile: py-8 (32px)
+   Tablet: md:py-16 (64px) 
+   Desktop: lg:py-24 (96px)
+   
+   This creates consistent visual rhythm across breakpoints.
+   ============================================================================ */
+
+.section-spacing {
+  @apply py-8 md:py-16 lg:py-24;
+}
+
+.section-spacing-sm {
+  @apply py-6 md:py-12 lg:py-18;
+}
+
+.section-spacing-lg {
+  @apply py-10 md:py-20 lg:py-32;
+}
+
+.section-header-spacing {
+  @apply mb-8 md:mb-12 lg:mb-16;
+}
+
+/* CARD SPACING SYSTEM
+   ============================================================================
+   All card components use consistent internal spacing:
+   
+   Padding: p-4 md:p-6 (proportional sizing)
+   Gap (internal): gap-4 md:gap-6 (content spacing)
+   Gap (buttons): gap-3 (action area spacing)
+   ============================================================================ */
+
+.card-spacing {
+  @apply p-4 md:p-6;
+}
+
+.card-spacing-sm {
+  @apply p-3 md:p-4;
+}
+
+.card-spacing-lg {
+  @apply p-6 md:p-8;
+}
+
+.card-gap {
+  @apply gap-4 md:gap-6;
+}
+
+.card-button-gap {
+  @apply gap-3;
+}
+
+/* TYPOGRAPHY HIERARCHY SYSTEM
+   ============================================================================
+   7-level typography system for consistent visual hierarchy:
+   
+   H1: text-3xl md:text-5xl lg:text-6xl (Hero titles)
+   H2: text-2xl md:text-3xl lg:text-4xl (Section headers)
+   H3: text-lg md:text-xl lg:text-2xl (Card/subsection titles)
+   Body Large: text-base md:text-lg (Descriptions, primary content)
+   Body Regular: text-sm md:text-base (Default body text)
+   Body Small: text-xs md:text-sm (Metadata, secondary info)
+   
+   Font weights: Regular (400) → Medium (500) → Semibold (600) → Bold (700)
+   ============================================================================ */
+
+.heading-h1 {
+  @apply text-3xl md:text-5xl lg:text-6xl font-bold;
+}
+
+.heading-h2 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+.heading-h3 {
+  @apply text-lg md:text-xl lg:text-2xl font-semibold;
+}
+
+.body-large {
+  @apply text-base md:text-lg font-regular;
+}
+
+.body-regular {
+  @apply text-sm md:text-base font-regular;
+}
+
+.body-small {
+  @apply text-xs md:text-sm font-regular;
+}
+
+.label-text {
+  @apply text-xs md:text-sm font-semibold;
+}
+
+/* BUTTON STYLING CONSISTENCY
+   ============================================================================
+   All buttons use consistent sizing and padding:
+   
+   Standard Button: px-4 py-2 (h-10 total)
+   Button Font: font-semibold (consistent weight)
+   ============================================================================ */
+
+.button-standard {
+  @apply px-4 py-2 font-semibold rounded-md;
+}
+
+.button-large {
+  @apply px-6 py-3 font-semibold rounded-lg;
+}
+
+/* ICON SIZING SYSTEM
+   ============================================================================
+   4-tier icon sizing system with proportional scaling:
+   
+   Large (Hero features): h-10 w-10 (40px)
+   Medium (Trust badges): h-6 w-6 md:h-7 md:w-7 (24-28px)
+   Small (Category cards): h-5 w-5 md:h-6 md:w-6 (20-24px)
+   Tiny (Lists): h-4 w-4 (16px)
+   ============================================================================ */
+
+.icon-large {
+  @apply h-10 w-10;
+}
+
+.icon-medium {
+  @apply h-6 w-6 md:h-7 md:w-7;
+}
+
+.icon-small {
+  @apply h-5 w-5 md:h-6 md:w-6;
+}
+
+.icon-tiny {
+  @apply h-4 w-4;
+}
+
+/* SHADOW & HOVER CONSISTENCY
+   ============================================================================
+   Unified shadow system with hover interactions:
+   
+   Subtle: shadow-sm (hover only)
+   Standard: shadow (cards default)
+   Elevated: shadow-lg (primary hover state)
+   Maximum: shadow-2xl (highest emphasis)
+   ============================================================================ */
+
+.card-hover {
+  @apply hover:shadow-lg hover:border-accent/50 hover:-translate-y-1 transition-all duration-300;
+}
+
+.card-hover-maximum {
+  @apply hover:shadow-2xl hover:border-accent/50 hover:-translate-y-2 transition-all duration-300;
+}
+
+/* BORDER & GROUPING SYSTEM
+   ============================================================================
+   Visual hierarchy through borders:
+   
+   Primary (action/focus): border-accent (orange)
+   Secondary (grouping): border-border (light gray)
+   Tertiary (subtle): border-border/50 (very light)
+   Light (glass effect): border-white/20 (on dark backgrounds)
+   ============================================================================ */
+
+.border-primary-visual {
+  @apply border-2 border-accent;
+}
+
+.border-secondary-visual {
+  @apply border border-border;
+}
+
+.border-tertiary-visual {
+  @apply border border-border/50;
+}
+
+/* TEXT COLOR CONSISTENCY
+   ============================================================================
+   Standardized text colors for hierarchy:
+   
+   Primary text: text-foreground (default)
+   Secondary text: text-muted-foreground (gray)
+   On dark background: text-primary-foreground (white)
+   Emphasis: text-accent (orange)
+   ============================================================================ */
+
+.text-secondary {
+  @apply text-muted-foreground;
+}
+
+.text-emphasis {
+  @apply text-accent font-semibold;
+}
+
+.text-light {
+  @apply text-primary-foreground/80;
+}
+
+/* BACKGROUND & OVERLAY CONSISTENCY
+   ============================================================================
+   Standardized background patterns:
+   
+   Grouped container: bg-white/10 backdrop-blur-sm rounded-lg border border-white/20
+   Hover container: bg-white/15
+   ============================================================================ */
+
+.container-grouped {
+  @apply bg-white/10 backdrop-blur-sm rounded-lg border border-white/20;
+}
+
+.container-grouped-hover {
+  @apply bg-white/15;
+}
