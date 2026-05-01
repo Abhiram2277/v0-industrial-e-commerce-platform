@@ -83,10 +83,10 @@ export function ProductExplorer() {
               const productCount = products.filter((p) => p.category === category.id).length
 
               return (
+                <Link href={`/category/${category.id}`} className="block">
                 <Card
                   key={category.id}
                   className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 cursor-pointer overflow-hidden flex flex-col h-full"
-                  onClick={() => handleCategoryClick(category.id)}
                 >
                   <div className="relative h-32 sm:h-40 md:h-56 w-full overflow-hidden bg-secondary/30">
                     <Image
@@ -112,16 +112,16 @@ export function ProductExplorer() {
                   </CardHeader>
                   <CardFooter className="mt-auto pt-2 sm:pt-4 pb-4 sm:pb-8 justify-center">
                     <Button
+                      asChild
                       className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full transition-all duration-300"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        handleCategoryClick(category.id)
-                      }}
                     >
-                      View All Products
+                      <span>
+                        View All Products
+                      </span>
                     </Button>
                   </CardFooter>
                 </Card>
+                </Link>
               )
             })}
           </div>
