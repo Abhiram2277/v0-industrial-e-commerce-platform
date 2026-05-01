@@ -17,13 +17,13 @@ export function PartnerBrands() {
   const duplicatedBrands = [...brands, ...brands, ...brands]
 
   return (
-    <section className="section-spacing bg-background border-y">
-      <div className="container mx-auto px-4 section-header-spacing">
+    <section className="py-8 md:py-16 bg-background border-y">
+      <div className="container mx-auto px-4 mb-8 md:mb-12">
         <div className="text-center">
-          <h2 className="heading-h2 mb-4 md:mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
             Trusted by Industry Leaders
           </h2>
-          <p className="body-large text-muted-foreground">Authorized Channel Partner for Premium Brands</p>
+          <p className="text-sm md:text-lg text-muted-foreground">Authorized Channel Partner for Premium Brands</p>
         </div>
       </div>
 
@@ -48,8 +48,8 @@ export function PartnerBrands() {
         </div>
       </div>
 
-      <div className="mt-8 md:mt-12 text-center px-4">
-        <p className="body-small text-muted-foreground italic">
+      <div className="mt-6 md:mt-8 text-center px-4">
+        <p className="text-xs md:text-sm text-muted-foreground italic">
           All products are genuine and backed by manufacturer warranties
         </p>
       </div>
