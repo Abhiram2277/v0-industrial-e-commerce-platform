@@ -26,27 +26,35 @@ export function CTASection() {
             </Button>
           </div>
 
-          {/* Trust Badges Below CTA */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
-            <div className="flex flex-col items-center text-center">
-              <Truck className="h-6 w-6 text-accent mb-2" />
-              <div className="font-semibold text-sm text-primary-foreground">Fast Delivery</div>
-              <div className="text-xs text-primary-foreground/70">7-10 business days</div>
+          {/* Trust Badges Below CTA - Enhanced Prominence */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-12 md:pt-16">
+            <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+              <div className="bg-accent/20 rounded-full p-3 mb-3 md:mb-4">
+                <Truck className="h-7 w-7 md:h-8 md:w-8 text-accent" />
+              </div>
+              <div className="font-bold text-sm md:text-base text-primary-foreground leading-tight">Fast Delivery</div>
+              <div className="text-xs md:text-sm text-primary-foreground/80 mt-1 font-medium">7-10 business days</div>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <Lock className="h-6 w-6 text-accent mb-2" />
-              <div className="font-semibold text-sm text-primary-foreground">Secure Payment</div>
-              <div className="text-xs text-primary-foreground/70">SSL encrypted</div>
+            <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+              <div className="bg-accent/20 rounded-full p-3 mb-3 md:mb-4">
+                <Lock className="h-7 w-7 md:h-8 md:w-8 text-accent" />
+              </div>
+              <div className="font-bold text-sm md:text-base text-primary-foreground leading-tight">Secure Payment</div>
+              <div className="text-xs md:text-sm text-primary-foreground/80 mt-1 font-medium">SSL encrypted</div>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <RotateCcw className="h-6 w-6 text-accent mb-2" />
-              <div className="font-semibold text-sm text-primary-foreground">30-Day Replacements</div>
-              <div className="text-xs text-primary-foreground/70">Free if defective</div>
+            <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+              <div className="bg-accent/20 rounded-full p-3 mb-3 md:mb-4">
+                <RotateCcw className="h-7 w-7 md:h-8 md:w-8 text-accent" />
+              </div>
+              <div className="font-bold text-sm md:text-base text-primary-foreground leading-tight">30-Day Replacements</div>
+              <div className="text-xs md:text-sm text-primary-foreground/80 mt-1 font-medium">Free if defective</div>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <CheckCircle className="h-6 w-6 text-accent mb-2" />
-              <div className="font-semibold text-sm text-primary-foreground">1-Year Warranty</div>
-              <div className="text-xs text-primary-foreground/70">Full coverage</div>
+            <div className="flex flex-col items-center text-center bg-white/10 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+              <div className="bg-accent/20 rounded-full p-3 mb-3 md:mb-4">
+                <CheckCircle className="h-7 w-7 md:h-8 md:w-8 text-accent" />
+              </div>
+              <div className="font-bold text-sm md:text-base text-primary-foreground leading-tight">1-Year Warranty</div>
+              <div className="text-xs md:text-sm text-primary-foreground/80 mt-1 font-medium">Full coverage</div>
             </div>
           </div>
           <div className="pt-8 flex flex-wrap justify-center gap-8 text-sm">

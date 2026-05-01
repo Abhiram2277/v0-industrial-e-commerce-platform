@@ -39,34 +39,34 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 pt-4 md:pt-8 border-t border-primary-foreground/20">
-              <div className="flex items-start gap-2 md:gap-3">
-                <Truck className="h-4 w-4 md:h-5 md:w-5 text-accent flex-shrink-0 mt-0.5" />
+            {/* Trust Badges - Enhanced Prominence */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 pt-6 md:pt-8 border-t border-primary-foreground/20">
+              <div className="flex items-start gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <Truck className="h-5 w-5 md:h-6 md:w-6 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs md:text-sm font-semibold">Fast Delivery</div>
-                  <div className="text-xs text-primary-foreground/70">7-10 days</div>
+                  <div className="text-xs md:text-sm font-bold text-primary-foreground">Fast Delivery</div>
+                  <div className="text-xs text-primary-foreground/80 font-medium">7-10 days</div>
                 </div>
               </div>
-              <div className="flex items-start gap-2 md:gap-3">
-                <Lock className="h-4 w-4 md:h-5 md:w-5 text-accent flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <Lock className="h-5 w-5 md:h-6 md:w-6 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs md:text-sm font-semibold">Secure</div>
-                  <div className="text-xs text-primary-foreground/70">SSL encrypted</div>
+                  <div className="text-xs md:text-sm font-bold text-primary-foreground">Secure Payment</div>
+                  <div className="text-xs text-primary-foreground/80 font-medium">SSL encrypted</div>
                 </div>
               </div>
-              <div className="flex items-start gap-2 md:gap-3">
-                <RotateCcw className="h-4 w-4 md:h-5 md:w-5 text-accent flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <RotateCcw className="h-5 w-5 md:h-6 md:w-6 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs md:text-sm font-semibold">30-Day</div>
-                  <div className="text-xs text-primary-foreground/70">Replacement</div>
+                  <div className="text-xs md:text-sm font-bold text-primary-foreground">30-Day</div>
+                  <div className="text-xs text-primary-foreground/80 font-medium">Replacement</div>
                 </div>
               </div>
-              <div className="flex items-start gap-2 md:gap-3">
-                <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-accent flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2 md:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 md:p-4 border border-white/20 hover:bg-white/15 transition-all">
+                <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs md:text-sm font-semibold">1-Year</div>
-                  <div className="text-xs text-primary-foreground/70">Warranty</div>
+                  <div className="text-xs md:text-sm font-bold text-primary-foreground">1-Year</div>
+                  <div className="text-xs text-primary-foreground/80 font-medium">Warranty</div>
                 </div>
               </div>
             </div>
