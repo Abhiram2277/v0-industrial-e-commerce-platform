@@ -83,12 +83,11 @@ export function ProductExplorer() {
               const productCount = products.filter((p) => p.category === category.id).length
 
               return (
+                <Link href={`/category/${category.id}`} className="block">
                 <Card
                   key={category.id}
                   className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 cursor-pointer overflow-hidden flex flex-col h-full"
-                  asChild
                 >
-                  <Link href={`/category/${category.id}`}>
                   <div className="relative h-32 sm:h-40 md:h-56 w-full overflow-hidden bg-secondary/30">
                     <Image
                       src={category.image || "/placeholder.svg"}
@@ -116,13 +115,13 @@ export function ProductExplorer() {
                       asChild
                       className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full transition-all duration-300"
                     >
-                      <Link href={`/category/${category.id}`}>
+                      <span>
                         View All Products
-                      </Link>
+                      </span>
                     </Button>
                   </CardFooter>
-                </Link>
                 </Card>
+                </Link>
               )
             })}
           </div>
