@@ -39,11 +39,6 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/safety-solutions" className="hover:text-accent transition-colors font-medium">
-                  Safety Solutions
-                </Link>
-              </li>
-              <li>
                 <Link href="/blog" className="hover:text-accent transition-colors font-medium text-accent-foreground bg-accent/20 px-3 py-2 rounded-md hover:bg-accent/30">
                   📚 Blog & Resources
                 </Link>
@@ -145,12 +140,6 @@ export function SiteFooter() {
                 <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
                   <span className="text-lg">📖</span>
                   <span>Product Guides</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/safety-solutions" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">🛡️</span>
-                  <span>Safety Solutions</span>
                 </Link>
               </li>
             </ul>
