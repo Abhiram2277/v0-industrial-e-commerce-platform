@@ -45,6 +45,7 @@ export function QuoteForm() {
     email: "",
     phone: "",
     company: "",
+    deliveryLocation: "",
     message: "",
   })
 
@@ -97,6 +98,17 @@ export function QuoteForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // Validate required fields
+    if (!formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.company.trim() || !formData.deliveryLocation.trim()) {
+      setShowValidationError(true)
+      toast({
+        title: "Missing required information",
+        description: "Please fill in all required fields including company name and delivery location.",
+        variant: "destructive",
+      })
+      return
+    }
+
     // Validate that at least one item is selected (either from cart or quote items)
     const hasCartItems = cartItems.length > 0
     const hasValidQuoteItems = quoteItems.some(item => item.category && item.product)
@@ -121,6 +133,7 @@ export function QuoteForm() {
         email: formData.email,
         phone: formData.phone,
         company: formData.company,
+        deliveryLocation: formData.deliveryLocation,
         message: formData.message,
         quoteItems: quoteItems.filter(item => item.category && item.product).map(item => ({
           category: item.category,
@@ -170,6 +183,7 @@ export function QuoteForm() {
           email: "",
           phone: "",
           company: "",
+          deliveryLocation: "",
           message: "",
         })
         setQuoteItems([{ id: crypto.randomUUID(), category: "", product: "", quantity: "1" }])
@@ -332,11 +346,26 @@ export function QuoteForm() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="company">Company Name</Label>
+                <Label htmlFor="company">
+                  Company Name <span className="text-destructive">*</span>
+                </Label>
                 <Input
                   id="company"
+                  required
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="delivery">
+                  Delivery Location <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="delivery"
+                  required
+                  value={formData.deliveryLocation}
+                  onChange={(e) => handleChange("deliveryLocation", e.target.value)}
                 />
               </div>
 

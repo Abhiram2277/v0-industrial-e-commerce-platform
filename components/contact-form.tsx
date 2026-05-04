@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import { Send, CheckCircle } from "lucide-react"
 
@@ -17,22 +18,35 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
+    company: "",
     email: "",
     phone: "",
-    subject: "",
+    enquiryType: "",
     message: "",
   })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Validate required fields on client side first
+    if (!formData.name.trim() || !formData.company.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.enquiryType || !formData.message.trim()) {
+      toast({
+        title: "Missing required information",
+        description: "Please fill in all required fields including company name and phone number.",
+        variant: "destructive",
+      })
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
       const submissionData = {
         name: formData.name,
+        company: formData.company,
         email: formData.email,
         phone: formData.phone,
-        subject: formData.subject,
+        enquiryType: formData.enquiryType,
         message: formData.message,
       }
 
@@ -65,9 +79,10 @@ export function ContactForm() {
         setIsSubmitted(false)
         setFormData({
           name: "",
+          company: "",
           email: "",
           phone: "",
-          subject: "",
+          enquiryType: "",
           message: "",
         })
       }, 3000)
@@ -75,7 +90,7 @@ export function ContactForm() {
       console.error("[v0] Error sending message:", error)
       toast({
         title: "Failed to send message",
-        description: "Please try again or call us directly.",
+        description: error instanceof Error ? error.message : "Please try again or call us directly.",
         variant: "destructive",
       })
     } finally {
@@ -125,6 +140,19 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-2">
+            <Label htmlFor="contact-company">
+              Company Name <span className="text-destructive">*</span>
+            </Label>
+            <Input
+              id="contact-company"
+              required
+              placeholder="Your company name"
+              value={formData.company}
+              onChange={(e) => handleChange("company", e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2">
             <Label htmlFor="contact-email">
               Email <span className="text-destructive">*</span>
             </Label>
@@ -139,10 +167,13 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="contact-phone">Phone Number</Label>
+            <Label htmlFor="contact-phone">
+              Phone Number <span className="text-destructive">*</span>
+            </Label>
             <Input
               id="contact-phone"
               type="tel"
+              required
               placeholder="+91 XXXXXXXXXX"
               value={formData.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
@@ -150,16 +181,19 @@ export function ContactForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="contact-subject">
-              Subject <span className="text-destructive">*</span>
+            <Label htmlFor="contact-enquiry">
+              Enquiry Type <span className="text-destructive">*</span>
             </Label>
-            <Input
-              id="contact-subject"
-              required
-              placeholder="How can we help you?"
-              value={formData.subject}
-              onChange={(e) => handleChange("subject", e.target.value)}
-            />
+            <Select value={formData.enquiryType} onValueChange={(value) => handleChange("enquiryType", value)}>
+              <SelectTrigger id="contact-enquiry">
+                <SelectValue placeholder="Select enquiry type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="product-enquiry">Product Enquiry</SelectItem>
+                <SelectItem value="bulk-order-quote">Bulk Order Quote</SelectItem>
+                <SelectItem value="general-query">General Query</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           <div className="space-y-2">
@@ -170,7 +204,7 @@ export function ContactForm() {
               id="contact-message"
               required
               rows={6}
-              placeholder="Tell us more about your requirements..."
+              placeholder="Eg: Need 500 safety helmets for a steel plant in Vizag"
               value={formData.message}
               onChange={(e) => handleChange("message", e.target.value)}
               className="resize-none"

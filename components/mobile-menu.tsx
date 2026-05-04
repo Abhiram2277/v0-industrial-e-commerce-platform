@@ -85,14 +85,6 @@ export function MobileMenu({ categories, isLoading, error }: MobileMenuProps) {
             </Link>
 
             <Link
-              href="/safety-solutions"
-              onClick={closeMenu}
-              className="block px-4 py-2 rounded-md text-base font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-            >
-              Safety Solutions
-            </Link>
-
-            <Link
               href="/contact"
               onClick={closeMenu}
               className="block px-4 py-2 rounded-md text-base font-medium hover:bg-accent hover:text-accent-foreground transition-colors"

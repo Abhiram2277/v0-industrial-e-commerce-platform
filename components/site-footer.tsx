@@ -6,7 +6,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="flex flex-col">
             <div className="relative h-40 w-40 mb-4 bg-white rounded-lg p-2 flex-shrink-0">
@@ -39,8 +39,8 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/safety-solutions" className="hover:text-accent transition-colors font-medium">
-                  Safety Solutions
+                <Link href="/blog" className="hover:text-accent transition-colors font-medium text-accent-foreground bg-accent/20 px-3 py-2 rounded-md hover:bg-accent/30">
+                  📚 Blog & Resources
                 </Link>
               </li>
               <li>
@@ -116,6 +116,33 @@ export function SiteFooter() {
                 </a>
               </div>
             </div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Resources
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link href="/blog" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
+                  <span className="text-lg">📚</span>
+                  <span>Blog Articles</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
+                  <span className="text-lg">🔧</span>
+                  <span>Technical Guides</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
+                  <span className="text-lg">📖</span>
+                  <span>Product Guides</span>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 

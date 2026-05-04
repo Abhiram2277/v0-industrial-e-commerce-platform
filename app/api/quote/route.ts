@@ -222,6 +222,7 @@ export async function POST(request: Request) {
         email: data.email,
         phone: data.phone,
         company: data.company,
+        delivery_location: data.deliveryLocation || null,
         category: data.category || firstItem.category || null,
         product_name: data.productName || firstItem.product || null,
         quantity: data.quantity ? Number.parseInt(data.quantity) : (firstItem.quantity ? Number.parseInt(firstItem.quantity) : null),
@@ -318,9 +319,10 @@ export async function POST(request: Request) {
             html: `
               <h2>New Quote Request - ${quoteReference}</h2>
               <p><strong>Name:</strong> ${data.name}</p>
-              <p><strong>Email:</strong> ${data.email}</p>
-              <p><strong>Phone:</strong> ${data.phone}</p>
+              <p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+              <p><strong>Phone:</strong> <a href="tel:${data.phone}">${data.phone}</a></p>
               <p><strong>Company:</strong> ${data.company || "N/A"}</p>
+              <p><strong>Delivery Location:</strong> ${data.deliveryLocation || "Not specified"}</p>
               <p><strong>Message:</strong> ${data.message || "N/A"}</p>
               ${
                 quoteItems.length > 0
