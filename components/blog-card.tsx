@@ -58,7 +58,7 @@ export function BlogCard({ article }: BlogCardProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex flex-col card-spacing pt-3 md:pt-4 border-t">
+      <div className="flex flex-col card-spacing pt-3 md:pt-4 border-t">
         <div className="w-full flex items-center justify-between text-xs text-muted-foreground mb-3">
           <div className="flex items-center gap-1">
             <Clock className="icon-tiny" />
@@ -74,7 +74,7 @@ export function BlogCard({ article }: BlogCardProps) {
             Read Article <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
-      </CardFooter>
+      </div>
     </Card>
   )
 }
