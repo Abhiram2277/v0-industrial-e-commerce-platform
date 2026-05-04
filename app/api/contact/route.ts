@@ -10,9 +10,10 @@ export async function POST(request: Request) {
       .from("contacts")
       .insert({
         name: data.name,
+        company: data.company,
         email: data.email,
         phone: data.phone,
-        subject: data.subject,
+        subject: data.enquiryType,
         message: data.message,
       })
       .select()
@@ -29,6 +30,12 @@ export async function POST(request: Request) {
       try {
         const adminEmail = process.env.ADMIN_EMAIL || "abhiramgollapalli@gmail.com"
 
+        const enquiryTypeLabels: Record<string, string> = {
+          "product-enquiry": "Product Enquiry",
+          "bulk-order-quote": "Bulk Order Quote",
+          "general-query": "General Query"
+        }
+
         const response = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
@@ -38,13 +45,14 @@ export async function POST(request: Request) {
           body: JSON.stringify({
             from: "PND Industrial Suppliers <noreply@resend.dev>",
             to: [adminEmail],
-            subject: `New Contact Message from ${data.name}`,
+            subject: `New Contact Message from ${data.name} - ${enquiryTypeLabels[data.enquiryType] || data.enquiryType}`,
             html: `
               <h2>New Contact Message</h2>
               <p><strong>Name:</strong> ${data.name}</p>
+              <p><strong>Company:</strong> ${data.company}</p>
               <p><strong>Email:</strong> ${data.email}</p>
               <p><strong>Phone:</strong> ${data.phone}</p>
-              <p><strong>Subject:</strong> ${data.subject}</p>
+              <p><strong>Enquiry Type:</strong> ${enquiryTypeLabels[data.enquiryType] || data.enquiryType}</p>
               <p><strong>Message:</strong></p>
               <p>${data.message}</p>
               <br/>
