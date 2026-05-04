@@ -27,6 +27,17 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Validate required fields on client side first
+    if (!formData.name.trim() || !formData.company.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.enquiryType || !formData.message.trim()) {
+      toast({
+        title: "Missing required information",
+        description: "Please fill in all required fields including company name and phone number.",
+        variant: "destructive",
+      })
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -79,7 +90,7 @@ export function ContactForm() {
       console.error("[v0] Error sending message:", error)
       toast({
         title: "Failed to send message",
-        description: "Please try again or call us directly.",
+        description: error instanceof Error ? error.message : "Please try again or call us directly.",
         variant: "destructive",
       })
     } finally {
