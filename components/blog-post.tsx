@@ -83,36 +83,55 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
           if (paragraph.startsWith('#')) {
             const level = paragraph.match(/^#+/)[0].length
             const text = paragraph.replace(/^#+\s/, '')
-            if (level === 1) return <h1 key={idx} className="heading-h1 mt-8 mb-4">{text}</h1>
-            if (level === 2) return <h2 key={idx} className="heading-h2 mt-6 mb-3">{text}</h2>
-            if (level === 3) return <h3 key={idx} className="heading-h3 mt-4 mb-2">{text}</h3>
+            if (level === 1) return <h1 key={idx} className="heading-h1 mt-10 mb-6 text-balance text-foreground">{text}</h1>
+            if (level === 2) return <h2 key={idx} className="heading-h2 mt-8 mb-4 text-foreground">{text}</h2>
+            if (level === 3) return <h3 key={idx} className="heading-h3 mt-6 mb-3 text-foreground">{text}</h3>
             return null
           }
           if (paragraph.startsWith('-')) {
             const items = paragraph.split('\n').filter(line => line.startsWith('-'))
             return (
-              <ul key={idx} className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+              <ul key={idx} className="list-disc list-inside space-y-3 my-6 pl-2">
                 {items.map((item, i) => (
-                  <li key={i}>{item.replace(/^-\s/, '')}</li>
+                  <li key={i} className="text-foreground leading-relaxed">{item.replace(/^-\s/, '')}</li>
                 ))}
               </ul>
             )
           }
           if (paragraph.trim()) {
-            return <p key={idx} className="mb-4 leading-relaxed text-muted-foreground">{paragraph}</p>
+            // Check if paragraph contains bold text markers
+            const hasBold = paragraph.includes('**')
+            let processedText = paragraph
+            
+            if (hasBold) {
+              processedText = processedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              return (
+                <p 
+                  key={idx} 
+                  className="mb-5 leading-relaxed text-foreground text-base lg:text-lg"
+                  dangerouslySetInnerHTML={{ __html: processedText }}
+                />
+              )
+            }
+            
+            return <p key={idx} className="mb-5 leading-relaxed text-foreground text-base lg:text-lg">{paragraph}</p>
           }
           return null
         })}
       </div>
 
-      {/* Keywords */}
-      <div className="mb-12 pb-8 border-b">
-        <h3 className="heading-h3 mb-4">Topics Covered</h3>
-        <div className="flex flex-wrap card-gap">
-          {article.keywords.map((keyword) => (
-            <Badge key={keyword} variant="outline">{keyword}</Badge>
+      {/* Table of Contents */}
+      <div className="bg-muted/50 rounded-lg p-6 mb-12 border border-border">
+        <h3 className="heading-h3 mb-4 flex items-center gap-2">
+          <span>📋</span> In This Article
+        </h3>
+        <ul className="space-y-2 text-sm">
+          {article.keywords.map((keyword, idx) => (
+            <li key={idx} className="text-foreground/70 hover:text-accent transition-colors">
+              • {keyword}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       {/* CTAs */}

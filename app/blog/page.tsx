@@ -3,9 +3,10 @@ import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { BlogListing } from "@/components/blog-listing"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { getBlogArticles } from "@/lib/blog-data"
+import { getBlogArticles, getAllIndustries, getAllRegions, getAllContentTypes } from "@/lib/blog-data"
 
 export const metadata = {
   title: "Safety Blog & Resources | PND Industrial Suppliers",
@@ -21,6 +22,32 @@ export const metadata = {
 export default function BlogPage() {
   const articles = getBlogArticles()
   const featuredArticle = articles[0]
+  const industries = getAllIndustries()
+  const regions = getAllRegions()
+  const contentTypes = getAllContentTypes()
+
+  // Helper functions to format labels
+  const industryLabels: Record<string, string> = {
+    'ports-logistics': 'Ports & Logistics',
+    'petrochemical': 'Petrochemical',
+    'pharma': 'Pharmaceutical',
+    'power-plants': 'Power Plants',
+    'manufacturing': 'Manufacturing',
+    'food-processing': 'Food Processing'
+  }
+
+  const regionLabels: Record<string, string> = {
+    'nellore': 'Nellore',
+    'kakinada': 'Kakinada',
+    'ap-wide': 'Andhra Pradesh Wide'
+  }
+
+  const contentTypeLabels: Record<string, string> = {
+    'technical-guide': 'Technical Guides',
+    'event-coverage': 'Event Coverage',
+    'product-guide': 'Product Guides',
+    'industry-news': 'Industry News'
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -101,7 +128,88 @@ export default function BlogPage() {
           </section>
         )}
 
-        {/* All Articles with Filtering */}
+        {/* Category Showcase */}
+        <section className="section-spacing">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="heading-h2 mb-4">Explore by Category</h2>
+              <p className="body-regular text-muted-foreground max-w-2xl mx-auto">
+                Browse articles organized by industry, location, and content type for easy discovery
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Industries */}
+              <div className="space-y-4">
+                <h3 className="heading-h3 mb-4">By Industry</h3>
+                <div className="space-y-2">
+                  {industries.map(industry => {
+                    const count = articles.filter(a => a.industry === industry).length
+                    return (
+                      <button
+                        key={industry}
+                        className="block w-full text-left p-3 rounded-lg hover:bg-accent/10 transition-colors group"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-foreground group-hover:text-accent transition-colors">
+                            {industryLabels[industry]}
+                          </span>
+                          <Badge variant="secondary" className="text-xs">{count}</Badge>
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Regions */}
+              <div className="space-y-4">
+                <h3 className="heading-h3 mb-4">By Region</h3>
+                <div className="space-y-2">
+                  {regions.map(region => {
+                    const count = articles.filter(a => a.region === region).length
+                    return (
+                      <button
+                        key={region}
+                        className="block w-full text-left p-3 rounded-lg hover:bg-accent/10 transition-colors group"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-foreground group-hover:text-accent transition-colors">
+                            {regionLabels[region]}
+                          </span>
+                          <Badge variant="secondary" className="text-xs">{count}</Badge>
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              {/* Content Types */}
+              <div className="space-y-4">
+                <h3 className="heading-h3 mb-4">By Type</h3>
+                <div className="space-y-2">
+                  {contentTypes.map(type => {
+                    const count = articles.filter(a => a.contentType === type).length
+                    return (
+                      <button
+                        key={type}
+                        className="block w-full text-left p-3 rounded-lg hover:bg-accent/10 transition-colors group"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-foreground group-hover:text-accent transition-colors">
+                            {contentTypeLabels[type]}
+                          </span>
+                          <Badge variant="secondary" className="text-xs">{count}</Badge>
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="featured" className="section-spacing bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="heading-h2 mb-8 md:mb-12">All Articles</h2>
