@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Select } from '@/components/ui/select'
 import { Search, X } from 'lucide-react'
+import { BlogCard } from '@/components/blog-card'
 import type { BlogArticle, Region, Industry, ContentType } from '@/lib/blog-data'
 
 interface BlogListingProps {
@@ -16,7 +17,6 @@ interface BlogListingProps {
     contentType?: ContentType
     search?: string
   }) => void
-  children: (filtered: BlogArticle[]) => React.ReactNode
 }
 
 const regionOptions = [
@@ -41,7 +41,7 @@ const contentTypeOptions = [
   { value: 'industry-news', label: 'Industry News' }
 ]
 
-export function BlogListing({ articles, onFilterChange, children }: BlogListingProps) {
+export function BlogListing({ articles, onFilterChange }: BlogListingProps) {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedRegion, setSelectedRegion] = useState<Region | ''>('')
   const [selectedIndustry, setSelectedIndustry] = useState<Industry | ''>('')
@@ -230,7 +230,11 @@ export function BlogListing({ articles, onFilterChange, children }: BlogListingP
 
       {/* Results */}
       {filteredArticles.length > 0 ? (
-        children(filteredArticles)
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 card-gap">
+          {filteredArticles.map(article => (
+            <BlogCard key={article.id} article={article} />
+          ))}
+        </div>
       ) : (
         <div className="text-center py-12">
           <h3 className="heading-h3 mb-2">No articles found</h3>

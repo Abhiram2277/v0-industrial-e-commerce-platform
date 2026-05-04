@@ -1,7 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { BlogCard } from "@/components/blog-card"
 import { BlogListing } from "@/components/blog-listing"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -106,16 +105,7 @@ export default function BlogPage() {
         <section id="featured" className="section-spacing bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="heading-h2 mb-8 md:mb-12">All Articles</h2>
-            
-            <BlogListing articles={articles}>
-              {(filtered) => (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 card-gap">
-                  {filtered.map(article => (
-                    <BlogCard key={article.id} article={article} />
-                  ))}
-                </div>
-              )}
-            </BlogListing>
+            <BlogListing articles={articles} />
           </div>
         </section>
 
