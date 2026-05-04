@@ -354,7 +354,6 @@ export function QuoteForm() {
                   required
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
-                  placeholder="Your company name"
                 />
               </div>
 
@@ -367,7 +366,6 @@ export function QuoteForm() {
                   required
                   value={formData.deliveryLocation}
                   onChange={(e) => handleChange("deliveryLocation", e.target.value)}
-                  placeholder="Eg: Vizag port, Mumbai warehouse, Delhi factory"
                 />
               </div>
 
