@@ -777,7 +777,7 @@ Manufacturing workers face daily eye hazards:
     id: 'hearing-protection-industrial-nellore',
     title: 'Hearing Protection in Industrial Environments: Preventing Occupational Hearing Loss',
     slug: 'hearing-protection-industrial-nellore',
-    excerpt: 'Comprehensive guide to implementing hearing protection programs in Nellore's industrial facilities, covering noise assessment and equipment selection.',
+    excerpt: 'Comprehensive guide to implementing hearing protection programs in Nellore&apos;s industrial facilities, covering noise assessment and equipment selection.',
     content: `
 # Hearing Protection in Nellore Industrial Facilities
 
