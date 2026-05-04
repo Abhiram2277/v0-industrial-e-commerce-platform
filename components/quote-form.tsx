@@ -471,7 +471,6 @@ export function QuoteForm() {
                 rows={5}
                 value={formData.message}
                 onChange={(e) => handleChange("message", e.target.value)}
-                placeholder="Eg: Need IS certified helmets, delivery to Vizag port, urgent requirement"
                 className="resize-none"
               />
             </div>
