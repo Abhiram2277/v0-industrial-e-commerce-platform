@@ -156,7 +156,7 @@ export const categories: Category[] = [
     slug: "harness",
     name: "Harness",
     description:
-      "Complete range of 29 full body safety harnesses for fall arrest, work positioning, and height safety applications",
+      "Complete range of 27 full body safety harnesses for fall arrest, work positioning, and height safety applications",
     subcategories: [
       "Professional Grade Harnesses",
       "Economical Harnesses",
