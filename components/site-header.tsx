@@ -81,6 +81,11 @@ export function SiteHeader() {
             <SearchBar />
           </div>
 
+          {/* Mobile Search Bar - Compact */}
+          <div className="md:hidden flex-1 max-w-xs mx-2">
+            <SearchBar />
+          </div>
+
           {/* Desktop: Cart Button and Get Quote Button */}
           <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <CartButton />
