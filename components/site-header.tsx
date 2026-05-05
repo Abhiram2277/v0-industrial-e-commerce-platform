@@ -39,10 +39,10 @@ export function SiteHeader() {
   }, [isMounted])
 
   return (
-    <header className="z-50 w-full border-b bg-background">
+    <header className="z-50 w-full border-b md:border-b bg-background md:bg-background">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
-        <div className="flex items-center justify-between border-b py-2 text-base">
+        <div className="flex items-center justify-between border-b md:border-b py-2 text-base">
           <div className="flex items-center gap-4 text-muted-foreground">
             <span className="flex items-center gap-1 text-sm md:text-base">
               <Phone className="h-3 w-3" />
