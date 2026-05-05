@@ -77,7 +77,7 @@ export function SiteHeader() {
           </Link>
 
           {/* Search Bar */}
-          <div className="hidden lg:flex flex-1 max-w-md mx-8">
+          <div className="hidden md:flex flex-1 max-w-md mx-4 lg:mx-8">
             <SearchBar />
           </div>
 

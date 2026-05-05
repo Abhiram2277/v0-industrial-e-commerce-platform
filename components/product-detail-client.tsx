@@ -8,6 +8,8 @@ import { CheckCircle2, Package, ShieldCheck, Wrench, ShoppingCart } from "lucide
 import { useCart } from "@/lib/cart-context"
 import Image from "next/image"
 import type { Product } from "@/lib/types"
+import { CertificationTooltip } from "./certification-tooltip"
+import { WarrantyTooltip } from "./warranty-tooltip"
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const { addItem, openCart } = useCart()
@@ -87,7 +89,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <div className="grid grid-cols-3 gap-4 pt-6 border-t">
               <div className="text-center">
                 <ShieldCheck className="h-8 w-8 text-accent mx-auto mb-2" />
-                <p className="text-sm font-medium">Certified</p>
+                <CertificationTooltip />
               </div>
               <div className="text-center">
                 <Package className="h-8 w-8 text-accent mx-auto mb-2" />
@@ -95,7 +97,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
               </div>
               <div className="text-center">
                 <Wrench className="h-8 w-8 text-accent mx-auto mb-2" />
-                <p className="text-sm font-medium">Warranty</p>
+                <WarrantyTooltip />
               </div>
             </div>
           </div>
