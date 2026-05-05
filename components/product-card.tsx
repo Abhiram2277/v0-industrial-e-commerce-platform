@@ -24,13 +24,13 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
       <CardHeader className="pb-4">
-        <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative">
+        <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative flex items-center justify-center">
           {product.image ? (
             <Image
               src={product.image || "/placeholder.svg"}
               alt={product.name}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-contain group-hover:scale-105 transition-transform duration-300 p-2"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
