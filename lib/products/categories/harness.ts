@@ -173,7 +173,7 @@ export const harnessProducts: Product[] = [
     brand: "Udyogi Safety",
     description:
       "High-visibility lime green vest-style harness combining fall protection with enhanced visibility for maximum safety",
-    image: "https://udyogisafety.com/wp-content/uploads/2023/06/ECO-1KG.jpg",
+    image: "/images/products/eco-1-kg-harness.jpg",
     features: [
       "Integrated high-visibility lime green vest",
       "Reflective strips for 360-degree visibility",
@@ -196,7 +196,7 @@ export const harnessProducts: Product[] = [
     subcategory: "High Visibility Vest Harnesses",
     brand: "Udyogi Safety",
     description: "High-visibility orange vest-style harness for maximum visibility in demanding work environments",
-    image: "https://udyogisafety.com/wp-content/uploads/2023/06/ECO-1KO.jpg",
+    image: "/images/products/eco-1-ko-harness.jpg",
     features: [
       "Integrated high-visibility orange vest",
       "Wide reflective strips",
@@ -334,7 +334,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Comfort Plus Harnesses",
     brand: "Udyogi Safety",
     description: "Enhanced version of UB102 with additional padding and comfort features",
-    image: "https://udyogisafety.com/wp-content/uploads/2020/02/210925-029-UB-102-Plus-1.jpg",
+    image: "/images/products/ub102-plus-harness.jpg",
     features: [
       "Enhanced padding over standard UB102",
       "Improved comfort for long wear",
@@ -357,7 +357,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Comfort Plus Harnesses",
     brand: "Udyogi Safety",
     description: "Premium version of UB103 with enhanced sit-strap and comfort padding",
-    image: "https://udyogisafety.com/wp-content/uploads/2020/02/UB-103-Plus.jpg",
+    image: "/images/products/ub103-plus-harness.jpg",
     features: [
       "Enhanced sit-strap with extra padding",
       "Premium comfort construction",
@@ -380,7 +380,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Flame Resistant Harnesses",
     brand: "Udyogi Safety",
     description: "Flame-resistant full body harness for hot work and welding applications",
-    image: "https://udyogisafety.com/wp-content/uploads/2020/02/UB-102-FR.jpg",
+    image: "/images/products/ub102-fr-harness.jpg",
     features: [
       "Flame-resistant webbing material",
       "Heat-resistant hardware",
@@ -426,7 +426,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Electrical Safety Harnesses",
     brand: "Udyogi Safety",
     description: "Premium electrically insulated harness with advanced features for electrical safety",
-    image: "https://udyogisafety.com/wp-content/uploads/2021/12/VIDYUT-ULTRATEK-DE.jpg",
+    image: "/images/products/vidyut-ultratek-de-harness.jpg",
     features: [
       "Premium dielectric construction",
       "Advanced insulation technology",
@@ -449,7 +449,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Arc Flash Harnesses",
     brand: "Udyogi Safety",
     description: "Arc flash rated harness with anti-static properties for electrical hazard protection",
-    image: "https://udyogisafety.com/wp-content/uploads/2021/12/UB-102-AS-Lite.jpg",
+    image: "/images/products/ub102-as-lite-harness.jpg",
     features: [
       "Arc flash protection rating",
       "Anti-static webbing material",
@@ -472,7 +472,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Arc Flash Harnesses",
     brand: "Udyogi Safety",
     description: "Premium arc flash and anti-static harness for advanced electrical safety",
-    image: "https://udyogisafety.com/wp-content/uploads/2021/12/200630-035-Ultratek-AS-2048x2048.jpg",
+    image: "/images/products/ultratek-as-harness.jpg",
     features: [
       "Advanced arc flash protection",
       "Anti-static construction",
@@ -518,7 +518,7 @@ export const harnessProducts: Product[] = [
     subcategory: "Premium Leather Harnesses",
     brand: "Udyogi Safety",
     description: "Advanced leather harness with enhanced features and comfort",
-    image: "https://udyogisafety.com/wp-content/uploads/2020/02/ULTRA-02.jpg",
+    image: "/images/products/ultra-02-harness.jpg",
     features: [
       "Premium leather with comfort padding",
       "Advanced adjustment system",
