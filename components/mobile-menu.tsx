@@ -36,11 +36,16 @@ export function MobileMenu({ categories, isLoading, error }: MobileMenuProps) {
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </Button>
 
-      {/* Mobile Menu Panel */}
-      {isOpen && (
-        <div className="md:hidden fixed inset-0 top-0 z-40 bg-black/50" onClick={closeMenu} />
-      )}
+      {/* Mobile Menu Overlay - Always rendered for hydration consistency */}
+      <div
+        className={cn(
+          "fixed inset-0 top-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden",
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+        onClick={closeMenu}
+      />
       
+      {/* Mobile Menu Panel - Always rendered for hydration consistency */}
       <div
         className={cn(
           "fixed left-0 top-0 z-50 h-screen w-full bg-background transition-transform duration-300 md:hidden overflow-y-auto",
