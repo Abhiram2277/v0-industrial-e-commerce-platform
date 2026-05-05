@@ -15,7 +15,6 @@ import { emergencySafetyProducts } from "./categories/emergency-safety"
 import { sgbiProducts } from "./categories/sgbi"
 import { workplaceSafetyProducts } from "./categories/workplace-safety"
 import { anchorageSlingProducts } from "./categories/anchorage-sling"
-import { harnessProducts } from "./categories/harness"
 
 // Combine all products
 export const products: Product[] = [
@@ -33,7 +32,6 @@ export const products: Product[] = [
   ...sgbiProducts,
   ...workplaceSafetyProducts,
   ...anchorageSlingProducts,
-  ...harnessProducts,
 ]
 
 // Export categories
