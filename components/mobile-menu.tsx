@@ -2,10 +2,24 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, Home, Info, Building2, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { SearchBar } from "./search-bar"
+import {
+  HardHat,
+  Eye,
+  Footprints,
+  Hand,
+  Wind,
+  Ear,
+  Zap,
+  AlertTriangle,
+  Anchor,
+  ShieldCheck,
+  ShieldAlert,
+  Flame,
+} from "lucide-react"
 
 interface MobileMenuProps {
   categories: any[]
@@ -13,16 +27,26 @@ interface MobileMenuProps {
   error: string | null
 }
 
+const categoryIcons: Record<string, any> = {
+  "head-protection": HardHat,
+  "eye-protection": Eye,
+  "face-protection": ShieldCheck,
+  "hearing-protection": Ear,
+  "hand-protection": Hand,
+  "foot-protection": Footprints,
+  "respiratory-protection": Wind,
+  workwear: ShieldAlert,
+  "electrical-safety": Zap,
+  "fall-protection": Anchor,
+  "arc-heat-protection": Flame,
+  "workplace-safety": AlertTriangle,
+}
+
 export function MobileMenu({ categories, isLoading, error }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
 
   const toggleMenu = () => setIsOpen(!isOpen)
   const closeMenu = () => setIsOpen(false)
-
-  const toggleCategory = (categorySlug: string) => {
-    setExpandedCategory(expandedCategory === categorySlug ? null : categorySlug)
-  }
 
   return (
     <>
@@ -56,7 +80,7 @@ export function MobileMenu({ categories, isLoading, error }: MobileMenuProps) {
         <div className="flex flex-col h-full">
           {/* Header with Close Button */}
           <div className="flex items-center justify-between p-4 border-b sticky top-0 bg-background z-10">
-            <h2 className="text-lg font-semibold text-center flex-1" style={{ fontFamily: "Montserrat, sans-serif" }}>Menu</h2>
+            <h2 className="text-lg font-semibold" style={{ fontFamily: "Montserrat, sans-serif" }}>Menu</h2>
             <Button
               variant="ghost"
               size="icon"
@@ -75,91 +99,72 @@ export function MobileMenu({ categories, isLoading, error }: MobileMenuProps) {
 
           {/* Navigation Content */}
           <div className="flex-1 overflow-y-auto">
-            <nav className="space-y-1 p-4 max-w-2xl mx-auto w-full">
-              <Link
-                href="/"
-                onClick={closeMenu}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-center hover:bg-accent hover:text-accent-foreground transition-colors min-h-[44px] flex items-center justify-center"
-              >
-                Home
-              </Link>
+            {/* NAVIGATE Section */}
+            <div className="px-4 py-6">
+              <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-4">Navigate</h3>
+              <nav className="space-y-2">
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium hover:bg-accent/10 transition-colors min-h-[44px]"
+                >
+                  <Home className="h-5 w-5 flex-shrink-0" />
+                  <span>Home</span>
+                </Link>
 
-              <Link
-                href="/about"
-                onClick={closeMenu}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-center hover:bg-accent hover:text-accent-foreground transition-colors min-h-[44px] flex items-center justify-center"
-              >
-                About Us
-              </Link>
+                <Link
+                  href="/about"
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium hover:bg-accent/10 transition-colors min-h-[44px]"
+                >
+                  <Info className="h-5 w-5 flex-shrink-0" />
+                  <span>About Us</span>
+                </Link>
 
-              <Link
-                href="/brands"
-                onClick={closeMenu}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-center hover:bg-accent hover:text-accent-foreground transition-colors min-h-[44px] flex items-center justify-center"
-              >
-                Partner Brands
-              </Link>
+                <Link
+                  href="/brands"
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium hover:bg-accent/10 transition-colors min-h-[44px]"
+                >
+                  <Building2 className="h-5 w-5 flex-shrink-0" />
+                  <span>Partner Brands</span>
+                </Link>
 
-              <Link
-                href="/contact"
-                onClick={closeMenu}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-center hover:bg-accent hover:text-accent-foreground transition-colors min-h-[44px] flex items-center justify-center"
-              >
-                Contact Us
-              </Link>
-            </nav>
+                <Link
+                  href="/contact"
+                  onClick={closeMenu}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium hover:bg-accent/10 transition-colors min-h-[44px]"
+                >
+                  <Phone className="h-5 w-5 flex-shrink-0" />
+                  <span>Contact Us</span>
+                </Link>
+              </nav>
+            </div>
 
-            {/* Categories Section */}
-            <div className="border-t mt-6 pt-6 max-w-2xl mx-auto w-full px-4">
-              <div className="py-2 text-sm font-semibold text-muted-foreground text-center">
-                Shop by Category
-              </div>
+            {/* SHOP BY CATEGORY Section */}
+            <div className="border-t px-4 py-6">
+              <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-4">Shop by Category</h3>
 
               {error ? (
                 <div className="py-2 text-xs text-destructive text-center">{error}</div>
               ) : isLoading ? (
                 <div className="py-2 text-xs text-muted-foreground text-center">Loading categories...</div>
               ) : categories && categories.length > 0 ? (
-                <div className="space-y-0">
-                  {categories.map((category) => (
-                    <div key={category.slug}>
-                      <button
-                        onClick={() => toggleCategory(category.slug)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-center hover:bg-accent/10 rounded-lg transition-colors min-h-[44px]"
+                <div className="grid grid-cols-2 gap-3">
+                  {categories.slice(0, 8).map((category) => {
+                    const IconComponent = categoryIcons[category.slug] || AlertTriangle
+                    return (
+                      <Link
+                        key={category.slug}
+                        href={`/category/${category.slug}`}
+                        onClick={closeMenu}
+                        className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-muted/50 hover:bg-muted hover:text-accent transition-colors min-h-[100px]"
                       >
-                        <span className="flex-1">{category.name}</span>
-                        <ChevronDown
-                          className={cn(
-                            "h-5 w-5 transition-transform flex-shrink-0",
-                            expandedCategory === category.slug && "rotate-180"
-                          )}
-                        />
-                      </button>
-
-                      {/* Expanded Category Items */}
-                      {expandedCategory === category.slug && (
-                        <div className="bg-muted/30 space-y-0">
-                          <Link
-                            href={`/category/${category.slug}`}
-                            onClick={closeMenu}
-                            className="block px-8 py-2.5 text-sm font-medium text-center text-foreground hover:text-accent transition-colors min-h-[40px] flex items-center justify-center"
-                          >
-                            View All {category.name}
-                          </Link>
-                          {category.subcategories?.map((subcat: string) => (
-                            <Link
-                              key={subcat}
-                              href={`/category/${category.slug}?sub=${encodeURIComponent(subcat)}`}
-                              onClick={closeMenu}
-                              className="block px-8 py-2.5 text-sm text-center text-muted-foreground hover:text-foreground transition-colors min-h-[40px] flex items-center justify-center"
-                            >
-                              {subcat}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                        <IconComponent className="h-6 w-6 flex-shrink-0" />
+                        <span className="text-xs font-medium text-center leading-tight">{category.name}</span>
+                      </Link>
+                    )
+                  })}
                 </div>
               ) : (
                 <div className="py-2 text-xs text-muted-foreground text-center">
