@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { HeroSearchBar } from "@/components/hero-search-bar"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { PartnerBrands } from "@/components/partner-brands"
@@ -13,6 +14,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
+      <HeroSearchBar />
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
