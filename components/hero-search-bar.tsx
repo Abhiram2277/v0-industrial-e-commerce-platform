@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Search, X } from "lucide-react"
-import { Input } from "@/components/ui/input"
 import { getAllProductsClient } from "@/lib/products-combined-client"
 import type { Product } from "@/lib/types"
 import Link from "next/link"
@@ -56,41 +55,47 @@ export function HeroSearchBar() {
   }
 
   return (
-    <div className="bg-background border-b sticky top-0 z-30">
-      <div className="container mx-auto px-4 py-4 md:py-6">
-        <div ref={searchRef} className="relative w-full">
-          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground z-10">
-            <Search className="h-5 w-5 md:h-6 md:w-6" />
+    <div className="bg-background py-6 md:py-8 border-b">
+      <div className="container mx-auto px-4">
+        <div ref={searchRef} className="relative max-w-2xl mx-auto">
+          {/* Search Input Container */}
+          <div className="relative flex items-center bg-white border-2 border-accent rounded-full shadow-sm hover:shadow-md transition-shadow">
+            {/* Search Icon */}
+            <Search className="h-5 w-5 text-muted-foreground ml-5 flex-shrink-0" />
+            
+            {/* Input Field */}
+            <input
+              type="search"
+              placeholder="Search"
+              className="flex-1 px-4 py-3 bg-transparent text-base focus:outline-none"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => searchQuery.length > 0 && setIsOpen(true)}
+            />
+            
+            {/* Clear Button */}
+            {searchQuery && (
+              <button
+                onClick={clearSearch}
+                className="text-muted-foreground hover:text-foreground mr-5 flex-shrink-0 transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            )}
           </div>
-          <Input
-            type="search"
-            placeholder="Search products, categories, brands..."
-            className="w-full pl-12 pr-10 py-3 md:py-4 text-base md:text-lg rounded-full border-2 border-input hover:border-accent focus:border-accent transition-colors"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => searchQuery.length > 0 && setIsOpen(true)}
-          />
-          {searchQuery && (
-            <button
-              onClick={clearSearch}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground z-10 transition-colors"
-            >
-              <X className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
-          )}
 
           {/* Search Results Dropdown */}
           {isOpen && searchResults.length > 0 && (
-            <div className="absolute top-full mt-2 w-full bg-background border rounded-lg shadow-xl max-h-[400px] overflow-y-auto z-50">
+            <div className="absolute top-full mt-3 w-full bg-background border border-accent/20 rounded-2xl shadow-lg max-h-[400px] overflow-y-auto z-50">
               {searchResults.slice(0, 8).map((product) => (
                 <Link
                   key={product.id}
                   href={`/product/${product.id}`}
                   onClick={() => clearSearch()}
-                  className="flex items-start gap-3 p-3 hover:bg-accent/10 transition-colors border-b last:border-0"
+                  className="flex items-center gap-4 p-4 hover:bg-accent/5 transition-colors border-b border-border/50 last:border-0"
                 >
                   {product.image && (
-                    <div className="relative w-12 h-12 flex-shrink-0">
+                    <div className="relative w-14 h-14 flex-shrink-0">
                       <Image
                         src={product.image}
                         alt={product.name}
@@ -109,9 +114,10 @@ export function HeroSearchBar() {
             </div>
           )}
 
+          {/* No Results Message */}
           {isOpen && searchResults.length === 0 && searchQuery.trim().length > 0 && (
-            <div className="absolute top-full mt-2 w-full bg-background border rounded-lg shadow-xl p-4 z-50">
-              <p className="text-center text-sm text-muted-foreground">No products found matching &quot;{searchQuery}&quot;</p>
+            <div className="absolute top-full mt-3 w-full bg-background border border-accent/20 rounded-2xl shadow-lg p-6 z-50">
+              <p className="text-center text-sm text-muted-foreground">No products found for &quot;{searchQuery}&quot;</p>
             </div>
           )}
         </div>
