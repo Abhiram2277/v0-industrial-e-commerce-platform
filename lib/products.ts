@@ -4501,7 +4501,7 @@ export const products: Product[] = [
     ],
   },
 
-  // HARNESS PRODUCTS
+]
   {
     id: "har-001",
     name: "VAYU YU01 Full Body Harness",
