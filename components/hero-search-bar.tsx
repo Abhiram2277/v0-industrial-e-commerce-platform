@@ -55,7 +55,7 @@ export function HeroSearchBar() {
   }
 
   return (
-    <div className="bg-background py-6 md:hidden border-b">
+    <div className="bg-background py-6 md:hidden">
       <div className="container mx-auto px-4">
         <div ref={searchRef} className="relative max-w-2xl mx-auto">
           {/* Search Input Container */}
