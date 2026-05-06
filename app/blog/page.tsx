@@ -8,7 +8,6 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { getBlogArticles, getAllIndustries, getAllRegions, getAllContentTypes } from "@/lib/blog-data"
 import type { Metadata } from "next"
-import { getCanonicalUrl } from "@/lib/seo-helpers"
 
 export const metadata: Metadata = {
   title: "Safety Blog & Resources | PND Industrial Suppliers",
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
     type: "website"
   },
   alternates: {
-    canonical: getCanonicalUrl("/blog"),
+    canonical: "https://pndindustrialsuppliers.com/blog",
   },
 }
 

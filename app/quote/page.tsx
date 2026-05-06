@@ -3,7 +3,6 @@ import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { QuoteForm } from "@/components/quote-form"
 import type { Metadata } from "next"
-import { getCanonicalUrl } from "@/lib/seo-helpers"
 
 export const dynamic = "force-dynamic"
 
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
   title: "Request a Quote | PND Industrial Suppliers",
   description: "Get competitive quotes on premium industrial equipment and PPE. Our experts respond within 24 hours.",
   alternates: {
-    canonical: getCanonicalUrl("/quote"),
+    canonical: "https://pndindustrialsuppliers.com/quote",
   },
 }
 

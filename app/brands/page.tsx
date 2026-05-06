@@ -5,13 +5,12 @@ import { PartnerBrands } from "@/components/partner-brands"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle } from "lucide-react"
 import type { Metadata } from "next"
-import { getCanonicalUrl } from "@/lib/seo-helpers"
 
 export const metadata: Metadata = {
   title: "Partner Brands | PND Industrial Suppliers",
   description: "Premium industrial brands - Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley and more. Authorized distributor in Nellore.",
   alternates: {
-    canonical: getCanonicalUrl("/brands"),
+    canonical: "https://pndindustrialsuppliers.com/brands",
   },
 }
 
