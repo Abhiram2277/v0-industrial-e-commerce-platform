@@ -5,7 +5,6 @@ import "./globals.css"
 import { CartProvider } from "@/lib/cart-context"
 import { CartSidebar } from "@/components/cart-sidebar"
 import { Analytics } from "@vercel/analytics/react"
-import { getCanonicalUrl } from "@/lib/seo-helpers"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
     maximumScale: 5,
   },
   alternates: {
-    canonical: getCanonicalUrl(),
+    canonical: "https://pndindustrialsuppliers.com",
   },
 }
 
