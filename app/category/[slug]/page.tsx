@@ -7,8 +7,34 @@ import { getAllProducts, getAllCategories } from "@/lib/products-combined"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import type { Metadata } from "next"
+import { getCategoryCanonicalUrl } from "@/lib/seo-helpers"
 
 export const dynamic = "force-dynamic"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const categories = await getAllCategories()
+  const category = categories.find((c) => c.slug === slug)
+
+  if (!category) {
+    return {
+      title: "Category Not Found",
+    }
+  }
+
+  return {
+    title: `${category.name} | PND Industrial Suppliers`,
+    description: category.description || `Browse ${category.name} products from PND Industrial Suppliers`,
+    alternates: {
+      canonical: getCategoryCanonicalUrl(slug),
+    },
+  }
+}
 
 export default async function CategoryPage({
   params,

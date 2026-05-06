@@ -1,9 +1,11 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /quote?
+Allow: /quote
 
 # Crawl delay
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://v0-industrial-ecommerce.vercel.app/sitemap.xml
+Sitemap: https://pndindustrialsuppliers.com/sitemap.xml

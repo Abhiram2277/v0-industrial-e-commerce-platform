@@ -7,8 +7,9 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { getBlogArticles, getAllIndustries, getAllRegions, getAllContentTypes } from "@/lib/blog-data"
+import type { Metadata } from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Safety Blog & Resources | PND Industrial Suppliers",
   description: "In-depth guides, industry insights, and safety solutions for Nellore and Kakinada industrial sectors. Learn from our experts about workplace safety.",
   keywords: "industrial safety blog, PPE guides, workplace safety, Nellore, Kakinada, Andhra Pradesh",
@@ -16,7 +17,10 @@ export const metadata = {
     title: "Safety Blog & Resources | PND Industrial Suppliers",
     description: "Expert insights on workplace safety for Andhra Pradesh industries",
     type: "website"
-  }
+  },
+  alternates: {
+    canonical: "https://pndindustrialsuppliers.com/blog",
+  },
 }
 
 export default function BlogPage() {

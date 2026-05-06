@@ -2,8 +2,17 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { QuoteForm } from "@/components/quote-form"
+import type { Metadata } from "next"
 
 export const dynamic = "force-dynamic"
+
+export const metadata: Metadata = {
+  title: "Request a Quote | PND Industrial Suppliers",
+  description: "Get competitive quotes on premium industrial equipment and PPE. Our experts respond within 24 hours.",
+  alternates: {
+    canonical: "https://pndindustrialsuppliers.com/quote",
+  },
+}
 
 export default function QuotePage() {
   return (

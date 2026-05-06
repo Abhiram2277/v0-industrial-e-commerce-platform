@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { BlogPostContent } from "@/components/blog-post"
 import { getBlogArticleBySlug, getRelatedArticles } from "@/lib/blog-data"
 import { notFound } from "next/navigation"
+import { getBlogCanonicalUrl } from "@/lib/seo-helpers"
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -33,7 +34,10 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       modifiedTime: article.updatedAt,
       authors: [article.author],
       tags: article.keywords,
-    }
+    },
+    alternates: {
+      canonical: getBlogCanonicalUrl(slug),
+    },
   }
 }
 
