@@ -5,6 +5,16 @@ import { AboutSection } from "@/components/about-section"
 import { PartnerBrands } from "@/components/partner-brands"
 import { Card, CardContent } from "@/components/ui/card"
 import { Shield, Award, Users, Zap } from "lucide-react"
+import type { Metadata } from "next"
+import { getCanonicalUrl } from "@/lib/seo-helpers"
+
+export const metadata: Metadata = {
+  title: "About Us | PND Industrial Suppliers",
+  description: "Leading industrial solutions provider in Nellore, Andhra Pradesh. Authorized partner for Udyogi Safety, Bosch, DeWalt, and Stanley. Life is Precious.",
+  alternates: {
+    canonical: getCanonicalUrl("/about"),
+  },
+}
 
 export default function AboutPage() {
   const values = [
