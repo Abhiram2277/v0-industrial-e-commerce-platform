@@ -8,3 +8,11 @@ export const metadata: Metadata = {
     canonical: getCanonicalUrl("/contact"),
   },
 }
+
+export default function ContactLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <>{children}</>
+}
