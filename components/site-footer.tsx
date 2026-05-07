@@ -144,7 +144,6 @@ export function SiteFooter() {
                   pndindustrialsuppliers@gmail.com
                 </a>
               </div>
-              </div>
             </div>
           </div>
         </div>
