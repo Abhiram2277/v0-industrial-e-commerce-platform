@@ -29,6 +29,11 @@ export function SiteFooter() {
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
+                <Link href="/" className="hover:text-accent transition-colors font-medium">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-accent transition-colors font-medium">
                   About Us
                 </Link>
@@ -39,13 +44,47 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-accent transition-colors font-medium text-accent-foreground bg-accent/20 px-3 py-2 rounded-md hover:bg-accent/30">
-                  📚 Blog & Resources
+                <Link href="/contact" className="hover:text-accent transition-colors font-medium">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-accent transition-colors font-medium">
-                  Contact Us
+                <Link href="/quote" className="hover:text-accent transition-colors font-medium">
+                  Get a Quote
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Popular Categories */}
+          <div>
+            <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Shop Categories
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link href="/category/head-protection" className="hover:text-accent transition-colors font-medium">
+                  Head Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/foot-protection" className="hover:text-accent transition-colors font-medium">
+                  Foot Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/fall-protection" className="hover:text-accent transition-colors font-medium">
+                  Fall Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/hand-protection" className="hover:text-accent transition-colors font-medium">
+                  Hand Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/ppe-kits" className="hover:text-accent transition-colors font-medium">
+                  PPE Kits
                 </Link>
               </li>
             </ul>
@@ -117,37 +156,93 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              Resources
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/blog" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">📚</span>
-                  <span>Blog Articles</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">🔧</span>
-                  <span>Technical Guides</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">📖</span>
-                  <span>Product Guides</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
 
+        {/* Resources & Blog Section */}
         <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-primary-foreground/20">
-          <div className="text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Blog Resources */}
+            <div>
+              <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
+                <span className="text-lg">📚</span>
+                Blog & Resources
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/blog" className="hover:text-accent transition-colors">
+                    All Blog Articles
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors">
+                    Technical Guides
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors">
+                    Product Guides
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Industries Served */}
+            <div>
+              <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
+                <span className="text-lg">🏭</span>
+                Industries We Serve
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/blog?industry=petrochemical" className="hover:text-accent transition-colors">
+                    Petrochemical & Refinery
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?industry=ports-logistics" className="hover:text-accent transition-colors">
+                    Ports & Logistics
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?industry=pharma" className="hover:text-accent transition-colors">
+                    Pharmaceutical
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?industry=manufacturing" className="hover:text-accent transition-colors">
+                    Manufacturing
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Locations */}
+            <div>
+              <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
+                <span className="text-lg">📍</span>
+                Service Areas
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="/blog?region=nellore" className="hover:text-accent transition-colors">
+                    Nellore Area
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?region=kakinada" className="hover:text-accent transition-colors">
+                    Kakinada Area
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?region=ap-wide" className="hover:text-accent transition-colors">
+                    Andhra Pradesh Wide
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-primary-foreground/20 pt-8 text-center">
             <p className="text-accent font-bold text-sm md:text-base">© 2026 PND Industrial Suppliers. All Rights Reserved.</p>
             <p className="text-primary-foreground/70 text-xs mt-2">Authorized Channel Partner | Premium Industrial Solutions</p>
           </div>
