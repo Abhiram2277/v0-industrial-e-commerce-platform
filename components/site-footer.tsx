@@ -79,7 +79,6 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
-        </div>
 
           {/* Contact Information - Nellore */}
           <div>
@@ -144,6 +143,7 @@ export function SiteFooter() {
                 >
                   pndindustrialsuppliers@gmail.com
                 </a>
+              </div>
               </div>
             </div>
           </div>
