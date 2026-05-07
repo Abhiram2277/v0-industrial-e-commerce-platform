@@ -1,6 +1,5 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { MapPin, Phone, Mail } from "lucide-react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -26,69 +25,30 @@ export default function HomePage() {
           <ProductExplorer />
         </Suspense>
         <CTASection />
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground border-t border-primary-foreground/20">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              {/* Nellore Branch */}
-              <div>
-                <h3 className="font-bold text-xl mb-6">Nellore Branch</h3>
-                <div className="space-y-4 text-sm">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-primary-foreground/85">Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <div className="flex flex-col gap-2">
-                      <a href="tel:+919398644987" className="hover:text-accent transition-colors">+91 9398644987</a>
-                      <a href="tel:+919701110242" className="hover:text-accent transition-colors">+91 9701110242</a>
-                      <a href="tel:+918712268672" className="hover:text-accent transition-colors">+91 8712268672</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Kakinada Branch */}
-              <div>
-                <h3 className="font-bold text-xl mb-6">Kakinada Branch</h3>
-                <div className="space-y-4 text-sm">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-primary-foreground/85">Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <div className="flex flex-col gap-2">
-                      <a href="tel:+917730940410" className="hover:text-accent transition-colors">+91 77309 40410</a>
-                      <a href="tel:+919182156665" className="hover:text-accent transition-colors">+91 91821 56665</a>
-                      <a href="tel:+919948592229" className="hover:text-accent transition-colors">+91 99485 92229</a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-accent flex-shrink-0" />
-                    <a href="mailto:pndindustrialsuppliers@gmail.com" className="hover:text-accent transition-colors text-xs break-all">pndindustrialsuppliers@gmail.com</a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Resources */}
-              <div>
-                <h3 className="font-bold text-xl mb-6">Resources</h3>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">📚</span>
-                    <Link href="/blog" className="hover:text-accent transition-colors">Blog Articles</Link>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">📖</span>
-                    <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors">Technical Guides</Link>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-lg">📋</span>
-                    <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors">Product Guides</Link>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <h3 className="font-bold text-xl mb-6">Resources</h3>
+              <ul className="space-y-3 text-sm flex gap-8">
+                <li>
+                  <Link href="/blog" className="hover:text-accent transition-colors flex items-center gap-2">
+                    <span>📚</span>
+                    <span>Blog Articles</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors flex items-center gap-2">
+                    <span>📖</span>
+                    <span>Technical Guides</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors flex items-center gap-2">
+                    <span>📋</span>
+                    <span>Product Guides</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
