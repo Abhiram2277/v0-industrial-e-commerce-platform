@@ -29,8 +29,18 @@ export function SiteFooter() {
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
+                <Link href="/" className="hover:text-accent transition-colors font-medium">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-accent transition-colors font-medium">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-accent transition-colors font-medium">
+                  Shop by Category
                 </Link>
               </li>
               <li>
@@ -39,13 +49,37 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-accent transition-colors font-medium text-accent-foreground bg-accent/20 px-3 py-2 rounded-md hover:bg-accent/30">
-                  📚 Blog & Resources
+                <Link href="/contact" className="hover:text-accent transition-colors font-medium">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-accent transition-colors font-medium">
-                  Contact Us
+                <Link href="/quote" className="hover:text-accent transition-colors font-medium">
+                  Get a Quote
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Resources
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link href="/blog" className="hover:text-accent transition-colors font-medium">
+                  Blog Articles
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors font-medium">
+                  Technical Guides
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors font-medium">
+                  Product Guides
                 </Link>
               </li>
             </ul>
@@ -117,40 +151,11 @@ export function SiteFooter() {
               </div>
             </div>
           </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              Resources
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/blog" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">📚</span>
-                  <span>Blog Articles</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">🔧</span>
-                  <span>Technical Guides</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors font-medium flex items-center gap-2">
-                  <span className="text-lg">📖</span>
-                  <span>Product Guides</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-primary-foreground/20">
-          <div className="text-center">
-            <p className="text-accent font-bold text-sm md:text-base">© 2026 PND Industrial Suppliers. All Rights Reserved.</p>
-            <p className="text-primary-foreground/70 text-xs mt-2">Authorized Channel Partner | Premium Industrial Solutions</p>
-          </div>
+        <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-primary-foreground/20 text-center">
+          <p className="text-accent font-bold text-sm md:text-base">© 2026 PND Industrial Suppliers. All Rights Reserved.</p>
+          <p className="text-primary-foreground/70 text-xs mt-2">Authorized Channel Partner | Premium Industrial Solutions</p>
         </div>
       </div>
     </footer>
