@@ -80,40 +80,6 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Shop Categories */}
-          <div>
-            <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              Shop Categories
-            </h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/category/head-protection" className="hover:text-accent transition-colors font-medium">
-                  Head Protection
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/foot-protection" className="hover:text-accent transition-colors font-medium">
-                  Foot Protection
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/harness" className="hover:text-accent transition-colors font-medium">
-                  Harness
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/lanyard" className="hover:text-accent transition-colors font-medium">
-                  Lanyards
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/workwear" className="hover:text-accent transition-colors font-medium">
-                  Workwear
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Information - Nellore */}
           <div>
             <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
