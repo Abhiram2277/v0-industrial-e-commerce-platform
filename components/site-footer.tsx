@@ -82,11 +82,6 @@ export function SiteFooter() {
                   Hand Protection
                 </Link>
               </li>
-              <li>
-                <Link href="/category/ppe-kits" className="hover:text-accent transition-colors font-medium">
-                  PPE Kits
-                </Link>
-              </li>
             </ul>
           </div>
 

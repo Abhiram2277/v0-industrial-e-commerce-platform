@@ -9,6 +9,7 @@ import { PartnerBrands } from "@/components/partner-brands"
 import { IndustriesServed } from "@/components/industries-served"
 import { ProductExplorer } from "@/components/product-explorer"
 import { CTASection } from "@/components/cta-section"
+import { BlogResourcesSection } from "@/components/blog-resources-section"
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
           <ProductExplorer />
         </Suspense>
         <CTASection />
+        <BlogResourcesSection />
       </main>
       <SiteFooter />
       <WhatsAppButton />
