@@ -53,6 +53,9 @@ export function SiteFooter() {
                   Get a Quote
                 </Link>
               </li>
+            </ul>
+          </div>
+
           {/* Resources */}
           <div>
             <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
