@@ -39,6 +39,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/shop" className="hover:text-accent transition-colors font-medium">
+                  Shop by Category
+                </Link>
+              </li>
+              <li>
                 <Link href="/brands" className="hover:text-accent transition-colors font-medium">
                   Partner Brands
                 </Link>
