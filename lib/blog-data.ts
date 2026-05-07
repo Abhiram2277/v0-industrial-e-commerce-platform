@@ -2073,7 +2073,7 @@ Supply services:
     authorTitle: 'Safety Coordinator - Andhra Pradesh',
     publishedAt: '2025-02-28',
     region: 'ap-wide',
-    industry: 'construction',
+    industry: 'manufacturing',
     contentType: 'technical-guide',
     keywords: ['construction site safety equipment Andhra Pradesh', 'construction PPE supplier AP', 'safety harness construction', 'construction helmet supplier'],
     readingTime: 9,
@@ -2125,7 +2125,7 @@ Andhra Pradesh has major chemical manufacturing plants. This guide covers PPE re
 
 1. **Elimination** — Remove hazardous chemical (best practice)
 2. **Substitution** — Use less hazardous alternative
-3. **Engineering Controls** — Enclosed systems, ventilation, containment
+3. **Engineering Controls** �� Enclosed systems, ventilation, containment
 4. **Administrative Controls** — Training, protocols, restricted access
 5. **PPE** — Last line of defense (respirators, suits, gloves)
 
@@ -2158,7 +2158,7 @@ Services:
     authorTitle: 'Hazmat Safety Expert - Andhra Pradesh',
     publishedAt: '2025-03-01',
     region: 'ap-wide',
-    industry: 'chemical-manufacturing',
+    industry: 'petrochemical',
     contentType: 'technical-guide',
     keywords: ['chemical plant PPE requirements Andhra Pradesh', 'hazmat suit supplier AP', 'chemical-resistant gloves Andhra Pradesh', 'chemical safety equipment'],
     readingTime: 11,
@@ -2228,7 +2228,7 @@ Pharma-specific services:
     authorTitle: 'GMP Compliance Expert - Nellore',
     publishedAt: '2025-03-02',
     region: 'nellore',
-    industry: 'pharmaceutical',
+    industry: 'pharma',
     contentType: 'technical-guide',
     keywords: ['pharmaceutical manufacturing PPE Nellore', 'cleanroom garments Andhra Pradesh', 'GMP-compliant PPE', 'pharma safety equipment'],
     readingTime: 8,
@@ -2307,7 +2307,7 @@ Stock:
     authorTitle: 'Height Safety Expert - Andhra Pradesh',
     publishedAt: '2025-03-03',
     region: 'ap-wide',
-    industry: 'construction',
+    industry: 'manufacturing',
     contentType: 'technical-guide',
     keywords: ['safety harness fall protection Andhra Pradesh', 'IS 3521 certified harness', 'lanyard supplier AP', 'fall arrest system'],
     readingTime: 9,
