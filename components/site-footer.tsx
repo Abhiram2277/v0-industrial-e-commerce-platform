@@ -158,94 +158,9 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Resources & Blog Section */}
-        <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-primary-foreground/20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Blog Resources */}
-            <div>
-              <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
-                <span className="text-lg">📚</span>
-                Blog & Resources
-              </h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/blog" className="hover:text-accent transition-colors">
-                    All Blog Articles
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors">
-                    Technical Guides
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors">
-                    Product Guides
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Industries Served */}
-            <div>
-              <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
-                <span className="text-lg">🏭</span>
-                Industries We Serve
-              </h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/blog?industry=petrochemical" className="hover:text-accent transition-colors">
-                    Petrochemical & Refinery
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?industry=ports-logistics" className="hover:text-accent transition-colors">
-                    Ports & Logistics
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?industry=pharma" className="hover:text-accent transition-colors">
-                    Pharmaceutical
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?industry=manufacturing" className="hover:text-accent transition-colors">
-                    Manufacturing
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Locations */}
-            <div>
-              <h4 className="font-bold text-base md:text-lg mb-4 flex items-center gap-2">
-                <span className="text-lg">📍</span>
-                Service Areas
-              </h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/blog?region=nellore" className="hover:text-accent transition-colors">
-                    Nellore Area
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?region=kakinada" className="hover:text-accent transition-colors">
-                    Kakinada Area
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?region=ap-wide" className="hover:text-accent transition-colors">
-                    Andhra Pradesh Wide
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-primary-foreground/20 pt-8 text-center">
-            <p className="text-accent font-bold text-sm md:text-base">© 2026 PND Industrial Suppliers. All Rights Reserved.</p>
-            <p className="text-primary-foreground/70 text-xs mt-2">Authorized Channel Partner | Premium Industrial Solutions</p>
-          </div>
+        <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-primary-foreground/20 text-center">
+          <p className="text-accent font-bold text-sm md:text-base">© 2026 PND Industrial Suppliers. All Rights Reserved.</p>
+          <p className="text-primary-foreground/70 text-xs mt-2">Authorized Channel Partner | Premium Industrial Solutions</p>
         </div>
       </div>
     </footer>
