@@ -53,37 +53,30 @@ export function SiteFooter() {
                   Get a Quote
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Popular Categories */}
+          {/* Resources */}
           <div>
             <h3 className="font-bold text-lg md:text-xl mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              Shop Categories
+              Resources
             </h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/category/head-protection" className="hover:text-accent transition-colors font-medium">
-                  Head Protection
+                <Link href="/blog" className="hover:text-accent transition-colors font-medium">
+                  Blog Articles
                 </Link>
               </li>
               <li>
-                <Link href="/category/foot-protection" className="hover:text-accent transition-colors font-medium">
-                  Foot Protection
+                <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors font-medium">
+                  Technical Guides
                 </Link>
               </li>
               <li>
-                <Link href="/category/fall-protection" className="hover:text-accent transition-colors font-medium">
-                  Fall Protection
-                </Link>
-              </li>
-              <li>
-                <Link href="/category/hand-protection" className="hover:text-accent transition-colors font-medium">
-                  Hand Protection
+                <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors font-medium">
+                  Product Guides
                 </Link>
               </li>
             </ul>
           </div>
+        </div>
 
           {/* Contact Information - Nellore */}
           <div>

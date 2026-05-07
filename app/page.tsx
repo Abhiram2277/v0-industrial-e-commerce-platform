@@ -1,5 +1,4 @@
 import { Suspense } from "react"
-import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -25,33 +24,6 @@ export default function HomePage() {
           <ProductExplorer />
         </Suspense>
         <CTASection />
-        <section className="py-16 bg-primary text-primary-foreground border-t border-primary-foreground/20">
-          <div className="container mx-auto px-4">
-            <div>
-              <h3 className="font-bold text-xl mb-6">Resources</h3>
-              <ul className="space-y-3 text-sm flex gap-8">
-                <li>
-                  <Link href="/blog" className="hover:text-accent transition-colors flex items-center gap-2">
-                    <span>📚</span>
-                    <span>Blog Articles</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?type=technical-guide" className="hover:text-accent transition-colors flex items-center gap-2">
-                    <span>📖</span>
-                    <span>Technical Guides</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog?type=product-guide" className="hover:text-accent transition-colors flex items-center gap-2">
-                    <span>📋</span>
-                    <span>Product Guides</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
       </main>
       <SiteFooter />
       <WhatsAppButton />
