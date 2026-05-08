@@ -32,12 +32,6 @@ export function ProductCard({ product }: ProductCardProps) {
       "@type": "Brand",
       name: product.brand || "PND Industrial Suppliers",
     },
-    offers: {
-      "@type": "AggregateOffer",
-      availability: "https://schema.org/InStock",
-      priceCurrency: "INR",
-      price: product.price?.toString() || "0",
-    },
   }
 
   return (
