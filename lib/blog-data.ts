@@ -10,6 +10,7 @@ export interface BlogArticle {
   content: string;
   author: string;
   authorTitle: string;
+  authorBio: string;
   publishedAt: string;
   updatedAt?: string;
   region: Region;
@@ -144,8 +145,9 @@ Complete systems including harnesses, lanyards, and anchorage:
 - Download our Port Safety Operations Checklist
 - Connect with safety experts who understand Krishnapatnam Port operations
     `,
-    author: 'Safety Expert Team',
-    authorTitle: 'Industrial Safety Consultant - Nellore',
+    author: 'Praveen Kumar',
+    authorTitle: 'Co-founder, PND Industrial Suppliers',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-01-15',
     region: 'nellore',
     industry: 'ports-logistics',
@@ -272,8 +274,9 @@ Kakinada is home to major petroleum refineries and petrochemical operations wher
 - View our complete arc flash PPE solution
 - Connect with electrical safety experts
     `,
-    author: 'Electrical Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'NFPA Certified Consultant - Kakinada',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-10',
     region: 'kakinada',
     industry: 'petrochemical',
@@ -416,8 +419,9 @@ For high-risk operations:
 - Connect with pharmaceutical safety specialists
 - Request glove samples for your specific applications
     `,
-    author: 'Pharmaceutical Safety Consultant',
+    author: 'Praveen Kumar',
     authorTitle: 'GMP Compliance Expert - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-15',
     region: 'nellore',
     industry: 'pharma',
@@ -598,8 +602,9 @@ Kakinada's petrochemical refineries expose workers to:
 - Request demonstration of PAPR systems
 - Connect with refinery safety specialists
     `,
-    author: 'Industrial Hygienist',
+    author: 'Praveen Kumar',
     authorTitle: 'Certified Safety Professional - Refinery Operations',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-12',
     region: 'kakinada',
     industry: 'petrochemical',
@@ -750,8 +755,9 @@ Manufacturing workers face daily eye hazards:
 - Select appropriate protection for your operations
 - Request product demonstrations
     `,
-    author: 'Safety Equipment Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Product Safety Consultant',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-08',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -935,8 +941,9 @@ Industrial environments in Nellore generate significant noise:
 - Implement baseline hearing testing
 - Select appropriate protection for your environment
     `,
-    author: 'Occupational Health Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Hearing Conservation Expert - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-05',
     region: 'nellore',
     industry: 'ports-logistics',
@@ -1161,8 +1168,9 @@ For in-stock items, same-day or next-day delivery within Kakinada is possible. F
 
 *PND Industrial Suppliers — Authorized channel partner for Udyogi, Hillson, Bosch, DeWalt, Ador Welding, Safepro Fire, and Asian Industrial Paints. Serving Kakinada and Nellore since 2020. "Life is Precious."*
     `,
-    author: 'Safety Equipment Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'PPE Expert - Kakinada Industrial Zone',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-10',
     region: 'kakinada',
     industry: 'petrochemical',
@@ -1251,8 +1259,9 @@ We handle bulk helmet orders for:
 **Volume pricing available. Contact us for quote.**
 
     `,
-    author: 'Industrial Safety Consultant',
+    author: 'Praveen Kumar',
     authorTitle: 'Udyogi Authorized Partner - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-12',
     region: 'nellore',
     industry: 'ports-logistics',
@@ -1403,8 +1412,9 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 **Same-day or next-day delivery for Krishnapatnam Port area.**
 
     `,
-    author: 'Port Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Maritime Safety Expert - Krishnapatnam',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-15',
     region: 'nellore',
     industry: 'ports-logistics',
@@ -1495,8 +1505,9 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 - Free consultation on shoe selection
 
     `,
-    author: 'Safety Equipment Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Industrial Footwear Expert - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-18',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -1617,8 +1628,9 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 - Staff training on fire safety
 
     `,
-    author: 'Fire Safety Consultant',
+    author: 'Praveen Kumar',
     authorTitle: 'Safepro Fire Safety Expert - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-20',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -1744,8 +1756,9 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 - Immediate availability in both cities
 
     `,
-    author: 'Industrial Tools Expert',
+    author: 'Praveen Kumar',
     authorTitle: 'Power Tools Specialist - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-22',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -1837,8 +1850,9 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 
 Stock: Udyogi respiratory protection, chemical suits, fall protection harnesses, fire-resistant gloves, IS 2925 helmets
     `,
-    author: 'Refinery Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Chemical Safety Expert - Kakinada',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-25',
     region: 'kakinada',
     industry: 'petrochemical',
@@ -1914,8 +1928,9 @@ Services:
 - On-site safety consulting
 - Equipment maintenance and inspection
     `,
-    author: 'Port Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Maritime Safety Expert - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-26',
     region: 'nellore',
     industry: 'ports-logistics',
@@ -1980,8 +1995,9 @@ Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
 - Maintenance teams
 - Safety compliance programs
     `,
-    author: 'Port Equipment Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Krishnapatnam Port Supplier',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-27',
     region: 'nellore',
     industry: 'ports-logistics',
@@ -2069,8 +2085,9 @@ Supply services:
 - Regular supply contracts for ongoing projects
 - On-site safety consultation
     `,
-    author: 'Construction Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Safety Coordinator - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-02-28',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -2125,7 +2142,7 @@ Andhra Pradesh has major chemical manufacturing plants. This guide covers PPE re
 
 1. **Elimination** — Remove hazardous chemical (best practice)
 2. **Substitution** — Use less hazardous alternative
-3. **Engineering Controls** �� Enclosed systems, ventilation, containment
+3. **Engineering Controls** ���� Enclosed systems, ventilation, containment
 4. **Administrative Controls** — Training, protocols, restricted access
 5. **PPE** — Last line of defense (respirators, suits, gloves)
 
@@ -2154,8 +2171,9 @@ Services:
 - Regular PPE supply contracts
 - Emergency chemical spill kits
     `,
-    author: 'Chemical Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Hazmat Safety Expert - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-01',
     region: 'ap-wide',
     industry: 'petrochemical',
@@ -2224,8 +2242,9 @@ Pharma-specific services:
 - On-site training for PPE protocols
 - Documentation for GMP audits
     `,
-    author: 'Pharma Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'GMP Compliance Expert - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-02',
     region: 'nellore',
     industry: 'pharma',
@@ -2303,8 +2322,9 @@ Stock:
 - Fall arrest systems
 - Training and fit-testing services
     `,
-    author: 'Fall Protection Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Height Safety Expert - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-03',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -2394,8 +2414,9 @@ Services:
 - Faster replacement for damaged shoes
 - Competitive pricing vs. online
     `,
-    author: 'Industrial Footwear Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Safety Shoes Expert - Andhra Pradesh',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-04',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -2473,8 +2494,9 @@ Services:
 - Training on proper use
 - Emergency replacement availability
     `,
-    author: 'Gas Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Industrial Monitoring Expert - AP',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-05',
     region: 'ap-wide',
     industry: 'petrochemical',
@@ -2559,8 +2581,9 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 Stock: All Udyogi helmet series (Vista, Fusion, Ultravent)
 Services: Bulk ordering, volume discounts, same-day delivery
     `,
-    author: 'Helmet Safety Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Udyogi Authorized Partner - AP',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-06',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -2645,8 +2668,9 @@ Why choose us for wholesale:
 - Local stock (no wait time for bulk orders)
 - Dedicated account manager for large contracts
     `,
-    author: 'Industrial Glove Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Wholesale PPE Expert - Kakinada',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-07',
     region: 'kakinada',
     industry: 'manufacturing',
@@ -2715,8 +2739,9 @@ Services:
 - Technical guidance and training
 - Demo available on request
     `,
-    author: 'Welding Equipment Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Ador Authorized Partner - AP',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-08',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -2798,6 +2823,7 @@ Why local dealer matters:
     `,
     author: 'Fire Safety Specialist',
     authorTitle: 'Safepro Authorized Dealer - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-09',
     region: 'nellore',
     industry: 'manufacturing',
@@ -2873,8 +2899,9 @@ Services:
 - Color and application consultation
 - Trained painters available on request
     `,
-    author: 'Industrial Coating Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Asian Paints Authorized Partner - AP',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-10',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -2947,8 +2974,9 @@ Services:
 - Same-day delivery in Nellore & Kakinada
 - Warranty support for defects
     `,
-    author: 'Safety Footwear Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'Hillson Authorized Dealer - AP',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-11',
     region: 'ap-wide',
     industry: 'manufacturing',
@@ -3030,8 +3058,9 @@ Why buy from us:
 - Expert product recommendations
 - Reliable after-sales support
     `,
-    author: 'Power Tools Specialist',
+    author: 'Praveen Kumar',
     authorTitle: 'DeWalt Authorized Partner - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-12',
     region: 'nellore',
     industry: 'manufacturing',
@@ -3114,8 +3143,9 @@ Why local dealer:
 - Reliable after-sales support
 - Technical expertise
     `,
-    author: 'Industrial Tools Expert',
+    author: 'Praveen Kumar',
     authorTitle: 'Bosch Authorized Partner - Nellore',
+    authorBio: 'Praveen has 6+ years of experience supplying PPE and industrial safety equipment to major industrial facilities across Andhra Pradesh.',
     publishedAt: '2025-03-13',
     region: 'nellore',
     industry: 'manufacturing',

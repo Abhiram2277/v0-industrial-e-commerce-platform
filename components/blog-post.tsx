@@ -97,7 +97,8 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
           if (paragraph.startsWith('#')) {
             const level = paragraph.match(/^#+/)[0].length
             const text = paragraph.replace(/^#+\s/, '')
-            if (level === 1) return <h1 key={idx} className="heading-h1 mt-14 mb-8 text-balance text-foreground">{text}</h1>
+            // Skip H1 tags in content since title is already H1
+            if (level === 1) return null
             if (level === 2) return <h2 key={idx} className="heading-h2 mt-12 mb-6 text-foreground">{text}</h2>
             if (level === 3) return <h3 key={idx} className="heading-h3 mt-10 mb-5 text-foreground">{text}</h3>
             return null
@@ -113,11 +114,38 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
             )
           }
           if (paragraph.trim()) {
-            // Check if paragraph contains bold text markers
-            const hasBold = paragraph.includes('**')
+            // Add internal links to contextual keywords
             let processedText = paragraph
             
-            if (hasBold) {
+            // Brand and product links
+            const linkMappings = [
+              { text: 'Udyogi', href: '/brands' },
+              { text: 'Udyogi Safety', href: '/brands' },
+              { text: 'Bosch', href: '/brands' },
+              { text: 'DeWalt', href: '/brands' },
+              { text: 'Stanley', href: '/brands' },
+              { text: 'safety helmet', href: '/category/head-protection' },
+              { text: 'safety shoe', href: '/category/foot-protection' },
+              { text: 'safety shoes', href: '/category/foot-protection' },
+              { text: 'fall protection', href: '/category/fall-protection' },
+              { text: 'harness', href: '/category/harness' },
+              { text: 'lanyard', href: '/category/lanyard' },
+              { text: 'workwear', href: '/category/workwear' },
+              { text: 'hand protection', href: '/category/hand-protection' },
+              { text: 'Get a quote', href: '/quote' },
+              { text: 'get a quote', href: '/quote' },
+              { text: 'contact us', href: '/contact' },
+            ]
+            
+            linkMappings.forEach(({ text, href }) => {
+              const regex = new RegExp(`\\b${text}\\b`, 'gi')
+              processedText = processedText.replace(regex, `<a href="${href}" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">${text}</a>`)
+            })
+            
+            // Check if paragraph contains bold text markers
+            const hasBold = paragraph.includes('**')
+            
+            if (hasBold || linkMappings.some(({ text }) => new RegExp(`\\b${text}\\b`, 'i').test(paragraph))) {
               processedText = processedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
               return (
                 <p 
@@ -156,40 +184,42 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
       )}
 
       {/* Share & Author Info */}
-      <div className="bg-muted/30 rounded-lg card-spacing">
-        <div className="flex items-center gap-4 mb-6 pb-6 border-b">
+      <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg card-spacing border border-primary/20">
+        <div className="flex flex-col md:flex-row md:items-start gap-6">
           <div className="flex-1">
-            <h4 className="heading-h3 mb-1">{article.author}</h4>
-            <p className="body-small text-muted-foreground">{article.authorTitle}</p>
+            <div className="mb-4">
+              <h4 className="heading-h3 mb-1 text-foreground">{article.author}</h4>
+              <p className="text-sm font-semibold text-accent mb-3">{article.authorTitle}</p>
+              <p className="body-regular text-foreground/85 leading-relaxed">
+                {article.authorBio}
+              </p>
+            </div>
           </div>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" className="self-start md:self-end">
             <Share2 className="h-4 w-4 mr-2" />
             Share
           </Button>
         </div>
-        <p className="body-small text-muted-foreground mb-4">
-          {article.author} brings years of expertise in industrial safety and regional compliance requirements for Andhra Pradesh industries.
-        </p>
       </div>
 
-      {/* Related Articles */}
+      {/* Related Articles - moved before footer */}
       {relatedArticles && relatedArticles.length > 0 && (
-        <div className="mt-16">
-          <h3 className="heading-h2 mb-8">Related Articles</h3>
-          <div className="grid md:grid-cols-3 card-gap">
+        <div className="my-16 p-8 bg-accent/5 rounded-lg border border-accent/20">
+          <h3 className="heading-h2 mb-8 text-foreground">Continue Reading</h3>
+          <div className="grid md:grid-cols-3 gap-6">
             {relatedArticles.map((relatedArticle) => (
               <Link
                 key={relatedArticle.id}
                 href={`/blog/${relatedArticle.slug}`}
-                className="group bg-card rounded-lg border border-border hover:border-accent/50 hover:shadow-lg transition-all p-4 hover:-translate-y-1"
+                className="group bg-background rounded-lg border border-border hover:border-accent/50 hover:shadow-lg transition-all p-4 hover:-translate-y-1 flex flex-col"
               >
-                <Badge className="mb-3" variant="secondary">{relatedArticle.region}</Badge>
-                <h4 className="heading-h3 line-clamp-2 group-hover:text-accent transition-colors mb-2">
+                <Badge className="mb-3 w-fit" variant="secondary">{relatedArticle.region}</Badge>
+                <h4 className="heading-h3 line-clamp-2 group-hover:text-accent transition-colors mb-3 flex-1">
                   {relatedArticle.title}
                 </h4>
                 <p className="body-small text-muted-foreground line-clamp-2 mb-4">{relatedArticle.excerpt}</p>
                 <div className="flex items-center text-accent text-sm font-semibold">
-                  Read More
+                  Read Article
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>
