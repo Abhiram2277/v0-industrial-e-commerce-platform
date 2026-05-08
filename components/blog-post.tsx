@@ -114,11 +114,38 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
             )
           }
           if (paragraph.trim()) {
-            // Check if paragraph contains bold text markers
-            const hasBold = paragraph.includes('**')
+            // Add internal links to contextual keywords
             let processedText = paragraph
             
-            if (hasBold) {
+            // Brand and product links
+            const linkMappings = [
+              { text: 'Udyogi', href: '/brands' },
+              { text: 'Udyogi Safety', href: '/brands' },
+              { text: 'Bosch', href: '/brands' },
+              { text: 'DeWalt', href: '/brands' },
+              { text: 'Stanley', href: '/brands' },
+              { text: 'safety helmet', href: '/category/head-protection' },
+              { text: 'safety shoe', href: '/category/foot-protection' },
+              { text: 'safety shoes', href: '/category/foot-protection' },
+              { text: 'fall protection', href: '/category/fall-protection' },
+              { text: 'harness', href: '/category/harness' },
+              { text: 'lanyard', href: '/category/lanyard' },
+              { text: 'workwear', href: '/category/workwear' },
+              { text: 'hand protection', href: '/category/hand-protection' },
+              { text: 'Get a quote', href: '/quote' },
+              { text: 'get a quote', href: '/quote' },
+              { text: 'contact us', href: '/contact' },
+            ]
+            
+            linkMappings.forEach(({ text, href }) => {
+              const regex = new RegExp(`\\b${text}\\b`, 'gi')
+              processedText = processedText.replace(regex, `<a href="${href}" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">${text}</a>`)
+            })
+            
+            // Check if paragraph contains bold text markers
+            const hasBold = paragraph.includes('**')
+            
+            if (hasBold || linkMappings.some(({ text }) => new RegExp(`\\b${text}\\b`, 'i').test(paragraph))) {
               processedText = processedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
               return (
                 <p 
@@ -175,24 +202,24 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
         </div>
       </div>
 
-      {/* Related Articles */}
+      {/* Related Articles - moved before footer */}
       {relatedArticles && relatedArticles.length > 0 && (
-        <div className="mt-16">
-          <h3 className="heading-h2 mb-8">Related Articles</h3>
-          <div className="grid md:grid-cols-3 card-gap">
+        <div className="my-16 p-8 bg-accent/5 rounded-lg border border-accent/20">
+          <h3 className="heading-h2 mb-8 text-foreground">Continue Reading</h3>
+          <div className="grid md:grid-cols-3 gap-6">
             {relatedArticles.map((relatedArticle) => (
               <Link
                 key={relatedArticle.id}
                 href={`/blog/${relatedArticle.slug}`}
-                className="group bg-card rounded-lg border border-border hover:border-accent/50 hover:shadow-lg transition-all p-4 hover:-translate-y-1"
+                className="group bg-background rounded-lg border border-border hover:border-accent/50 hover:shadow-lg transition-all p-4 hover:-translate-y-1 flex flex-col"
               >
-                <Badge className="mb-3" variant="secondary">{relatedArticle.region}</Badge>
-                <h4 className="heading-h3 line-clamp-2 group-hover:text-accent transition-colors mb-2">
+                <Badge className="mb-3 w-fit" variant="secondary">{relatedArticle.region}</Badge>
+                <h4 className="heading-h3 line-clamp-2 group-hover:text-accent transition-colors mb-3 flex-1">
                   {relatedArticle.title}
                 </h4>
                 <p className="body-small text-muted-foreground line-clamp-2 mb-4">{relatedArticle.excerpt}</p>
                 <div className="flex items-center text-accent text-sm font-semibold">
-                  Read More
+                  Read Article
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>
