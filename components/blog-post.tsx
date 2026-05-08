@@ -157,20 +157,22 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
       )}
 
       {/* Share & Author Info */}
-      <div className="bg-muted/30 rounded-lg card-spacing">
-        <div className="flex items-center gap-4 mb-6 pb-6 border-b">
+      <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-lg card-spacing border border-primary/20">
+        <div className="flex flex-col md:flex-row md:items-start gap-6">
           <div className="flex-1">
-            <h4 className="heading-h3 mb-1">{article.author}</h4>
-            <p className="body-small text-muted-foreground">{article.authorTitle}</p>
+            <div className="mb-4">
+              <h4 className="heading-h3 mb-1 text-foreground">{article.author}</h4>
+              <p className="text-sm font-semibold text-accent mb-3">{article.authorTitle}</p>
+              <p className="body-regular text-foreground/85 leading-relaxed">
+                {article.authorBio}
+              </p>
+            </div>
           </div>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" className="self-start md:self-end">
             <Share2 className="h-4 w-4 mr-2" />
             Share
           </Button>
         </div>
-        <p className="body-small text-muted-foreground mb-4">
-          {article.author} brings years of expertise in industrial safety and regional compliance requirements for Andhra Pradesh industries.
-        </p>
       </div>
 
       {/* Related Articles */}
