@@ -15,8 +15,11 @@ export function HeroSection() {
               className="text-2xl md:text-4xl lg:text-6xl font-bold leading-tight text-balance"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
-              Your Premier Partner for <span className="text-accent">Industrial Excellence</span>
+              Authorized PPE & <span className="text-accent">Industrial Safety</span> Equipment Supplier in Nellore & Kakinada, Andhra Pradesh
             </h1>
+            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-primary-foreground/90 leading-relaxed">
+              Your Premier Partner for Industrial Excellence
+            </h2>
             <p className="text-sm md:text-lg lg:text-xl text-primary-foreground/90 leading-relaxed">
               Serving from Nellore and Kakinada, we specialize in high-quality PPE and industrial tools from world-leading brands. Guided by our philosophy: <span className="font-semibold text-accent">"Life is Precious"</span>
             </p>
