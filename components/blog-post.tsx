@@ -97,7 +97,8 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
           if (paragraph.startsWith('#')) {
             const level = paragraph.match(/^#+/)[0].length
             const text = paragraph.replace(/^#+\s/, '')
-            if (level === 1) return <h1 key={idx} className="heading-h1 mt-14 mb-8 text-balance text-foreground">{text}</h1>
+            // Skip H1 tags in content since title is already H1
+            if (level === 1) return null
             if (level === 2) return <h2 key={idx} className="heading-h2 mt-12 mb-6 text-foreground">{text}</h2>
             if (level === 3) return <h3 key={idx} className="heading-h3 mt-10 mb-5 text-foreground">{text}</h3>
             return null

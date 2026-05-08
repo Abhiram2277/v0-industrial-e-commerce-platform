@@ -26,7 +26,27 @@ export const metadata: Metadata = {
   description:
     "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more. Life is Precious.",
   generator: "v0.app",
-  keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore", "Kakinada", "Andhra Pradesh"],
+  keywords: [
+    "Industrial Suppliers",
+    "PPE",
+    "Safety Equipment",
+    "Safety Shoes",
+    "Welding Equipment",
+    "Bosch Tools",
+    "DeWalt",
+    "Stanley",
+    "Industrial Tools",
+    "Nellore",
+    "Kakinada",
+    "Andhra Pradesh",
+    "Head Protection",
+    "Fall Protection",
+    "Hand Protection",
+    "Foot Protection",
+    "Harness",
+    "Workwear",
+    "Industrial Safety"
+  ],
   manifest: "/manifest.json",
   icons: {
     icon: [
