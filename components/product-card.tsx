@@ -41,14 +41,13 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <>
+    <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
       {/* Product Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         suppressHydrationWarning
       />
-      <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
       <CardHeader className="pb-4">
         <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative flex items-center justify-center">
           {product.image ? (
@@ -127,6 +126,6 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </CardFooter>
-    </>
+    </Card>
   )
 }
