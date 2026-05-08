@@ -57,6 +57,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <main className="flex-1">
         <article className="section-spacing">
           <div className="container mx-auto px-4">
+            {/* BlogPosting Schema */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "BlogPosting",
+                  "headline": article.seoTitle || article.title,
+                  "description": article.seoDescription || article.excerpt,
+                  "image": article.featuredImage,
+                  "datePublished": article.publishedAt,
+                  "dateModified": article.updatedAt,
+                  "author": {
+                    "@type": "Organization",
+                    "name": article.author,
+                    "url": "https://pndindustrialsuppliers.com"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "PND Industrial Suppliers",
+                    "url": "https://pndindustrialsuppliers.com"
+                  },
+                  "url": getBlogCanonicalUrl(slug),
+                  "articleBody": article.content
+                })
+              }}
+            />
             <BlogPostContent article={article} relatedArticles={relatedArticles} />
           </div>
         </article>

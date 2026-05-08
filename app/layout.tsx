@@ -22,11 +22,11 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "PND Industrial Suppliers | Premium Industrial Solutions & PPE",
+  title: "PND Industrial Suppliers | PPE & Safety Equipment — Nellore & Kakinada, AP",
   description:
-    "Leading industrial solutions provider based in Nellore. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more. Life is Precious.",
+    "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more. Life is Precious.",
   generator: "v0.app",
-  keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore"],
+  keywords: ["Industrial Suppliers", "PPE", "Safety Equipment", "Bosch Tools", "DeWalt", "Industrial Tools", "Nellore", "Kakinada", "Andhra Pradesh"],
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -45,6 +45,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pndindustrialsuppliers.com",
   },
+  openGraph: {
+    title: "PND Industrial Suppliers | PPE & Safety Equipment — Nellore & Kakinada",
+    description: "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized Udyogi, Bosch, DeWalt, Stanley distributor.",
+    url: "https://pndindustrialsuppliers.com",
+    siteName: "PND Industrial Suppliers",
+    locale: "en_IN",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
@@ -60,6 +68,62 @@ export default function RootLayout({
         {/* DNS prefetch for external services */}
         <link rel="dns-prefetch" href="https://supabase.co" />
         <link rel="dns-prefetch" href="https://api.supabase.co" />
+        
+        {/* LocalBusiness Schema - Nellore & Kakinada */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "PND Industrial Suppliers",
+              "description": "Authorized channel partner for industrial PPE and tools in Andhra Pradesh",
+              "url": "https://pndindustrialsuppliers.com",
+              "telephone": "+919398644987",
+              "email": "pndindustrialsuppliers@gmail.com",
+              "areaServed": ["Nellore", "Kakinada", "Andhra Pradesh", "IN"],
+              "priceRange": "₹₹",
+              "branch": [
+                {
+                  "@type": "LocalBusiness",
+                  "name": "PND Industrial Suppliers - Nellore",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd",
+                    "addressLocality": "Nellore",
+                    "addressRegion": "AP",
+                    "postalCode": "524001",
+                    "addressCountry": "IN"
+                  },
+                  "telephone": "+919398644987",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "14.4307",
+                    "longitude": "79.9864"
+                  }
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "name": "PND Industrial Suppliers - Kakinada",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi",
+                    "addressLocality": "Kakinada",
+                    "addressRegion": "AP",
+                    "postalCode": "533005",
+                    "addressCountry": "IN"
+                  },
+                  "telephone": "+917730940410",
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "16.9891",
+                    "longitude": "82.2475"
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>
