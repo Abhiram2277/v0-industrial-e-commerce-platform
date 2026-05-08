@@ -89,58 +89,90 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://supabase.co" />
         <link rel="dns-prefetch" href="https://api.supabase.co" />
         
-        {/* LocalBusiness Schema - Nellore & Kakinada */}
+        {/* LocalBusiness Schema - Nellore Branch */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "PND Industrial Suppliers",
-              "description": "Authorized channel partner for industrial PPE and tools in Andhra Pradesh",
+              "name": "PND Industrial Suppliers - Nellore",
+              "description": "Authorized PPE and industrial safety equipment supplier in Nellore, Andhra Pradesh. Dealer for Udyogi, Hillson, Bosch, DeWalt, Ador Welding.",
               "url": "https://pndindustrialsuppliers.com",
               "telephone": "+919398644987",
               "email": "pndindustrialsuppliers@gmail.com",
-              "areaServed": ["Nellore", "Kakinada", "Andhra Pradesh", "IN"],
-              "priceRange": "₹₹",
-              "branch": [
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Plot No 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Road",
+                "addressLocality": "Nellore",
+                "addressRegion": "Andhra Pradesh",
+                "postalCode": "524004",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "14.4426",
+                "longitude": "79.9865"
+              },
+              "openingHoursSpecification": [
                 {
-                  "@type": "LocalBusiness",
-                  "name": "PND Industrial Suppliers - Nellore",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd",
-                    "addressLocality": "Nellore",
-                    "addressRegion": "AP",
-                    "postalCode": "524001",
-                    "addressCountry": "IN"
-                  },
-                  "telephone": "+919398644987",
-                  "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "14.4307",
-                    "longitude": "79.9864"
-                  }
-                },
-                {
-                  "@type": "LocalBusiness",
-                  "name": "PND Industrial Suppliers - Kakinada",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi",
-                    "addressLocality": "Kakinada",
-                    "addressRegion": "AP",
-                    "postalCode": "533005",
-                    "addressCountry": "IN"
-                  },
-                  "telephone": "+917730940410",
-                  "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "16.9891",
-                    "longitude": "82.2475"
-                  }
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
                 }
-              ]
+              ],
+              "sameAs": [
+                "https://www.indiamart.com/pndindustrialsuppliers/",
+                "https://www.justdial.com/Nellore/Pnd-Industrial-Suppliers/9999PX861-X861-251129045314-Y9E4_BZDET"
+              ],
+              "priceRange": "₹₹",
+              "currenciesAccepted": "INR",
+              "paymentAccepted": "Cash, Bank Transfer, UPI"
+            })
+          }}
+        />
+
+        {/* LocalBusiness Schema - Kakinada Branch */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "PND Industrial Suppliers - Kakinada",
+              "description": "Authorized PPE and industrial safety equipment supplier in Kakinada, Andhra Pradesh. Dealer for Udyogi, Hillson, Bosch, DeWalt, Ador Welding.",
+              "url": "https://pndindustrialsuppliers.com",
+              "telephone": "+917730940410",
+              "email": "pndindustrialsuppliers@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi",
+                "addressLocality": "Kakinada",
+                "addressRegion": "Andhra Pradesh",
+                "postalCode": "533005",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "16.9891",
+                "longitude": "82.2475"
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
+                }
+              ],
+              "sameAs": [
+                "https://www.indiamart.com/pndindustrialsuppliers/",
+                "https://www.justdial.com/Kakinada/Pnd-Industrial-Suppliers/9999PX861-X861-251129045314-Y9E4_BZDET"
+              ],
+              "priceRange": "₹₹",
+              "currenciesAccepted": "INR",
+              "paymentAccepted": "Cash, Bank Transfer, UPI"
             })
           }}
         />
