@@ -21,8 +21,34 @@ export function ProductCard({ product }: ProductCardProps) {
     openCart()
   }
 
+  // Product Schema for Google Rich Snippets
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.image || "/placeholder.svg",
+    brand: {
+      "@type": "Brand",
+      name: product.brand || "PND Industrial Suppliers",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "INR",
+      price: product.price?.toString() || "0",
+    },
+  }
+
   return (
-    <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
+    <>
+      {/* Product Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        suppressHydrationWarning
+      />
+      <Card className="group hover:shadow-xl transition-all hover:border-accent/50 hover:-translate-y-1 flex flex-col h-full">
       <CardHeader className="pb-4">
         <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative flex items-center justify-center">
           {product.image ? (
@@ -101,6 +127,6 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         </div>
       </CardFooter>
-    </Card>
+    </>
   )
 }

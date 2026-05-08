@@ -124,6 +124,50 @@ export default function RootLayout({
             })
           }}
         />
+        
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "PND Industrial Suppliers",
+              "url": "https://pndindustrialsuppliers.com",
+              "logo": "https://pndindustrialsuppliers.com/pnd-logo.png",
+              "description": "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more.",
+              "foundingDate": "2024",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+919398644987",
+                "contactType": "Sales",
+                "areaServed": ["Nellore", "Kakinada", "Andhra Pradesh"]
+              },
+              "sameAs": [
+                "https://www.facebook.com/pndindustrialsuppliers",
+                "https://www.instagram.com/pndindustrialsuppliers"
+              ],
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd",
+                  "addressLocality": "Nellore",
+                  "addressRegion": "AP",
+                  "postalCode": "524001",
+                  "addressCountry": "IN"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi",
+                  "addressLocality": "Kakinada",
+                  "addressRegion": "AP",
+                  "postalCode": "533005",
+                  "addressCountry": "IN"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`font-sans antialiased`} style={{ fontFamily: "Roboto, var(--font-sans)" }} suppressHydrationWarning>
         <CartProvider>
