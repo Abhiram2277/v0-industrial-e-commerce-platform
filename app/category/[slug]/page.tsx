@@ -10,7 +10,16 @@ import { ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 import { getCategoryCanonicalUrl } from "@/lib/seo-helpers"
 
-export const dynamic = "force-dynamic"
+// Enable static generation with dynamic params for all categories
+export const dynamicParams = true
+export const revalidate = 3600 // Revalidate every hour
+
+export async function generateStaticParams() {
+  const categories = await getAllCategories()
+  return categories.map((category) => ({
+    slug: category.slug,
+  }))
+}
 
 export async function generateMetadata({
   params,
@@ -27,11 +36,18 @@ export async function generateMetadata({
     }
   }
 
+  const canonicalUrl = getCategoryCanonicalUrl(slug)
   return {
     title: `${category.name} | PND Industrial Suppliers`,
     description: category.description || `Browse ${category.name} products from PND Industrial Suppliers`,
     alternates: {
-      canonical: getCategoryCanonicalUrl(slug),
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${category.name} | PND Industrial Suppliers`,
+      description: category.description || `Browse ${category.name} products from PND Industrial Suppliers`,
+      url: canonicalUrl,
+      type: "website",
     },
   }
 }
@@ -53,10 +69,31 @@ export default async function CategoryPage({
 
   const categoryProducts = products.filter((p) => p.category === slug)
 
+  // CollectionPage Schema for SEO
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: category.name,
+    description: category.description,
+    url: getCategoryCanonicalUrl(slug),
+    isPartOf: {
+      "@type": "WebSite",
+      name: "PND Industrial Suppliers",
+      url: "https://pndindustrialsuppliers.com",
+    },
+    numberOfItems: categoryProducts.length,
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
+        {/* Schema markup for search engines */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
         {/* Sticky Back Navigation Bar */}
         <div className="sticky top-0 z-30 bg-background/95 backdrop-blur border-b border-border/50">
           <div className="container mx-auto px-4 py-3 flex items-center gap-4">
