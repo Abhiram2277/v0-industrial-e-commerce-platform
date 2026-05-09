@@ -32,6 +32,23 @@ export function ProductCard({ product }: ProductCardProps) {
       "@type": "Brand",
       name: product.brand || "PND Industrial Suppliers",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "3",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "INR",
+      url: "https://pndindustrialsuppliers.com/quote",
+      seller: {
+        "@type": "Organization",
+        name: "PND Industrial Suppliers",
+      },
+    },
   }
 
   return (

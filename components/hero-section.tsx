@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, Award, Users, Truck, RotateCcw, Lock, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import { formatYearsActive } from "@/lib/utils"
 
 export function HeroSection() {
   return (
@@ -76,7 +77,7 @@ export function HeroSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-3 md:gap-6 pt-4 md:pt-8 border-t border-primary-foreground/20">
               <div>
-                <div className="text-2xl md:text-3xl font-bold text-accent">6 Yrs</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">{formatYearsActive()}</div>
                 <div className="text-xs md:text-sm text-primary-foreground/70">Industry Experience</div>
               </div>
               <div>

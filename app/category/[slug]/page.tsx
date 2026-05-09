@@ -130,7 +130,46 @@ export default async function CategoryPage({
           </div>
         </section>
 
-        {/* Products Grid */}
+        {/* Modern B2B Description Section */}
+        <section className="py-12 md:py-16 bg-background border-b border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              {/* Dynamic Headline */}
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+                Authorized {category.name} Supplier in Nellore & Kakinada
+              </h2>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-4 md:gap-6 mb-8">
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <span className="text-accent text-lg">✓</span>
+                  <span>Authorized Distributor</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <span className="text-accent text-lg">✓</span>
+                  <span>IS/CE Certified</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <span className="text-accent text-lg">✓</span>
+                  <span>Same-Day Stock</span>
+                </div>
+              </div>
+
+              {/* Brands Line */}
+              <div className="flex items-center gap-3 mb-8 text-sm md:text-base">
+                <span className="font-semibold text-foreground">Brands:</span>
+                <span className="text-foreground/80">Udyogi · Hillson · Bosch · DeWalt · Ador Welding</span>
+              </div>
+
+              {/* CTA Button */}
+              <Link href="/quote">
+                <Button size="lg" className="gap-2">
+                  Get Bulk Quote →
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
         <section className="py-24 md:py-32">
           <div className="container mx-auto px-4">
             <div className="mb-12 flex items-center justify-between">

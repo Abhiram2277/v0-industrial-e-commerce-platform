@@ -9,8 +9,14 @@ import { PartnerBrands } from "@/components/partner-brands"
 import { IndustriesServed } from "@/components/industries-served"
 import { ProductExplorer } from "@/components/product-explorer"
 import { CTASection } from "@/components/cta-section"
+import { getAllProducts, getAllCategories } from "@/lib/products-combined"
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [products, categories] = await Promise.all([
+    getAllProducts(),
+    getAllCategories(),
+  ])
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -20,9 +26,7 @@ export default function HomePage() {
         <AboutSection />
         <PartnerBrands />
         <IndustriesServed />
-        <Suspense fallback={<div className="py-20 container mx-auto px-4"><p className="text-center">Loading products...</p></div>}>
-          <ProductExplorer />
-        </Suspense>
+        <ProductExplorer initialProducts={products} initialCategories={categories} />
         <CTASection />
       </main>
       <SiteFooter />

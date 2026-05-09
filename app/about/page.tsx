@@ -6,6 +6,7 @@ import { PartnerBrands } from "@/components/partner-brands"
 import { Card, CardContent } from "@/components/ui/card"
 import { Shield, Award, Users, Zap } from "lucide-react"
 import type { Metadata } from "next"
+import { formatYearsActive } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "About Us | PND Industrial Suppliers",
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const yearsActive = formatYearsActive()
   const values = [
     {
       icon: Shield,
@@ -35,7 +37,7 @@ export default function AboutPage() {
     {
       icon: Zap,
       title: "Industry Expertise",
-      description: "6+ years of experience serving industrial clients across South India",
+      description: `${yearsActive} years of experience serving industrial clients across South India`,
     },
   ]
 

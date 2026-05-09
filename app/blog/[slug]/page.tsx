@@ -16,52 +16,59 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params
   const article = getBlogArticleBySlug(slug)
   
-  if (!article) return {}
+  if (!article) {
+    return {
+      title: "Blog Post Not Found | PND Industrial Suppliers",
+      description: "This blog post could not be found.",
+    }
+  }
 
   const canonicalUrl = getBlogCanonicalUrl(slug)
+  const seoTitle = article.seoTitle || article.title
+  const seoDescription = article.seoDescription || article.excerpt
 
   return {
-    title: article.seoTitle || article.title,
-    description: article.seoDescription || article.excerpt,
-    keywords: article.keywords.join(', '),
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-      maximumScale: 5,
-    },
+    title: seoTitle,
+    description: seoDescription,
+    keywords: article.keywords?.join(', ') || [],
     openGraph: {
-      title: article.seoTitle || article.title,
-      description: article.seoDescription || article.excerpt,
-      type: "article",
+      title: seoTitle,
+      description: seoDescription,
+      type: "article" as const,
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
-      authors: [article.author],
+      authors: article.author ? [article.author] : [],
       url: canonicalUrl,
-      images: [
-        {
-          url: article.featuredImage || "/og-default.jpg",
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        }
-      ],
+      siteName: "PND Industrial Suppliers",
+      images: article.featuredImage 
+        ? [
+            {
+              url: article.featuredImage,
+              width: 1200,
+              height: 630,
+              alt: seoTitle,
+              type: "image/jpeg",
+            }
+          ]
+        : [],
     },
     twitter: {
-      card: "summary_large_image",
-      title: article.seoTitle || article.title,
-      description: article.seoDescription || article.excerpt,
-      images: [article.featuredImage || "/og-default.jpg"],
+      card: "summary_large_image" as const,
+      title: seoTitle,
+      description: seoDescription,
+      images: article.featuredImage ? [article.featuredImage] : [],
+      creator: article.author ? `@${article.author.replace(/\s+/g, '')}` : "@pndsuppliers",
     },
     article: {
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
-      authors: [article.author],
-      tags: article.keywords,
+      authors: article.author ? [article.author] : [],
+      tags: article.keywords || [],
     },
     alternates: {
       canonical: canonicalUrl,
     },
-  }
+  } as const
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

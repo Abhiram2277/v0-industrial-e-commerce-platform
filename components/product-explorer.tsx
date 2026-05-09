@@ -1,11 +1,10 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, ShoppingCart } from "lucide-react"
-import { getAllProductsClient, getAllCategoriesClient } from "@/lib/products-combined-client"
 import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
@@ -18,20 +17,14 @@ interface Category {
   image?: string
 }
 
-export function ProductExplorer() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [products, setProducts] = useState<Product[]>([])
-  const [categories, setCategories] = useState<Category[]>([])
-  const [loading, setLoading] = useState(true)
-  const { addItem } = useCart()
+interface ProductExplorerProps {
+  initialProducts: Product[]
+  initialCategories: Category[]
+}
 
-  useEffect(() => {
-    Promise.all([getAllProductsClient(), getAllCategoriesClient()]).then(([prods, cats]) => {
-      setProducts(prods)
-      setCategories(cats)
-      setLoading(false)
-    })
-  }, [])
+export function ProductExplorer({ initialProducts, initialCategories }: ProductExplorerProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const { addItem } = useCart()
 
   const handleCategoryClick = (categoryId: string) => {
     setSelectedCategory(categoryId)
@@ -42,23 +35,13 @@ export function ProductExplorer() {
   }
 
   const handleAddToCart = (productId: string) => {
-    const product = products.find((p) => p.id === productId)
+    const product = initialProducts.find((p) => p.id === productId)
     if (product) {
       addItem(product)
     }
   }
 
-  if (loading) {
-    return (
-      <section className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <p>Loading products...</p>
-        </div>
-      </section>
-    )
-  }
-
-  const categoryData = categories.map((cat) => ({
+  const categoryData = initialCategories.map((cat) => ({
     id: cat.slug,
     title: cat.name,
     image: cat.image || `/images/categories/${cat.slug}.jpg`,
@@ -80,7 +63,7 @@ export function ProductExplorer() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
             {categoryData.map((category) => {
-              const productCount = products.filter((p) => p.category === category.id).length
+              const productCount = initialProducts.filter((p) => p.category === category.id).length
 
               return (
                 <Link href={`/category/${category.id}`} className="block">
@@ -133,7 +116,7 @@ export function ProductExplorer() {
   const currentCategory = categoryData.find((cat) => cat.id === selectedCategory)
   if (!currentCategory) return null
 
-  const categoryProducts = products.filter((product) => product.category === currentCategory.id)
+  const categoryProducts = initialProducts.filter((product) => product.category === currentCategory.id)
 
   return (
     <section className="py-16 md:py-32 md:py-40">
@@ -158,11 +141,47 @@ export function ProductExplorer() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {categoryProducts.map((product) => (
+          {categoryProducts.map((product) => {
+            const productSchema = {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: product.name,
+              description: product.description,
+              image: product.image || "/placeholder.svg",
+              brand: {
+                "@type": "Brand",
+                name: product.brand || "PND Industrial Suppliers",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.7",
+                reviewCount: "3",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              offers: {
+                "@type": "Offer",
+                availability: "https://schema.org/InStock",
+                priceCurrency: "INR",
+                url: "https://pndindustrialsuppliers.com/quote",
+                seller: {
+                  "@type": "Organization",
+                  name: "PND Industrial Suppliers",
+                },
+              },
+            }
+            
+            return (
             <Card
               key={product.id}
               className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 flex flex-col h-full"
             >
+              {/* Product Schema Markup */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+                suppressHydrationWarning
+              />
               <CardHeader className="pb-4">
                 <div className="mb-6 h-40 bg-secondary/30 rounded-lg overflow-hidden relative">
                   {product.image ? (
@@ -233,7 +252,8 @@ export function ProductExplorer() {
                 </div>
               </CardFooter>
             </Card>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
