@@ -130,7 +130,32 @@ export default async function CategoryPage({
           </div>
         </section>
 
-        {/* Products Grid */}
+        {/* Rich Content Section with Location Keywords */}
+        <section className="py-16 md:py-20 bg-background/50">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg text-foreground/90 leading-relaxed mb-6">
+                PND Industrial Suppliers is your authorized distributor of premium {category.name.toLowerCase()} in Nellore and Kakinada, Andhra Pradesh. We partner with leading brands including Udyogi, Hillson, Bosch, DeWalt, and Ador Welding to provide industrial workers with reliable, certified safety equipment that meets all Indian and international standards.
+              </p>
+              <p className="text-lg text-foreground/90 leading-relaxed mb-6">
+                Our {category.name.toLowerCase()} collection is specifically curated for the demanding industrial environments across Andhra Pradesh—from the Krishnapatnam Port and Kakinada refinery operations to pharmaceutical plants, manufacturing facilities, and chemical processing units in Nellore. Every product undergoes rigorous quality checks to ensure worker safety and regulatory compliance.
+              </p>
+              <div className="bg-accent/5 border-l-4 border-accent p-6 my-8 rounded">
+                <p className="text-base font-semibold text-accent mb-2">Why Choose Our {category.name}?</p>
+                <ul className="space-y-2 text-foreground/85">
+                  <li>✓ Authorized distributor for Udyogi, Hillson, and other premium brands</li>
+                  <li>✓ Same-day delivery available in Nellore and Kakinada</li>
+                  <li>✓ Bulk orders with competitive wholesale pricing</li>
+                  <li>✓ Expert consultation on workplace safety requirements</li>
+                  <li>✓ Certified to Indian and international safety standards (ISI, CE, ANSI)</li>
+                </ul>
+              </div>
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                Contact PND Industrial Suppliers today for your {category.name.toLowerCase()} needs. We serve industrial clients across Nellore, Kakinada, and surrounding areas of Andhra Pradesh with fast shipping, flexible payment options, and dedicated customer support.
+              </p>
+            </div>
+          </div>
+        </section>
         <section className="py-24 md:py-32">
           <div className="container mx-auto px-4">
             <div className="mb-12 flex items-center justify-between">
