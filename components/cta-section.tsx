@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Truck, RotateCcw, Lock, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import { formatYearsActive } from "@/lib/utils"
 
 export function CTASection() {
   return (
@@ -67,7 +68,7 @@ export function CTASection() {
               <div className="text-primary-foreground/70">Brand Partners</div>
             </div>
             <div>
-              <div className="font-bold text-2xl text-accent">6 Yrs</div>
+              <div className="font-bold text-2xl text-accent">{formatYearsActive()}</div>
               <div className="text-primary-foreground/70">Industry Experience</div>
             </div>
           </div>
