@@ -130,29 +130,43 @@ export default async function CategoryPage({
           </div>
         </section>
 
-        {/* Rich Content Section with Location Keywords */}
-        <section className="py-16 md:py-20 bg-background/50">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                PND Industrial Suppliers is your authorized distributor of premium {category.name.toLowerCase()} in Nellore and Kakinada, Andhra Pradesh. We partner with leading brands including Udyogi, Hillson, Bosch, DeWalt, and Ador Welding to provide industrial workers with reliable, certified safety equipment that meets all Indian and international standards.
-              </p>
-              <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                Our {category.name.toLowerCase()} collection is specifically curated for the demanding industrial environments across Andhra Pradesh—from the Krishnapatnam Port and Kakinada refinery operations to pharmaceutical plants, manufacturing facilities, and chemical processing units in Nellore. Every product undergoes rigorous quality checks to ensure worker safety and regulatory compliance.
-              </p>
-              <div className="bg-accent/5 border-l-4 border-accent p-6 my-8 rounded">
-                <p className="text-base font-semibold text-accent mb-2">Why Choose Our {category.name}?</p>
-                <ul className="space-y-2 text-foreground/85">
-                  <li>✓ Authorized distributor for Udyogi, Hillson, and other premium brands</li>
-                  <li>✓ Same-day delivery available in Nellore and Kakinada</li>
-                  <li>✓ Bulk orders with competitive wholesale pricing</li>
-                  <li>✓ Expert consultation on workplace safety requirements</li>
-                  <li>✓ Certified to Indian and international safety standards (ISI, CE, ANSI)</li>
-                </ul>
+        {/* Modern B2B Description Section */}
+        <section className="py-12 md:py-16 bg-background border-b border-border/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              {/* Dynamic Headline */}
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground">
+                Authorized {category.name} Supplier in Nellore & Kakinada
+              </h2>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-4 md:gap-6 mb-8">
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <span className="text-accent text-lg">✓</span>
+                  <span>Authorized Distributor</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <span className="text-accent text-lg">✓</span>
+                  <span>IS/CE Certified</span>
+                </div>
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <span className="text-accent text-lg">✓</span>
+                  <span>Same-Day Stock</span>
+                </div>
               </div>
-              <p className="text-lg text-foreground/90 leading-relaxed">
-                Contact PND Industrial Suppliers today for your {category.name.toLowerCase()} needs. We serve industrial clients across Nellore, Kakinada, and surrounding areas of Andhra Pradesh with fast shipping, flexible payment options, and dedicated customer support.
-              </p>
+
+              {/* Brands Line */}
+              <div className="flex items-center gap-3 mb-8 text-sm md:text-base">
+                <span className="font-semibold text-foreground">Brands:</span>
+                <span className="text-foreground/80">Udyogi · Hillson · Bosch · DeWalt · Ador Welding</span>
+              </div>
+
+              {/* CTA Button */}
+              <Link href="/quote">
+                <Button size="lg" className="gap-2">
+                  Get Bulk Quote →
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
