@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: "PND Industrial Suppliers | PPE & Safety Equipment — Nellore & Kakinada, AP",
   description:
     "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more. Life is Precious.",
+  metadataBase: new URL("https://pndindustrialsuppliers.com"),
   generator: "v0.app",
   keywords: [
     "Industrial Suppliers",
