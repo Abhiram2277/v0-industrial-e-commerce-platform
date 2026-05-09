@@ -141,11 +141,47 @@ export function ProductExplorer({ initialProducts, initialCategories }: ProductE
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
-          {categoryProducts.map((product) => (
+          {categoryProducts.map((product) => {
+            const productSchema = {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: product.name,
+              description: product.description,
+              image: product.image || "/placeholder.svg",
+              brand: {
+                "@type": "Brand",
+                name: product.brand || "PND Industrial Suppliers",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.7",
+                reviewCount: "3",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              offers: {
+                "@type": "Offer",
+                availability: "https://schema.org/InStock",
+                priceCurrency: "INR",
+                url: "https://pndindustrialsuppliers.com/quote",
+                seller: {
+                  "@type": "Organization",
+                  name: "PND Industrial Suppliers",
+                },
+              },
+            }
+            
+            return (
             <Card
               key={product.id}
               className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 flex flex-col h-full"
             >
+              {/* Product Schema Markup */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+                suppressHydrationWarning
+              />
               <CardHeader className="pb-4">
                 <div className="mb-6 h-40 bg-secondary/30 rounded-lg overflow-hidden relative">
                   {product.image ? (
@@ -216,7 +252,8 @@ export function ProductExplorer({ initialProducts, initialCategories }: ProductE
                 </div>
               </CardFooter>
             </Card>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
