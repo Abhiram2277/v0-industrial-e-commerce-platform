@@ -55,20 +55,9 @@ export function BlogCard({ article }: BlogCardProps) {
         </CardDescription>
       </CardHeader>
 
-      {/* Content Section with Keywords */}
+      {/* Content Section */}
       <CardContent className="flex-1 px-6 pb-0">
-        <div className="space-y-6">
-          <div className="flex flex-wrap gap-2">
-            {article.keywords.slice(0, 3).map((keyword) => (
-              <span 
-                key={keyword} 
-                className="inline-block px-3 py-1.5 bg-muted/50 text-muted-foreground rounded-md text-xs font-medium hover:bg-muted transition-colors"
-              >
-                #{keyword}
-              </span>
-            ))}
-          </div>
-        </div>
+        {/* Keywords hidden in metadata for filtering, not visible */}
       </CardContent>
 
       {/* Footer Section */}
