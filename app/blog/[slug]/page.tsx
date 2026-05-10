@@ -5,6 +5,7 @@ import { BlogPostContent } from "@/components/blog-post"
 import { getBlogArticleBySlug, getRelatedArticles } from "@/lib/blog-data"
 import { notFound } from "next/navigation"
 import { getBlogCanonicalUrl } from "@/lib/seo-helpers"
+import type { Metadata } from "next"
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -12,7 +13,7 @@ interface BlogPostPageProps {
   }>
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
   const article = getBlogArticleBySlug(slug)
   
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     openGraph: {
       title: seoTitle,
       description: seoDescription,
-      type: "article" as const,
+      type: "article",
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       authors: article.author ? [article.author] : [],
@@ -53,22 +54,16 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
         : [],
     },
     twitter: {
-      card: "summary_large_image" as const,
+      card: "summary_large_image",
       title: seoTitle,
       description: seoDescription,
       images: article.featuredImage ? [article.featuredImage] : [],
       creator: article.author ? `@${article.author.replace(/\s+/g, '')}` : "@pndsuppliers",
     },
-    article: {
-      publishedTime: article.publishedAt,
-      modifiedTime: article.updatedAt,
-      authors: article.author ? [article.author] : [],
-      tags: article.keywords || [],
-    },
     alternates: {
       canonical: canonicalUrl,
     },
-  } as const
+  }
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -80,9 +75,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const relatedArticles = getRelatedArticles(article.id, 3)
+  const canonicalUrl = getBlogCanonicalUrl(slug)
+
+  // BreadcrumbList schema for Google search results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pndindustrialsuppliers.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://pndindustrialsuppliers.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": canonicalUrl
+      }
+    ]
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        suppressHydrationWarning
+      />
       <SiteHeader />
       <main className="flex-1">
         <article className="section-spacing">
