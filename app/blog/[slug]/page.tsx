@@ -75,9 +75,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const relatedArticles = getRelatedArticles(article.id, 3)
+  const canonicalUrl = getBlogCanonicalUrl(slug)
+
+  // BreadcrumbList schema for Google search results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pndindustrialsuppliers.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://pndindustrialsuppliers.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": canonicalUrl
+      }
+    ]
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        suppressHydrationWarning
+      />
       <SiteHeader />
       <main className="flex-1">
         <article className="section-spacing">
