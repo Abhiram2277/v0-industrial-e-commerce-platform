@@ -40,6 +40,10 @@ export async function generateMetadata({
   return {
     title: `${category.name} | PND Industrial Suppliers`,
     description: category.description || `Browse ${category.name} products from PND Industrial Suppliers`,
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
       canonical: canonicalUrl,
     },
