@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website"
   },
   alternates: {
-    canonical: "https://www.pndindustrialsuppliers.com/blog",
+    canonical: "https://pndindustrialsuppliers.com/blog",
   },
 }
 

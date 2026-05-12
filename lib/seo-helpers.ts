@@ -2,7 +2,7 @@
  * SEO Helper Functions for Canonical URLs and Meta Tags
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.pndindustrialsuppliers.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pndindustrialsuppliers.com'
 
 /**
  * Generate canonical URL for a given path
