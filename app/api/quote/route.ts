@@ -141,7 +141,7 @@ function generateCustomerEmailHTML(
         <div class="container">
           <div class="email-content">
             <div class="logo">
-              <img src="https://www.pndindustrialsuppliers.com/favicon.png" alt="PND Industrial Suppliers Logo" style="max-height: 80px; width: auto; object-fit: contain;" />
+              <img src="https://pndindustrialsuppliers.com/favicon.png" alt="PND Industrial Suppliers Logo" style="max-height: 80px; width: auto; object-fit: contain;" />
             </div>
 
             <div class="header">

@@ -93,13 +93,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.pndindustrialsuppliers.com"
+        "item": "https://pndindustrialsuppliers.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://www.pndindustrialsuppliers.com/blog"
+        "item": "https://pndindustrialsuppliers.com/blog"
       },
       {
         "@type": "ListItem",
@@ -137,12 +137,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   "author": {
                     "@type": "Organization",
                     "name": article.author,
-                    "url": "https://www.pndindustrialsuppliers.com"
+                    "url": "https://pndindustrialsuppliers.com"
                   },
                   "publisher": {
                     "@type": "Organization",
                     "name": "PND Industrial Suppliers",
-                    "url": "https://www.pndindustrialsuppliers.com"
+                    "url": "https://pndindustrialsuppliers.com"
                   },
                   "url": getBlogCanonicalUrl(slug),
                   "articleBody": article.content

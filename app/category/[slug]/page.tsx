@@ -83,7 +83,7 @@ export default async function CategoryPage({
     isPartOf: {
       "@type": "WebSite",
       name: "PND Industrial Suppliers",
-      url: "https://www.pndindustrialsuppliers.com",
+      url: "https://pndindustrialsuppliers.com",
     },
     numberOfItems: categoryProducts.length,
   }
