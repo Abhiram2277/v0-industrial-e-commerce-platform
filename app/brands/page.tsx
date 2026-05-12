@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Partner Brands | PND Industrial Suppliers",
   description: "Premium industrial brands - Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley and more. Authorized distributor in Nellore.",
   alternates: {
-    canonical: "https://pndindustrialsuppliers.com/brands",
+    canonical: "https://www.pndindustrialsuppliers.com/brands",
   },
 }
 

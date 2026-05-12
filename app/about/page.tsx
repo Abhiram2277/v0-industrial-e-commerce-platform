@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "About Us | PND Industrial Suppliers",
   description: "Leading industrial solutions provider in Nellore, Andhra Pradesh. Authorized partner for Udyogi Safety, Bosch, DeWalt, and Stanley. Life is Precious.",
   alternates: {
-    canonical: "https://pndindustrialsuppliers.com/about",
+    canonical: "https://www.pndindustrialsuppliers.com/about",
   },
 }
 

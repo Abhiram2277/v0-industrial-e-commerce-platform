@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { getAllProducts, getAllCategories } from '@/lib/products-combined'
 import { getBlogArticles } from '@/lib/blog-data'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pndindustrialsuppliers.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.pndindustrialsuppliers.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages with their priorities and change frequencies
