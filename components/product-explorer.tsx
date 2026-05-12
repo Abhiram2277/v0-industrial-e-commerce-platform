@@ -163,7 +163,7 @@ export function ProductExplorer({ initialProducts, initialCategories }: ProductE
                 "@type": "Offer",
                 availability: "https://schema.org/InStock",
                 priceCurrency: "INR",
-                url: "https://pndindustrialsuppliers.com/quote",
+                url: "https://www.pndindustrialsuppliers.com/quote",
                 seller: {
                   "@type": "Organization",
                   name: "PND Industrial Suppliers",

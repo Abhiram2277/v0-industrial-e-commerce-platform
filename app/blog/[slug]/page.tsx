@@ -2,7 +2,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { BlogPostContent } from "@/components/blog-post"
-import { getBlogArticleBySlug, getRelatedArticles } from "@/lib/blog-data"
+import { getBlogArticleBySlug, getRelatedArticles, blogArticles } from "@/lib/blog-data"
 import { notFound } from "next/navigation"
 import { getBlogCanonicalUrl } from "@/lib/seo-helpers"
 import type { Metadata } from "next"
@@ -11,6 +11,13 @@ interface BlogPostPageProps {
   params: Promise<{
     slug: string
   }>
+}
+
+// Generate static params for all blog posts to enable prerendering
+export async function generateStaticParams() {
+  return blogArticles.map((article) => ({
+    slug: article.slug,
+  }))
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
@@ -86,13 +93,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://pndindustrialsuppliers.com"
+        "item": "https://www.pndindustrialsuppliers.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Blog",
-        "item": "https://pndindustrialsuppliers.com/blog"
+        "item": "https://www.pndindustrialsuppliers.com/blog"
       },
       {
         "@type": "ListItem",
@@ -130,12 +137,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   "author": {
                     "@type": "Organization",
                     "name": article.author,
-                    "url": "https://pndindustrialsuppliers.com"
+                    "url": "https://www.pndindustrialsuppliers.com"
                   },
                   "publisher": {
                     "@type": "Organization",
                     "name": "PND Industrial Suppliers",
-                    "url": "https://pndindustrialsuppliers.com"
+                    "url": "https://www.pndindustrialsuppliers.com"
                   },
                   "url": getBlogCanonicalUrl(slug),
                   "articleBody": article.content
