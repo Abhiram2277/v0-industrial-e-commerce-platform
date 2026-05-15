@@ -3,9 +3,10 @@ import { getDbProducts, getDbCategories } from "./db/products"
 import type { Product } from "./types"
 
 export async function getAllProducts(): Promise<Product[]> {
-  const dbProducts = await getDbProducts()
-  // Merge file-based products with database products
-  return [...fileProducts, ...dbProducts]
+  // Use file-based products only
+  // Database products have different ID schemes (fp-002 vs foot-001) which causes conflicts
+  // File-based products are the source of truth for this application
+  return fileProducts
 }
 
 export async function getAllCategories() {
