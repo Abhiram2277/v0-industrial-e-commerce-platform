@@ -120,9 +120,9 @@ export function ProductCard({ product }: ProductCardProps) {
           <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
         </Button>
         {/* Trust Badges with Tooltips */}
-        <div className="w-full pt-3 border-t flex items-center justify-center gap-6">
+        <div className="w-full pt-3 border-t flex items-center justify-center gap-16">
           <WarrantyTooltip />
-          <CertificationTooltip />
+          <CertificationTooltip category={product.category} />
         </div>
       </CardFooter>
     </Card>

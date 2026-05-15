@@ -2,7 +2,25 @@
 
 import { Info } from "lucide-react"
 
-export function CertificationCard() {
+interface CertificationCardProps {
+  category?: string
+}
+
+// ISO standards mapping by product category
+const ISO_STANDARDS: Record<string, string> = {
+  "foot-protection": "IS 15298",
+  "head-protection": "IS 2925",
+  "fall-protection": "IS 3521",
+  "eye-protection": "IS 5983",
+  "respiratory": "IS 9623",
+  "hand-protection": "IS 4770",
+  "high-vis": "IS 15809",
+  "workwear": "IS 15809",
+}
+
+export function CertificationCard({ category = "foot-protection" }: CertificationCardProps) {
+  const isoStandard = ISO_STANDARDS[category] || "IS 4151"
+
   return (
     <div className="relative">
       <div className="bg-slate-900 rounded-2xl p-8 text-white border border-accent/50 relative overflow-hidden">
@@ -20,7 +38,7 @@ export function CertificationCard() {
           </li>
           <li className="flex items-start gap-3">
             <span className="text-accent font-bold text-lg leading-none">•</span>
-            <span className="text-sm">IS 4151 compliant</span>
+            <span className="text-sm">{isoStandard} compliant</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-accent font-bold text-lg leading-none">•</span>

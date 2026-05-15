@@ -108,7 +108,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Warranty and Certification B2B Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-16">
           <WarrantyCard />
-          <CertificationCard />
+          <CertificationCard category={product.category} />
         </div>
 
         {/* Features and Applications */}
