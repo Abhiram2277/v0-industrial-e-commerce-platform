@@ -7,7 +7,9 @@ import type { Product } from "@/lib/types"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
-import { ShoppingCart, CheckCircle, Lock } from "lucide-react"
+import { ShoppingCart } from "lucide-react"
+import { WarrantyTooltip } from "./warranty-tooltip"
+import { CertificationTooltip } from "./certification-tooltip"
 
 interface ProductCardProps {
   product: Product
@@ -117,16 +119,10 @@ export function ProductCard({ product }: ProductCardProps) {
         >
           <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
         </Button>
-        {/* Trust Badges */}
-        <div className="w-full pt-2 border-t flex items-center justify-center gap-3 text-xs">
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <CheckCircle className="h-3.5 w-3.5 text-accent" />
-            <span>30-Day Replacement</span>
-          </div>
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <Lock className="h-3.5 w-3.5 text-accent" />
-            <span>1-Year Warranty</span>
-          </div>
+        {/* Trust Badges with Tooltips */}
+        <div className="w-full pt-3 border-t flex items-center justify-center gap-16">
+          <WarrantyTooltip />
+          <CertificationTooltip category={product.category} />
         </div>
       </CardFooter>
     </Card>
