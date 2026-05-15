@@ -10,6 +10,8 @@ import Image from "next/image"
 import type { Product } from "@/lib/types"
 import { CertificationTooltip } from "./certification-tooltip"
 import { WarrantyTooltip } from "./warranty-tooltip"
+import { CertificationCard } from "./certification-card"
+import { WarrantyCard } from "./warranty-card"
 
 export function ProductDetailClient({ product }: { product: Product }) {
   const { addItem, openCart } = useCart()
@@ -101,6 +103,12 @@ export function ProductDetailClient({ product }: { product: Product }) {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Warranty and Certification B2B Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-16">
+          <WarrantyCard />
+          <CertificationCard />
         </div>
 
         {/* Features and Applications */}

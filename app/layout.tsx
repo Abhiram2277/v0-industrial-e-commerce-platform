@@ -93,6 +93,7 @@ export default function RootLayout({
         {/* LocalBusiness Schema - Nellore Branch */}
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -137,6 +138,7 @@ export default function RootLayout({
         {/* LocalBusiness Schema - Kakinada Branch */}
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -181,6 +183,7 @@ export default function RootLayout({
         {/* Organization Schema */}
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

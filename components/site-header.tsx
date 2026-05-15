@@ -39,7 +39,7 @@ export function SiteHeader() {
   }, [isMounted])
 
   return (
-    <header className="z-50 w-full border-b md:border-b bg-background md:bg-background">
+    <header className="z-50 w-full border-b md:border-b bg-background md:bg-background" suppressHydrationWarning>
       <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div className="flex items-center justify-between border-b md:border-b py-2 text-base">
