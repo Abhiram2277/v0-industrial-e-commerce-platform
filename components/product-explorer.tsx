@@ -66,8 +66,9 @@ export function ProductExplorer({ initialProducts, initialCategories }: ProductE
               const productCount = initialProducts.filter((p) => p.category === category.id).length
 
               return (
-                <Link key={category.id} href={`/category/${category.id}`} className="block">
+                <Link href={`/category/${category.id}`} className="block">
                 <Card
+                  key={category.id}
                   className="group hover:shadow-2xl transition-all duration-300 hover:border-accent/50 hover:-translate-y-2 cursor-pointer overflow-hidden flex flex-col h-full"
                 >
                   <div className="relative h-32 sm:h-40 md:h-56 w-full overflow-hidden bg-secondary/30">
