@@ -111,20 +111,12 @@ export function ProductCard({ product }: ProductCardProps) {
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
         </Button>
-        <div className="flex gap-2 w-full">
-          <Button 
-            asChild 
-            className="flex-1 bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
-          >
-            <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
-          </Button>
-          <Button 
-            asChild 
-            className="flex-1 bg-primary/10 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold transition-all duration-200"
-          >
-            <Link href={`/product/${product.id}`}>View Details</Link>
-          </Button>
-        </div>
+        <Button 
+          asChild 
+          className="w-full bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
+        >
+          <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+        </Button>
         {/* Trust Badges */}
         <div className="w-full pt-2 border-t flex items-center justify-center gap-3 text-xs">
           <div className="flex items-center gap-1 text-muted-foreground">
