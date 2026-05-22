@@ -18,7 +18,7 @@ export function CartButton() {
     >
       <div className="relative h-7 w-7">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping-cart-0nYBoMu2kdkdRXlHWUzBQPrvbekGhI.png"
+          src="/images/cart-icon.png"
           alt="Shopping Cart"
           fill
           className="object-contain"
