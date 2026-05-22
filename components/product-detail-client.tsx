@@ -16,6 +16,10 @@ import { WarrantyCard } from "./warranty-card"
 export function ProductDetailClient({ product }: { product: Product }) {
   const { addItem, openCart } = useCart()
 
+  if (!product) {
+    return null
+  }
+
   const handleAddToCart = () => {
     addItem(product)
     openCart()
@@ -28,10 +32,10 @@ export function ProductDetailClient({ product }: { product: Product }) {
           {/* Product Image */}
           <div className="space-y-4">
             <div className="aspect-square bg-secondary/30 rounded-xl overflow-hidden relative">
-              {product.image ? (
+              {product?.image ? (
                 <Image
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.name}
+                  src={product.image}
+                  alt={product?.name ?? "Product"}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -40,7 +44,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center p-8">
                     <div className="text-8xl font-bold text-primary/20 mb-4">
-                      {product.name
+                      {(product?.name ?? "Product")
                         .split(" ")
                         .map((w) => w[0])
                         .join("")
@@ -55,13 +59,13 @@ export function ProductDetailClient({ product }: { product: Product }) {
 
           {/* Product Details */}
           <div className="space-y-6">
-            {product.brand && <Badge className="bg-accent text-accent-foreground">{product.brand}</Badge>}
+            {product?.brand && <Badge className="bg-accent text-accent-foreground">{product.brand}</Badge>}
             <h1 className="text-4xl font-bold leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              {product.name}
+              {product?.name ?? "Product Name Unavailable"}
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">{product.description}</p>
+            <p className="text-xl text-muted-foreground leading-relaxed">{product?.description ?? "No description available"}</p>
 
-            {product.subcategory && (
+            {product?.subcategory && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Package className="h-4 w-4" />
                 <span>
@@ -84,14 +88,14 @@ export function ProductDetailClient({ product }: { product: Product }) {
                 size="lg" 
                 className="w-full bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
               >
-                <Link href={`/quote?product=${product.id}`} rel="nofollow">Request Quote</Link>
+                <Link href={`/quote?product=${product?.id ?? ""}`} rel="nofollow">Request Quote</Link>
               </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-4 pt-6 border-t">
               <div className="text-center">
                 <ShieldCheck className="h-8 w-8 text-accent mx-auto mb-2" />
-                <CertificationTooltip />
+                <CertificationTooltip category={product?.category} />
               </div>
               <div className="text-center">
                 <Package className="h-8 w-8 text-accent mx-auto mb-2" />
@@ -108,7 +112,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
         {/* Warranty and Certification B2B Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-16">
           <WarrantyCard />
-          <CertificationCard category={product.category} />
+          <CertificationCard category={product?.category} />
         </div>
 
         {/* Features and Applications */}
@@ -119,7 +123,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                {product.features.map((feature, index) => (
+                {(product?.features ?? []).map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{feature}</span>
@@ -135,7 +139,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                {product.applications.map((application, index) => (
+                {(product?.applications ?? []).map((application, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span className="leading-relaxed">{application}</span>
