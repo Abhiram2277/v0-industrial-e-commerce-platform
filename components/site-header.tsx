@@ -89,8 +89,9 @@ export function SiteHeader() {
             </Link>
           </div>
 
-          {/* Mobile: Hamburger Menu */}
+          {/* Mobile: Hamburger Menu + Cart */}
           <div className="md:hidden flex items-center gap-2 flex-shrink-0">
+            <CartButton />
             <MobileMenu categories={categories} isLoading={isLoading} error={error} />
           </div>
         </div>
