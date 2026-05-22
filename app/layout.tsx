@@ -68,11 +68,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "PND Industrial Suppliers | PPE & Safety Equipment — Nellore & Kakinada",
-    description: "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized Udyogi, Bosch, DeWalt, Stanley distributor.",
+    description: "Authorized PPE & industrial safety equipment supplier in Nellore & Kakinada, AP. Channel partner for Udyogi, Hillson, Bosch, DeWalt & Ador Welding. Call for bulk pricing.",
     url: "https://pndindustrialsuppliers.com",
     siteName: "PND Industrial Suppliers",
     locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PND Industrial Suppliers | PPE & Safety Equipment",
+    description: "Authorized PPE & industrial safety equipment supplier in Nellore & Kakinada, AP. Channel partner for Udyogi, Hillson, Bosch, DeWalt & Ador Welding. Call for bulk pricing.",
+    creator: "@pndindustrial",
   },
 }
 
