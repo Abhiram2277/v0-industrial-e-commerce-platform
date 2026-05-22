@@ -115,7 +115,7 @@ export function CartSidebar() {
                 Submit your cart to receive a detailed quote for all items
               </div>
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-12 text-base">
-                <Link href="/quote" onClick={() => setIsOpen(false)}>
+                <Link href="/quote" rel="nofollow" onClick={() => setIsOpen(false)}>
                   Request Quote for {getTotalItems()} Item{getTotalItems() > 1 ? 's' : ''}
                 </Link>
               </Button>

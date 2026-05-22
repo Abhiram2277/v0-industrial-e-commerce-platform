@@ -241,7 +241,7 @@ export function ProductExplorer({ initialProducts, initialCategories }: ProductE
                     asChild 
                     className="flex-1 bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
                   >
-                    <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+                    <Link href={`/quote?product=${product.id}`} rel="nofollow">Request Quote</Link>
                   </Button>
                   <Button 
                     asChild 

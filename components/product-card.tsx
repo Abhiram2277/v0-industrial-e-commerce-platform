@@ -62,14 +62,15 @@ export function ProductCard({ product }: ProductCardProps) {
         suppressHydrationWarning
       />
       <CardHeader className="pb-4">
-        <div className="mb-6 h-48 bg-secondary/30 rounded-lg overflow-hidden relative flex items-center justify-center">
+        <div className="mb-6 h-48 w-full bg-secondary/30 rounded-lg overflow-hidden relative flex items-center justify-center">
           {product.image ? (
             <Image
-              src={product.image || "/placeholder.svg"}
+              src={product.image}
               alt={product.name}
               fill
               className="object-contain group-hover:scale-105 transition-transform duration-300 p-2"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={false}
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -117,7 +118,7 @@ export function ProductCard({ product }: ProductCardProps) {
           asChild 
           className="w-full bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
         >
-          <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+          <Link href={`/quote?product=${product.id}`} rel="nofollow">Request Quote</Link>
         </Button>
         {/* Trust Badges with Tooltips */}
         <div className="w-full pt-3 border-t flex items-center justify-center gap-16">

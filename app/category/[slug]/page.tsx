@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ProductCard } from "@/components/product-card"
 import { Button } from "@/components/ui/button"
 import { getAllProducts, getAllCategories } from "@/lib/products-combined"
+import { generateFAQSchema } from "@/lib/faq-schema"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
@@ -74,7 +75,7 @@ export default async function CategoryPage({
   const categoryProducts = products.filter((p) => p.category === slug)
 
   // CollectionPage Schema for SEO
-  const schemaData = {
+  const collectionSchemaData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: category.name,
@@ -88,14 +89,25 @@ export default async function CategoryPage({
     numberOfItems: categoryProducts.length,
   }
 
+  // FAQPage Schema for SEO (invisible to visitors)
+  const faqSchema = generateFAQSchema(category.name, slug)
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        {/* Schema markup for search engines */}
+        {/* CollectionPage Schema markup for search engines */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchemaData) }}
+          suppressHydrationWarning
+        />
+
+        {/* FAQPage Schema markup for search engines (invisible to visitors) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          suppressHydrationWarning
         />
 
         {/* Sticky Back Navigation Bar */}
