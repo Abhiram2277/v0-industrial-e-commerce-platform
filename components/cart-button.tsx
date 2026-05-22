@@ -1,9 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { useCart } from "@/lib/cart-context"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { ShoppingCart } from "lucide-react"
 
 export function CartButton() {
   const { getTotalItems, setIsOpen } = useCart()
@@ -16,15 +16,7 @@ export function CartButton() {
       className="relative h-12 w-12 p-0 hover:bg-accent hover:text-accent-foreground bg-transparent flex items-center justify-center"
       onClick={() => setIsOpen(true)}
     >
-      <div className="relative h-7 w-7">
-        <Image
-          src="/images/cart-icon.png"
-          alt="Shopping Cart"
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
+      <ShoppingCart className="h-6 w-6 text-foreground" />
       {totalItems > 0 && (
         <Badge
           variant="destructive"
