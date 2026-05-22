@@ -118,7 +118,7 @@ export function ProductCard({ product }: ProductCardProps) {
           asChild 
           className="w-full bg-accent/10 border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200"
         >
-          <Link href={`/quote?product=${product.id}`}>Request Quote</Link>
+          <Link href={`/quote?product=${product.id}`} rel="nofollow">Request Quote</Link>
         </Button>
         {/* Trust Badges with Tooltips */}
         <div className="w-full pt-3 border-t flex items-center justify-center gap-16">
