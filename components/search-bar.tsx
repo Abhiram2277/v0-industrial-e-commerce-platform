@@ -94,7 +94,7 @@ export function SearchBar() {
               >
                 <div className="relative w-12 h-12 flex-shrink-0 bg-muted rounded overflow-hidden">
                   {product.image ? (
-                    <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                    <Image src={product.image || "/placeholder.svg"} alt={product.name} fill unoptimized className="object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-xs font-bold text-muted-foreground">
                       {product.name

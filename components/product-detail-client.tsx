@@ -37,6 +37,7 @@ export function ProductDetailClient({ product }: { product: Product }) {
                   src={product.image}
                   alt={product?.name ?? "Product"}
                   fill
+                  unoptimized
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
