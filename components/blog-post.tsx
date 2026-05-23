@@ -93,95 +93,25 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-16 body-regular">
-        {article.content.split('\n\n').map((paragraph, idx) => {
-          if (paragraph.startsWith('#')) {
-            const level = paragraph.match(/^#+/)[0].length
-            const text = paragraph.replace(/^#+\s/, '')
-            // Skip H1 tags in content since title is already H1
-            if (level === 1) return null
-            if (level === 2) return <h2 key={idx} className="heading-h2 mt-12 mb-6 text-foreground">{text}</h2>
-            if (level === 3) return <h3 key={idx} className="heading-h3 mt-10 mb-5 text-foreground">{text}</h3>
-            return null
-          }
-          if (paragraph.startsWith('-')) {
-            const items = paragraph.split('\n').filter(line => line.startsWith('-'))
-            return (
-              <ul key={idx} className="list-disc list-inside space-y-4 my-8 pl-4">
-                {items.map((item, i) => (
-                  <li key={i} className="text-foreground leading-relaxed ml-2 text-base lg:text-lg">{item.replace(/^-\s/, '')}</li>
-                ))}
-              </ul>
-            )
-          }
-          if (paragraph.trim()) {
-            // Add internal links to contextual keywords
-            let processedText = paragraph
-            
-            // First, parse markdown links [text](url) format
-            processedText = processedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">$1</a>')
-            
-            // Brand and product links
-            const linkMappings = [
-              { text: 'Udyogi', href: '/brands' },
-              { text: 'Udyogi Safety', href: '/brands' },
-              { text: 'Bosch', href: '/brands' },
-              { text: 'DeWalt', href: '/brands' },
-              { text: 'Stanley', href: '/brands' },
-              { text: 'safety helmet', href: '/category/head-protection' },
-              { text: 'safety shoe', href: '/category/foot-protection' },
-              { text: 'safety shoes', href: '/category/foot-protection' },
-              { text: 'fall protection', href: '/category/fall-protection' },
-              { text: 'harness', href: '/category/harness' },
-              { text: 'lanyard', href: '/category/lanyard' },
-              { text: 'workwear', href: '/category/workwear' },
-              { text: 'hand protection', href: '/category/hand-protection' },
-              { text: 'Get a quote', href: '/quote' },
-              { text: 'get a quote', href: '/quote' },
-              { text: 'contact us', href: '/contact' },
-              // Browse links for AP/Telangana blog post
-              { text: 'Browse Safety Helmets', href: '/category/head-protection' },
-              { text: 'Browse Safety Shoes', href: '/category/foot-protection' },
-              { text: 'Browse Fall Protection', href: '/category/fall-protection' },
-              { text: 'Browse Lanyards & Anchorage', href: '/category/lanyard' },
-              { text: 'Browse Respiratory Protection', href: '/category/respiratory-protection' },
-              { text: 'Browse Safety Gloves', href: '/category/hand-protection' },
-              { text: 'Browse Eye Protection', href: '/category/eye-protection' },
-              { text: 'Browse Face Protection', href: '/category/face-protection' },
-              { text: 'Browse Workwear & PPE', href: '/category/workwear' },
-              { text: 'Browse Electrical Safety', href: '/category/electrical-safety' },
-              { text: 'Browse Arc & Heat Protection', href: '/category/arc-heat-protection' },
-              { text: 'Browse Fire Safety Equipment', href: '/category/fire-safety' },
-              { text: 'Browse Emergency Safety', href: '/category/emergency-safety' },
-              { text: 'Browse Hearing Protection', href: '/category/hearing-protection' },
-              { text: 'Browse Workplace Safety Signs', href: '/category/sgbi' },
-              { text: 'Browse Workplace Safety Systems', href: '/category/workplace-safety' },
-              { text: 'Browse Welding Equipment', href: '/category/welding-equipment' },
-              { text: 'Browse Power Tools', href: '/category/power-tools' },
-            ]
-            
-            linkMappings.forEach(({ text, href }) => {
-              const regex = new RegExp(`\\b${text}\\b`, 'gi')
-              processedText = processedText.replace(regex, `<a href="${href}" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">${text}</a>`)
-            })
-            
-            // Check if paragraph contains bold text markers
-            const hasBold = paragraph.includes('**')
-            
-            if (hasBold || linkMappings.some(({ text }) => new RegExp(`\\b${text}\\b`, 'i').test(paragraph))) {
-              processedText = processedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-              return (
-                <p 
-                  key={idx} 
-                  className="mb-8 leading-relaxed text-foreground text-base lg:text-lg"
-                  dangerouslySetInnerHTML={{ __html: processedText }}
-                />
-              )
-            }
-            
-            return <p key={idx} className="mb-8 leading-relaxed text-foreground text-base lg:text-lg">{paragraph}</p>
-          }
-          return null
-        })}
+        <div 
+          dangerouslySetInnerHTML={{ 
+            __html: article.content
+              .replace(/^## (.+)$/gm, '<h2 class="heading-h2 mt-12 mb-6 text-foreground">$1</h2>')
+              .replace(/^### (.+)$/gm, '<h3 class="heading-h3 mt-10 mb-5 text-foreground">$1</h3>')
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">$1</a>')
+              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+              .replace(/\n\n/g, '</p><p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">')
+              .split('\n- ')
+              .map((part, i) => {
+                if (i === 0) return part
+                return part.replace(/^/, '<li class="ml-4 mb-2">').replace(/\n/g, '</li><li class="ml-4 mb-2">')
+              })
+              .join('')
+              .replace(/<li class="ml-4 mb-2">$/gm, '</li>')
+              .replace(/^<p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">/, '<p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">')
+              .replace(/<\/p><p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">$/, '</p>')
+          }}
+        />
       </div>
 
       {/* CTAs */}
