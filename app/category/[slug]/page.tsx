@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ProductCard } from "@/components/product-card"
 import { Button } from "@/components/ui/button"
 import { getAllProducts, getAllCategories } from "@/lib/products-combined"
+import { generateFAQPageSchema } from "@/lib/generate-faq-schema"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
@@ -88,6 +89,9 @@ export default async function CategoryPage({
     numberOfItems: categoryProducts.length,
   }
 
+  // FAQPage Schema for local SEO (invisible to visitors)
+  const faqSchemaJson = generateFAQPageSchema(slug)
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -96,6 +100,13 @@ export default async function CategoryPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
+        {/* FAQPage Schema for local SEO (invisible to visitors) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: faqSchemaJson }}
+          suppressHydrationWarning
         />
 
         {/* Sticky Back Navigation Bar */}
