@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Clock, User, Share2 } from "lucide-react"
+import ReactMarkdown from 'react-markdown'
 import type { BlogArticle } from "@/lib/blog-data"
 
 interface BlogPostProps {
@@ -99,36 +100,53 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-16 body-regular">
-        <div 
-          dangerouslySetInnerHTML={{ 
-            __html: article.content
-              // First, extract heading text to create IDs
-              .replace(/^## (.+)$/gm, (match, text) => {
-                const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
-                return `<h2 id="${id}" class="heading-h2 mt-12 mb-6 text-foreground">${text}</h2>`
-              })
-              .replace(/^### (.+)$/gm, (match, text) => {
-                const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
-                return `<h3 id="${id}" class="heading-h3 mt-10 mb-5 text-foreground">${text}</h3>`
-              })
-              // Handle bold markdown links: **[text](url)** → <strong><a>text</a></strong>
-              .replace(/\*\*\[([^\]]+)\]\(([^)]+)\)\*\*/g, '<strong><a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2">$1</a></strong>')
-              // Handle regular markdown links: [text](url)
-              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">$1</a>')
-              // Handle remaining bold: **text**
-              .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-              .replace(/\n\n/g, '</p><p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">')
-              .split('\n- ')
-              .map((part, i) => {
-                if (i === 0) return part
-                return part.replace(/^/, '<li class="ml-4 mb-2">').replace(/\n/g, '</li><li class="ml-4 mb-2">')
-              })
-              .join('')
-              .replace(/<li class="ml-4 mb-2">$/gm, '</li>')
-              .replace(/^<p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">/, '<p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">')
-              .replace(/<\/p><p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">$/, '</p>')
+        <ReactMarkdown
+          components={{
+            h1: ({children}) => (
+              <h1 className="text-4xl font-bold mt-12 mb-6 text-foreground">
+                {children}
+              </h1>
+            ),
+            h2: ({children}) => (
+              <h2 className="heading-h2 mt-12 mb-6 text-foreground border-b pb-2">
+                {children}
+              </h2>
+            ),
+            h3: ({children}) => (
+              <h3 className="heading-h3 mt-10 mb-5 text-foreground">
+                {children}
+              </h3>
+            ),
+            p: ({children}) => (
+              <p className="mb-8 leading-relaxed text-foreground text-base lg:text-lg">
+                {children}
+              </p>
+            ),
+            a: ({href, children}) => (
+              <a 
+                href={href} 
+                className="text-accent hover:text-accent/80 underline underline-offset-2 font-medium"
+              >
+                {children}
+              </a>
+            ),
+            strong: ({children}) => (
+              <strong className="font-semibold text-foreground">
+                {children}
+              </strong>
+            ),
+            ul: ({children}) => (
+              <ul className="list-disc list-inside mb-8 space-y-2 text-foreground">
+                {children}
+              </ul>
+            ),
+            li: ({children}) => (
+              <li className="ml-4 text-base lg:text-lg leading-relaxed">{children}</li>
+            ),
           }}
-        />
+        >
+          {article.content}
+        </ReactMarkdown>
       </div>
 
       {/* CTAs */}
