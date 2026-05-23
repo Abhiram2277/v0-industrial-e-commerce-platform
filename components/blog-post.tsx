@@ -83,11 +83,17 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
           <span>📋</span> In This Article
         </h3>
         <ul className="space-y-3 text-sm">
-          {article.keywords.map((keyword, idx) => (
-            <li key={idx} className="text-foreground/70 hover:text-accent transition-colors ml-4">
-              • {keyword}
-            </li>
-          ))}
+          {article.keywords.map((keyword, idx) => {
+            // Convert keyword to anchor slug (lowercase, replace spaces with hyphens)
+            const slug = keyword.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+            return (
+              <li key={idx} className="text-foreground/70 hover:text-accent transition-colors ml-4">
+                <a href={`#${slug}`} className="hover:text-accent">
+                  • {keyword}
+                </a>
+              </li>
+            )
+          })}
         </ul>
       </div>
 
@@ -96,9 +102,20 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
         <div 
           dangerouslySetInnerHTML={{ 
             __html: article.content
-              .replace(/^## (.+)$/gm, '<h2 class="heading-h2 mt-12 mb-6 text-foreground">$1</h2>')
-              .replace(/^### (.+)$/gm, '<h3 class="heading-h3 mt-10 mb-5 text-foreground">$1</h3>')
+              // First, extract heading text to create IDs
+              .replace(/^## (.+)$/gm, (match, text) => {
+                const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+                return `<h2 id="${id}" class="heading-h2 mt-12 mb-6 text-foreground">${text}</h2>`
+              })
+              .replace(/^### (.+)$/gm, (match, text) => {
+                const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+                return `<h3 id="${id}" class="heading-h3 mt-10 mb-5 text-foreground">${text}</h3>`
+              })
+              // Handle bold markdown links: **[text](url)** → <strong><a>text</a></strong>
+              .replace(/\*\*\[([^\]]+)\]\(([^)]+)\)\*\*/g, '<strong><a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2">$1</a></strong>')
+              // Handle regular markdown links: [text](url)
               .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">$1</a>')
+              // Handle remaining bold: **text**
               .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
               .replace(/\n\n/g, '</p><p class="mb-8 leading-relaxed text-foreground text-base lg:text-lg">')
               .split('\n- ')
