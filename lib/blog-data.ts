@@ -3180,25 +3180,17 @@ IS 2925 certified safety helmets from Udyogi Vista, Fusion and Ultravent series 
 
 **[Browse Safety Helmets →](/category/head-protection)**
 
----
-
 ### Safety Shoes & Foot Protection
 
 IS 15298 certified steel toe safety shoes from Hillson and Udyogi protect workers in refineries, ports, pharma facilities and manufacturing plants across AP and Telangana. Choose from DPP PU sole options for oil resistance, DIP PU sole for chemical environments, and PVC gumboot variants for wet operations. Our collection includes slip-resistant designs, puncture-resistant soles, and ESD protection for sensitive manufacturing. Same-day delivery available from both branches.
 
 **[Browse Safety Shoes →](/category/foot-protection)**
 
----
-
 ### Fall Protection — Harnesses & Lanyards
 
 IS 3521 certified full body harnesses, energy absorbing lanyards and lifeline systems provide essential protection for elevated work at ports, refineries and construction sites. Our harnesses feature multiple attachment points, comfortable padding for extended wear, and corrosion-resistant hardware for maritime environments. Lanyards include shock absorption technology to minimize fall distance and impact force. Complete PFAS (Personal Fall Arrest Systems) solutions available for all industrial applications across AP and Telangana.
 
-**[Browse Fall Protection →](/category/fall-protection)**
-
-**[Browse Lanyards & Anchorage →](/category/lanyard)**
-
----
+**[Browse Fall Protection →](/category/fall-protection)** | **[Browse Lanyards & Anchorage →](/category/lanyard)**
 
 ### Respiratory Protection
 
@@ -3206,25 +3198,17 @@ Half face respirators, full face masks and disposable respirators protect worker
 
 **[Browse Respiratory Protection →](/category/respiratory-protection)**
 
----
-
 ### Safety Gloves & Hand Protection
 
 Nitrile chemical resistant gloves, leather welding gloves and cut resistant gloves protect workers in pharma, chemical and manufacturing industries across AP and Telangana. Our collection includes medical-grade nitrile for pharmaceutical operations, latex-free options, and specialized gloves for food processing. Welding gloves feature heat-resistant leather and extended cuffs for arc protection. We offer bulk pricing for factory orders with custom branding options.
 
 **[Browse Safety Gloves →](/category/hand-protection)**
 
----
-
 ### Eye & Face Protection
 
 IS 5983 certified safety goggles, chemical splash goggles and face shields protect workers during welding, grinding and chemical handling operations across Andhra Pradesh and Telangana. Our selection includes direct and indirect ventilation options, anti-scratch coatings, and UV protection for outdoor welding. Face shields attach to headgear or stand-alone frames. All eyewear meets impact resistance requirements for industrial applications.
 
-**[Browse Eye Protection →](/category/eye-protection)**
-
-**[Browse Face Protection →](/category/face-protection)**
-
----
+**[Browse Eye Protection →](/category/eye-protection)** | **[Browse Face Protection →](/category/face-protection)**
 
 ### Workwear & High Visibility Clothing
 
@@ -3232,15 +3216,11 @@ IS 15809 certified high visibility reflective jackets, arc flash protection suit
 
 **[Browse Workwear & PPE →](/category/workwear)**
 
----
-
 ### Electrical Safety Equipment
 
 High-voltage safety tools, insulated gloves, and electrical safety equipment protect maintenance teams working with live electrical equipment across Andhra Pradesh and Telangana. Our collection includes insulating mats, voltage testers, safety gates and arc flash rated PPE for power plants, electrical contractors and industrial maintenance. All equipment meets IEC standards for electrical safety.
 
 **[Browse Electrical Safety →](/category/electrical-safety)**
-
----
 
 ### Arc Flash & Heat Protection
 
@@ -3248,15 +3228,11 @@ Arc flash rated protective suits and heat-resistant clothing protect workers in 
 
 **[Browse Arc & Heat Protection →](/category/arc-heat-protection)**
 
----
-
 ### Fire Safety Equipment
 
 Safepro fire extinguishers, fire blankets and fire safety systems protect factories, warehouses and industrial facilities across Andhra Pradesh and Telangana. We supply powder, foam, CO2 and water mist extinguishers for different fire classes. All equipment meets IS 9191 standards and includes annual servicing and refill support. Installation and training services available for manufacturing units and ports.
 
 **[Browse Fire Safety Equipment →](/category/fire-safety)**
-
----
 
 ### Emergency & First Aid Safety
 
@@ -3264,15 +3240,11 @@ Emergency response kits, first aid supplies and workplace medical equipment supp
 
 **[Browse Emergency Safety →](/category/emergency-safety)**
 
----
-
 ### Hearing Protection
 
 IS 4008 certified ear plugs and ear muffs protect workers in high-noise environments including steel plants, cement factories, manufacturing units and airports across AP and Telangana. Our collection includes foam plugs for comfort, reusable options for cost efficiency, and communication-enabled headsets for work teams. Sound attenuation ratings up to 33 dB for extreme noise environments.
 
 **[Browse Hearing Protection →](/category/hearing-protection)**
-
----
 
 ### Workplace Safety Signs & Equipment (SGBI)
 
@@ -3280,15 +3252,11 @@ Safety signs, warning labels, and workplace safety indicators ensure regulatory 
 
 **[Browse Workplace Safety Signs →](/category/sgbi)**
 
----
-
 ### Workplace Safety Systems
 
 Comprehensive workplace safety solutions including emergency eyewash stations, safety showers, safety gates and workspace protection systems across AP and Telangana. Our collection covers OSHA and Indian Standards compliance for manufacturing facilities, chemical plants and industrial workspaces. Complete safety infrastructure support with installation and maintenance services.
 
 **[Browse Workplace Safety Systems →](/category/workplace-safety)**
-
----
 
 ### Welding Equipment & Consumables
 
@@ -3296,15 +3264,11 @@ Ador welding machines, electrodes and welding accessories serve fabrication and 
 
 **[Browse Welding Equipment →](/category/welding-equipment)**
 
----
-
 ### Power Tools — Bosch & DeWalt
 
 Authorized dealer for Bosch and DeWalt cordless drills, angle grinders, rotary hammers and impact drivers serving maintenance teams across AP and Telangana. Our collection includes professional-grade tools with brushless motors, extended battery runtime, and compatibility with universal charging systems. Genuine spare parts and warranty service available at both branches.
 
 **[Browse Power Tools →](/category/power-tools)**
-
----
 
 ## Cities We Serve in Andhra Pradesh
 
