@@ -122,14 +122,32 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
                 {children}
               </p>
             ),
-            a: ({href, children}) => (
-              <a 
-                href={href} 
-                className="text-accent hover:text-accent/80 underline underline-offset-2 font-medium"
-              >
-                {children}
-              </a>
-            ),
+            a: ({href, children}) => {
+              // Check if it's an external link or internal link
+              const isExternal = href?.startsWith('http')
+              
+              if (isExternal) {
+                return (
+                  <a 
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 underline underline-offset-2 font-medium"
+                  >
+                    {children}
+                  </a>
+                )
+              }
+              
+              return (
+                <Link
+                  href={href || '/'}
+                  className="text-accent hover:text-accent/80 underline underline-offset-2 font-medium"
+                >
+                  {children}
+                </Link>
+              )
+            },
             strong: ({children}) => (
               <strong className="font-semibold text-foreground">
                 {children}

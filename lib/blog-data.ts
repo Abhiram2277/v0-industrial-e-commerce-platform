@@ -3262,13 +3262,13 @@ Comprehensive workplace safety solutions including emergency eyewash stations, s
 
 Ador welding machines, electrodes and welding accessories serve fabrication and manufacturing units across Andhra Pradesh and Telangana. We supply stick welders, MIG/MAG systems, and TIG welders for various industrial applications. Complete welding consumables including electrodes, flux-cored wires and shielding gases available at both Kakinada and Nellore branches.
 
-**[Browse Welding Equipment →](/category/welding-equipment)**
+**[Get Welding Equipment Quote →](/quote)**
 
 ### Power Tools — Bosch & DeWalt
 
 Authorized dealer for Bosch and DeWalt cordless drills, angle grinders, rotary hammers and impact drivers serving maintenance teams across AP and Telangana. Our collection includes professional-grade tools with brushless motors, extended battery runtime, and compatibility with universal charging systems. Genuine spare parts and warranty service available at both branches.
 
-**[Browse Power Tools →](/category/power-tools)**
+**[Get Power Tools Quote →](/quote)**
 
 ## Cities We Serve in Andhra Pradesh
 
