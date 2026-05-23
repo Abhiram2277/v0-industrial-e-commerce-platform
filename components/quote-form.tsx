@@ -254,6 +254,7 @@ export function QuoteForm() {
                         src={item.image || "/placeholder.svg"}
                         alt={item.name}
                         fill
+                        unoptimized
                         className="object-cover"
                         sizes="64px"
                       />
