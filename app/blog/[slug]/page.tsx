@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "name": "Do you supply PPE across Andhra Pradesh?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we supply certified PPE and industrial safety equipment to all cities across Andhra Pradesh including Visakhapatnam, Vijayawada, Tirupati, Guntur, Rajahmundry, Ongole, Kadapa, Kurnool, Anantapur and Srikakulam. Our Kakinada and Nellore branches provide 1-5 day delivery depending on location. Contact us at +91 77309 40410 or +91 9398644987 for bulk orders and project requirements."
+          "text": "Yes, PND Industrial Suppliers is an authorized PPE supplier serving all major cities in Andhra Pradesh including Visakhapatnam, Vijayawada, Kakinada, Nellore, Guntur, Tirupati and Rajahmundry from our Kakinada and Nellore branches."
         }
       },
       {
@@ -128,7 +128,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "name": "Do you supply safety equipment in Hyderabad?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we serve Hyderabad's pharma city, IT parks, chemical zones and manufacturing facilities. Our specialized collection covers pharmaceutical cleanroom requirements, HITEC City construction safety and Patancheru industrial compliance. 5-7 day delivery available with competitive bulk pricing. Call +91 9398644987 for Hyderabad orders."
+          "text": "Yes, we supply certified PPE and industrial safety equipment to Hyderabad and across Telangana. Delivery within 5-7 business days. Call +91 9398644987."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you an authorized Udyogi dealer in AP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, PND Industrial Suppliers is an authorized Udyogi Safety channel partner serving Andhra Pradesh and Telangana from branches in Kakinada and Nellore."
         }
       },
       {
@@ -136,31 +144,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "name": "Do you supply safety shoes in Visakhapatnam?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we supply IS 15298 certified Hillson and Udyogi safety shoes to Visakhapatnam's steel plants, ports and refinery operations. Oil-resistant DPP soles, chemical-resistant DIP soles and marine-grade options available. 3-5 day delivery from Kakinada branch. Contact +91 77309 40410 for immediate quotes."
+          "text": "Yes, we deliver IS 15298 certified Hillson and Udyogi safety shoes to Visakhapatnam within 3-5 business days from our Kakinada branch. Call +91 77309 40410."
         }
       },
       {
         "@type": "Question",
-        "name": "Are you an authorized Udyogi dealer in Andhra Pradesh?",
+        "name": "What is delivery time to Vijayawada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we are an official Udyogi Safety authorized distributor across Andhra Pradesh and Telangana. We stock Udyogi Vista, Fusion and Ultravent helmets, Udyogi safety shoes and complete Udyogi PPE range. Same-day stock available at Kakinada and Nellore branches. Phone +91 77309 40410 or +91 9398644987."
+          "text": "We deliver PPE and safety equipment to Vijayawada within 3-5 business days from our Nellore branch. Call +91 9398644987 for bulk orders and same-week delivery options."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you deliver to Telangana cities?",
+        "name": "Do you offer bulk pricing for factory orders?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we deliver to all major Telangana cities including Hyderabad, Warangal, Karimnagar, Nizamabad, Khammam, Ramagundam, Mahbubnagar and Suryapet. 5-7 day delivery for Telangana orders with bulk pricing available. Contact us for project-specific requirements and delivery timelines."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the delivery time to Vijayawada?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard delivery to Vijayawada is 3-5 days from our Nellore branch. For urgent orders, express delivery available within 2-3 days. Construction project requirements and bulk orders may have accelerated timelines. Call +91 9398644987 for rush delivery options."
+          "text": "Yes, PND Industrial Suppliers offers competitive wholesale pricing for bulk PPE orders. Contact our Kakinada branch at +91 77309 40410 or Nellore branch at +91 9398644987 for bulk pricing."
         }
       },
       {
@@ -168,15 +168,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "name": "Do you supply safety helmets in Warangal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we supply IS 2925 certified Udyogi safety helmets to Warangal's steel plants and manufacturing facilities. Standard delivery 5-6 days with ratchet suspension systems, chin straps and ventilation options. Bulk pricing available for industrial facilities. Phone +91 77309 40410 for Warangal orders."
+          "text": "Yes, we supply IS 2925 certified safety helmets to Warangal and across Telangana within 5-7 business days. Call for bulk pricing."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I get bulk pricing for factory orders?",
+        "name": "Do you deliver to Telangana cities?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, we offer competitive bulk pricing for factories, construction projects and institutional buyers. Our Kakinada (+91 77309 40410) and Nellore (+91 9398644987) branches provide customized quotes based on product specifications and order quantities. Flexible payment terms and delivery schedules available for long-term partnerships."
+          "text": "Yes, PND Industrial Suppliers delivers certified PPE and industrial safety equipment to all major Telangana cities including Hyderabad, Warangal, Karimnagar, Nizamabad and Khammam."
         }
       }
     ]

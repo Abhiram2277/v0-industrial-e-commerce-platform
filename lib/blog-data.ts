@@ -3380,8 +3380,6 @@ Krishnapatnam Road, Nellore, AP 524004
 **Email:** pndindustrialsuppliers@gmail.com
 **Website:** pndindustrialsuppliers.com
 
----
-
 ## FAQ — Industrial Safety Equipment Supply Across AP & Telangana
 
 **Q: Do you supply PPE across Andhra Pradesh?**
@@ -3416,10 +3414,10 @@ A: Yes, we offer competitive bulk pricing for factories, construction projects a
     region: 'ap-wide',
     industry: 'manufacturing',
     contentType: 'industry-news',
-    keywords: ['PPE supplier Andhra Pradesh', 'industrial safety equipment Telangana', 'safety helmets AP', 'fall protection Kakinada', 'respiratory protection Nellore', 'safety shoes Visakhapatnam', 'Udyogi authorized dealer', 'bulk PPE pricing'],
+    keywords: ['PPE & Safety Equipment We Supply', 'Safety Helmets & Head Protection', 'Safety Shoes & Foot Protection', 'Fall Protection & Harnesses', 'Respiratory Protection', 'Cities We Serve in Andhra Pradesh', 'Cities We Serve in Telangana', 'Why Choose PND Industrial Suppliers', 'Contact Us'],
     readingTime: 15,
-    seoTitle: 'Industrial Safety Equipment & PPE Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers',
-    seoDescription: 'Authorized PPE & industrial safety equipment supplier serving all major cities in Andhra Pradesh & Telangana. Udyogi, Hillson, Bosch, DeWalt dealer. Kakinada & Nellore branches. Call for bulk pricing.',
+    seoTitle: 'Industrial Safety Equipment & PPE Supplier in Andhra Pradesh & Telangana — Complete City Guide | PND Industrial Suppliers',
+    seoDescription: 'Authorized PPE & industrial safety equipment supplier serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada, Nellore & all major cities in AP & Telangana. Udyogi, Hillson, Bosch, DeWalt dealer. Call for bulk pricing.',
     cta: [
       { text: 'Request Bulk Quote', link: '/quote', type: 'primary' },
       { text: 'Browse All Categories', link: '/categories', type: 'secondary' }

@@ -117,6 +117,9 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
             // Add internal links to contextual keywords
             let processedText = paragraph
             
+            // First, parse markdown links [text](url) format
+            processedText = processedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">$1</a>')
+            
             // Brand and product links
             const linkMappings = [
               { text: 'Udyogi', href: '/brands' },
@@ -135,6 +138,25 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
               { text: 'Get a quote', href: '/quote' },
               { text: 'get a quote', href: '/quote' },
               { text: 'contact us', href: '/contact' },
+              // Browse links for AP/Telangana blog post
+              { text: 'Browse Safety Helmets', href: '/category/head-protection' },
+              { text: 'Browse Safety Shoes', href: '/category/foot-protection' },
+              { text: 'Browse Fall Protection', href: '/category/fall-protection' },
+              { text: 'Browse Lanyards & Anchorage', href: '/category/lanyard' },
+              { text: 'Browse Respiratory Protection', href: '/category/respiratory-protection' },
+              { text: 'Browse Safety Gloves', href: '/category/hand-protection' },
+              { text: 'Browse Eye Protection', href: '/category/eye-protection' },
+              { text: 'Browse Face Protection', href: '/category/face-protection' },
+              { text: 'Browse Workwear & PPE', href: '/category/workwear' },
+              { text: 'Browse Electrical Safety', href: '/category/electrical-safety' },
+              { text: 'Browse Arc & Heat Protection', href: '/category/arc-heat-protection' },
+              { text: 'Browse Fire Safety Equipment', href: '/category/fire-safety' },
+              { text: 'Browse Emergency Safety', href: '/category/emergency-safety' },
+              { text: 'Browse Hearing Protection', href: '/category/hearing-protection' },
+              { text: 'Browse Workplace Safety Signs', href: '/category/sgbi' },
+              { text: 'Browse Workplace Safety Systems', href: '/category/workplace-safety' },
+              { text: 'Browse Welding Equipment', href: '/category/welding-equipment' },
+              { text: 'Browse Power Tools', href: '/category/power-tools' },
             ]
             
             linkMappings.forEach(({ text, href }) => {
