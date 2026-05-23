@@ -54,10 +54,10 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "any" },
       { url: "/pnd-logo.ico", type: "image/x-icon" },
-      { url: "/pnd-logo.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: "/pnd-logo.png",
+    apple: "/favicon.png",
   },
   viewport: {
     width: "device-width",
