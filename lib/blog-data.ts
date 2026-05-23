@@ -3268,7 +3268,7 @@ Ador welding machines, electrodes and welding accessories serve fabrication and 
 
 Authorized dealer for Bosch and DeWalt cordless drills, angle grinders, rotary hammers and impact drivers serving maintenance teams across AP and Telangana. Our collection includes professional-grade tools with brushless motors, extended battery runtime, and compatibility with universal charging systems. Genuine spare parts and warranty service available at both branches.
 
-**[Get Power Tools Quote →](/quote)**
+**[Browse Power Tools →](/category/powertools)**
 
 ## Cities We Serve in Andhra Pradesh
 
