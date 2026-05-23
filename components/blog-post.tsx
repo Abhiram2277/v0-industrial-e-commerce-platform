@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Clock, User, Share2 } from "lucide-react"
+import ReactMarkdown from 'react-markdown'
 import type { BlogArticle } from "@/lib/blog-data"
 
 interface BlogPostProps {
@@ -83,83 +84,87 @@ export function BlogPostContent({ article, relatedArticles }: BlogPostProps) {
           <span>📋</span> In This Article
         </h3>
         <ul className="space-y-3 text-sm">
-          {article.keywords.map((keyword, idx) => (
-            <li key={idx} className="text-foreground/70 hover:text-accent transition-colors ml-4">
-              • {keyword}
-            </li>
-          ))}
+          {article.keywords.map((keyword, idx) => {
+            // Convert keyword to anchor slug (lowercase, replace spaces with hyphens)
+            const slug = keyword.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, '')
+            return (
+              <li key={idx} className="text-foreground/70 hover:text-accent transition-colors ml-4">
+                <a href={`#${slug}`} className="hover:text-accent">
+                  • {keyword}
+                </a>
+              </li>
+            )
+          })}
         </ul>
       </div>
 
       {/* Article Content */}
       <div className="prose prose-lg max-w-none mb-16 body-regular">
-        {article.content.split('\n\n').map((paragraph, idx) => {
-          if (paragraph.startsWith('#')) {
-            const level = paragraph.match(/^#+/)[0].length
-            const text = paragraph.replace(/^#+\s/, '')
-            // Skip H1 tags in content since title is already H1
-            if (level === 1) return null
-            if (level === 2) return <h2 key={idx} className="heading-h2 mt-12 mb-6 text-foreground">{text}</h2>
-            if (level === 3) return <h3 key={idx} className="heading-h3 mt-10 mb-5 text-foreground">{text}</h3>
-            return null
-          }
-          if (paragraph.startsWith('-')) {
-            const items = paragraph.split('\n').filter(line => line.startsWith('-'))
-            return (
-              <ul key={idx} className="list-disc list-inside space-y-4 my-8 pl-4">
-                {items.map((item, i) => (
-                  <li key={i} className="text-foreground leading-relaxed ml-2 text-base lg:text-lg">{item.replace(/^-\s/, '')}</li>
-                ))}
-              </ul>
-            )
-          }
-          if (paragraph.trim()) {
-            // Add internal links to contextual keywords
-            let processedText = paragraph
-            
-            // Brand and product links
-            const linkMappings = [
-              { text: 'Udyogi', href: '/brands' },
-              { text: 'Udyogi Safety', href: '/brands' },
-              { text: 'Bosch', href: '/brands' },
-              { text: 'DeWalt', href: '/brands' },
-              { text: 'Stanley', href: '/brands' },
-              { text: 'safety helmet', href: '/category/head-protection' },
-              { text: 'safety shoe', href: '/category/foot-protection' },
-              { text: 'safety shoes', href: '/category/foot-protection' },
-              { text: 'fall protection', href: '/category/fall-protection' },
-              { text: 'harness', href: '/category/harness' },
-              { text: 'lanyard', href: '/category/lanyard' },
-              { text: 'workwear', href: '/category/workwear' },
-              { text: 'hand protection', href: '/category/hand-protection' },
-              { text: 'Get a quote', href: '/quote' },
-              { text: 'get a quote', href: '/quote' },
-              { text: 'contact us', href: '/contact' },
-            ]
-            
-            linkMappings.forEach(({ text, href }) => {
-              const regex = new RegExp(`\\b${text}\\b`, 'gi')
-              processedText = processedText.replace(regex, `<a href="${href}" class="text-accent hover:text-accent/80 underline underline-offset-2 font-medium">${text}</a>`)
-            })
-            
-            // Check if paragraph contains bold text markers
-            const hasBold = paragraph.includes('**')
-            
-            if (hasBold || linkMappings.some(({ text }) => new RegExp(`\\b${text}\\b`, 'i').test(paragraph))) {
-              processedText = processedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        <ReactMarkdown
+          components={{
+            h1: ({children}) => (
+              <h1 className="text-4xl font-bold mt-12 mb-6 text-foreground">
+                {children}
+              </h1>
+            ),
+            h2: ({children}) => (
+              <h2 className="heading-h2 mt-12 mb-6 text-foreground border-b pb-2">
+                {children}
+              </h2>
+            ),
+            h3: ({children}) => (
+              <h3 className="heading-h3 mt-10 mb-5 text-foreground">
+                {children}
+              </h3>
+            ),
+            p: ({children}) => (
+              <p className="mb-8 leading-relaxed text-foreground text-base lg:text-lg">
+                {children}
+              </p>
+            ),
+            a: ({href, children}) => {
+              // Check if it's an external link or internal link
+              const isExternal = href?.startsWith('http')
+              
+              if (isExternal) {
+                return (
+                  <a 
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 underline underline-offset-2 font-medium"
+                  >
+                    {children}
+                  </a>
+                )
+              }
+              
               return (
-                <p 
-                  key={idx} 
-                  className="mb-8 leading-relaxed text-foreground text-base lg:text-lg"
-                  dangerouslySetInnerHTML={{ __html: processedText }}
-                />
+                <Link
+                  href={href || '/'}
+                  className="text-accent hover:text-accent/80 underline underline-offset-2 font-medium"
+                >
+                  {children}
+                </Link>
               )
-            }
-            
-            return <p key={idx} className="mb-8 leading-relaxed text-foreground text-base lg:text-lg">{paragraph}</p>
-          }
-          return null
-        })}
+            },
+            strong: ({children}) => (
+              <strong className="font-semibold text-foreground">
+                {children}
+              </strong>
+            ),
+            ul: ({children}) => (
+              <ul className="list-disc list-inside mb-8 space-y-2 text-foreground">
+                {children}
+              </ul>
+            ),
+            li: ({children}) => (
+              <li className="ml-4 text-base lg:text-lg leading-relaxed">{children}</li>
+            ),
+          }}
+        >
+          {article.content}
+        </ReactMarkdown>
       </div>
 
       {/* CTAs */}
