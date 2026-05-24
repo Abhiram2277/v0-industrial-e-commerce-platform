@@ -73,6 +73,14 @@ export const metadata: Metadata = {
     siteName: "PND Industrial Suppliers",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://pndindustrialsuppliers.com/pnd-logo.png",
+        width: 228,
+        height: 179,
+        alt: "PND Industrial Suppliers Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
