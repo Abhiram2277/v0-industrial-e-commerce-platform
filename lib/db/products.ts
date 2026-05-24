@@ -5,7 +5,10 @@ export interface Category {
   slug: string
   name: string
   description: string
-  image: string
+  image?: string
+  seoTitle?: string
+  seoDescription?: string
+  subcategories?: string[]
 }
 
 export async function getDbProducts(): Promise<Product[]> {
