@@ -9,11 +9,11 @@ export async function getAllProductsClient(): Promise<Product[]> {
 
 export async function getAllCategoriesClient() {
   const dbCategories = await getDbCategoriesClient()
-  const combinedCategories = [...fileCategories]
+  const combinedCategories = [...(fileCategories as any)]
 
   for (const dbCat of dbCategories) {
     if (!combinedCategories.find((c) => c.slug === dbCat.slug)) {
-      combinedCategories.push({ ...dbCat, subcategories: [] })
+      combinedCategories.push({ ...dbCat, subcategories: [] } as any)
     }
   }
 

@@ -42,5 +42,7 @@ export interface Category {
   slug: string
   name: string
   description: string
+  seoTitle?: string
+  seoDescription?: string
   subcategories?: string[]
 }

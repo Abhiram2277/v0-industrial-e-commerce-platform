@@ -10,12 +10,12 @@ import { getBlogArticles, getAllIndustries, getAllRegions, getAllContentTypes } 
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Safety Blog & Resources | PND Industrial Suppliers",
-  description: "In-depth guides, industry insights, and safety solutions for Nellore and Kakinada industrial sectors. Learn from our experts about workplace safety.",
-  keywords: "industrial safety blog, PPE guides, workplace safety, Nellore, Kakinada, Andhra Pradesh",
+  title: "Industrial Safety Blog — PPE & Safety Equipment Guides for Andhra Pradesh & Telangana | PND Industrial Suppliers",
+  description: "Expert safety guides, PPE buyer's guides and industrial safety resources for factories, refineries, ports and construction sites across Andhra Pradesh & Telangana. Serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
+  keywords: "industrial safety blog, PPE guides, workplace safety, Nellore, Kakinada, Andhra Pradesh, Telangana, safety equipment",
   openGraph: {
-    title: "Safety Blog & Resources | PND Industrial Suppliers",
-    description: "Expert insights on workplace safety for Andhra Pradesh industries",
+    title: "Industrial Safety Blog | PND Industrial Suppliers",
+    description: "Expert PPE guides and industrial safety resources for Andhra Pradesh & Telangana industries. Authorized Udyogi, Hillson, Bosch & DeWalt dealer.",
     type: "website"
   },
   alternates: {

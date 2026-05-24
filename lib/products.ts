@@ -4508,6 +4508,8 @@ export const categories = [
     slug: "head-protection",
     name: "Head Protection",
     description: "Comprehensive range of safety helmets and bump caps",
+    seoTitle: "Safety Helmets Supplier in Andhra Pradesh & Telangana — Nellore & Kakinada | PND Industrial Suppliers",
+    seoDescription: "Authorized Udyogi safety helmets in Andhra Pradesh & Telangana. IS 2925 certified. Serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada, Nellore & all major cities.",
     subcategories: [
       "Thermoguard Series",
       "Vista Series",
@@ -4527,6 +4529,8 @@ export const categories = [
     slug: "eye-protection",
     name: "Eye & Face Protection",
     description: "Safety goggles, glasses, and face shields for comprehensive eye and face protection",
+    seoTitle: "Safety Goggles & Eye Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "IS 5983 certified safety goggles & face shields in Andhra Pradesh & Telangana. Authorized dealer serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
     subcategories: [
       "Safety Goggles",
       "Safety Glasses",
@@ -4540,12 +4544,16 @@ export const categories = [
     slug: "face-protection",
     name: "Face Protection",
     description: "Face shields, welding shields, and carriers for complete face protection",
+    seoTitle: "Face Shields & Welding Visors Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "Helmet-mounted face shields & welding visors in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities. Bulk pricing available.",
     subcategories: ["Helmet-Mounted Shields", "Welding Visors", "Face Shields", "Face Shield Carriers"],
   },
   {
     slug: "arc-heat-protection",
     name: "Arc + Heat Protection",
     description: "Arc flash and heat protective equipment for electrical and high-temperature work",
+    seoTitle: "Arc Flash & Heat Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "NFPA 70E arc flash suits & heat protection in Andhra Pradesh & Telangana. Authorized dealer serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
     subcategories: [
       "Economic Arc Shields",
       "AmpShield Series",
@@ -4561,12 +4569,16 @@ export const categories = [
     slug: "foot-protection",
     name: "Foot Protection",
     description: "Industrial safety shoes and boots with steel toe and anti-static protection",
+    seoTitle: "Safety Shoes Supplier in Andhra Pradesh & Telangana — Nellore & Kakinada | PND Industrial Suppliers",
+    seoDescription: "Authorized Hillson & Udyogi safety shoes in Andhra Pradesh & Telangana. IS 15298 certified. Serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
     subcategories: ["DPP PU Sole", "DIP PU Sole", "PVC Gumboot"],
   },
   {
     slug: "hand-protection",
     name: "Hand Protection",
     description: "Complete range of safety gloves for all industrial applications",
+    seoTitle: "Safety Gloves Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "Nitrile, leather & cut-resistant gloves in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities. Wholesale pricing available.",
     subcategories: [
       "General Purpose",
       "PU Coated",
@@ -4586,30 +4598,40 @@ export const categories = [
     slug: "hearing-protection",
     name: "Hearing Protection",
     description: "Ear muffs, ear plugs, and dispensers for noise protection",
+    seoTitle: "Hearing Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "IS 4008 certified ear plugs & ear muffs in Andhra Pradesh & Telangana. Authorized dealer serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
     subcategories: ["Ear Muffs", "Ear Plugs", "Ear Plug Dispensers"],
   },
   {
     slug: "respiratory-protection",
     name: "Respiratory Protection",
     description: "Half face and full face respirators with filters for air purification",
+    seoTitle: "Respiratory Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "Half face & full face respirators in Andhra Pradesh & Telangana. H2S rated for Kakinada refineries. Authorized dealer AP & TS.",
     subcategories: ["Half Face Respirators", "Full Face Respirators", "Filters & Cartridges"],
   },
   {
     slug: "fall-protection",
     name: "Fall Protection",
     description: "Harnesses, lanyards, and lifelines for working at heights",
+    seoTitle: "Fall Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "IS 3521 certified harnesses & lanyards in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities.",
     subcategories: ["Harnesses", "Lanyards", "Lifelines", "Retractable Blocks"],
   },
   {
     slug: "workwear",
     name: "Workwear",
     description: "FR clothing, chemical protection suits, and specialized protective workwear",
+    seoTitle: "Safety Workwear Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "IS 15809 hi-vis jackets & FR clothing in Andhra Pradesh & Telangana. Authorized dealer serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
     subcategories: ["FR Clothing", "Chemical Protection", "Heat Protection", "Cryo Protection"],
   },
   {
     slug: "electrical-safety",
     name: "Electrical Safety Solutions",
     description: "Arc flash protection kits, electrical gloves, and rescue equipment for electrical work",
+    seoTitle: "Electrical Safety Equipment Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "IEC certified electrical safety tools & arc flash kits in Andhra Pradesh & Telangana. Authorized dealer for power plants & contractors across AP & TS.",
     subcategories: [
       "Arc Flash Kits",
       "Arc Flash Clothing",
@@ -4622,6 +4644,8 @@ export const categories = [
     slug: "emergency-safety",
     name: "Emergency Safety Shower & Eyewash",
     description: "Emergency shower and eyewash stations for chemical exposure response",
+    seoTitle: "Emergency Eyewash & Safety Shower Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "BIS certified eyewash stations & safety showers in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS industrial cities.",
     subcategories: ["Combination Units", "Eyewash Stations", "Enclosed Showers", "Portable Eyewash"],
   },
   {
@@ -4629,6 +4653,8 @@ export const categories = [
     name: "SGBI",
     description:
       "Safety, Gas Detection & Breathing Apparatus - Complete range of ventilation, lighting, SCBA, medical equipment, and gas detection systems",
+    seoTitle: "Workplace Safety Signs & SGBI Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "Explosion-proof blowers & BIS certified safety signs in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities.",
     subcategories: [
       "Explosion-Proof Blowers",
       "Portable Blowers",
@@ -4649,6 +4675,8 @@ export const categories = [
     slug: "workplace-safety",
     name: "Workplace Safety Solutions",
     description: "Spill control, safety storage, containment solutions, and emergency response equipment",
+    seoTitle: "Workplace Safety Solutions Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "OSHA & IS compliant safety storage cabinets & workplace safety solutions in Andhra Pradesh & Telangana. Serving all major AP & TS cities.",
     subcategories: [
       "Safety Storage Cabinets",
       "Safety Cans & Containers",
@@ -4663,6 +4691,8 @@ export const categories = [
     name: "Anchorage Sling & Solutions",
     description:
       "Webbing slings, wire rope slings, anchorage devices, and fall protection solutions for work at height",
+    seoTitle: "Anchorage Slings & Solutions Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "Certified anchorage slings & solutions in Andhra Pradesh & Telangana. Authorized dealer serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
     subcategories: ["Anchorage Slings", "Anchorage Solutions"],
   },
   {
@@ -4670,6 +4700,8 @@ export const categories = [
     name: "Harness",
     description:
       "Complete range of 27 full body safety harnesses for fall arrest, work positioning, and height safety applications",
+    seoTitle: "Safety Harness Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
+    seoDescription: "IS 3521 certified professional & economical harnesses in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities.",
     subcategories: [
       "Professional Series",
       "Economical Series",

@@ -38,9 +38,12 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = getCategoryCanonicalUrl(slug)
+  const title = (category as any).seoTitle || `${category.name} | PND Industrial Suppliers`
+  const description = (category as any).seoDescription || category.description || `Browse ${category.name} products from PND Industrial Suppliers`
+
   return {
-    title: `${category.name} | PND Industrial Suppliers`,
-    description: category.description || `Browse ${category.name} products from PND Industrial Suppliers`,
+    title,
+    description,
     robots: {
       index: true,
       follow: true,
@@ -49,8 +52,8 @@ export async function generateMetadata({
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${category.name} | PND Industrial Suppliers`,
-      description: category.description || `Browse ${category.name} products from PND Industrial Suppliers`,
+      title,
+      description,
       url: canonicalUrl,
       type: "website",
     },

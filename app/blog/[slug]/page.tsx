@@ -180,6 +180,75 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         }
       }
     ]
+  } : article.slug === 'ppe-supplier-visakhapatnam-industrial-safety-equipment' ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you supply PPE in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, PND Industrial Suppliers supplies certified PPE to Visakhapatnam including safety helmets, safety shoes, harnesses, and respiratory protection. We deliver from our Kakinada branch within 3-5 business days. Call +91 77309 40410."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is the authorized Udyogi dealer in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PND Industrial Suppliers is an authorized Udyogi Safety channel partner supplying Udyogi helmets, harnesses, and PPE to Visakhapatnam industries. Call +91 77309 40410 for pricing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I buy safety shoes in Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PND Industrial Suppliers delivers IS 15298 certified Hillson and Udyogi safety shoes to Visakhapatnam within 3-5 days from our Kakinada branch. Call +91 77309 40410."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you supply PPE to Vizag Steel Plant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we supply IS certified safety helmets, shoes, harnesses, and respiratory protection for Vizag Steel Plant workers and contractors. Bulk pricing available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you supply safety equipment to HPCL Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we supply H2S rated respiratory protection, flame-resistant clothing, anti-static safety shoes, and fire safety equipment meeting HPCL and OISD compliance requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the delivery time for PPE to Visakhapatnam?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We deliver PPE to Visakhapatnam in 3-5 business days from our Kakinada branch. Emergency orders are prioritized. Call +91 77309 40410."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you supply fire extinguishers to Visakhapatnam Port?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we supply Safepro IS 9191 certified fire extinguishers to Visakhapatnam Port facilities and contractors. Call for pricing and delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your products BIS certified for Visakhapatnam factory inspections?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all PPE we supply carries valid BIS certification meeting DGFASLI inspection requirements for AP factories including IS 2925, IS 15298, IS 3521 and IS 5983."
+        }
+      }
+    ]
   } : null
 
   return (
