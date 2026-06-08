@@ -29,6 +29,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pndindustrialsuppliers.com",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   generator: "v0.app",
   keywords: [
     "Industrial Suppliers",
@@ -73,6 +84,14 @@ export const metadata: Metadata = {
     siteName: "PND Industrial Suppliers",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://pndindustrialsuppliers.com/pnd-logo.png",
+        width: 228,
+        height: 179,
+        alt: "PND Industrial Suppliers Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
