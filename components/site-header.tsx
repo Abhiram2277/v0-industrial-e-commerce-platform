@@ -15,16 +15,9 @@ export function SiteHeader() {
   const [categories, setCategories] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [isMounted, setIsMounted] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (!isMounted) return
-    
     getAllCategoriesClient()
       .then((allCategories) => {
         setCategories(allCategories || [])
@@ -36,10 +29,10 @@ export function SiteHeader() {
         setCategories([])
       })
       .finally(() => setIsLoading(false))
-  }, [isMounted])
+  }, [])
 
   return (
-    <header className="z-50 w-full border-b md:border-b bg-background md:bg-background" suppressHydrationWarning>
+    <header className="z-50 w-full border-b md:border-b bg-background md:bg-background">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div className="flex items-center justify-between border-b md:border-b py-2 text-base">
@@ -97,8 +90,7 @@ export function SiteHeader() {
         </div>
 
         {/* Desktop Navigation Menu - Hidden on Mobile */}
-        {isMounted && (
-          <nav className="hidden md:flex items-center justify-start pb-4 gap-4 flex-wrap">
+        <nav className="hidden md:flex items-center justify-start pb-4 gap-4 flex-wrap">
             <Link href="/" className={cn(
               "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
             )}>
@@ -166,7 +158,6 @@ export function SiteHeader() {
               )}
             </div>
           </nav>
-        )}
       </div>
     </header>
   )
