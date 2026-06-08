@@ -9,3 +9,6 @@ Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://pndindustrialsuppliers.com/sitemap.xml
+
+# Canonical host for Google
+Host: https://pndindustrialsuppliers.com
