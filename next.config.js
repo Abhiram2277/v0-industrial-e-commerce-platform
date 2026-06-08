@@ -26,37 +26,6 @@ const nextConfig = {
   // Production optimizations
   productionBrowserSourceMaps: false,
 
-  // Redirects for URL canonicalization
-  async redirects() {
-    return [
-      // Redirect HTTP to HTTPS
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'header',
-            key: 'x-forwarded-proto',
-            value: 'http',
-          },
-        ],
-        permanent: true,
-        destination: 'https://pndindustrialsuppliers.com/:path*',
-      },
-      // Redirect www to non-www
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.pndindustrialsuppliers.com',
-          },
-        ],
-        permanent: true,
-        destination: 'https://pndindustrialsuppliers.com/:path*',
-      },
-    ]
-  },
-
   // Headers for caching and performance
   async headers() {
     return [
