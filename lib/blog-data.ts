@@ -1787,6 +1787,8 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
     excerpt: 'Essential PPE for oil refinery workers in Kakinada. Respiratory protection, chemical suits, fall protection, and local supplier options.',
     content: `# PPE for Oil Refinery Workers in Kakinada — Complete Safety Guide
 
+PND Industrial Suppliers supplies certified PPE for oil refinery workers in Kakinada — including H2S-rated respirators, chemical-resistant suits, safety helmets and fall protection. We are an authorized Udyogi dealer with same-day stock at our Vakalapudi branch. Call +91 77309 40410.
+
 Kakinada's oil refineries handle hazardous chemicals daily. This guide covers essential PPE requirements, standards compliance, and where to source certified equipment locally.
 
 ## Kakinada Refinery Hazards & PPE Hierarchy
@@ -3166,6 +3168,8 @@ Why local dealer:
     excerpt: 'Authorized PPE & industrial safety equipment supplier serving all major cities in Andhra Pradesh & Telangana. Udyogi, Hillson, Bosch, DeWalt dealer. Kakinada & Nellore branches. Call for bulk pricing.',
     content: `# Industrial Safety Equipment & PPE Supplier in Andhra Pradesh & Telangana — Complete City Guide
 
+PND Industrial Suppliers is an authorized PPE and industrial safety equipment supplier with branches in Kakinada and Nellore, delivering certified safety helmets, shoes, harnesses, respirators and welding equipment across all major cities in Andhra Pradesh and Telangana. We are authorized dealers for Udyogi, Hillson, Bosch, DeWalt and Ador Welding. Call +91 9398644987 or +91 77309 40410 for bulk pricing.
+
 ## Introduction
 
 PND Industrial Suppliers is an authorized distributor of premium industrial safety equipment and PPE across Andhra Pradesh and Telangana. With branches in Kakinada and Nellore, we supply certified safety helmets, safety shoes, fall protection harnesses, respiratory protection, safety gloves, fire extinguishers, welding machines, and power tools to factories, refineries, ports, pharma units and construction sites across all major cities in AP and TS.
@@ -3429,6 +3433,8 @@ A: Yes, we offer competitive bulk pricing for factories, construction projects a
     title: 'PPE Supplier in Visakhapatnam — Complete Industrial Safety Equipment Guide',
     excerpt: 'Authorized PPE & industrial safety equipment supplier serving Visakhapatnam. Udyogi, Hillson, Bosch & DeWalt dealer. Supplying Vizag Steel, HPCL, Visakhapatnam Port, Pharma City & all industries. Call +91 77309 40410.',
     content: `# PPE Supplier in Visakhapatnam — Complete Industrial Safety Equipment Guide
+
+PND Industrial Suppliers is an authorized PPE supplier delivering certified safety helmets, shoes, harnesses and respiratory protection to Visakhapatnam within 3-5 business days from our Kakinada branch. We are an authorized dealer for Udyogi, Hillson, Bosch and DeWalt, serving Vizag Steel, HPCL, Visakhapatnam Port and Pharma City. Call +91 77309 40410 for bulk pricing.
 
 ## Introduction
 
