@@ -12,8 +12,15 @@ export const metadata: Metadata = {
     canonical: "https://pndindustrialsuppliers.com/quote",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 }
 
