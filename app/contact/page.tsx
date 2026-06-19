@@ -73,7 +73,7 @@ export default function ContactPage() {
                         Kakinada Branch
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        D.No. 2-98/2B, Near Gangalamma Devi Temple, Opp. Indrapasta Apartment, Vakalapudi, Kakinada, AP-533005
+                        Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005
                       </p>
                     </div>
                   </div>
@@ -347,7 +347,7 @@ export default function ContactPage() {
                         <div className="flex-1">
                           <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
                           <p className="text-xs text-gray-700 mt-2 leading-relaxed">
-                            D.No. 2-98/2B, Vakalapudi, Kakinada, AP-533005
+                            Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005
                           </p>
                           <div className="flex items-center gap-2 mt-2">
                             <div className="flex gap-0.5 text-yellow-500">
