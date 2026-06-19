@@ -1,32 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www\\.pndindustrialsuppliers\\.com"
-        }
-      ],
-      "destination": "https://pndindustrialsuppliers.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*/",
-      "destination": "/:path*",
-      "permanent": true
-    }
-  ],
   "headers": [
-    {
-      "source": "/",
-      "headers": [
-        {
-          "key": "x-robots-tag",
-          "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-        }
-      ]
-    },
     {
       "source": "/(.*)",
       "headers": [
