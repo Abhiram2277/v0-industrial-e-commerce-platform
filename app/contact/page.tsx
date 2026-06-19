@@ -32,7 +32,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                Contact Us
+                Contact PND Industrial Suppliers — Nellore & Kakinada Branches
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
                 Get in touch with our expert team for all your industrial safety needs
@@ -73,7 +73,7 @@ export default function ContactPage() {
                         Kakinada Branch
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        D.No. 2-98/2B, Near Gangalamma Devi Temple, Opp. Indrapasta Apartment, Vakalapudi, Kakinada, AP-533005
+                        Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005
                       </p>
                     </div>
                   </div>
@@ -347,7 +347,7 @@ export default function ContactPage() {
                         <div className="flex-1">
                           <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
                           <p className="text-xs text-gray-700 mt-2 leading-relaxed">
-                            D.No. 2-98/2B, Vakalapudi, Kakinada, AP-533005
+                            Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005
                           </p>
                           <div className="flex items-center gap-2 mt-2">
                             <div className="flex gap-0.5 text-yellow-500">
