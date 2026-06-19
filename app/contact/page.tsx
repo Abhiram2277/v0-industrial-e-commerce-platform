@@ -32,7 +32,7 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                Contact Us
+                Contact PND Industrial Suppliers — Nellore & Kakinada Branches
               </h1>
               <p className="text-xl text-primary-foreground/90 leading-relaxed">
                 Get in touch with our expert team for all your industrial safety needs

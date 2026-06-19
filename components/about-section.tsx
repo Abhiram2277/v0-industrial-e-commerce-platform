@@ -16,9 +16,9 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         {/* Centered About Us Heading - Desktop Only */}
         <div className="hidden md:block text-center mb-16">
-          <h1 className="text-4xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+          <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
             About Us
-          </h1>
+          </h2>
           <div className="h-1 w-24 bg-accent mx-auto"></div>
         </div>
 
