@@ -77,6 +77,26 @@ export default async function CategoryPage({
 
   const categoryProducts = products.filter((p) => p.category === slug)
 
+  // BreadcrumbList schema for Google search results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pndindustrialsuppliers.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": category.name,
+        "item": getCategoryCanonicalUrl(slug)
+      }
+    ]
+  }
+
   // CollectionPage Schema for SEO
   const schemaData = {
     "@context": "https://schema.org",
@@ -99,7 +119,13 @@ export default async function CategoryPage({
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        {/* Schema markup for search engines */}
+        {/* BreadcrumbList Schema for Google search results */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+
+        {/* CollectionPage Schema markup for search engines */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
