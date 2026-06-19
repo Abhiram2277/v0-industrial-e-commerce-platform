@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.pndindustrialsuppliers\\.com"
+        }
+      ],
+      "destination": "https://pndindustrialsuppliers.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/",
