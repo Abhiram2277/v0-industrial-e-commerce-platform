@@ -171,7 +171,7 @@
 .marquee-track {
   display: flex;
   gap: 2rem;
-  animation: marquee 30s linear infinite;
+  animation: marquee calc(var(--marquee-items, 10) * 3s) linear infinite;
   width: fit-content;
 }
 
@@ -181,8 +181,8 @@
 
 .marquee-item {
   flex: 0 0 auto;
-  min-width: 280px;
-  height: 170px;
+  min-width: 320px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,12 +197,12 @@
 @media (max-width: 768px) {
   .marquee-track {
     gap: 1rem;
-    animation-duration: 20s;
+    animation-duration: calc(var(--marquee-items, 10) * 2s);
   }
 
   .marquee-item {
-    min-width: 200px;
-    height: 140px;
+    min-width: 230px;
+    height: 165px;
   }
 }
 

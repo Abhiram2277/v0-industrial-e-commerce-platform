@@ -55,7 +55,7 @@ export default function ContactPage() {
                         Nellore Branch
                       </h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Near Narayana Medical College, Nellore
+                        KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore 524346, Andhra Pradesh
                       </p>
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export default function ContactPage() {
                     <Card className="overflow-hidden">
                       <CardContent className="p-0">
                         <iframe
-                          src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+C2F4%2B6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003&output=embed"
+                          src="https://www.google.com/maps?q=PND+INDUSTRIAL+SUPPLIERS,+KP1-912,+Nandamuri+Nagar,+Kakupali,+Nellore,+Andhra+Pradesh+524346&output=embed"
                           width="100%"
                           height="400"
                           style={{ border: 0 }}
@@ -287,7 +287,7 @@ export default function ContactPage() {
                         <div className="flex-1">
                           <p className="font-semibold text-sm line-clamp-1">PND Industrial Suppliers...</p>
                           <p className="text-xs text-gray-700 mt-2 leading-relaxed">
-                            C2F4+6FH, SH 444, Nellore, Andhra Pradesh 524003
+                            KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore 524346, Andhra Pradesh
                           </p>
                           <div className="flex items-center gap-2 mt-2">
                             <div className="flex gap-0.5 text-yellow-500">
@@ -310,7 +310,7 @@ export default function ContactPage() {
                           </a>
                         </div>
                         <a
-                          href="https://www.google.com/maps/dir/?api=1&destination=C2F4+6FH,+SH+444,+Nellore,+Andhra+Pradesh+524003"
+                          href="https://www.google.com/maps/dir/?api=1&destination=KP1-912,+Nandamuri+Nagar,+Kakupali,+Nellore,+Andhra+Pradesh+524346"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-blue-500 hover:text-blue-700 flex-shrink-0 text-sm font-medium"
@@ -355,9 +355,9 @@ export default function ContactPage() {
                                 <span key={i} className="text-xs">★</span>
                               ))}
                             </div>
-                            <span className="text-xs text-gray-700">5.0</span>
+                            <span className="text-xs text-gray-700">4.9</span>
                             <a href="https://maps.app.goo.gl/2wuDnZxifZQMiJWN6" target="_blank" rel="noopener noreferrer" className="text-blue-500 text-xs hover:underline">
-                              9 reviews
+                              36 reviews
                             </a>
                           </div>
                           <a

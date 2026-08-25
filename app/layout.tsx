@@ -130,10 +130,10 @@ export default function RootLayout({
               "email": "pndindustrialsuppliers@gmail.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Plot No 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Road",
+                "streetAddress": "KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali",
                 "addressLocality": "Nellore",
                 "addressRegion": "Andhra Pradesh",
-                "postalCode": "524004",
+                "postalCode": "524346",
                 "addressCountry": "IN"
               },
               "geo": {
@@ -232,10 +232,10 @@ export default function RootLayout({
               "address": [
                 {
                   "@type": "PostalAddress",
-                  "streetAddress": "Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd",
+                  "streetAddress": "KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali",
                   "addressLocality": "Nellore",
                   "addressRegion": "AP",
-                  "postalCode": "524001",
+                  "postalCode": "524346",
                   "addressCountry": "IN"
                 },
                 {

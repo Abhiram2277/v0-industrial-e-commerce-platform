@@ -1138,7 +1138,7 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 📞 +91 77309 40410 | +91 91821 56665 | +91 99485 92229
 
 **Nellore Branch:**  
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004  
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346  
 📞 +91 9398644987 | +91 9701110242
 
 📧 pndindustrialsuppliers@gmail.com
@@ -1238,7 +1238,7 @@ All Udyogi helmets come with:
 **PND Industrial Suppliers — Authorized Udyogi Distributor**
 
 **Nellore Branch Location:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 
 **Kakinada Branch Location:**
 Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Pradesh 533005
@@ -1395,7 +1395,7 @@ Krishnapatnam Deep Water Port handles millions of tons of cargo annually. Port w
 **PND Industrial Suppliers** is a trusted PPE provider for Krishnapatnam Port contractors and direct workforce teams.
 
 **Nellore Branch (Serving Krishnapatnam Port):**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch (East Godavari Port Access):**
@@ -1491,7 +1491,7 @@ All products come with:
 **PND Industrial Suppliers — Authorized Safety Footwear Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -1613,7 +1613,7 @@ All fire extinguishers must meet:
 **Safepro Fire Equipment — Authorized Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -1741,7 +1741,7 @@ Both DeWalt and Bosch are trusted power tool brands in India. This guide compare
 **PND Industrial Suppliers — Authorized Dealer**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -1921,7 +1921,7 @@ Port workers at Krishnapatnam and surrounding facilities face unique hazards. Th
 ## Local Sourcing in Nellore
 
 **PND Industrial Suppliers — Nellore Branch**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Services:
@@ -1983,7 +1983,7 @@ Krishnapatnam Deep Water Port handles thousands of tons of cargo daily. We suppl
 ## Serving Krishnapatnam Port Area
 
 **PND Industrial Suppliers — Nellore Branch**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Response Time:**
@@ -2074,7 +2074,7 @@ All construction sites must comply with:
 **PND Industrial Suppliers**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -2157,7 +2157,7 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 📞 +91 77309 40410 | +91 91821 56665 | +91 99485 92229
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Stock:
@@ -2234,7 +2234,7 @@ Pharmaceutical manufacturers in Nellore must comply with GMP (Good Manufacturing
 ## Nellore Pharmaceutical Manufacturing Support
 
 **PND Industrial Suppliers — Nellore Branch**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Pharma-specific services:
@@ -2310,7 +2310,7 @@ Fall protection is the #1 safety requirement for any work above 1.8 meters in An
 **PND Industrial Suppliers**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -2396,7 +2396,7 @@ IS 15298 is the Indian standard for industrial safety footwear. Shoes must meet:
 **PND Industrial Suppliers — Authorized Hillson & Udyogi Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -2486,7 +2486,7 @@ Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi, Kakinada, Andhra Prad
 📞 +91 77309 40410 | +91 91821 56665 | +91 99485 92229
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Services:
@@ -2506,7 +2506,7 @@ Services:
     keywords: ['gas detection system supplier Andhra Pradesh', 'H2S detector Kakinada', 'portable gas monitor', 'confined space gas detector'],
     readingTime: 8,
     seoTitle: 'Gas Detection System Supplier Andhra Pradesh — H₂S & CO Monitors',
-    seoDescription: 'Gas detection systems in Andhra Pradesh. Portable & fixed monitors for H₂S, CO, O₂. Supplier in Kakinada & Nellore.',
+    seoDescription: 'Gas detection systems in Andhra Pradesh. Portable & fixed monitors for H��S, CO, O₂. Supplier in Kakinada & Nellore.',
     cta: [
       { text: 'Get Gas Detection Quote', link: '/quote?product=gas-detection', type: 'primary' },
       { text: 'View Safety Monitors', link: '/category/monitoring-systems', type: 'secondary' }
@@ -2573,7 +2573,7 @@ Udyogi helmets are the most trusted in South India. This guide covers pricing, f
 **PND Industrial Suppliers — Authorized Udyogi Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -2727,7 +2727,7 @@ Ador is India's leading welding equipment manufacturer. We are authorized distri
 **PND Industrial Suppliers — Authorized Ador Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -2807,7 +2807,7 @@ Fire safety compliance is non-negotiable for factories and facilities. Safepro f
 ## Local Fire Safety Dealer
 
 **Safepro Fire Equipment — Nellore Branch**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Services:
@@ -2888,7 +2888,7 @@ Asian Paints Industrial is the leading brand for factory and industrial coatings
 **PND Industrial Suppliers — Asian Paints Industrial Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -2961,7 +2961,7 @@ Hillson is the most trusted safety footwear brand in South India. We are authori
 **PND Industrial Suppliers — Authorized Hillson Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 **Kakinada Branch:**
@@ -3044,7 +3044,7 @@ DeWalt is the world's leading power tool brand. We are authorized dealers in Nel
 **PND Industrial Suppliers — Authorized DeWalt Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Services:
@@ -3129,7 +3129,7 @@ Bosch represents German engineering excellence. We are authorized dealers in Nel
 **PND Industrial Suppliers — Authorized Bosch Distributor**
 
 **Nellore Branch:**
-Plot No. 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987 | +91 9701110242
 
 Services:
@@ -3377,8 +3377,8 @@ Vakalapudi, Kakinada, AP 533005
 📞 **+91 77309 40410**
 
 **Nellore Branch (HQ):**
-Plot No 23-18-19, Pardhasaradhi Nagar,
-Krishnapatnam Road, Nellore, AP 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar,
+Behind MGB Infinity, Kakupali, Nellore, AP 524346
 📞 **+91 9398644987**
 
 **Email:** pndindustrialsuppliers@gmail.com
@@ -3759,8 +3759,8 @@ Door No. 2, 98/2, near Gangalamma Devi Temple,
 Vakalapudi, Kakinada, Andhra Pradesh 533005
 
 **Nellore Branch:**
-Plot No 23-18-19, Pardhasaradhi Nagar,
-Krishnapatnam Road, Nellore – 524004
+KP1-912, Opp. Desamma Gudi, Nandamuri Nagar,
+Behind MGB Infinity, Kakupali, Nellore – 524346
 📞 +91 9398644987
 
 Delivery across Visakhapatnam, Gajuwaka, Parawada, Madhurawada, Bheemunipatnam, Anakapalli, and all East Godavari areas.
