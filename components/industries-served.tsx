@@ -37,7 +37,7 @@ export function IndustriesServed() {
         <div className="marquee-track" style={{ "--marquee-items": clients.length } as React.CSSProperties}>
           {duplicatedClients.map((client, index) => (
             <div key={index} className="marquee-item">
-              <div className="relative w-full h-full flex items-center justify-center px-4 rounded-lg bg-background border">
+              <div className="relative w-full h-full flex items-center justify-center px-2 rounded-lg bg-background border">
                 <Image
                   src={client.logo || "/placeholder.svg"}
                   alt={`${client.name} logo`}
