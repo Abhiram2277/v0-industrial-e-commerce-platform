@@ -18,7 +18,7 @@ export default async function HomePage() {
   ])
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col" suppressHydrationWarning>
       <SiteHeader />
       <HeroSearchBar />
       <main className="flex-1">
