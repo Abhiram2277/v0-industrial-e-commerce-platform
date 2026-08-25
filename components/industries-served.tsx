@@ -1,45 +1,55 @@
 "use client"
 
-import { Factory, Droplets, Building2, Car, ShoppingBag, Flag as Flask, Package } from "lucide-react"
+import Image from "next/image"
 
 export function IndustriesServed() {
-  const industries = [
-    { name: "Power Sector", icon: Factory },
-    { name: "Oil Refineries", icon: Droplets },
-    { name: "Steel Industries", icon: Building2 },
-    { name: "Automotive", icon: Car },
-    { name: "Food Processing", icon: ShoppingBag },
-    { name: "Chemical Industries", icon: Flask },
-    { name: "Manufacturing Units", icon: Package },
+  const clients = [
+    { name: "Reliance Industries Limited", logo: "/images/clients/reliance.png" },
+    { name: "Tata Chemicals", logo: "/images/clients/tata-chemicals.png" },
+    { name: "LG", logo: "/images/clients/lg.png" },
+    { name: "Dodla Dairy", logo: "/images/clients/dodla.jpeg" },
+    { name: "Coromandel", logo: "/images/clients/coromandel.png" },
+    { name: "Amara Raja Power & Chemicals", logo: "/images/clients/amara-raja.png" },
+    { name: "Continental Coffee", logo: "/images/clients/continental-coffee.png" },
+    { name: "Jindal Steel & Power", logo: "/images/clients/jindal.png" },
+    { name: "AM Green", logo: "/images/clients/am-green.jpg" },
+    { name: "Patanjali", logo: "/images/clients/patanjali.png" },
   ]
+
+  // Duplicate clients array for seamless looping
+  const duplicatedClients = [...clients, ...clients, ...clients]
 
   return (
     <section className="py-8 md:py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-6 md:mb-12">
+      <div className="container mx-auto px-4 mb-8 md:mb-12">
+        <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
             Industries Served
           </h2>
           <p className="text-sm md:text-lg text-muted-foreground">
-            Providing comprehensive safety solutions across diverse industrial sectors
+            Trusted by leading names across power, chemicals, steel, and manufacturing sectors
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-6">
-          {industries.map((industry, index) => {
-            const Icon = industry.icon
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center gap-1.5 md:gap-3 p-2 md:p-6 rounded-lg bg-background border hover:border-accent/50 hover:shadow-md transition-all hover:-translate-y-1"
-              >
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-accent/10 flex items-center justify-center px-0">
-                  <Icon className="w-4 h-4 md:w-6 md:h-6 text-accent px-px py-px mx-px my-0 border-0" />
-                </div>
-                <span className="text-xs md:text-sm font-medium text-center leading-tight">{industry.name}</span>
+      {/* Infinite Scrolling Marquee */}
+      <div className="marquee-container">
+        <div className="marquee-track">
+          {duplicatedClients.map((client, index) => (
+            <div key={index} className="marquee-item">
+              <div className="relative w-full h-full flex items-center justify-center px-4 rounded-lg bg-background border">
+                <Image
+                  src={client.logo || "/placeholder.svg"}
+                  alt={`${client.name} logo`}
+                  width={240}
+                  height={160}
+                  className="object-contain max-w-[80%] max-h-[70%]"
+                  loading="lazy"
+                  quality={85}
+                />
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
