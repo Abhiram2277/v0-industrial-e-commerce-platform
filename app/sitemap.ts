@@ -4,43 +4,49 @@ import { getBlogArticles } from '@/lib/blog-data'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://pndindustrialsuppliers.com'
 
+// Fallback date used only when a content item has no real updatedAt/createdAt.
+// Using a fixed date (instead of `new Date()` / `Date.now()`) avoids sending Google
+// a "this page changed" signal on every single deploy, which wastes crawl budget
+// and undermines trust in our lastmod dates.
+const FALLBACK_LAST_MODIFIED = new Date('2026-01-01T00:00:00.000Z')
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages with their priorities and change frequencies
   // Homepage gets highest priority as it's the entry point
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}`,
-      lastModified: new Date(),
+      lastModified: FALLBACK_LAST_MODIFIED,
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${BASE_URL}/about`,
-      lastModified: new Date(),
+      lastModified: FALLBACK_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/contact`,
-      lastModified: new Date(),
+      lastModified: FALLBACK_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/quote`,
-      lastModified: new Date(),
+      lastModified: FALLBACK_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/brands`,
-      lastModified: new Date(),
+      lastModified: FALLBACK_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${BASE_URL}/blog`,
-      lastModified: new Date(),
+      lastModified: FALLBACK_LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
@@ -51,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const categories = await getAllCategories()
   const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
     url: `${BASE_URL}/category/${category.slug}`,
-    lastModified: new Date(),
+    lastModified: FALLBACK_LAST_MODIFIED,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))
@@ -61,7 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getAllProducts()
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({
     url: `${BASE_URL}/product/${product.id}`,
-    lastModified: new Date(product.updatedAt || product.createdAt || Date.now()),
+    lastModified: product.updatedAt || product.createdAt || FALLBACK_LAST_MODIFIED,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }))
@@ -71,7 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogArticles = getBlogArticles()
   const blogPages: MetadataRoute.Sitemap = blogArticles.map((article) => ({
     url: `${BASE_URL}/blog/${article.slug}`,
-    lastModified: new Date(article.updatedAt || article.publishedAt),
+    lastModified: article.updatedAt || article.publishedAt || FALLBACK_LAST_MODIFIED,
     changeFrequency: 'monthly' as const,
     priority: 0.65,
   }))
