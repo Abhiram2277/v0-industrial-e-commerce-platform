@@ -29,7 +29,7 @@ export function PartnerBrands() {
 
       {/* Infinite Scrolling Marquee */}
       <div className="marquee-container">
-        <div className="marquee-track">
+        <div className="marquee-track" style={{ "--marquee-items": brands.length } as React.CSSProperties}>
           {duplicatedBrands.map((brand, index) => (
             <div key={index} className="marquee-item">
               <div className="relative w-full h-full flex items-center justify-center px-4">

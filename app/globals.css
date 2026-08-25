@@ -171,7 +171,7 @@
 .marquee-track {
   display: flex;
   gap: 2rem;
-  animation: marquee 30s linear infinite;
+  animation: marquee calc(var(--marquee-items, 10) * 3s) linear infinite;
   width: fit-content;
 }
 
@@ -197,7 +197,7 @@
 @media (max-width: 768px) {
   .marquee-track {
     gap: 1rem;
-    animation-duration: 20s;
+    animation-duration: calc(var(--marquee-items, 10) * 2s);
   }
 
   .marquee-item {
