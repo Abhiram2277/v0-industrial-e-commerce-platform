@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /manifest.json
 
 # Crawl delay
 Crawl-delay: 1
