@@ -44,6 +44,7 @@ export function IndustriesServed() {
                   width={240}
                   height={160}
                   className="object-contain max-w-[90%] max-h-[90%]"
+                  style={index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
                   loading="lazy"
                   quality={85}
                 />
