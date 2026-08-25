@@ -38,7 +38,7 @@ export function PartnerBrands() {
                   alt={`${brand.name} logo`}
                   width={240}
                   height={160}
-                  className="object-contain max-w-[90%] max-h-[90%]"
+                  className="object-contain max-w-[100%] max-h-[100%]"
                   loading="lazy"
                   quality={85}
                 />
