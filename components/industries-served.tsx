@@ -43,7 +43,7 @@ export function IndustriesServed() {
                   alt={`${client.name} logo`}
                   width={240}
                   height={160}
-                  className="object-contain max-w-[100%] max-h-[100%]"
+                  className={`object-contain max-w-[100%] max-h-[100%] ${client.name === "Tata Chemicals" ? "scale-[1.08]" : ""}`}
                   style={index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
                   loading="lazy"
                   quality={85}
