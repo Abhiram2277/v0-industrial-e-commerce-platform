@@ -94,7 +94,7 @@ export function SiteFooter() {
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/85 leading-relaxed">
-                  Plot no: 23-18-19, Pardhasaradhi Nagar, Krishnapatnam Rd, Nellore
+                  KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali, Nellore 524346, Andhra Pradesh
                 </span>
               </div>
               <div className="flex items-start gap-3">
