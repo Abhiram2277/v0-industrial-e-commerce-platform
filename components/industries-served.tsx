@@ -43,7 +43,7 @@ export function IndustriesServed() {
                   alt={`${client.name} logo`}
                   width={240}
                   height={160}
-                  className="object-contain max-w-[80%] max-h-[70%]"
+                  className="object-contain max-w-[90%] max-h-[90%]"
                   loading="lazy"
                   quality={85}
                 />
