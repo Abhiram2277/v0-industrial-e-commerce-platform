@@ -39,7 +39,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-4 text-muted-foreground">
             <span className="flex items-center gap-1 text-sm md:text-base">
               <Phone className="h-3 w-3" />
-              +91 9398644987
+              +91 7730940410
             </span>
             <span className="hidden md:inline">pndindustrialsuppliers@gmail.com</span>
           </div>
