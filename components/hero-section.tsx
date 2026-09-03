@@ -5,11 +5,15 @@ import { formatYearsActive } from "@/lib/utils"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden text-primary-foreground">
-      {/* Background image */}
+    <section className="relative overflow-hidden text-primary-foreground" style={{ backgroundColor: "#080d24" }}>
+      {/* Background image: full photo anchored right, navy fills the rest */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-ppe-inspection.jpg')" }}
+        className="absolute inset-0 bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/hero-ppe-inspection.jpg')",
+          backgroundSize: "contain",
+          backgroundPosition: "right center",
+        }}
         aria-hidden="true"
       />
       {/* Horizontal navy gradient: dark on the left, image visible on the right */}
