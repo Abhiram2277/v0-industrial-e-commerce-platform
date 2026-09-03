@@ -7,18 +7,18 @@ export function AboveFoldCTA() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
             <a
-              href="tel:+919398644987"
-              className="flex items-center gap-2 font-semibold text-foreground hover:text-accent transition-colors"
-            >
-              <Phone className="h-4 w-4 text-accent" />
-              <span>+91 9398644987 (Nellore)</span>
-            </a>
-            <a
               href="tel:+917730940410"
               className="flex items-center gap-2 font-semibold text-foreground hover:text-accent transition-colors"
             >
               <Phone className="h-4 w-4 text-accent" />
-              <span>+91 77309 40410 (Kakinada)</span>
+              <span>+91 77309 40410 (Nellore)</span>
+            </a>
+            <a
+              href="tel:+919948592229"
+              className="flex items-center gap-2 font-semibold text-foreground hover:text-accent transition-colors"
+            >
+              <Phone className="h-4 w-4 text-accent" />
+              <span>+91 99485 92229 (Kakinada)</span>
             </a>
           </div>
           <div className="hidden md:block h-4 w-px bg-border" />
