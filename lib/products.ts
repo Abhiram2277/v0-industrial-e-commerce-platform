@@ -4508,8 +4508,8 @@ export const categories = [
     slug: "head-protection",
     name: "Head Protection",
     description: "Comprehensive range of safety helmets and bump caps",
-    seoTitle: "Safety Helmets Supplier in Andhra Pradesh & Telangana — Nellore & Kakinada | PND Industrial Suppliers",
-    seoDescription: "Authorized Udyogi safety helmets in Andhra Pradesh & Telangana. IS 2925 certified. Serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada, Nellore & all major cities.",
+    seoTitle: "Helmet Shop in Kakinada | Safety Helmets | PND Industrial",
+    seoDescription: "PND Industrial Suppliers is your local helmet shop in Kakinada, stocking IS 2925 certified Udyogi safety helmets. Same-day stock, bulk pricing available.",
     subcategories: [
       "Thermoguard Series",
       "Vista Series",
@@ -4569,8 +4569,8 @@ export const categories = [
     slug: "foot-protection",
     name: "Foot Protection",
     description: "Industrial safety shoes and boots with steel toe and anti-static protection",
-    seoTitle: "Safety Shoes Supplier in Andhra Pradesh & Telangana — Nellore & Kakinada | PND Industrial Suppliers",
-    seoDescription: "Authorized Hillson & Udyogi safety shoes in Andhra Pradesh & Telangana. IS 15298 certified. Serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
+    seoTitle: "Safety Shoes Shop Near Me | Nellore & Kakinada | PND",
+    seoDescription: "Looking for a safety shoes shop near you? PND Industrial Suppliers stocks Hillson & Udyogi safety shoes in Nellore & Kakinada. Visit or call today.",
     subcategories: ["DPP PU Sole", "DIP PU Sole", "PVC Gumboot"],
   },
   {

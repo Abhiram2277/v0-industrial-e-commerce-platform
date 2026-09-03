@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { AboveFoldCTA } from "@/components/above-fold-cta"
 import { ProductCard } from "@/components/product-card"
 import { Button } from "@/components/ui/button"
 import { getAllProducts, getAllCategories } from "@/lib/products-combined"
@@ -118,6 +119,7 @@ export default async function CategoryPage({
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
+      {(slug === "foot-protection" || slug === "head-protection") && <AboveFoldCTA />}
       <main className="flex-1">
         {/* BreadcrumbList Schema for Google search results */}
         <script
