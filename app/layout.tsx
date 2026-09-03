@@ -22,9 +22,9 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "PND Industrial Suppliers | PPE & Safety Equipment — Nellore & Kakinada, AP",
+  title: "Safety Equipment Shop Near Me | PND Industrial Suppliers",
   description:
-    "Authorized PPE & industrial safety equipment supplier in Nellore & Kakinada, AP. Channel partner for Udyogi, Hillson, Bosch, DeWalt & Ador Welding. Call for bulk pricing.",
+    "Find a trusted safety equipment shop near you — PND Industrial Suppliers serves Nellore, Kakinada & across AP/Telangana with PPE, tools & safety gear.",
   metadataBase: new URL("https://pndindustrialsuppliers.com"),
   alternates: {
     canonical: "https://pndindustrialsuppliers.com",
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
     maximumScale: 5,
   },
   openGraph: {
-    title: "PND Industrial Suppliers | PPE & Safety Equipment — Nellore & Kakinada",
-    description: "Authorized PPE & industrial safety equipment supplier in Nellore & Kakinada, AP. Channel partner for Udyogi, Hillson, Bosch, DeWalt & Ador Welding. Call for bulk pricing.",
+    title: "Safety Equipment Shop Near Me | PND Industrial Suppliers",
+    description: "Find a trusted safety equipment shop near you — PND Industrial Suppliers serves Nellore, Kakinada & across AP/Telangana with PPE, tools & safety gear.",
     url: "https://pndindustrialsuppliers.com",
     siteName: "PND Industrial Suppliers",
     locale: "en_IN",
@@ -95,8 +95,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PND Industrial Suppliers | PPE & Safety Equipment",
-    description: "Authorized PPE & industrial safety equipment supplier in Nellore & Kakinada, AP. Channel partner for Udyogi, Hillson, Bosch, DeWalt & Ador Welding. Call for bulk pricing.",
+    title: "Safety Equipment Shop Near Me | PND Industrial Suppliers",
+    description: "Find a trusted safety equipment shop near you — PND Industrial Suppliers serves Nellore, Kakinada & across AP/Telangana with PPE, tools & safety gear.",
   },
 }
 

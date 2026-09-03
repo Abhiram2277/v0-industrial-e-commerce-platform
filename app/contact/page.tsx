@@ -3,6 +3,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { AboveFoldCTA } from "@/components/above-fold-cta"
 import { ContactForm } from "@/components/contact-form"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
@@ -27,6 +28,7 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
+      <AboveFoldCTA />
       <main className="flex-1">
         <section className="bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-16">
           <div className="container mx-auto px-4">

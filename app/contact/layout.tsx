@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us | PND Industrial Suppliers",
-  description: "Get in touch with PND Industrial Suppliers in Nellore. Call, email, or visit us for industrial solutions and PPE.",
+  title: "Visit Our Safety Material Shop | Nellore & Kakinada | PND",
+  description: "Visit PND Industrial Suppliers' safety material shop in Nellore or Kakinada. Bulk PPE, tools & safety gear available with expert guidance.",
   alternates: {
     canonical: "https://pndindustrialsuppliers.com/contact",
   },
