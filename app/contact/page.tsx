@@ -119,8 +119,8 @@ export default function ContactPage() {
                       </h3>
                       <div className="text-sm text-muted-foreground space-y-2">
                         <p>
-                          <a href="tel:+919398644987" className="hover:text-accent transition-colors font-medium">
-                            +91 9398644987
+                          <a href="tel:+917730940410" className="hover:text-accent transition-colors font-medium">
+                            +91 77309 40410
                           </a>
                         </p>
                         <p>
@@ -151,8 +151,8 @@ export default function ContactPage() {
                       </h3>
                       <div className="text-sm text-muted-foreground space-y-2">
                         <p>
-                          <a href="tel:+917730940410" className="hover:text-accent transition-colors font-medium">
-                            +91 77309 40410
+                          <a href="tel:+919948592229" className="hover:text-accent transition-colors font-medium">
+                            +91 99485 92229
                           </a>
                         </p>
                         <p>
