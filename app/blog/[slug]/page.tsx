@@ -249,6 +249,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         }
       }
     ]
+  } : article.slug === 'dewalt-vs-bosch-cordless-drills-industrial' ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which is better for industrial site work, Bosch or DeWalt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both are reliable — Bosch suits precision tasks in tighter spaces, while DeWalt's 20V MAX platform is often preferred for heavy-duty site work needing more torque."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get genuine Bosch and DeWalt tools in Kakinada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, PND Industrial Suppliers is an authorized dealer for both Bosch and DeWalt with stock available at our Nellore and Kakinada branches."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do these drills come with a warranty?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all Bosch and DeWalt power tools sold by PND include full manufacturer warranty coverage."
+        }
+      }
+    ]
   } : null
 
   return (
