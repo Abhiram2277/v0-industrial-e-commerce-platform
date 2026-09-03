@@ -4552,8 +4552,8 @@ export const categories = [
     slug: "arc-heat-protection",
     name: "Arc + Heat Protection",
     description: "Arc flash and heat protective equipment for electrical and high-temperature work",
-    seoTitle: "Arc Flash & Heat Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
-    seoDescription: "NFPA 70E arc flash suits & heat protection in Andhra Pradesh & Telangana. Authorized dealer serving Visakhapatnam, Vijayawada, Hyderabad, Kakinada & Nellore.",
+  seoTitle: "Arc Flash & Heat Protection Suits | PND Industrial",
+  seoDescription: "Arc-rated clothing, aluminised heat suits & face shields for refinery & power plant workers in Andhra Pradesh. Serving Kakinada's industrial belt.",
     subcategories: [
       "Economic Arc Shields",
       "AmpShield Series",
@@ -4577,8 +4577,8 @@ export const categories = [
     slug: "hand-protection",
     name: "Hand Protection",
     description: "Complete range of safety gloves for all industrial applications",
-    seoTitle: "Safety Gloves Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
-    seoDescription: "Nitrile, leather & cut-resistant gloves in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities. Wholesale pricing available.",
+  seoTitle: "Safety Gloves Supplier in Nellore & Kakinada | PND",
+  seoDescription: "Insulated, cut-resistant & welding gloves for industrial use. Genuine Udyogi & Hillson gloves with bulk pricing for factories across AP & Telangana.",
     subcategories: [
       "General Purpose",
       "PU Coated",
@@ -4614,8 +4614,8 @@ export const categories = [
     slug: "fall-protection",
     name: "Fall Protection",
     description: "Harnesses, lanyards, and lifelines for working at heights",
-    seoTitle: "Fall Protection Supplier in Andhra Pradesh & Telangana | PND Industrial Suppliers",
-    seoDescription: "IS 3521 certified harnesses & lanyards in Andhra Pradesh & Telangana. Authorized dealer serving all major AP & TS cities.",
+  seoTitle: "Fall Protection Equipment Supplier | PND Industrial",
+  seoDescription: "Harnesses, lanyards & anchor points for height work compliance. Supplying construction & telecom sites across Nellore, Kakinada & Andhra Pradesh.",
     subcategories: ["Harnesses", "Lanyards", "Lifelines", "Retractable Blocks"],
   },
   {
