@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
 export function CartButton() {
-  const { getTotalItems, setIsOpen } = useCart()
-  const totalItems = getTotalItems()
+  const { getTotalItems, setIsOpen, isHydrated } = useCart()
+  const totalItems = isHydrated ? getTotalItems() : 0
 
   return (
     <Button

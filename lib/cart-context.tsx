@@ -24,6 +24,7 @@ interface CartContextType {
   openCart: () => void
   closeCart: () => void
   setIsOpen: (open: boolean) => void
+  isHydrated: boolean
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
@@ -119,7 +120,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const closeCart = () => setIsOpen(false)
 
   return (
-    <CartContext.Provider
+      <CartContext.Provider
       value={{
         items,
         addItem,
@@ -131,6 +132,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         openCart,
         closeCart,
         setIsOpen,
+        isHydrated,
       }}
     >
       {children}
