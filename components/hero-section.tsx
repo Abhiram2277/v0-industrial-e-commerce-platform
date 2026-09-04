@@ -5,10 +5,10 @@ import { formatYearsActive } from "@/lib/utils"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden text-primary-foreground" style={{ backgroundColor: "#080d24" }}>
-      {/* Background image: full photo anchored right, navy fills the rest */}
+    <section className="relative overflow-hidden text-primary-foreground" style={{ backgroundColor: "#080d18" }}>
+      {/* Background image: full photo anchored right, navy fills the rest (desktop only) */}
       <div
-        className="absolute inset-0 bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat hidden md:block"
         style={{
           backgroundImage: "url('/images/hero-ppe-inspection.jpg')",
           backgroundSize: "contain",
@@ -16,32 +16,68 @@ export function HeroSection() {
         }}
         aria-hidden="true"
       />
-      {/* Horizontal navy gradient: dark on the left, image visible on the right */}
+      {/* Horizontal navy gradient: dark on the left, image visible on the right (desktop only) */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hidden md:block"
         style={{
           background:
             "linear-gradient(90deg, rgba(8,13,24,0.97) 0%, rgba(8,13,24,0.85) 35%, rgba(8,13,24,0.45) 65%, rgba(8,13,24,0.15) 100%)",
         }}
         aria-hidden="true"
       />
-      {/* Bottom gradient for badge legibility */}
+      {/* Bottom gradient for badge legibility (desktop only) */}
       <div
-        className="absolute inset-x-0 bottom-0 h-1/2"
+        className="absolute inset-x-0 bottom-0 h-1/2 hidden md:block"
         style={{ background: "linear-gradient(0deg, rgba(8,13,24,0.55) 0%, rgba(8,13,24,0) 100%)" }}
         aria-hidden="true"
       />
-      {/* Soft orange glow, top-right */}
+      {/* Soft orange glow, top-right (desktop only) */}
       <div
-        className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full blur-3xl"
+        className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full blur-3xl hidden md:block"
         style={{ background: "rgba(232,116,42,0.4)" }}
         aria-hidden="true"
       />
 
-      <div className="container relative mx-auto px-4 py-12 md:py-20 lg:py-28">
+      {/* Mobile image banner: full-bleed natural-ratio photo with badge and bottom fade */}
+      <div className="relative md:hidden h-[480px] w-screen overflow-hidden">
+        <img
+          src="/images/hero-ppe-inspection.jpg"
+          alt="Worker inspecting a hard hat beside safety gloves, goggles, ear defenders, boots and a fall-protection harness"
+          className="h-full w-full object-cover object-center"
+        />
+        {/* Bottom fade into the content block */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-2/5"
+          style={{ background: "linear-gradient(0deg, #080d18 0%, rgba(8,13,24,0.6) 45%, rgba(8,13,24,0) 100%)" }}
+          aria-hidden="true"
+        />
+        {/* Thin orange accent line at the very bottom edge */}
+        <div className="absolute inset-x-0 bottom-0 h-1" style={{ backgroundColor: "#e8742a" }} aria-hidden="true" />
+        {/* Radial dark gradient behind the badge for legibility */}
+        <div
+          className="absolute inset-x-0 top-0 h-32"
+          style={{ background: "radial-gradient(120% 100% at 20% 0%, rgba(8,13,24,0.55) 0%, rgba(8,13,24,0) 70%)" }}
+          aria-hidden="true"
+        />
+        {/* Badge inside banner, orange-themed to match desktop */}
+        <div className="absolute inset-x-0 top-0 p-4">
+          <div
+            className="inline-block rounded-full px-4 py-1.5 border-2"
+            style={{
+              backgroundColor: "rgba(232,116,42,0.15)",
+              borderColor: "#e8742a",
+              color: "#f4b479",
+            }}
+          >
+            <span className="text-xs font-semibold tracking-wide uppercase">Authorized Channel Partner</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="container relative mx-auto px-4 py-8 md:py-20 lg:py-28">
         <div className="max-w-[600px] space-y-5 md:space-y-6">
-          {/* Badge */}
-          <div className="inline-block rounded-full bg-accent/15 px-4 py-1.5 text-accent border border-accent/40">
+          {/* Badge (desktop only; mobile badge lives in the image banner) */}
+          <div className="hidden md:inline-block rounded-full bg-accent/15 px-4 py-1.5 text-accent border border-accent/40">
             <span className="text-xs md:text-sm font-semibold tracking-wide uppercase">
               Authorized Channel Partner
             </span>

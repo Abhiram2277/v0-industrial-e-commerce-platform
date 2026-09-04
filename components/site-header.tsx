@@ -48,8 +48,8 @@ export function SiteHeader() {
 
         {/* Main Navigation */}
         <div className="flex items-center justify-between py-4 gap-4">
-          <Link href="/" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0 min-w-0">
-            <div className="relative h-20 w-20 md:h-36 md:w-36 flex-shrink-0">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-4 flex-shrink-0 min-w-0">
+            <div className="relative h-20 w-20 md:h-[9.5rem] md:w-[9.5rem] flex-shrink-0">
               <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
             </div>
             <div className="flex md:hidden flex-col min-w-0">
@@ -61,8 +61,8 @@ export function SiteHeader() {
               </span>
               <span className="text-xs text-muted-foreground">Industrial Excellence</span>
             </div>
-            <div className="hidden md:flex flex-col">
-              <span className="font-bold text-4xl leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <div className="hidden md:flex flex-col justify-center gap-0.5">
+              <span className="font-bold text-5xl leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
                 PND Industrial Suppliers
               </span>
               <span className="text-sm text-muted-foreground">Industrial Excellence Since 2020</span>
@@ -70,7 +70,7 @@ export function SiteHeader() {
           </Link>
 
           {/* Search Bar - Desktop Only */}
-          <div className="hidden lg:flex flex-1 max-w-md mx-8">
+          <div className="hidden lg:flex flex-1 max-w-md mx-8 items-center">
             <SearchBar />
           </div>
 
