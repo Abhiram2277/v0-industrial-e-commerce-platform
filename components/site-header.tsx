@@ -49,7 +49,7 @@ export function SiteHeader() {
         {/* Main Navigation */}
         <div className="flex items-center justify-between py-4 gap-4">
           <Link href="/" className="flex items-center space-x-2 md:space-x-4 flex-shrink-0 min-w-0">
-            <div className="relative h-20 w-20 md:h-52 md:w-52 flex-shrink-0">
+            <div className="relative h-20 w-20 md:h-[9.5rem] md:w-[9.5rem] flex-shrink-0">
               <Image src="/pnd-logo.png" alt="PND Industrial Suppliers Logo" fill className="object-contain" priority />
             </div>
             <div className="flex md:hidden flex-col min-w-0">
