@@ -38,8 +38,8 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Mobile image banner: natural-ratio photo with badge and bottom fade */}
-      <div className="relative md:hidden h-[480px] w-full overflow-hidden">
+      {/* Mobile image banner: full-bleed natural-ratio photo with badge and bottom fade */}
+      <div className="relative md:hidden h-[480px] w-screen overflow-hidden">
         <img
           src="/images/hero-ppe-inspection.jpg"
           alt="Worker inspecting a hard hat beside safety gloves, goggles, ear defenders, boots and a fall-protection harness"
@@ -48,14 +48,26 @@ export function HeroSection() {
         {/* Bottom fade into the content block */}
         <div
           className="absolute inset-x-0 bottom-0 h-2/5"
-          style={{ background: "linear-gradient(0deg, #080d18 0%, rgba(8,13,24,0) 100%)" }}
+          style={{ background: "linear-gradient(0deg, #080d18 0%, rgba(8,13,24,0.6) 45%, rgba(8,13,24,0) 100%)" }}
           aria-hidden="true"
         />
-        {/* Badge inside banner with its own dark gradient for legibility */}
+        {/* Thin orange accent line at the very bottom edge */}
+        <div className="absolute inset-x-0 bottom-0 h-1" style={{ backgroundColor: "#e8742a" }} aria-hidden="true" />
+        {/* Radial dark gradient behind the badge for legibility */}
+        <div
+          className="absolute inset-x-0 top-0 h-32"
+          style={{ background: "radial-gradient(120% 100% at 20% 0%, rgba(8,13,24,0.55) 0%, rgba(8,13,24,0) 70%)" }}
+          aria-hidden="true"
+        />
+        {/* Badge inside banner, orange-themed to match desktop */}
         <div className="absolute inset-x-0 top-0 p-4">
           <div
-            className="inline-block rounded-full bg-accent/90 px-4 py-1.5 text-accent-foreground shadow-lg"
-            style={{ textShadow: "0 1px 2px rgba(0,0,0,0.25)" }}
+            className="inline-block rounded-full px-4 py-1.5 border-2"
+            style={{
+              backgroundColor: "rgba(232,116,42,0.15)",
+              borderColor: "#e8742a",
+              color: "#f4b479",
+            }}
           >
             <span className="text-xs font-semibold tracking-wide uppercase">Authorized Channel Partner</span>
           </div>
