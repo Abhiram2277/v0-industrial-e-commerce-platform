@@ -110,6 +110,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const clearCart = () => {
     setItems([])
+    // Write through immediately instead of waiting for the debounced save,
+    // so a quick navigation/refresh right after submitting can't resurrect
+    // the stale cart from localStorage.
+    try {
+      localStorage.setItem("pnd-cart", JSON.stringify([]))
+    } catch (e) {
+      console.error("Failed to clear cart storage")
+    }
   }
 
   const getTotalItems = () => {

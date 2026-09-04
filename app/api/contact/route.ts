@@ -37,7 +37,15 @@ export async function POST(request: Request) {
     // Attempt to send email notification if Resend API is configured
     if (process.env.RESEND_API_KEY) {
       try {
-        const adminEmail = process.env.ADMIN_EMAIL || "info@pndindustrial.com"
+        const adminEmail = process.env.ADMIN_EMAIL || "pndindustrialsuppliers@gmail.com"
+
+        // Use the verified sending domain (RESEND_FROM_EMAIL). Falling back to the
+        // resend.dev sandbox only delivers to the Resend account owner, so real
+        // notifications to the admin inbox would silently fail.
+        const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"
+        const fromAddress = fromEmail.includes("<")
+          ? fromEmail
+          : `PND Industrial Suppliers <${fromEmail}>`
 
         const enquiryTypeLabels: Record<string, string> = {
           "product-enquiry": "Product Enquiry",
@@ -107,8 +115,9 @@ export async function POST(request: Request) {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
           },
           body: JSON.stringify({
-            from: "PND Industrial Suppliers <noreply@resend.dev>",
+            from: fromAddress,
             to: [adminEmail],
+            reply_to: data.email,
             subject: emailSubject,
             html: emailHtml,
           }),
