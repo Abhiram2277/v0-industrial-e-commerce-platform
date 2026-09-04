@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -48,6 +48,14 @@ export function QuoteForm() {
     deliveryLocation: "",
     message: "",
   })
+  const isMountedRef = useRef(true)
+
+  useEffect(() => {
+    isMountedRef.current = true
+    return () => {
+      isMountedRef.current = false
+    }
+  }, [])
 
   useEffect(() => {
     Promise.all([getAllProductsClient(), getAllCategoriesClient()]).then(([prods, cats]) => {
@@ -176,6 +184,7 @@ export function QuoteForm() {
       })
 
       setTimeout(() => {
+        if (!isMountedRef.current) return
         setIsSubmitted(false)
         setQuoteReference("")
         setFormData({
