@@ -32,13 +32,15 @@ const trimmed = await sharp(transparentPng)
 // Helper: place the trimmed logo (FULL logo — helmet + "PND" text, unchanged)
 // centered on a square canvas with a solid WHITE background, filling ~85-90%
 // of the canvas (small padding) so it reads clearly at favicon sizes.
+// The canvas itself is masked with rounded corners (~22% radius).
 const WHITE = { r: 255, g: 255, b: 255, alpha: 1 }
-async function square(size, { paddingRatio = 0.06 } = {}) {
+async function square(size, { paddingRatio = 0.06, cornerRatio = 0.22 } = {}) {
   const inner = Math.round(size * (1 - paddingRatio * 2))
   const logo = await sharp(trimmed)
     .resize(inner, inner, { fit: "contain", background: WHITE })
     .toBuffer()
-  return sharp({
+
+  const flatSquare = await sharp({
     create: {
       width: size,
       height: size,
@@ -48,6 +50,16 @@ async function square(size, { paddingRatio = 0.06 } = {}) {
   })
     .composite([{ input: logo, gravity: "center" }])
     .flatten({ background: WHITE })
+    .png()
+    .toBuffer()
+
+  // Rounded-rect mask so the white canvas has soft corners instead of sharp ones.
+  const radius = Math.round(size * cornerRatio)
+  const maskSvg = `<svg width="${size}" height="${size}"><rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="#fff"/></svg>`
+  const mask = await sharp(Buffer.from(maskSvg)).png().toBuffer()
+
+  return sharp(flatSquare)
+    .composite([{ input: mask, blend: "dest-in" }])
     .png()
     .toBuffer()
 }
