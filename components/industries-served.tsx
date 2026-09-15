@@ -15,6 +15,8 @@ export function IndustriesServed() {
     { name: "Patanjali", logo: "/images/clients/patanjali.png" },
     { name: "Amrutanjan", logo: "/images/clients/amrutanjan.png" },
     { name: "The Ramco Cements", logo: "/images/clients/ramco-cements.avif" },
+    { name: "Tata Chemicals", logo: "/images/clients/tata-chemicals-v3.png" },
+    { name: "Blue Star", logo: "/images/clients/blue-star-v2.png" },
   ]
 
   // Duplicate clients array for seamless looping
