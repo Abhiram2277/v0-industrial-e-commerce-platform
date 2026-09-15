@@ -211,7 +211,7 @@ export default function RootLayout({
               "url": "https://pndindustrialsuppliers.com",
               "logo": "https://pndindustrialsuppliers.com/icon-512x512.png",
               "description": "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more.",
-              "foundingDate": "2024",
+              "foundingDate": "2020",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+919398644987",
