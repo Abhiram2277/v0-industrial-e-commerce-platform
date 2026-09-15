@@ -10,6 +10,7 @@ export function PartnerBrands() {
     { name: "Hillson", logo: "/images/brands/hillson-logo.jpg" },
     { name: "Ador Welding", logo: "/images/brands/ador-logo.jpg" },
     { name: "Black+Decker", logo: "/images/brands/black-decker-logo.jpg" },
+    { name: "Bosch", logo: "/images/brands/bosch-logo-v2.png" },
   ]
 
   // Duplicate brands array for seamless looping
