@@ -23,7 +23,7 @@ export function IndustriesServed() {
   const duplicatedClients = [...clients, ...clients, ...clients]
 
   return (
-    <section className="py-8 md:py-16 bg-muted/30">
+    <section className="py-8 md:py-16 bg-muted/30" style={{ fontSize: "18px" }}>
       <div className="container mx-auto px-4 mb-8 md:mb-12">
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
@@ -47,7 +47,7 @@ export function IndustriesServed() {
                   width={240}
                   height={160}
                   className={`object-contain max-w-[100%] max-h-[100%] ${client.name === "Tata Chemicals" ? "scale-[1.08]" : ""} ${client.name === "Blue Star" ? "scale-[1.18]" : ""}`}
-                  style={index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
+                  style={index === 23 ? { fontSize: "20px" } : index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
                   loading="lazy"
                   quality={85}
                 />
