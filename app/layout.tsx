@@ -212,32 +212,49 @@ export default function RootLayout({
               "logo": "https://pndindustrialsuppliers.com/icon-512x512.png",
               "description": "Leading industrial solutions provider in Nellore & Kakinada, AP. Authorized channel partner for Udyogi Safety PPE, Bosch Tools, DeWalt, Stanley, and more.",
               "foundingDate": "2020",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+919398644987",
-                "contactType": "Sales",
-                "areaServed": ["Nellore", "Kakinada", "Andhra Pradesh"]
-              },
+              "email": "pndindustrialsuppliers@gmail.com",
               "sameAs": [
                 "https://www.facebook.com/pndindustrialsuppliers",
                 "https://www.instagram.com/pndindustrialsuppliers"
               ],
-              "address": [
+              "department": [
                 {
-                  "@type": "PostalAddress",
-                  "streetAddress": "KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali",
-                  "addressLocality": "Nellore",
-                  "addressRegion": "AP",
-                  "postalCode": "524346",
-                  "addressCountry": "IN"
+                  "@type": "LocalBusiness",
+                  "name": "PND Industrial Suppliers - Nellore Branch",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "KP1-912, Opp. Desamma Gudi, Nandamuri Nagar, Behind MGB Infinity, Kakupali",
+                    "addressLocality": "Nellore",
+                    "addressRegion": "AP",
+                    "postalCode": "524346",
+                    "addressCountry": "IN"
+                  },
+                  "telephone": "+919398644987",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+919398644987",
+                    "contactType": "Sales",
+                    "areaServed": ["Nellore", "Andhra Pradesh"]
+                  }
                 },
                 {
-                  "@type": "PostalAddress",
-                  "streetAddress": "Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi",
-                  "addressLocality": "Kakinada",
-                  "addressRegion": "AP",
-                  "postalCode": "533005",
-                  "addressCountry": "IN"
+                  "@type": "LocalBusiness",
+                  "name": "PND Industrial Suppliers - Kakinada Branch",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Door No. 2, 98/2, near Gangalamma Devi Temple, Vakalapudi",
+                    "addressLocality": "Kakinada",
+                    "addressRegion": "AP",
+                    "postalCode": "533005",
+                    "addressCountry": "IN"
+                  },
+                  "telephone": "+917730940410",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+917730940410",
+                    "contactType": "Sales",
+                    "areaServed": ["Kakinada", "Andhra Pradesh"]
+                  }
                 }
               ]
             })
