@@ -5,7 +5,6 @@ import Image from "next/image"
 export function IndustriesServed() {
   const clients = [
     { name: "Reliance Industries Limited", logo: "/images/clients/reliance.png" },
-    { name: "Tata Chemicals", logo: "/images/clients/tata-chemicals-v2.png" },
     { name: "LG", logo: "/images/clients/lg.png" },
     { name: "Dodla Dairy", logo: "/images/clients/dodla.jpeg" },
     { name: "Coromandel", logo: "/images/clients/coromandel.png" },
@@ -45,7 +44,7 @@ export function IndustriesServed() {
                   alt={`${client.name} logo`}
                   width={240}
                   height={160}
-                  className={`object-contain max-w-[100%] max-h-[100%] ${client.name === "Tata Chemicals" ? "scale-[1.08]" : ""}`}
+                  className={`object-contain max-w-[100%] max-h-[100%]`}
                   style={index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
                   loading="lazy"
                   quality={85}
