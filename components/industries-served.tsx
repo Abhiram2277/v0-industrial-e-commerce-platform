@@ -14,7 +14,6 @@ export function IndustriesServed() {
     { name: "Jindal Steel & Power", logo: "/images/clients/jindal.png" },
     { name: "AM Green", logo: "/images/clients/am-green.jpg" },
     { name: "Patanjali", logo: "/images/clients/patanjali.png" },
-    { name: "Blue Star", logo: "/images/clients/blue-star.jpg" },
     { name: "Amrutanjan", logo: "/images/clients/amrutanjan.png" },
     { name: "The Ramco Cements", logo: "/images/clients/ramco-cements.avif" },
   ]
@@ -46,8 +45,8 @@ export function IndustriesServed() {
                   alt={`${client.name} logo`}
                   width={240}
                   height={160}
-                  className={`object-contain max-w-[100%] max-h-[100%] ${client.name === "Tata Chemicals" ? "scale-[1.08]" : ""} ${client.name === "Blue Star" ? "scale-[1.18]" : ""}`}
-                  style={index === 23 ? { fontSize: "20px" } : index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
+                  className={`object-contain max-w-[100%] max-h-[100%] ${client.name === "Tata Chemicals" ? "scale-[1.08]" : ""}`}
+                  style={index === 11 || index === 28 ? { fontSize: "18px" } : undefined}
                   loading="lazy"
                   quality={85}
                 />
