@@ -5,12 +5,12 @@ import Image from "next/image"
 export function PartnerBrands() {
   const brands = [
     { name: "Udyogi Safety", logo: "/images/brands/udyogi-logo.png" },
-    { name: "Bosch", logo: "/images/brands/bosch-logo.jpg" },
     { name: "DeWalt", logo: "/images/brands/dewalt-logo.jpg" },
     { name: "Stanley", logo: "/images/brands/stanley-logo.jpg" },
     { name: "Hillson", logo: "/images/brands/hillson-logo.jpg" },
     { name: "Ador Welding", logo: "/images/brands/ador-logo.jpg" },
     { name: "Black+Decker", logo: "/images/brands/black-decker-logo.jpg" },
+    { name: "Bosch", logo: "/images/brands/bosch-logo-v2.png" },
   ]
 
   // Duplicate brands array for seamless looping

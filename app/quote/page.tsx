@@ -5,6 +5,13 @@ import { QuoteForm } from "@/components/quote-form"
 import { Suspense } from "react"
 import type { Metadata } from "next"
 
+// Force per-request rendering so the Suspense boundary around QuoteForm
+// (required because it reads useSearchParams) resolves on the server for
+// every request. Without this, Next.js would try to statically generate
+// this page and bake the Suspense fallback text into the HTML shell,
+// leaving the actual <form> to be rendered client-side only.
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: "Request a Quote | PND Industrial Suppliers",
   description: "Get competitive quotes on premium industrial equipment and PPE. Our experts respond within 24 hours.",
