@@ -24,10 +24,10 @@ export function IndustriesServed() {
       <div className="container mx-auto px-4 mb-8 md:mb-12">
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-            Industries Served
+            Our Valued Clients
           </h2>
           <p className="text-sm md:text-lg text-muted-foreground">
-            Trusted by leading names across power, chemicals, steel, and manufacturing sectors
+            Proud to supply industry leaders across power, chemicals, steel, and manufacturing sectors nationwide
           </p>
         </div>
       </div>
