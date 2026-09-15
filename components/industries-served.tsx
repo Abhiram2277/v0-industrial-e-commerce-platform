@@ -14,6 +14,9 @@ export function IndustriesServed() {
     { name: "Jindal Steel & Power", logo: "/images/clients/jindal.png" },
     { name: "AM Green", logo: "/images/clients/am-green.jpg" },
     { name: "Patanjali", logo: "/images/clients/patanjali.png" },
+    { name: "Blue Star", logo: "/images/clients/blue-star.jpg" },
+    { name: "Amrutanjan", logo: "/images/clients/amrutanjan.png" },
+    { name: "The Ramco Cements", logo: "/images/clients/ramco-cements.avif" },
   ]
 
   // Duplicate clients array for seamless looping
